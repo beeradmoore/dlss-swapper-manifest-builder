@@ -1,0 +1,8 @@
+.vs/
+.idea/
+.vscode/
+bin/
+obj/
+input_files/
+output_files/
+temp_files/
