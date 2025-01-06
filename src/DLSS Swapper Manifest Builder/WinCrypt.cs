@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Diagnostics;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Security.Cryptography.Pkcs;
@@ -433,11 +434,11 @@ static class WinCrypt
                 }
                 else if (unsignedAttribute.Oid.Value == "1.3.6.1.4.1.311.3.2.1") //SPC_TIME_STAMP_REQUEST_OBJID 
                 {
-                    int x = 0;
+                    Debugger.Break();
                 }
                 else if (unsignedAttribute.Oid.Value == "1.3.6.1.4.1.311.10.3.2") // szOID_KP_TIME_STAMP_SIGNING 
                 {
-                    int x = 0;
+                    Debugger.Break();
                 }
             }
 
@@ -445,11 +446,11 @@ static class WinCrypt
             {
                 if (signedAttribute.Oid.Value == "1.3.6.1.4.1.311.3.2.1") //SPC_TIME_STAMP_REQUEST_OBJID 
                 {
-                    int x = 0;
+                    Debugger.Break();
                 }
                 else if (signedAttribute.Oid.Value == "1.3.6.1.4.1.311.10.3.2") // szOID_KP_TIME_STAMP_SIGNING 
                 {
-                    int x = 0;
+                    Debugger.Break();
                 }
             }
         }
