@@ -11,7 +11,8 @@
       "is_signature_valid": true,
       "is_dev_file": false,
       "file_size": 4522888,
-      "zip_file_size": 3911015
+      "zip_file_size": 3911015,
+      "dll_source": ""
     },
     {
       "version": "1.0.9.0",
@@ -24,7 +25,8 @@
       "is_signature_valid": true,
       "is_dev_file": false,
       "file_size": 4487024,
-      "zip_file_size": 3923871
+      "zip_file_size": 3923871,
+      "dll_source": ""
     },
     {
       "version": "1.0.11.0",
@@ -37,7 +39,8 @@
       "is_signature_valid": false,
       "is_dev_file": false,
       "file_size": 4502400,
-      "zip_file_size": 3943103
+      "zip_file_size": 3943103,
+      "dll_source": ""
     },
     {
       "version": "1.0.13.0",
@@ -50,7 +53,8 @@
       "is_signature_valid": false,
       "is_dev_file": false,
       "file_size": 4502216,
-      "zip_file_size": 3947194
+      "zip_file_size": 3947194,
+      "dll_source": ""
     },
     {
       "version": "1.0.17.0",
@@ -63,7 +67,8 @@
       "is_signature_valid": true,
       "is_dev_file": false,
       "file_size": 4487208,
-      "zip_file_size": 3922693
+      "zip_file_size": 3922693,
+      "dll_source": ""
     },
     {
       "version": "1.1.6.0",
@@ -76,7 +81,8 @@
       "is_signature_valid": true,
       "is_dev_file": false,
       "file_size": 5564400,
-      "zip_file_size": 4243863
+      "zip_file_size": 4243863,
+      "dll_source": ""
     },
     {
       "version": "1.1.13.0",
@@ -89,7 +95,8 @@
       "is_signature_valid": true,
       "is_dev_file": false,
       "file_size": 5646688,
-      "zip_file_size": 4237882
+      "zip_file_size": 4237882,
+      "dll_source": ""
     },
     {
       "version": "1.2.14.0",
@@ -102,7 +109,8 @@
       "is_signature_valid": true,
       "is_dev_file": false,
       "file_size": 5771120,
-      "zip_file_size": 4277307
+      "zip_file_size": 4277307,
+      "dll_source": ""
     },
     {
       "version": "2.0.34.0",
@@ -115,7 +123,8 @@
       "is_signature_valid": true,
       "is_dev_file": false,
       "file_size": 6344168,
-      "zip_file_size": 4271682
+      "zip_file_size": 4271682,
+      "dll_source": ""
     },
     {
       "version": "2.0.38.0",
@@ -128,7 +137,8 @@
       "is_signature_valid": true,
       "is_dev_file": false,
       "file_size": 6290920,
-      "zip_file_size": 4265147
+      "zip_file_size": 4265147,
+      "dll_source": ""
     },
     {
       "version": "2.1.16.0",
@@ -141,7 +151,8 @@
       "is_signature_valid": true,
       "is_dev_file": false,
       "file_size": 11562296,
-      "zip_file_size": 8181461
+      "zip_file_size": 8181461,
+      "dll_source": ""
     },
     {
       "version": "2.1.19.0",
@@ -154,7 +165,8 @@
       "is_signature_valid": true,
       "is_dev_file": false,
       "file_size": 11731432,
-      "zip_file_size": 8270038
+      "zip_file_size": 8270038,
+      "dll_source": ""
     },
     {
       "version": "2.1.24.0",
@@ -167,7 +179,8 @@
       "is_signature_valid": true,
       "is_dev_file": false,
       "file_size": 11772216,
-      "zip_file_size": 8295012
+      "zip_file_size": 8295012,
+      "dll_source": ""
     },
     {
       "version": "2.1.25.0",
@@ -180,7 +193,8 @@
       "is_signature_valid": true,
       "is_dev_file": false,
       "file_size": 11773928,
-      "zip_file_size": 8297950
+      "zip_file_size": 8297950,
+      "dll_source": ""
     },
     {
       "version": "2.1.28.0",
@@ -193,7 +207,8 @@
       "is_signature_valid": true,
       "is_dev_file": false,
       "file_size": 11773416,
-      "zip_file_size": 8297980
+      "zip_file_size": 8297980,
+      "dll_source": ""
     },
     {
       "version": "2.1.29.0",
@@ -206,7 +221,8 @@
       "is_signature_valid": true,
       "is_dev_file": false,
       "file_size": 11773928,
-      "zip_file_size": 8298338
+      "zip_file_size": 8298338,
+      "dll_source": ""
     },
     {
       "version": "2.1.31.0",
@@ -219,7 +235,8 @@
       "is_signature_valid": true,
       "is_dev_file": false,
       "file_size": 11773752,
-      "zip_file_size": 8311187
+      "zip_file_size": 8311187,
+      "dll_source": ""
     },
     {
       "version": "2.1.35.0",
@@ -232,7 +249,8 @@
       "is_signature_valid": true,
       "is_dev_file": false,
       "file_size": 11784504,
-      "zip_file_size": 8317342
+      "zip_file_size": 8317342,
+      "dll_source": ""
     },
     {
       "version": "2.1.39.0",
@@ -245,7 +263,8 @@
       "is_signature_valid": true,
       "is_dev_file": false,
       "file_size": 11887416,
-      "zip_file_size": 8349831
+      "zip_file_size": 8349831,
+      "dll_source": ""
     },
     {
       "version": "2.1.40.0",
@@ -258,7 +277,8 @@
       "is_signature_valid": true,
       "is_dev_file": false,
       "file_size": 11888616,
-      "zip_file_size": 8350246
+      "zip_file_size": 8350246,
+      "dll_source": ""
     },
     {
       "version": "2.1.50.0",
@@ -271,7 +291,8 @@
       "is_signature_valid": true,
       "is_dev_file": false,
       "file_size": 13758192,
-      "zip_file_size": 9247449
+      "zip_file_size": 9247449,
+      "dll_source": ""
     },
     {
       "version": "2.1.51.0",
@@ -284,7 +305,8 @@
       "is_signature_valid": true,
       "is_dev_file": false,
       "file_size": 13758192,
-      "zip_file_size": 9247596
+      "zip_file_size": 9247596,
+      "dll_source": ""
     },
     {
       "version": "2.1.52.0",
@@ -297,7 +319,8 @@
       "is_signature_valid": true,
       "is_dev_file": false,
       "file_size": 13758192,
-      "zip_file_size": 9247601
+      "zip_file_size": 9247601,
+      "dll_source": ""
     },
     {
       "version": "2.1.53.0",
@@ -310,7 +333,8 @@
       "is_signature_valid": true,
       "is_dev_file": false,
       "file_size": 13756768,
-      "zip_file_size": 9246649
+      "zip_file_size": 9246649,
+      "dll_source": ""
     },
     {
       "version": "2.1.55.0",
@@ -323,7 +347,8 @@
       "is_signature_valid": true,
       "is_dev_file": false,
       "file_size": 13805424,
-      "zip_file_size": 9256577
+      "zip_file_size": 9256577,
+      "dll_source": ""
     },
     {
       "version": "2.1.58.0",
@@ -336,7 +361,8 @@
       "is_signature_valid": true,
       "is_dev_file": false,
       "file_size": 14905712,
-      "zip_file_size": 9661997
+      "zip_file_size": 9661997,
+      "dll_source": ""
     },
     {
       "version": "2.1.62.0",
@@ -349,7 +375,8 @@
       "is_signature_valid": true,
       "is_dev_file": false,
       "file_size": 14904688,
-      "zip_file_size": 9660938
+      "zip_file_size": 9660938,
+      "dll_source": ""
     },
     {
       "version": "2.1.63.0",
@@ -362,7 +389,8 @@
       "is_signature_valid": true,
       "is_dev_file": false,
       "file_size": 14904688,
-      "zip_file_size": 9660969
+      "zip_file_size": 9660969,
+      "dll_source": ""
     },
     {
       "version": "2.1.66.0",
@@ -375,7 +403,8 @@
       "is_signature_valid": true,
       "is_dev_file": false,
       "file_size": 14908784,
-      "zip_file_size": 9663090
+      "zip_file_size": 9663090,
+      "dll_source": ""
     },
     {
       "version": "2.2.6.0",
@@ -388,7 +417,8 @@
       "is_signature_valid": true,
       "is_dev_file": false,
       "file_size": 14444400,
-      "zip_file_size": 9832066
+      "zip_file_size": 9832066,
+      "dll_source": ""
     },
     {
       "version": "2.2.9.0",
@@ -401,7 +431,8 @@
       "is_signature_valid": true,
       "is_dev_file": false,
       "file_size": 14445936,
-      "zip_file_size": 9851986
+      "zip_file_size": 9851986,
+      "dll_source": ""
     },
     {
       "version": "2.2.10.0",
@@ -414,7 +445,8 @@
       "is_signature_valid": true,
       "is_dev_file": false,
       "file_size": 14447984,
-      "zip_file_size": 9829250
+      "zip_file_size": 9829250,
+      "dll_source": ""
     },
     {
       "version": "2.2.11.0",
@@ -427,7 +459,8 @@
       "is_signature_valid": true,
       "is_dev_file": false,
       "file_size": 14449864,
-      "zip_file_size": 9829770
+      "zip_file_size": 9829770,
+      "dll_source": ""
     },
     {
       "version": "2.2.14.0",
@@ -440,7 +473,8 @@
       "is_signature_valid": true,
       "is_dev_file": false,
       "file_size": 14449872,
-      "zip_file_size": 9829774
+      "zip_file_size": 9829774,
+      "dll_source": ""
     },
     {
       "version": "2.2.15.0",
@@ -453,7 +487,8 @@
       "is_signature_valid": true,
       "is_dev_file": false,
       "file_size": 14450376,
-      "zip_file_size": 9829877
+      "zip_file_size": 9829877,
+      "dll_source": ""
     },
     {
       "version": "2.2.16.0",
@@ -466,7 +501,8 @@
       "is_signature_valid": true,
       "is_dev_file": false,
       "file_size": 14448328,
-      "zip_file_size": 9852955
+      "zip_file_size": 9852955,
+      "dll_source": ""
     },
     {
       "version": "2.2.16.0",
@@ -479,7 +515,8 @@
       "is_signature_valid": true,
       "is_dev_file": true,
       "file_size": 14673608,
-      "zip_file_size": 9953225
+      "zip_file_size": 9953225,
+      "dll_source": ""
     },
     {
       "version": "2.2.18.0",
@@ -492,7 +529,8 @@
       "is_signature_valid": true,
       "is_dev_file": false,
       "file_size": 14452944,
-      "zip_file_size": 9830351
+      "zip_file_size": 9830351,
+      "dll_source": ""
     },
     {
       "version": "2.2.18.0",
@@ -505,7 +543,8 @@
       "is_signature_valid": true,
       "is_dev_file": false,
       "file_size": 14452944,
-      "zip_file_size": 9830358
+      "zip_file_size": 9830358,
+      "dll_source": ""
     },
     {
       "version": "2.2.18.0",
@@ -518,7 +557,8 @@
       "is_signature_valid": true,
       "is_dev_file": false,
       "file_size": 14450896,
-      "zip_file_size": 9853141
+      "zip_file_size": 9853141,
+      "dll_source": ""
     },
     {
       "version": "2.3.0.0",
@@ -531,7 +571,8 @@
       "is_signature_valid": true,
       "is_dev_file": false,
       "file_size": 14452936,
-      "zip_file_size": 9830325
+      "zip_file_size": 9830325,
+      "dll_source": ""
     },
     {
       "version": "2.3.0.0",
@@ -544,7 +585,8 @@
       "is_signature_valid": true,
       "is_dev_file": true,
       "file_size": 14677704,
-      "zip_file_size": 9934056
+      "zip_file_size": 9934056,
+      "dll_source": ""
     },
     {
       "version": "2.3.1.0",
@@ -557,7 +599,8 @@
       "is_signature_valid": true,
       "is_dev_file": false,
       "file_size": 14452944,
-      "zip_file_size": 9834560
+      "zip_file_size": 9834560,
+      "dll_source": ""
     },
     {
       "version": "2.3.1.0",
@@ -570,7 +613,8 @@
       "is_signature_valid": true,
       "is_dev_file": true,
       "file_size": 14677712,
-      "zip_file_size": 9945589
+      "zip_file_size": 9945589,
+      "dll_source": ""
     },
     {
       "version": "2.3.2.0",
@@ -583,7 +627,8 @@
       "is_signature_valid": true,
       "is_dev_file": false,
       "file_size": 14461648,
-      "zip_file_size": 9863677
+      "zip_file_size": 9863677,
+      "dll_source": ""
     },
     {
       "version": "2.3.3.0",
@@ -596,7 +641,8 @@
       "is_signature_valid": true,
       "is_dev_file": false,
       "file_size": 14462152,
-      "zip_file_size": 9864188
+      "zip_file_size": 9864188,
+      "dll_source": ""
     },
     {
       "version": "2.3.4.0",
@@ -609,7 +655,8 @@
       "is_signature_valid": true,
       "is_dev_file": false,
       "file_size": 14464712,
-      "zip_file_size": 9835857
+      "zip_file_size": 9835857,
+      "dll_source": ""
     },
     {
       "version": "2.3.5.0",
@@ -622,7 +669,8 @@
       "is_signature_valid": true,
       "is_dev_file": false,
       "file_size": 14467280,
-      "zip_file_size": 9845219
+      "zip_file_size": 9845219,
+      "dll_source": ""
     },
     {
       "version": "2.3.7.0",
@@ -635,7 +683,8 @@
       "is_signature_valid": true,
       "is_dev_file": false,
       "file_size": 14621184,
-      "zip_file_size": 9933100
+      "zip_file_size": 9933100,
+      "dll_source": ""
     },
     {
       "version": "2.3.9.0",
@@ -648,7 +697,8 @@
       "is_signature_valid": true,
       "is_dev_file": false,
       "file_size": 14619848,
-      "zip_file_size": 9931384
+      "zip_file_size": 9931384,
+      "dll_source": ""
     },
     {
       "version": "2.3.11.0",
@@ -661,7 +711,8 @@
       "is_signature_valid": true,
       "is_dev_file": true,
       "file_size": 15029968,
-      "zip_file_size": 10122921
+      "zip_file_size": 10122921,
+      "dll_source": ""
     },
     {
       "version": "2.3.11.0",
@@ -674,7 +725,8 @@
       "is_signature_valid": true,
       "is_dev_file": false,
       "file_size": 14804680,
-      "zip_file_size": 10022876
+      "zip_file_size": 10022876,
+      "dll_source": ""
     },
     {
       "version": "2.4.0.0",
@@ -687,7 +739,8 @@
       "is_signature_valid": true,
       "is_dev_file": true,
       "file_size": 15032952,
-      "zip_file_size": 10142033
+      "zip_file_size": 10142033,
+      "dll_source": ""
     },
     {
       "version": "2.4.0.0",
@@ -700,7 +753,8 @@
       "is_signature_valid": true,
       "is_dev_file": false,
       "file_size": 14803656,
-      "zip_file_size": 10029959
+      "zip_file_size": 10029959,
+      "dll_source": ""
     },
     {
       "version": "2.4.3.0",
@@ -713,7 +767,8 @@
       "is_signature_valid": true,
       "is_dev_file": false,
       "file_size": 14816512,
-      "zip_file_size": 10045924
+      "zip_file_size": 10045924,
+      "dll_source": ""
     },
     {
       "version": "2.4.6.0",
@@ -726,7 +781,8 @@
       "is_signature_valid": true,
       "is_dev_file": false,
       "file_size": 14852216,
-      "zip_file_size": 10054383
+      "zip_file_size": 10054383,
+      "dll_source": ""
     },
     {
       "version": "2.4.11.0",
@@ -739,7 +795,8 @@
       "is_signature_valid": true,
       "is_dev_file": false,
       "file_size": 14149736,
-      "zip_file_size": 9773240
+      "zip_file_size": 9773240,
+      "dll_source": ""
     },
     {
       "version": "2.4.12.0",
@@ -752,7 +809,8 @@
       "is_signature_valid": true,
       "is_dev_file": false,
       "file_size": 14171176,
-      "zip_file_size": 9804690
+      "zip_file_size": 9804690,
+      "dll_source": ""
     },
     {
       "version": "2.4.12.0",
@@ -765,7 +823,8 @@
       "is_signature_valid": true,
       "is_dev_file": false,
       "file_size": 15076392,
-      "zip_file_size": 10114234
+      "zip_file_size": 10114234,
+      "dll_source": ""
     },
     {
       "version": "2.4.12.0",
@@ -778,7 +837,8 @@
       "is_signature_valid": true,
       "is_dev_file": false,
       "file_size": 24002088,
-      "zip_file_size": 14883268
+      "zip_file_size": 14883268,
+      "dll_source": ""
     },
     {
       "version": "2.4.13.0",
@@ -791,7 +851,8 @@
       "is_signature_valid": true,
       "is_dev_file": false,
       "file_size": 25176120,
-      "zip_file_size": 15294895
+      "zip_file_size": 15294895,
+      "dll_source": ""
     },
     {
       "version": "2.5.0.0",
@@ -804,7 +865,8 @@
       "is_signature_valid": true,
       "is_dev_file": false,
       "file_size": 25176104,
-      "zip_file_size": 15290460
+      "zip_file_size": 15290460,
+      "dll_source": ""
     },
     {
       "version": "2.5.1.0",
@@ -817,7 +879,8 @@
       "is_signature_valid": true,
       "is_dev_file": false,
       "file_size": 25179192,
-      "zip_file_size": 15280895
+      "zip_file_size": 15280895,
+      "dll_source": ""
     },
     {
       "version": "3.1.1.0",
@@ -830,7 +893,8 @@
       "is_signature_valid": true,
       "is_dev_file": false,
       "file_size": 36687416,
-      "zip_file_size": 25992955
+      "zip_file_size": 25992955,
+      "dll_source": ""
     },
     {
       "version": "3.1.1.0",
@@ -843,7 +907,8 @@
       "is_signature_valid": true,
       "is_dev_file": true,
       "file_size": 36856360,
-      "zip_file_size": 26061799
+      "zip_file_size": 26061799,
+      "dll_source": ""
     },
     {
       "version": "3.1.2.0",
@@ -856,7 +921,8 @@
       "is_signature_valid": true,
       "is_dev_file": false,
       "file_size": 35399736,
-      "zip_file_size": 24607573
+      "zip_file_size": 24607573,
+      "dll_source": ""
     },
     {
       "version": "3.1.11.0",
@@ -869,7 +935,8 @@
       "is_signature_valid": true,
       "is_dev_file": true,
       "file_size": 35552824,
-      "zip_file_size": 24677601
+      "zip_file_size": 24677601,
+      "dll_source": ""
     },
     {
       "version": "3.1.11.0",
@@ -882,7 +949,8 @@
       "is_signature_valid": true,
       "is_dev_file": false,
       "file_size": 35385384,
-      "zip_file_size": 24603805
+      "zip_file_size": 24603805,
+      "dll_source": ""
     },
     {
       "version": "3.1.13.0",
@@ -895,7 +963,8 @@
       "is_signature_valid": true,
       "is_dev_file": false,
       "file_size": 35400248,
-      "zip_file_size": 24609612
+      "zip_file_size": 24609612,
+      "dll_source": ""
     },
     {
       "version": "3.1.13.0",
@@ -908,7 +977,8 @@
       "is_signature_valid": true,
       "is_dev_file": true,
       "file_size": 35568696,
-      "zip_file_size": 24687532
+      "zip_file_size": 24687532,
+      "dll_source": ""
     },
     {
       "version": "3.1.30.0",
@@ -921,7 +991,8 @@
       "is_signature_valid": true,
       "is_dev_file": false,
       "file_size": 51717160,
-      "zip_file_size": 36275661
+      "zip_file_size": 36275661,
+      "dll_source": ""
     },
     {
       "version": "3.1.30.0",
@@ -934,7 +1005,8 @@
       "is_signature_valid": true,
       "is_dev_file": true,
       "file_size": 51860520,
-      "zip_file_size": 36338901
+      "zip_file_size": 36338901,
+      "dll_source": ""
     },
     {
       "version": "3.5.0.0",
@@ -947,7 +1019,8 @@
       "is_signature_valid": true,
       "is_dev_file": true,
       "file_size": 51859496,
-      "zip_file_size": 36338246
+      "zip_file_size": 36338246,
+      "dll_source": ""
     },
     {
       "version": "3.5.0.0",
@@ -960,7 +1033,8 @@
       "is_signature_valid": true,
       "is_dev_file": false,
       "file_size": 51716648,
-      "zip_file_size": 36275062
+      "zip_file_size": 36275062,
+      "dll_source": ""
     },
     {
       "version": "3.5.10.0",
@@ -973,7 +1047,8 @@
       "is_signature_valid": true,
       "is_dev_file": false,
       "file_size": 53689400,
-      "zip_file_size": 37073443
+      "zip_file_size": 37073443,
+      "dll_source": ""
     },
     {
       "version": "3.5.10.0",
@@ -986,7 +1061,8 @@
       "is_signature_valid": true,
       "is_dev_file": true,
       "file_size": 53850152,
-      "zip_file_size": 37144469
+      "zip_file_size": 37144469,
+      "dll_source": ""
     },
     {
       "version": "3.6.0.0",
@@ -999,7 +1075,8 @@
       "is_signature_valid": true,
       "is_dev_file": false,
       "file_size": 47438904,
-      "zip_file_size": 34158396
+      "zip_file_size": 34158396,
+      "dll_source": ""
     },
     {
       "version": "3.7.0.0",
@@ -1012,7 +1089,8 @@
       "is_signature_valid": true,
       "is_dev_file": true,
       "file_size": 51412024,
-      "zip_file_size": 37777646
+      "zip_file_size": 37777646,
+      "dll_source": ""
     },
     {
       "version": "3.7.0.0",
@@ -1025,7 +1103,8 @@
       "is_signature_valid": true,
       "is_dev_file": false,
       "file_size": 51255848,
-      "zip_file_size": 37706902
+      "zip_file_size": 37706902,
+      "dll_source": ""
     },
     {
       "version": "3.7.10.0",
@@ -1038,7 +1117,8 @@
       "is_signature_valid": true,
       "is_dev_file": false,
       "file_size": 51276856,
-      "zip_file_size": 37716116
+      "zip_file_size": 37716116,
+      "dll_source": ""
     },
     {
       "version": "3.7.10.0",
@@ -1051,7 +1131,8 @@
       "is_signature_valid": true,
       "is_dev_file": true,
       "file_size": 51432488,
-      "zip_file_size": 37786087
+      "zip_file_size": 37786087,
+      "dll_source": ""
     },
     {
       "version": "3.7.20.0",
@@ -1064,7 +1145,8 @@
       "is_signature_valid": true,
       "is_dev_file": false,
       "file_size": 51281960,
-      "zip_file_size": 37719722
+      "zip_file_size": 37719722,
+      "dll_source": ""
     },
     {
       "version": "3.7.20.0",
@@ -1077,7 +1159,8 @@
       "is_signature_valid": true,
       "is_dev_file": true,
       "file_size": 51438136,
-      "zip_file_size": 37790427
+      "zip_file_size": 37790427,
+      "dll_source": ""
     },
     {
       "version": "3.8.10.0",
@@ -1090,7 +1173,8 @@
       "is_signature_valid": true,
       "is_dev_file": false,
       "file_size": 24925344,
-      "zip_file_size": 14908401
+      "zip_file_size": 14908401,
+      "dll_source": ""
     }
   ],
   "dlss_d": [
@@ -1105,7 +1189,8 @@
       "is_signature_valid": true,
       "is_dev_file": false,
       "file_size": 70025768,
-      "zip_file_size": 44989656
+      "zip_file_size": 44989656,
+      "dll_source": ""
     },
     {
       "version": "3.5.0.0",
@@ -1118,7 +1203,8 @@
       "is_signature_valid": true,
       "is_dev_file": false,
       "file_size": 70026792,
-      "zip_file_size": 44990071
+      "zip_file_size": 44990071,
+      "dll_source": ""
     },
     {
       "version": "3.5.0.0",
@@ -1131,7 +1217,8 @@
       "is_signature_valid": true,
       "is_dev_file": false,
       "file_size": 71719976,
-      "zip_file_size": 45582040
+      "zip_file_size": 45582040,
+      "dll_source": ""
     },
     {
       "version": "3.5.10.0",
@@ -1144,7 +1231,8 @@
       "is_signature_valid": true,
       "is_dev_file": false,
       "file_size": 71894568,
-      "zip_file_size": 44459772
+      "zip_file_size": 44459772,
+      "dll_source": ""
     },
     {
       "version": "3.7.0.0",
@@ -1157,7 +1245,8 @@
       "is_signature_valid": true,
       "is_dev_file": false,
       "file_size": 38426680,
-      "zip_file_size": 16643816
+      "zip_file_size": 16643816,
+      "dll_source": ""
     },
     {
       "version": "3.7.10.0",
@@ -1170,7 +1259,8 @@
       "is_signature_valid": true,
       "is_dev_file": false,
       "file_size": 43790888,
-      "zip_file_size": 21482406
+      "zip_file_size": 21482406,
+      "dll_source": ""
     },
     {
       "version": "3.7.20.0",
@@ -1183,7 +1273,8 @@
       "is_signature_valid": true,
       "is_dev_file": false,
       "file_size": 44006968,
-      "zip_file_size": 21600530
+      "zip_file_size": 21600530,
+      "dll_source": ""
     }
   ],
   "dlss_g": [
@@ -1198,7 +1289,8 @@
       "is_signature_valid": true,
       "is_dev_file": false,
       "file_size": 12803624,
-      "zip_file_size": 6899097
+      "zip_file_size": 6899097,
+      "dll_source": ""
     },
     {
       "version": "1.0.2.0",
@@ -1211,7 +1303,8 @@
       "is_signature_valid": true,
       "is_dev_file": false,
       "file_size": 12799528,
-      "zip_file_size": 6897802
+      "zip_file_size": 6897802,
+      "dll_source": ""
     },
     {
       "version": "1.0.3.0",
@@ -1224,7 +1317,8 @@
       "is_signature_valid": true,
       "is_dev_file": false,
       "file_size": 12799528,
-      "zip_file_size": 6897953
+      "zip_file_size": 6897953,
+      "dll_source": ""
     },
     {
       "version": "1.0.4.0",
@@ -1237,7 +1331,8 @@
       "is_signature_valid": true,
       "is_dev_file": false,
       "file_size": 12876840,
-      "zip_file_size": 6949281
+      "zip_file_size": 6949281,
+      "dll_source": ""
     },
     {
       "version": "1.0.4.0",
@@ -1250,7 +1345,8 @@
       "is_signature_valid": true,
       "is_dev_file": false,
       "file_size": 12876840,
-      "zip_file_size": 6949140
+      "zip_file_size": 6949140,
+      "dll_source": ""
     },
     {
       "version": "1.0.5.0",
@@ -1263,7 +1359,8 @@
       "is_signature_valid": true,
       "is_dev_file": false,
       "file_size": 12932648,
-      "zip_file_size": 6991730
+      "zip_file_size": 6991730,
+      "dll_source": ""
     },
     {
       "version": "1.0.6.0",
@@ -1276,7 +1373,8 @@
       "is_signature_valid": true,
       "is_dev_file": false,
       "file_size": 12936744,
-      "zip_file_size": 6992753
+      "zip_file_size": 6992753,
+      "dll_source": ""
     },
     {
       "version": "1.0.7.0",
@@ -1289,7 +1387,8 @@
       "is_signature_valid": true,
       "is_dev_file": false,
       "file_size": 12936744,
-      "zip_file_size": 6992860
+      "zip_file_size": 6992860,
+      "dll_source": ""
     },
     {
       "version": "3.1.1.0",
@@ -1302,7 +1401,8 @@
       "is_signature_valid": true,
       "is_dev_file": false,
       "file_size": 13181992,
-      "zip_file_size": 7095877
+      "zip_file_size": 7095877,
+      "dll_source": ""
     },
     {
       "version": "3.1.11.0",
@@ -1315,7 +1415,8 @@
       "is_signature_valid": true,
       "is_dev_file": false,
       "file_size": 12997672,
-      "zip_file_size": 6943864
+      "zip_file_size": 6943864,
+      "dll_source": ""
     },
     {
       "version": "3.1.12.0",
@@ -1328,7 +1429,8 @@
       "is_signature_valid": true,
       "is_dev_file": false,
       "file_size": 13004328,
-      "zip_file_size": 6950291
+      "zip_file_size": 6950291,
+      "dll_source": ""
     },
     {
       "version": "3.1.13.0",
@@ -1341,7 +1443,8 @@
       "is_signature_valid": true,
       "is_dev_file": false,
       "file_size": 13001768,
-      "zip_file_size": 6961883
+      "zip_file_size": 6961883,
+      "dll_source": ""
     },
     {
       "version": "3.1.30.0",
@@ -1354,7 +1457,8 @@
       "is_signature_valid": true,
       "is_dev_file": false,
       "file_size": 12572712,
-      "zip_file_size": 6816475
+      "zip_file_size": 6816475,
+      "dll_source": ""
     },
     {
       "version": "3.1.30.0",
@@ -1367,7 +1471,8 @@
       "is_signature_valid": true,
       "is_dev_file": false,
       "file_size": 12569128,
-      "zip_file_size": 6813920
+      "zip_file_size": 6813920,
+      "dll_source": ""
     },
     {
       "version": "3.5.0.0",
@@ -1380,7 +1485,8 @@
       "is_signature_valid": true,
       "is_dev_file": false,
       "file_size": 12582456,
-      "zip_file_size": 6819366
+      "zip_file_size": 6819366,
+      "dll_source": ""
     },
     {
       "version": "3.5.10.0",
@@ -1393,7 +1499,8 @@
       "is_signature_valid": true,
       "is_dev_file": false,
       "file_size": 11698216,
-      "zip_file_size": 6455216
+      "zip_file_size": 6455216,
+      "dll_source": ""
     },
     {
       "version": "3.6.0.0",
@@ -1406,7 +1513,8 @@
       "is_signature_valid": true,
       "is_dev_file": false,
       "file_size": 11727912,
-      "zip_file_size": 6471042
+      "zip_file_size": 6471042,
+      "dll_source": ""
     },
     {
       "version": "3.7.0.0",
@@ -1419,7 +1527,8 @@
       "is_signature_valid": true,
       "is_dev_file": false,
       "file_size": 11778088,
-      "zip_file_size": 6506502
+      "zip_file_size": 6506502,
+      "dll_source": ""
     },
     {
       "version": "3.7.1.0",
@@ -1432,7 +1541,8 @@
       "is_signature_valid": true,
       "is_dev_file": false,
       "file_size": 11779112,
-      "zip_file_size": 6506990
+      "zip_file_size": 6506990,
+      "dll_source": ""
     },
     {
       "version": "3.7.10.0",
@@ -1445,7 +1555,8 @@
       "is_signature_valid": true,
       "is_dev_file": false,
       "file_size": 9477688,
-      "zip_file_size": 5108666
+      "zip_file_size": 5108666,
+      "dll_source": ""
     },
     {
       "version": "3.8.1.0",
@@ -1458,89 +1569,125 @@
       "is_signature_valid": true,
       "is_dev_file": false,
       "file_size": 9283120,
-      "zip_file_size": 5077776
+      "zip_file_size": 5077776,
+      "dll_source": ""
     }
   ],
-  "fsr_31_dx12": [],
-  "fsr_31_vk": [],
-  "xess": [
+  "fsr_31_dx12": [
     {
-      "version": "1.0.0.59",
-      "version_number": 281474976710715,
-      "additional_label": "",
-      "md5_hash": "FEB7639E1043D0DC88D638C21871F566",
-      "zip_md5_hash": "C88B7EA94FD1113A404BC88B77BBFFC9",
-      "download_url": "https://downloads.dlss-swapper.beeradmoore.com/xess/xess_v1.0.0.59.zip",
-      "file_description": "XeSS SDK",
+      "version": "1.0.0.36604",
+      "version_number": 281474976747260,
+      "additional_label": "3.1.0",
+      "md5_hash": "071EB42E3CBD0989A12465E0E529BCAC",
+      "zip_md5_hash": "B24B409B92258F50D46091AEFFD21DEA",
+      "download_url": "https://downloads.dlss-swapper.beeradmoore.com/fsr_31_dx12/fsr_31_dx12_v1.0.0.36604_3.1.0.zip",
+      "file_description": "DX12 AMD FidelityFX Library",
       "is_signature_valid": true,
       "is_dev_file": false,
-      "file_size": 9271976,
-      "zip_file_size": 3558544
+      "file_size": 6475480,
+      "zip_file_size": 2402647,
+      "dll_source": "FidelityFX-SDK-1.1.zip"
     },
     {
-      "version": "1.0.1.12",
-      "version_number": 281474976776204,
-      "additional_label": "",
-      "md5_hash": "049BFEA8C51245A545DC242A7317B9D3",
-      "zip_md5_hash": "D099973C0108CEDB2BB715226EFB47F3",
-      "download_url": "https://downloads.dlss-swapper.beeradmoore.com/xess/xess_v1.0.1.12.zip",
-      "file_description": "XeSS SDK",
+      "version": "1.0.1.37507",
+      "version_number": 281474976813699,
+      "additional_label": "3.1.1",
+      "md5_hash": "2FCBE69A137DBA1FF45071A9B64C9581",
+      "zip_md5_hash": "324D443105A760C6D9525F73FE9CC952",
+      "download_url": "https://downloads.dlss-swapper.beeradmoore.com/fsr_31_dx12/fsr_31_dx12_v1.0.1.37507_3.1.1.zip",
+      "file_description": "DX12 AMD FidelityFX Library",
       "is_signature_valid": true,
       "is_dev_file": false,
-      "file_size": 9272488,
-      "zip_file_size": 3558764
+      "file_size": 6609624,
+      "zip_file_size": 2485793,
+      "dll_source": "FidelityFX-SDK-v1.1.1.zip"
     },
     {
-      "version": "1.1.0.21",
-      "version_number": 281479271677973,
-      "additional_label": "",
-      "md5_hash": "7B20CC0A10008F0846DDAC99981AC77F",
-      "zip_md5_hash": "CF676C4DC7A26D55E3C1A48574F87DF4",
-      "download_url": "https://downloads.dlss-swapper.beeradmoore.com/xess/xess_v1.1.0.21.zip",
-      "file_description": "XeSS SDK",
+      "version": "1.0.1.38338",
+      "version_number": 281474976814530,
+      "additional_label": "3.1.2",
+      "md5_hash": "2DC40D2F183920624BE396B624466157",
+      "zip_md5_hash": "74F6953BCAF75A3AB761CE875437FDC6",
+      "download_url": "https://downloads.dlss-swapper.beeradmoore.com/fsr_31_dx12/fsr_31_dx12_v1.0.1.38338_3.1.2.zip",
+      "file_description": "DX12 AMD FidelityFX Library",
       "is_signature_valid": true,
       "is_dev_file": false,
-      "file_size": 15275688,
-      "zip_file_size": 7324023
+      "file_size": 6634192,
+      "zip_file_size": 2507944,
+      "dll_source": "FidelityFX-SDK-v1.1.2.zip"
     },
     {
-      "version": "1.2.0.13",
-      "version_number": 281483566645261,
-      "additional_label": "",
-      "md5_hash": "B0130DF92C02EFDE7C2C4DF42D69EE70",
-      "zip_md5_hash": "B8AD494B6F72AB1681DE49C353EDA487",
-      "download_url": "https://downloads.dlss-swapper.beeradmoore.com/xess/xess_v1.2.0.13.zip",
-      "file_description": "XeSS SDK",
+      "version": "1.0.1.39157",
+      "version_number": 281474976815349,
+      "additional_label": "3.1.3",
+      "md5_hash": "3EF374F8F7EB44D211BCC0C063A520D9",
+      "zip_md5_hash": "E4A2995237728D5AB0B08C70B9960B99",
+      "download_url": "https://downloads.dlss-swapper.beeradmoore.com/fsr_31_dx12/fsr_31_dx12_v1.0.1.39157_3.1.3.zip",
+      "file_description": "DX12 AMD FidelityFX Library",
       "is_signature_valid": true,
       "is_dev_file": false,
-      "file_size": 67777552,
-      "zip_file_size": 47605083
-    },
-    {
-      "version": "1.3.0.28",
-      "version_number": 281487861612572,
-      "additional_label": "",
-      "md5_hash": "DD62B2EF2DA5A9BE89E18302E38970A2",
-      "zip_md5_hash": "A87639DE819061FCC50769EA3D1A95E1",
-      "download_url": "https://downloads.dlss-swapper.beeradmoore.com/xess/xess_v1.3.0.28.zip",
-      "file_description": "XeSS SDK",
-      "is_signature_valid": true,
-      "is_dev_file": false,
-      "file_size": 74108944,
-      "zip_file_size": 52696830
-    },
-    {
-      "version": "1.3.1.32",
-      "version_number": 281487861678112,
-      "additional_label": "",
-      "md5_hash": "10623C59D5E4571BFD6118337AC69491",
-      "zip_md5_hash": "73DF310D156A2963CF1646D6813068FE",
-      "download_url": "https://downloads.dlss-swapper.beeradmoore.com/xess/xess_v1.3.1.32.zip",
-      "file_description": "XeSS SDK",
-      "is_signature_valid": true,
-      "is_dev_file": false,
-      "file_size": 67095056,
-      "zip_file_size": 50770385
+      "file_size": 6647504,
+      "zip_file_size": 2536509,
+      "dll_source": "FidelityFX-SDK-v1.1.3.zip"
     }
-  ]
+  ],
+  "fsr_31_vk": [
+    {
+      "version": "1.0.0.36604",
+      "version_number": 281474976747260,
+      "additional_label": "3.1.0",
+      "md5_hash": "A2BC75BC5455E870D71890C774541DA9",
+      "zip_md5_hash": "4AC34EAFB5D2081354E5823AF867577D",
+      "download_url": "https://downloads.dlss-swapper.beeradmoore.com/fsr_31_vk/fsr_31_vk_v1.0.0.36604_3.1.0.zip",
+      "file_description": "VK AMD FidelityFX Library",
+      "is_signature_valid": true,
+      "is_dev_file": false,
+      "file_size": 9200344,
+      "zip_file_size": 2630265,
+      "dll_source": "FidelityFX-SDK-1.1.zip"
+    },
+    {
+      "version": "1.0.1.37507",
+      "version_number": 281474976813699,
+      "additional_label": "3.1.1",
+      "md5_hash": "1FC735751D2632E926016206398B8654",
+      "zip_md5_hash": "9DDD3C8611958549510B95863F4CF702",
+      "download_url": "https://downloads.dlss-swapper.beeradmoore.com/fsr_31_vk/fsr_31_vk_v1.0.1.37507_3.1.1.zip",
+      "file_description": "VK AMD FidelityFX Library",
+      "is_signature_valid": true,
+      "is_dev_file": false,
+      "file_size": 9262808,
+      "zip_file_size": 2645445,
+      "dll_source": "FidelityFX-SDK-v1.1.1.zip"
+    },
+    {
+      "version": "1.0.1.38338",
+      "version_number": 281474976814530,
+      "additional_label": "3.1.2",
+      "md5_hash": "0D0CDC8D5865027D100DAA35B605793F",
+      "zip_md5_hash": "3BFC80EE1F156F3A4FEEE353CC5CA873",
+      "download_url": "https://downloads.dlss-swapper.beeradmoore.com/fsr_31_vk/fsr_31_vk_v1.0.1.38338_3.1.2.zip",
+      "file_description": "VK AMD FidelityFX Library",
+      "is_signature_valid": true,
+      "is_dev_file": false,
+      "file_size": 9277136,
+      "zip_file_size": 2648662,
+      "dll_source": "FidelityFX-SDK-v1.1.2.zip"
+    },
+    {
+      "version": "1.0.1.39157",
+      "version_number": 281474976815349,
+      "additional_label": "3.1.3",
+      "md5_hash": "23A87C10A859D5756EDBE5A6D7F692B5",
+      "zip_md5_hash": "8B665D9672846AD18E6AB5818F671337",
+      "download_url": "https://downloads.dlss-swapper.beeradmoore.com/fsr_31_vk/fsr_31_vk_v1.0.1.39157_3.1.3.zip",
+      "file_description": "VK AMD FidelityFX Library",
+      "is_signature_valid": true,
+      "is_dev_file": false,
+      "file_size": 9284304,
+      "zip_file_size": 2667895,
+      "dll_source": "FidelityFX-SDK-v1.1.3.zip"
+    }
+  ],
+  "xess": []
 }

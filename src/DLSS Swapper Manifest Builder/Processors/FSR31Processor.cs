@@ -1,42 +1,28 @@
-﻿using System.Diagnostics;
+﻿using System;
+using System.Collections.Generic;
 using System.IO.Compression;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace DLSS_Swapper_Manifest_Builder.Processors;
 
-public class DLSSProcessor : DLLProcessor
+public abstract class FSR31Processor : DLLProcessor
 {
-    public override string NamePath => "dlss";
-    public override string ExpectedDLLName => "nvngx_dlss.dll";
-
-    public override string[] ValidFileDescriptions => new string[]
-    {
-        "NGX DLSS",
-        "NGX DLSS - DVS PRODUCTION",
-        "NGX DLSS - DVS VIRTUAL",
-        "NVIDIA DLSSv2 - DVS PRODUCTION",
-        "NVIDIA DLSSv3 - DVS PRODUCTION",
-        "NVIDIA DLSSv2 - Beta - White Collie 1 - DVS PRODUCTION",
-        "NVIDIA DLSSv2 - Beta - White Collie 2 - DVS PRODUCTION",
-    };
-
-    public DLSSProcessor() : base()
-    {
-    }
-
     public override List<DLLRecord> ProcessLocalFiles(IReadOnlyList<DLLRecord> existingRecords)
     {
         var files = GetAllLocalRecords();
         var dllRecords = new Dictionary<string, DLLRecord>();
 
-
         var customAdditionalLabels = new Dictionary<string, string>();
-        customAdditionalLabels.Add("0A71EFBA8DAFF9C284CE6010923C01F1", "v2"); // 2.4.12 v2
-        customAdditionalLabels.Add("31BFD8F750F87E5040557D95C2345080", "v3"); // 2.4.12 v3
-        customAdditionalLabels.Add("40D468487EA4E0F56595F8DE1AC8ED7C", "v2"); // 3.1.1 v2
-        customAdditionalLabels.Add("BF68025B3603C382FCA65B148B979682", "v2"); // 3.5 v2
-        customAdditionalLabels.Add("B2B6FAE8936719CF81D6B5577F257C40", "Beta - White Collie 1");
-        customAdditionalLabels.Add("CD71EE48B994AC254DFF5DEC20828BE7", "Beta - White Collie 2");
-
+        customAdditionalLabels.Add("071EB42E3CBD0989A12465E0E529BCAC", "3.1.0"); // DX12 FidelityFX-SDK-1.1.zip
+        customAdditionalLabels.Add("2FCBE69A137DBA1FF45071A9B64C9581", "3.1.1"); // DX12 FidelityFX-SDK-1.1.1.zip
+        customAdditionalLabels.Add("2DC40D2F183920624BE396B624466157", "3.1.2"); // DX12 FidelityFX-SDK-1.1.2.zip
+        customAdditionalLabels.Add("3EF374F8F7EB44D211BCC0C063A520D9", "3.1.3"); // DX12 FidelityFX-SDK-1.1.3.zip
+        customAdditionalLabels.Add("A2BC75BC5455E870D71890C774541DA9", "3.1.0"); // VK FidelityFX-SDK-1.1.zip
+        customAdditionalLabels.Add("1FC735751D2632E926016206398B8654", "3.1.1"); // VK FidelityFX-SDK-1.1.1.zip
+        customAdditionalLabels.Add("0D0CDC8D5865027D100DAA35B605793F", "3.1.2"); // VK FidelityFX-SDK-1.1.2.zip
+        customAdditionalLabels.Add("23A87C10A859D5756EDBE5A6D7F692B5", "3.1.3"); // VK FidelityFX-SDK-1.1.3.zip
 
         foreach (var file in files)
         {
@@ -67,7 +53,7 @@ public class DLSSProcessor : DLLProcessor
             using (var archive = ZipFile.OpenRead(file))
             {
                 // If we are using the SDK distribution we should get it from the rel folder
-                var releaseDll = archive.Entries.Where(x => x.FullName.EndsWith($"Windows_x86_64/rel/{ExpectedDLLName}", StringComparison.InvariantCultureIgnoreCase)).ToList();
+                var releaseDll = archive.Entries.Where(x => x.FullName.EndsWith($"PrebuiltSignedDLL/{ExpectedDLLName}", StringComparison.InvariantCultureIgnoreCase)).ToList();
                 if (releaseDll.Count == 1)
                 {
                     var dllEntry = releaseDll.Single();
@@ -77,6 +63,7 @@ public class DLSSProcessor : DLLProcessor
                     dllEntry.ExtractToFile(dllExtractFilename, false);
 
                     var dllRecord = DLLRecord.FromFile(dllExtractFilename);
+                    Console.WriteLine(dllRecord.MD5Hash);
 
                     // Default to the filename to make it easy to track SDK source
                     dllRecord.DllSource = fileName;
@@ -95,47 +82,6 @@ public class DLSSProcessor : DLLProcessor
                     {
                         Console.WriteLine($"Skipping {dllRecord.Version}, hash already exists. File: {file}, Dll: {dllExtractFilename}");
                     }
-
-                    // If we have one from the rel folder we should also check the dev folder
-                    var devDll = archive.Entries.Where(x => x.FullName.EndsWith($"Windows_x86_64/dev/{ExpectedDLLName}", StringComparison.InvariantCultureIgnoreCase)).ToList();
-                    if (devDll.Count == 1)
-                    {
-
-
-                        var devDllEntry = devDll.Single();
-                        Console.WriteLine(Path.GetFileName(file) + " - " + devDllEntry.Crc32);
-                        var devDLLExtractFilename = Path.Combine(devDLLExtractPath, $"{devDllEntry.Crc32}_{ExpectedDLLName}");
-                        devDllEntry.ExtractToFile(devDLLExtractFilename, false);
-
-                        var devDllRecord = DLLRecord.FromFile(devDLLExtractFilename);
-
-                        // Default to the filename to make it easy to track SDK source
-                        devDllRecord.DllSource = fileName;
-
-                        if (customAdditionalLabels.ContainsKey(devDllRecord.MD5Hash) == true)
-                        {
-                            devDllRecord.AdditionalLabel = customAdditionalLabels[devDllRecord.MD5Hash];
-                        }
-
-                        if (dllRecords.ContainsKey(devDllRecord.MD5Hash) == false)
-                        {
-                            devDllRecord.IsDevFile = true;
-                            ValidateAndProcessDLLRecord(devDllRecord);
-                            dllRecords.Add(devDllRecord.MD5Hash, devDllRecord);
-                        }
-                        else
-                        {
-                            Console.WriteLine($"Skipping {dllRecord.Version}, hash already exists. File: {file}, Dll: {dllExtractFilename}");
-                        }
-                    }
-                    else if (devDll.Count > 0)
-                    {
-                        throw new Exception($"Multiple dev DLLs found in {file}");
-                    }
-                    else
-                    {
-                        throw new Exception($"Expected to find a dev DLL but did not find any in {file}");
-                    }
                 }
                 else if (releaseDll.Count > 0)
                 {
@@ -150,6 +96,7 @@ public class DLSSProcessor : DLLProcessor
                     dllEntry.ExtractToFile(dllExtractFilename, false);
 
                     var dllRecord = DLLRecord.FromFile(dllExtractFilename);
+                    Console.WriteLine(dllRecord.MD5Hash);
 
                     // Default to the filename to make it easy to track SDK source
                     dllRecord.DllSource = fileName;

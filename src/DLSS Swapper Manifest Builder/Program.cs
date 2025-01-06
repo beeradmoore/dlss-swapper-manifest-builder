@@ -58,39 +58,26 @@ var dlssProcessor = new DLSSProcessor();
 var dlssgProcessor = new DLSSGProcessor();
 var dlssdProcessor = new DLSSDProcessor();
 var xessProcessor = new XeSSProcessor();
-var fsr31dxProcessor = new FSR31DX12Processor();
+var fsr31dx12Processor = new FSR31DX12Processor();
 var fsr31vkProcessor = new FSR31VKProcessor();
 
-/*
 await dlssProcessor.DownloadExistingRecordsAsync(manifest.DLSS);
 manifest.DLSS = dlssProcessor.ProcessLocalFiles(manifest.DLSS);
-*/
 
-/*
 await dlssgProcessor.DownloadExistingRecordsAsync(manifest.DLSS_G);
 manifest.DLSS_G = dlssgProcessor.ProcessLocalFiles(manifest.DLSS_G);
-*/
 
-/*
 await dlssdProcessor.DownloadExistingRecordsAsync(manifest.DLSS_D);
 manifest.DLSS_D = dlssdProcessor.ProcessLocalFiles(manifest.DLSS_D);
-*/
 
-/*
 await xessProcessor.DownloadExistingRecordsAsync(manifest.XeSS);
 manifest.XeSS = xessProcessor.ProcessLocalFiles(manifest.XeSS);
-*/
 
-/*
-await fsr31dxProcessor.DownloadExistingRecordsAsync(manifest.FSR_31_DX12);
-manifest.FSR_31_DX12 = fsr31dxProcessor.ProcessLocalFiles(manifest.FSR_31_DX12);
-*/
+await fsr31dx12Processor.DownloadExistingRecordsAsync(manifest.FSR_31_DX12);
+manifest.FSR_31_DX12 = fsr31dx12Processor.ProcessLocalFiles(manifest.FSR_31_DX12);
 
-/*
 await fsr31vkProcessor.DownloadExistingRecordsAsync(manifest.FSR_31_VK);
 manifest.FSR_31_VK = fsr31vkProcessor.ProcessLocalFiles(manifest.FSR_31_VK);
-*/
-
 
 var manifestJson = JsonSerializer.Serialize(manifest, new JsonSerializerOptions() { WriteIndented = true });
 File.WriteAllText(DLLProcessor.OutputManifestPath, manifestJson);

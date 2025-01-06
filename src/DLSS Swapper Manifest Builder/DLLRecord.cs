@@ -53,6 +53,9 @@ public class DLLRecord
     [JsonPropertyName("zip_file_size")]
     public long ZipFileSize { get; set; } = 0;
 
+    [JsonPropertyName("dll_source")]
+    public string DllSource { get; set; } = string.Empty;
+
     public DLLRecord()
     {
 

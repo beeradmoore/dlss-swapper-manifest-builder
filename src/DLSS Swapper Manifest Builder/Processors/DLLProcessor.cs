@@ -152,6 +152,9 @@ public abstract class DLLProcessor
                 dllEntry.ExtractToFile(dllExtractFilename, false);
 
                 var dllRecord = DLLRecord.FromFile(dllExtractFilename);
+                
+                // Default to the filename to make it easy to track SDK source
+                dllRecord.DllSource = fileName;
 
                 if (customAdditionalLabels.ContainsKey(dllRecord.MD5Hash) == true)
                 {
