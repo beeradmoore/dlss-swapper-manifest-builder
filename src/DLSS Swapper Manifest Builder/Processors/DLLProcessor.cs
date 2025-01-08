@@ -108,8 +108,8 @@ public abstract class DLLProcessor
     public string[] GetAllLocalRecords()
     {
         var files = new List<string>();
-        files.AddRange(Directory.GetFiles(InputSDKsFilesPath, "*.zip", SearchOption.AllDirectories));
         files.AddRange(Directory.GetFiles(BaseInputPath, "*.zip", SearchOption.TopDirectoryOnly));
+        files.AddRange(Directory.GetFiles(InputSDKsFilesPath, "*.zip", SearchOption.AllDirectories));
         files.AddRange(Directory.GetFiles(ImportPath, "*.zip", SearchOption.TopDirectoryOnly));
         return files.ToArray();
     }
@@ -130,8 +130,11 @@ public abstract class DLLProcessor
                 var existingRecord = existingRecords.Where(x => x.ZipMD5Hash == md5).SingleOrDefault();
                 if (existingRecord is not null)
                 {
-                    dllRecords.Add(existingRecord.MD5Hash, existingRecord);
-                    // Don't copy file, otherwise we have to re-upload it
+                    if (dllRecords.ContainsKey(existingRecord.MD5Hash) == false)
+                    {
+                        dllRecords.Add(existingRecord.MD5Hash, existingRecord);
+                        // Don't copy file, otherwise we have to re-upload it
+                    }
                     continue;
                 }
             }
