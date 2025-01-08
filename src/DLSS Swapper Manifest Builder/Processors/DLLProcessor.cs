@@ -24,10 +24,16 @@ public abstract class DLLProcessor
 #endif
     public static string InputManifestPath => Path.Combine(InputFilesPath, "manifest.json");
     public static string OutputManifestPath => Path.Combine(OutputFilesPath, "manifest.json");
+    public static string InputSDKsFilesPath => Path.Combine(InputFilesPath, "sdks");
 
     public abstract string NamePath { get; }
     public abstract string ExpectedDLLName { get; }
     public abstract string[] ValidFileDescriptions { get; }
+    public abstract string[] ExpectedPrefix { get; }
+    public abstract string[] ExpectedDevPrefix { get; }
+    public abstract Dictionary<string, string> CustomAdditionalLabels { get; }
+    public abstract Dictionary<string, string> DllSource { get; }
+
 
     public string BaseInputPath => Path.Combine(InputFilesPath, "base", NamePath);
     public string ImportPath => Path.Combine(InputFilesPath, "import", NamePath);
@@ -102,6 +108,7 @@ public abstract class DLLProcessor
     public string[] GetAllLocalRecords()
     {
         var files = new List<string>();
+        files.AddRange(Directory.GetFiles(InputSDKsFilesPath, "*.zip", SearchOption.AllDirectories));
         files.AddRange(Directory.GetFiles(BaseInputPath, "*.zip", SearchOption.TopDirectoryOnly));
         files.AddRange(Directory.GetFiles(ImportPath, "*.zip", SearchOption.TopDirectoryOnly));
         return files.ToArray();
@@ -112,14 +119,6 @@ public abstract class DLLProcessor
         var files = GetAllLocalRecords();
 
         var dllRecords = new Dictionary<string, DLLRecord>();
-
-
-
-        var customAdditionalLabels = new Dictionary<string, string>();
-        customAdditionalLabels.Add("DE3479E49E53A8AB4950F8C72A415239", "v2"); // DLSS G 1.0.4 v2
-        customAdditionalLabels.Add("8363E2AC2E3E512AC5AB2D364AA4C245", "v2"); // DLSS G 3.1.30 v2
-        customAdditionalLabels.Add("3ED68C9456DC83BDF66B13D1A9C66F18", "33284283"); // DLSS D 3.5 CL 33284283
-        customAdditionalLabels.Add("625907DE06A912414FDB8444C91B262C", "33367307"); // DLSS D 3.5 CL 33367307
 
         foreach (var file in files)
         {
@@ -145,31 +144,109 @@ public abstract class DLLProcessor
 
             using (var archive = ZipFile.OpenRead(file))
             {
-                var dllEntry = archive.Entries.Single(x => x.Name == ExpectedDLLName);
-                
-                var dllExtractFilename = Path.Combine(dllExtractPath, $"{dllEntry.Crc32}_{ExpectedDLLName}");
-                Console.WriteLine(Path.GetFileName(file) + " - " + dllEntry.Crc32);
-                dllEntry.ExtractToFile(dllExtractFilename, false);
-
-                var dllRecord = DLLRecord.FromFile(dllExtractFilename);
-                
-                // Default to the filename to make it easy to track SDK source
-                dllRecord.DllSource = fileName;
-
-                if (customAdditionalLabels.ContainsKey(dllRecord.MD5Hash) == true)
+                foreach (var prefix in ExpectedPrefix)
                 {
-                    dllRecord.AdditionalLabel = customAdditionalLabels[dllRecord.MD5Hash];
+                    var dllEntries = prefix.StartsWith("/") switch
+                    {
+                        true => archive.Entries.Where(x => x.FullName.Equals($"{prefix.Substring(1)}{ExpectedDLLName}", StringComparison.OrdinalIgnoreCase)).ToList(),
+                        _ => archive.Entries.Where(x => x.FullName.EndsWith($"{prefix}{ExpectedDLLName}", StringComparison.OrdinalIgnoreCase)).ToList(),
+                    };
+
+                    if (dllEntries.Count == 1)
+                    {
+                        var dllEntry = dllEntries[0];
+
+                        var dllExtractFilename = Path.Combine(dllExtractPath, $"{dllEntry.Crc32}_{ExpectedDLLName}");
+                        dllEntry.ExtractToFile(dllExtractFilename, false);
+
+                        var dllRecord = DLLRecord.FromFile(dllExtractFilename);
+                        // If the file is imported from SDKs, add its source name here.
+                        if (file.Contains(InputSDKsFilesPath) == true)
+                        {
+                            dllRecord.DllSource = fileName;
+                        }
+                        else if (DllSource.ContainsKey(dllRecord.MD5Hash))
+                        {
+                            dllRecord.DllSource = DllSource[dllRecord.MD5Hash];
+                        }
+                        else
+                        {
+                            Console.WriteLine($"! {ExpectedDLLName} {dllRecord.Version} {dllRecord.MD5Hash} does not have a source attributed.");
+                        }
+
+
+                        if (CustomAdditionalLabels.ContainsKey(dllRecord.MD5Hash) == true)
+                        {
+                            dllRecord.AdditionalLabel = CustomAdditionalLabels[dllRecord.MD5Hash];
+                        }
+
+                        if (dllRecords.ContainsKey(dllRecord.MD5Hash) == false)
+                        {
+                            ValidateAndProcessDLLRecord(dllRecord);
+                            dllRecords.Add(dllRecord.MD5Hash, dllRecord);
+                        }
+                        else
+                        {
+                            Console.WriteLine($"Skipping {dllRecord.Version}, hash already exists. File: {file}, Dll: {dllExtractFilename}");
+                        }
+                    }
+                    else if (dllEntries.Count == 0)
+                    {
+                        // NOOP
+                    }
+                    else
+                    {
+                        Debugger.Break();
+                    }
                 }
 
-                if (dllRecords.ContainsKey(dllRecord.MD5Hash) == false)
+                foreach (var prefix in ExpectedDevPrefix)
                 {
-                    ValidateAndProcessDLLRecord(dllRecord);
+                    var dllEntries = prefix.StartsWith("/") switch
+                    {
+                        true => archive.Entries.Where(x => x.FullName.Equals($"{prefix.Substring(1)}{ExpectedDLLName}", StringComparison.OrdinalIgnoreCase)).ToList(),
+                        _ => archive.Entries.Where(x => x.FullName.EndsWith($"{prefix}{ExpectedDLLName}", StringComparison.OrdinalIgnoreCase)).ToList(),
+                    };
 
-                    dllRecords.Add(dllRecord.MD5Hash, dllRecord);
-                }
-                else
-                {
-                    Console.WriteLine($"Skipping {dllRecord.Version}, hash already exists. File: {file}, Dll: {dllExtractFilename}");
+                    if (dllEntries.Count == 1)
+                    {
+                        var dllEntry = dllEntries[0];
+
+                        var dllExtractFilename = Path.Combine(dllExtractPath, $"{dllEntry.Crc32}_{ExpectedDLLName}");
+                        dllEntry.ExtractToFile(dllExtractFilename, false);
+
+                        var dllRecord = DLLRecord.FromFile(dllExtractFilename);
+                        dllRecord.IsDevFile = true;
+                        // Default to the filename to make it easy to track SDK source
+
+                        if (fileName.StartsWith("nvngx_") == false)
+                        {
+                            dllRecord.DllSource = fileName;
+                        }
+
+                        if (CustomAdditionalLabels.ContainsKey(dllRecord.MD5Hash) == true)
+                        {
+                            dllRecord.AdditionalLabel = CustomAdditionalLabels[dllRecord.MD5Hash];
+                        }
+
+                        if (dllRecords.ContainsKey(dllRecord.MD5Hash) == false)
+                        {
+                            ValidateAndProcessDLLRecord(dllRecord);
+                            dllRecords.Add(dllRecord.MD5Hash, dllRecord);
+                        }
+                        else
+                        {
+                            Console.WriteLine($"Skipping {dllRecord.Version}, hash already exists. File: {file}, Dll: {dllExtractFilename}");
+                        }
+                    }
+                    else if (dllEntries.Count == 0)
+                    {
+                        // NOOP
+                    }
+                    else
+                    {
+                        Debugger.Break();
+                    }
                 }
             }
         }
@@ -191,7 +268,7 @@ public abstract class DLLProcessor
     protected void CreateZipFromRecord(DLLRecord dllRecord)
     {
         // Create zip output
-        var newZipFilename = $"{NamePath}_v{dllRecord.Version}";
+        var newZipFilename = $"{Path.GetFileNameWithoutExtension(ExpectedDLLName)}_v{dllRecord.Version}";
 
         if (string.IsNullOrEmpty(dllRecord.AdditionalLabel) == false)
         {
@@ -208,6 +285,12 @@ public abstract class DLLProcessor
         var zipOutputFile = Path.Combine(OutputZipPath, newZipFilename);
 
         Console.WriteLine($"Creating zip: {zipOutputFile}");
+
+        if (File.Exists(zipOutputFile))
+        {
+            Console.WriteLine($"File already exists {zipOutputFile}");
+            Debugger.Break();
+        }
         using (var fileStream = File.Create(zipOutputFile))
         {
             using (var archive = new ZipArchive(fileStream, ZipArchiveMode.Create, true))

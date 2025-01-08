@@ -34,21 +34,25 @@ if (Directory.Exists(DLLProcessor.OutputFilesPath) == false)
     Directory.CreateDirectory(DLLProcessor.OutputFilesPath);
 }
 
-var httpClient = new HttpClient();
-
-if (File.Exists(DLLProcessor.InputManifestPath) == false)
+if (Directory.Exists(DLLProcessor.InputSDKsFilesPath) == false)
 {
-    var manifestData = await httpClient.GetStringAsync("https://downloads.dlss-swapper.beeradmoore.com/manifest.json");
-    File.WriteAllText(DLLProcessor.InputManifestPath, manifestData);
+    Directory.CreateDirectory(DLLProcessor.InputSDKsFilesPath);
 }
 
-var manifest = JsonSerializer.Deserialize<Manifest>(File.ReadAllText(DLLProcessor.InputManifestPath));
 
+var httpClient = new HttpClient();
+
+//if (File.Exists(DLLProcessor.InputManifestPath) == false)
+//{
+    var manifestData = await httpClient.GetStringAsync("https://downloads.dlss-swapper.beeradmoore.com/manifest.json");
+    File.WriteAllText(DLLProcessor.InputManifestPath, manifestData);
+//}
+
+
+var manifest = JsonSerializer.Deserialize<Manifest>(File.ReadAllText(DLLProcessor.InputManifestPath));
 if (manifest == null)
 {
-    manifest = new Manifest();
-
-    Console.WriteLine("Could not find manifest.json.");
+    Console.WriteLine($"Could not load {DLLProcessor.InputManifestPath}.");
     return 1;
 }
 
@@ -64,6 +68,7 @@ var fsr31vkProcessor = new FSR31VKProcessor();
 await dlssProcessor.DownloadExistingRecordsAsync(manifest.DLSS);
 manifest.DLSS = dlssProcessor.ProcessLocalFiles(manifest.DLSS);
 
+/*
 await dlssgProcessor.DownloadExistingRecordsAsync(manifest.DLSS_G);
 manifest.DLSS_G = dlssgProcessor.ProcessLocalFiles(manifest.DLSS_G);
 
@@ -78,9 +83,10 @@ manifest.FSR_31_DX12 = fsr31dx12Processor.ProcessLocalFiles(manifest.FSR_31_DX12
 
 await fsr31vkProcessor.DownloadExistingRecordsAsync(manifest.FSR_31_VK);
 manifest.FSR_31_VK = fsr31vkProcessor.ProcessLocalFiles(manifest.FSR_31_VK);
-
+*/
 var manifestJson = JsonSerializer.Serialize(manifest, new JsonSerializerOptions() { WriteIndented = true });
 File.WriteAllText(DLLProcessor.OutputManifestPath, manifestJson);
+
 
 // Copy to root of the repo
 var repoRootManifestPath = Path.Combine("..", "..", "..", "..", "..", "manifest.json");

@@ -13,4 +13,14 @@ public class XeSSProcessor : DLLProcessor
     {
         "XeSS SDK"
     };
+    public override string[] ExpectedPrefix => new string[]
+    {
+        "/bin/",
+    };
+    public override string[] ExpectedDevPrefix => new string[]
+    {
+
+    };
+    public override Dictionary<string, string> CustomAdditionalLabels => new Dictionary<string, string>();
+    public override Dictionary<string, string> DllSource => new Dictionary<string, string>();
 }
