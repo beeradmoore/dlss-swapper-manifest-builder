@@ -71,18 +71,14 @@ manifest.DLSS_D = dlssdProcessor.ProcessLocalFiles(manifest.DLSS_D);
 await xessProcessor.DownloadExistingRecordsAsync(manifest.XeSS);
 manifest.XeSS = xessProcessor.ProcessLocalFiles(manifest.XeSS);
 
-
-/*
 await fsr31dx12Processor.DownloadExistingRecordsAsync(manifest.FSR_31_DX12);
 manifest.FSR_31_DX12 = fsr31dx12Processor.ProcessLocalFiles(manifest.FSR_31_DX12);
 
 await fsr31vkProcessor.DownloadExistingRecordsAsync(manifest.FSR_31_VK);
 manifest.FSR_31_VK = fsr31vkProcessor.ProcessLocalFiles(manifest.FSR_31_VK);
-*/
 
 var manifestJson = JsonSerializer.Serialize(manifest, new JsonSerializerOptions() { WriteIndented = true });
 File.WriteAllText(DLLProcessor.OutputManifestPath, manifestJson);
-
 
 // Copy to root of the repo
 var repoRootManifestPath = Path.Combine("..", "..", "..", "..", "..", "manifest.json");

@@ -1685,8 +1685,122 @@
       "dll_source": "Diablo IV (via TechPowerUp)"
     }
   ],
-  "fsr_31_dx12": [],
-  "fsr_31_vk": [],
+  "fsr_31_dx12": [
+    {
+      "version": "1.0.0.36604",
+      "version_number": 281474976747260,
+      "additional_label": "3.1.0",
+      "md5_hash": "071EB42E3CBD0989A12465E0E529BCAC",
+      "zip_md5_hash": "B24B409B92258F50D46091AEFFD21DEA",
+      "download_url": "https://downloads.dlss-swapper.beeradmoore.com/fsr_31_dx12/amd_fidelityfx_dx12_v1.0.0.36604_3.1.0.zip",
+      "file_description": "DX12 AMD FidelityFX Library",
+      "is_signature_valid": true,
+      "is_dev_file": false,
+      "file_size": 6475480,
+      "zip_file_size": 2402647,
+      "dll_source": "FidelityFX-SDK-1.1.zip"
+    },
+    {
+      "version": "1.0.1.37507",
+      "version_number": 281474976813699,
+      "additional_label": "3.1.1",
+      "md5_hash": "2FCBE69A137DBA1FF45071A9B64C9581",
+      "zip_md5_hash": "324D443105A760C6D9525F73FE9CC952",
+      "download_url": "https://downloads.dlss-swapper.beeradmoore.com/fsr_31_dx12/amd_fidelityfx_dx12_v1.0.1.37507_3.1.1.zip",
+      "file_description": "DX12 AMD FidelityFX Library",
+      "is_signature_valid": true,
+      "is_dev_file": false,
+      "file_size": 6609624,
+      "zip_file_size": 2485793,
+      "dll_source": "FidelityFX-SDK-v1.1.1.zip"
+    },
+    {
+      "version": "1.0.1.38338",
+      "version_number": 281474976814530,
+      "additional_label": "3.1.2",
+      "md5_hash": "2DC40D2F183920624BE396B624466157",
+      "zip_md5_hash": "74F6953BCAF75A3AB761CE875437FDC6",
+      "download_url": "https://downloads.dlss-swapper.beeradmoore.com/fsr_31_dx12/amd_fidelityfx_dx12_v1.0.1.38338_3.1.2.zip",
+      "file_description": "DX12 AMD FidelityFX Library",
+      "is_signature_valid": true,
+      "is_dev_file": false,
+      "file_size": 6634192,
+      "zip_file_size": 2507944,
+      "dll_source": "FidelityFX-SDK-v1.1.2.zip"
+    },
+    {
+      "version": "1.0.1.39157",
+      "version_number": 281474976815349,
+      "additional_label": "3.1.3",
+      "md5_hash": "3EF374F8F7EB44D211BCC0C063A520D9",
+      "zip_md5_hash": "E4A2995237728D5AB0B08C70B9960B99",
+      "download_url": "https://downloads.dlss-swapper.beeradmoore.com/fsr_31_dx12/amd_fidelityfx_dx12_v1.0.1.39157_3.1.3.zip",
+      "file_description": "DX12 AMD FidelityFX Library",
+      "is_signature_valid": true,
+      "is_dev_file": false,
+      "file_size": 6647504,
+      "zip_file_size": 2536509,
+      "dll_source": "FidelityFX-SDK-v1.1.3.zip"
+    }
+  ],
+  "fsr_31_vk": [
+    {
+      "version": "1.0.0.36604",
+      "version_number": 281474976747260,
+      "additional_label": "3.1.0",
+      "md5_hash": "A2BC75BC5455E870D71890C774541DA9",
+      "zip_md5_hash": "4AC34EAFB5D2081354E5823AF867577D",
+      "download_url": "https://downloads.dlss-swapper.beeradmoore.com/fsr_31_vk/amd_fidelityfx_vk_v1.0.0.36604_3.1.0.zip",
+      "file_description": "VK AMD FidelityFX Library",
+      "is_signature_valid": true,
+      "is_dev_file": false,
+      "file_size": 9200344,
+      "zip_file_size": 2630265,
+      "dll_source": "FidelityFX-SDK-1.1.zip"
+    },
+    {
+      "version": "1.0.1.37507",
+      "version_number": 281474976813699,
+      "additional_label": "3.1.1",
+      "md5_hash": "1FC735751D2632E926016206398B8654",
+      "zip_md5_hash": "9DDD3C8611958549510B95863F4CF702",
+      "download_url": "https://downloads.dlss-swapper.beeradmoore.com/fsr_31_vk/amd_fidelityfx_vk_v1.0.1.37507_3.1.1.zip",
+      "file_description": "VK AMD FidelityFX Library",
+      "is_signature_valid": true,
+      "is_dev_file": false,
+      "file_size": 9262808,
+      "zip_file_size": 2645445,
+      "dll_source": "FidelityFX-SDK-v1.1.1.zip"
+    },
+    {
+      "version": "1.0.1.38338",
+      "version_number": 281474976814530,
+      "additional_label": "3.1.2",
+      "md5_hash": "0D0CDC8D5865027D100DAA35B605793F",
+      "zip_md5_hash": "3BFC80EE1F156F3A4FEEE353CC5CA873",
+      "download_url": "https://downloads.dlss-swapper.beeradmoore.com/fsr_31_vk/amd_fidelityfx_vk_v1.0.1.38338_3.1.2.zip",
+      "file_description": "VK AMD FidelityFX Library",
+      "is_signature_valid": true,
+      "is_dev_file": false,
+      "file_size": 9277136,
+      "zip_file_size": 2648662,
+      "dll_source": "FidelityFX-SDK-v1.1.2.zip"
+    },
+    {
+      "version": "1.0.1.39157",
+      "version_number": 281474976815349,
+      "additional_label": "3.1.3",
+      "md5_hash": "23A87C10A859D5756EDBE5A6D7F692B5",
+      "zip_md5_hash": "8B665D9672846AD18E6AB5818F671337",
+      "download_url": "https://downloads.dlss-swapper.beeradmoore.com/fsr_31_vk/amd_fidelityfx_vk_v1.0.1.39157_3.1.3.zip",
+      "file_description": "VK AMD FidelityFX Library",
+      "is_signature_valid": true,
+      "is_dev_file": false,
+      "file_size": 9284304,
+      "zip_file_size": 2667895,
+      "dll_source": "FidelityFX-SDK-v1.1.3.zip"
+    }
+  ],
   "xess": [
     {
       "version": "1.0.0.59",
