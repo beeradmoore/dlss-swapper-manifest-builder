@@ -91,7 +91,7 @@ public abstract class DLLProcessor
             }
             else
             {
-                Console.WriteLine($"Skipping {dllRecord.Filename}");
+                Console.WriteLine($"Skipping download of {dllRecord.Filename}");
             }
 
             using (var localStream = File.OpenRead(expectedZipPath))
@@ -255,7 +255,7 @@ public abstract class DLLProcessor
         }
         
         var dllRecordsList = dllRecords.Values.ToList();
-        dllRecordsList.Sort((x, y) => x.VersionNumber.CompareTo(y.VersionNumber));
+        dllRecordsList.Sort();
         return dllRecordsList;
     }
 

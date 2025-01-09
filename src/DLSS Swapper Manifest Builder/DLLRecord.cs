@@ -12,7 +12,7 @@ using System.Threading.Tasks;
 
 namespace DLSS_Swapper_Manifest_Builder;
 
-public class DLLRecord
+public class DLLRecord : IComparable<DLLRecord>
 {
     [JsonIgnore]
     public string Filename { get; set; } = string.Empty;
@@ -118,5 +118,23 @@ public class DLLRecord
         return dllRecord;
     }
 
-    
+    public int CompareTo(DLLRecord? other)
+    {
+        if (other is null)
+        {
+            return 1;
+        }
+
+        if (VersionNumber == other.VersionNumber)
+        {
+            if (IsDevFile == other.IsDevFile)
+            {
+                return AdditionalLabel.CompareTo(other.AdditionalLabel);
+            }
+
+            return IsDevFile.CompareTo(other.IsDevFile);
+        }
+
+        return VersionNumber.CompareTo(other.VersionNumber);
+    }
 }
