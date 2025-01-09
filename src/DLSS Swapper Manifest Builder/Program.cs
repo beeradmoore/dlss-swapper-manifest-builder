@@ -68,10 +68,11 @@ manifest.DLSS_G = dlssgProcessor.ProcessLocalFiles(manifest.DLSS_G);
 await dlssdProcessor.DownloadExistingRecordsAsync(manifest.DLSS_D);
 manifest.DLSS_D = dlssdProcessor.ProcessLocalFiles(manifest.DLSS_D);
 
-/*
 await xessProcessor.DownloadExistingRecordsAsync(manifest.XeSS);
 manifest.XeSS = xessProcessor.ProcessLocalFiles(manifest.XeSS);
 
+
+/*
 await fsr31dx12Processor.DownloadExistingRecordsAsync(manifest.FSR_31_DX12);
 manifest.FSR_31_DX12 = fsr31dx12Processor.ProcessLocalFiles(manifest.FSR_31_DX12);
 

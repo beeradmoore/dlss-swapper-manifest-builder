@@ -15,12 +15,16 @@ public class XeSSProcessor : DLLProcessor
     };
     public override string[] ExpectedPrefix => new string[]
     {
-        "/bin/",
+        "bin/",
+        "/",
     };
     public override string[] ExpectedDevPrefix => new string[]
     {
 
     };
     public override Dictionary<string, string> CustomAdditionalLabels => new Dictionary<string, string>();
-    public override Dictionary<string, string> DllSource => new Dictionary<string, string>();
+    public override Dictionary<string, string> DllSource => new Dictionary<string, string>()
+    {
+        {"C9FB6BB716A087FD537790BEBE710D4C", "Forza Horizon 5" }, // v1.1.0.18
+    };
 }
