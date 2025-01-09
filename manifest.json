@@ -1303,7 +1303,106 @@
       "dll_source": "NVIDIA Driver (DirectSR) (via TechPowerUp)"
     }
   ],
-  "dlss_d": [],
+  "dlss_d": [
+    {
+      "version": "3.5.0.0",
+      "version_number": 844446404968448,
+      "additional_label": "",
+      "md5_hash": "CD523B592B9471B43D0E85D9629A6AE4",
+      "zip_md5_hash": "91434488903C71FE8652DE6FE5F10522",
+      "download_url": "https://downloads.dlss-swapper.beeradmoore.com/dlss_d/nvngx_dlssd_v3.5.0.0.zip",
+      "file_description": "NVIDIA DLSSv3 - DVS PRODUCTION",
+      "is_signature_valid": true,
+      "is_dev_file": false,
+      "file_size": 70025768,
+      "zip_file_size": 44989656,
+      "dll_source": "Cyberpunk 2077 Phantom Liberty (via TechPowerUp)"
+    },
+    {
+      "version": "3.5.0.0",
+      "version_number": 844446404968448,
+      "additional_label": "33284283",
+      "md5_hash": "3ED68C9456DC83BDF66B13D1A9C66F18",
+      "zip_md5_hash": "0E42E205C855CAAD6DDFCF4AC4B2131C",
+      "download_url": "https://downloads.dlss-swapper.beeradmoore.com/dlss_d/nvngx_dlssd_v3.5.0.0_33284283.zip",
+      "file_description": "NVIDIA DLSSv3 - DVS PRODUCTION",
+      "is_signature_valid": true,
+      "is_dev_file": false,
+      "file_size": 70026792,
+      "zip_file_size": 44990071,
+      "dll_source": "Cyberpunk 2077 Phantom Liberty 2.01 (via TechPowerUp)"
+    },
+    {
+      "version": "3.5.0.0",
+      "version_number": 844446404968448,
+      "additional_label": "33367307",
+      "md5_hash": "625907DE06A912414FDB8444C91B262C",
+      "zip_md5_hash": "0EA4A004D32DA5B3CB239FE0F3E74389",
+      "download_url": "https://downloads.dlss-swapper.beeradmoore.com/dlss_d/nvngx_dlssd_v3.5.0.0_33367307.zip",
+      "file_description": "NVIDIA DLSSv3 - DVS PRODUCTION",
+      "is_signature_valid": true,
+      "is_dev_file": false,
+      "file_size": 71719976,
+      "zip_file_size": 45582040,
+      "dll_source": "Alan Wake 2 (via TechPowerUp)"
+    },
+    {
+      "version": "3.5.10.0",
+      "version_number": 844446405623808,
+      "additional_label": "",
+      "md5_hash": "CE8B65654872A30DC6B771AAE8CA98AD",
+      "zip_md5_hash": "F30B758335AE96EA26C477DAA9E8EE3C",
+      "download_url": "https://downloads.dlss-swapper.beeradmoore.com/dlss_d/nvngx_dlssd_v3.5.10.0.zip",
+      "file_description": "NVIDIA DLSSv3 - DVS PRODUCTION",
+      "is_signature_valid": true,
+      "is_dev_file": false,
+      "file_size": 71894568,
+      "zip_file_size": 44459772,
+      "dll_source": "Alan Wake  (via TechPowerUp)2"
+    },
+    {
+      "version": "3.7.0.0",
+      "version_number": 844454994903040,
+      "additional_label": "",
+      "md5_hash": "622FCB76D37A2D73811756E891CC80E8",
+      "zip_md5_hash": "C6B496A8895EE441CE3FC9B6EE60A50F",
+      "download_url": "https://downloads.dlss-swapper.beeradmoore.com/dlss_d/nvngx_dlssd_v3.7.0.0.zip",
+      "file_description": "NVIDIA DLSSv3 - DVS PRODUCTION",
+      "is_signature_valid": true,
+      "is_dev_file": false,
+      "file_size": 38426680,
+      "zip_file_size": 16643816,
+      "dll_source": "Portal with RTX (via TechPowerUp)"
+    },
+    {
+      "version": "3.7.10.0",
+      "version_number": 844454995558400,
+      "additional_label": "",
+      "md5_hash": "FDFAC845AB72D509A24EA2C16A1619C4",
+      "zip_md5_hash": "535C50BBD79D874E100D281F6DA1A639",
+      "download_url": "https://downloads.dlss-swapper.beeradmoore.com/dlss_d/nvngx_dlssd_v3.7.10.0.zip",
+      "file_description": "NVIDIA DLSSv3 - DVS PRODUCTION",
+      "is_signature_valid": true,
+      "is_dev_file": false,
+      "file_size": 43790888,
+      "zip_file_size": 21482406,
+      "dll_source": "The First Descendant (via TechPowerUp)"
+    },
+    {
+      "version": "3.7.20.0",
+      "version_number": 844454996213760,
+      "additional_label": "",
+      "md5_hash": "F2F968B15CD295D13D571D0D18170E10",
+      "zip_md5_hash": "6C97E5CA1C58714D2D98EB41F93B6357",
+      "download_url": "https://downloads.dlss-swapper.beeradmoore.com/dlss_d/nvngx_dlssd_v3.7.20.0.zip",
+      "file_description": "NVIDIA DLSSv3 - DVS PRODUCTION",
+      "is_signature_valid": true,
+      "is_dev_file": false,
+      "file_size": 44006968,
+      "zip_file_size": 21600530,
+      "dll_source": "Star Wars Outlaws (via TechPowerUp)"
+    }
+  ],
   "dlss_g": [
     {
       "version": "1.0.1.0",
