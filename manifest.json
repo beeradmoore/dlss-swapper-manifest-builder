@@ -1687,6 +1687,20 @@
   ],
   "fsr_31_dx12": [
     {
+      "version": "1.0.0.36208",
+      "version_number": 281474976746864,
+      "additional_label": "3.1.0",
+      "md5_hash": "CFCD38F47665DDFF195B80C62E3B57E2",
+      "zip_md5_hash": "6E0F9EDDE4C3604AB32F257DF59F8F00",
+      "download_url": "https://downloads.dlss-swapper.beeradmoore.com/fsr_31_dx12/amd_fidelityfx_dx12_v1.0.0.36208_3.1.0.zip",
+      "file_description": "DX12 AMD FidelityFX Library",
+      "is_signature_valid": true,
+      "is_dev_file": false,
+      "file_size": 6470360,
+      "zip_file_size": 2395294,
+      "dll_source": "F1 2024"
+    },
+    {
       "version": "1.0.0.36604",
       "version_number": 281474976747260,
       "additional_label": "3.1.0",
@@ -1699,6 +1713,20 @@
       "file_size": 6475480,
       "zip_file_size": 2402647,
       "dll_source": "FidelityFX-SDK-1.1.zip"
+    },
+    {
+      "version": "1.0.0.36752",
+      "version_number": 281474976747408,
+      "additional_label": "3.1.0",
+      "md5_hash": "46F7049B30404D8C4EF685A13EF0BC43",
+      "zip_md5_hash": "D855E93AA6156C4BB45D2E0924EDE72B",
+      "download_url": "https://downloads.dlss-swapper.beeradmoore.com/fsr_31_dx12/amd_fidelityfx_dx12_v1.0.0.36752_3.1.0.zip",
+      "file_description": "DX12 AMD FidelityFX Library",
+      "is_signature_valid": true,
+      "is_dev_file": false,
+      "file_size": 6475992,
+      "zip_file_size": 2406675,
+      "dll_source": "Horizon Zero Dawn Remastered"
     },
     {
       "version": "1.0.1.37507",

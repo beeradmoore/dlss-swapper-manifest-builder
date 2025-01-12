@@ -16,6 +16,8 @@ public class FSR31DX12Processor : FSR31Processor
     };
     public override Dictionary<string, string> CustomAdditionalLabels => new Dictionary<string, string>()
     {
+        { "46F7049B30404D8C4EF685A13EF0BC43", "3.1.0" }, // v1.0.0.36752
+        { "CFCD38F47665DDFF195B80C62E3B57E2", "3.1.0" }, // v1.0.0.36208
         { "071EB42E3CBD0989A12465E0E529BCAC", "3.1.0" }, // DX12 FidelityFX-SDK-1.1.zip
         { "2FCBE69A137DBA1FF45071A9B64C9581", "3.1.1" }, // DX12 FidelityFX-SDK-1.1.1.zip
         { "2DC40D2F183920624BE396B624466157", "3.1.2" }, // DX12 FidelityFX-SDK-1.1.2.zip
