@@ -15,6 +15,7 @@ internal class DLSSGProcessor : DLLProcessor
         "NVIDIA DLSS-G - DVS PRODUCTION",
         "NVIDIA DLSS-G - NOT FOR PRODUCTION",
         "NVIDIA DLSS-G - PRODUCTION",
+        "NVIDIA DLSS-G MFGLW - DVS PRODUCTION",
     };
     public override string[] ExpectedPrefix => new string[]
     {
@@ -70,6 +71,7 @@ internal class DLSSGProcessor : DLLProcessor
         { "B16E50DD7C60D254AAB782278C2EF73C", "Senua's Saga: Hellblade II (via TechPowerUp)" }, // v3.7.1.0
         { "69E9F9DC32D0AEF4E7C986E2339A0E52", "Diablo IV (via TechPowerUp)" }, // 3.7.10, also from Streamline
         { "DB7B5C2C8686E1586CC56D5BDB64965C", "Diablo IV (via TechPowerUp)" }, // 3.8.1
+        { "11ECC4BF7FE5CEFCF4A737E95B6752FF", "Cyberpunk 2077 2.21" }, // 310.1.0.0
 
         // Not showing E8E78491DC415315A2C3785916185CF1 (1.10.0 , 3.1.10)
         // as it says NVIDIA CONFIDENTIAL - PROVIDED UNDER NDA - DO NOT DISTRIBUTE IN ANY WAY

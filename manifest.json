@@ -1301,6 +1301,20 @@
       "file_size": 24925344,
       "zip_file_size": 14860681,
       "dll_source": "NVIDIA Driver (DirectSR) (via TechPowerUp)"
+    },
+    {
+      "version": "310.1.0.0",
+      "version_number": 87257247075270656,
+      "additional_label": "",
+      "md5_hash": "117595D4839DCAB18501249CBEEE9B7A",
+      "zip_md5_hash": "D25589AAC99559F6162F285156CAFC91",
+      "download_url": "https://downloads.dlss-swapper.beeradmoore.com/dlss/nvngx_dlss_v310.1.0.0.zip",
+      "file_description": "NVIDIA DLSS - DVS PRODUCTION",
+      "is_signature_valid": true,
+      "is_dev_file": false,
+      "file_size": 44609064,
+      "zip_file_size": 32363161,
+      "dll_source": "Cyberpunk 2077 2.21"
     }
   ],
   "dlss_d": [
@@ -1401,6 +1415,20 @@
       "file_size": 44006968,
       "zip_file_size": 21600530,
       "dll_source": "Star Wars Outlaws (via TechPowerUp)"
+    },
+    {
+      "version": "310.1.0.0",
+      "version_number": 87257247075270656,
+      "additional_label": "",
+      "md5_hash": "10C793F0B14EFEDC595838BB8A09FD28",
+      "zip_md5_hash": "3EBCD043C4F7CFAED085BEE8CE6CA281",
+      "download_url": "https://downloads.dlss-swapper.beeradmoore.com/dlss_d/nvngx_dlssd_v310.1.0.0.zip",
+      "file_description": "NVIDIA DLSSv3 - DVS PRODUCTION",
+      "is_signature_valid": true,
+      "is_dev_file": false,
+      "file_size": 65630248,
+      "zip_file_size": 32844236,
+      "dll_source": "Cyberpunk 2077 2.21"
     }
   ],
   "dlss_g": [
@@ -1683,6 +1711,20 @@
       "file_size": 9283120,
       "zip_file_size": 5077776,
       "dll_source": "Diablo IV (via TechPowerUp)"
+    },
+    {
+      "version": "310.1.0.0",
+      "version_number": 87257247075270656,
+      "additional_label": "",
+      "md5_hash": "11ECC4BF7FE5CEFCF4A737E95B6752FF",
+      "zip_md5_hash": "4AF4B56E10BFBE0F509B4C178059C487",
+      "download_url": "https://downloads.dlss-swapper.beeradmoore.com/dlss_g/nvngx_dlssg_v310.1.0.0.zip",
+      "file_description": "NVIDIA DLSS-G MFGLW - DVS PRODUCTION",
+      "is_signature_valid": true,
+      "is_dev_file": false,
+      "file_size": 7607336,
+      "zip_file_size": 3798898,
+      "dll_source": "Cyberpunk 2077 2.21"
     }
   ],
   "fsr_31_dx12": [

@@ -37,5 +37,6 @@ internal class DLSSDProcessor : DLLProcessor
         { "622FCB76D37A2D73811756E891CC80E8", "Portal with RTX (via TechPowerUp)" }, // v3.7
         { "FDFAC845AB72D509A24EA2C16A1619C4", "The First Descendant (via TechPowerUp)" }, // v3.7.10
         { "F2F968B15CD295D13D571D0D18170E10", "Star Wars Outlaws (via TechPowerUp)" }, // v3.7.20
+        { "10C793F0B14EFEDC595838BB8A09FD28", "Cyberpunk 2077 2.21" }, // v310.1.0.0
     };
 }

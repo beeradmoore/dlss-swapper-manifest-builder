@@ -16,6 +16,7 @@ public class DLSSProcessor : DLLProcessor
         "NVIDIA DLSSv3 - DVS PRODUCTION",
         "NVIDIA DLSSv2 - Beta - White Collie 1 - DVS PRODUCTION",
         "NVIDIA DLSSv2 - Beta - White Collie 2 - DVS PRODUCTION",
+        "NVIDIA DLSS - DVS PRODUCTION",
     };
     public override string[] ExpectedPrefix => new string[]
     {
@@ -107,5 +108,6 @@ public class DLSSProcessor : DLLProcessor
         { "49CE45D36D0FE6E498F2AAE54D94BDEE", "Naraka Bladepoint (via TechPowerUp)" }, // 3.6.0.0
         { "53DBEC92BB250E667CBC532D5D782316", "NVIDIA Driver (DirectSR) (via TechPowerUp)" }, // 3.7.20.0
         { "AED94E7029846C356882DB166B824F5E", "NVIDIA Driver (DirectSR) (via TechPowerUp)" }, // 3.8.10.0
+        { "117595D4839DCAB18501249CBEEE9B7A", "Cyberpunk 2077 2.21" }, // 310.1.0.0
     };
 }
