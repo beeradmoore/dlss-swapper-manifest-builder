@@ -13,6 +13,7 @@ internal class DLSSDProcessor : DLLProcessor
     public override string[] ValidFileDescriptions => new string[]
     {
         "NVIDIA DLSSv3 - DVS PRODUCTION",
+        "NVIDIA DLSS - DVS PRODUCTION",
     };
     public override string[] ExpectedPrefix => new string[]
     {
@@ -38,5 +39,6 @@ internal class DLSSDProcessor : DLLProcessor
         { "FDFAC845AB72D509A24EA2C16A1619C4", "The First Descendant (via TechPowerUp)" }, // v3.7.10
         { "F2F968B15CD295D13D571D0D18170E10", "Star Wars Outlaws (via TechPowerUp)" }, // v3.7.20
         { "10C793F0B14EFEDC595838BB8A09FD28", "Cyberpunk 2077 2.21" }, // v310.1.0.0
+        { "E6081B848EA68880DB8ADC83CDFB15DC", "NVIDIA Driver" }, // v310.2.0.0
     };
 }

@@ -109,5 +109,6 @@ public class DLSSProcessor : DLLProcessor
         { "53DBEC92BB250E667CBC532D5D782316", "NVIDIA Driver (DirectSR) (via TechPowerUp)" }, // 3.7.20.0
         { "AED94E7029846C356882DB166B824F5E", "NVIDIA Driver (DirectSR) (via TechPowerUp)" }, // 3.8.10.0
         { "117595D4839DCAB18501249CBEEE9B7A", "Cyberpunk 2077 2.21" }, // 310.1.0.0
+        { "3A875F45C315D09E5F4548CC9288F178" , "NVIDIA Driver" }, // v310.2.0.0
     };
 }
