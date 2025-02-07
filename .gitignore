@@ -7,3 +7,5 @@ input_files/
 output_files/
 temp_files/
 generated_files/
+.DS_Store
+*.user
