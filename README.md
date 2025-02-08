@@ -5,6 +5,7 @@ This repository is used to maintain tools to ingest DLLs and maintain `manifest.
 > [!NOTE]  
 > Tools in this repository are not meant to run as standalone applications, but instead run from within Visual Studio 2022 directly.
 
+Because `NewDLLHandler` generates files that `DLSS Swapper Manifest Builder` uses they should be run in that order. Running `NewDLLHandler` without `DLSS Swapper Manifest Builder` has no impact on DLSS Swapper and its data.
 
 ## DLSS Swapper Manifest Builder 
 
