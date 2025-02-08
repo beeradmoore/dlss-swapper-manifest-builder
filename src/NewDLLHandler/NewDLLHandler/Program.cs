@@ -368,16 +368,27 @@ try
             }
         }
     }
-    
+
+    int SortDLLs(KnownDLL a, KnownDLL b)
+    {
+        if (a.Version == b.Version)
+        {
+            // If version matches sort on hash. This has no real meaning but it makes it 
+            // consitant between runs and updates.
+            return b.Hash.CompareTo(a.Hash);
+        }
+        return b.Version.CompareTo(a.Version);
+    }
+
     // Sort on DLL version
-    knownDLLs["DLSS"].Sort((a, b) => b.Version.CompareTo(a.Version));
-    knownDLLs["DLSS_G"].Sort((a, b) => b.Version.CompareTo(a.Version));
-    knownDLLs["DLSS_D"].Sort((a, b) => b.Version.CompareTo(a.Version));
-    knownDLLs["FSR_31_DX12"].Sort((a, b) => b.Version.CompareTo(a.Version));
-    knownDLLs["FSR_31_VK"].Sort((a, b) => b.Version.CompareTo(a.Version));
-    knownDLLs["XeSS"].Sort((a, b) => b.Version.CompareTo(a.Version));
-    knownDLLs["XeLL"].Sort((a, b) => b.Version.CompareTo(a.Version));
-    knownDLLs["XeSS_FG"].Sort((a, b) => b.Version.CompareTo(a.Version));
+    knownDLLs["DLSS"].Sort(SortDLLs);
+    knownDLLs["DLSS_G"].Sort(SortDLLs);
+    knownDLLs["DLSS_D"].Sort(SortDLLs);
+    knownDLLs["FSR_31_DX12"].Sort(SortDLLs);
+    knownDLLs["FSR_31_VK"].Sort(SortDLLs);
+    knownDLLs["XeSS"].Sort(SortDLLs);
+    knownDLLs["XeLL"].Sort(SortDLLs);
+    knownDLLs["XeSS_FG"].Sort(SortDLLs);
 
     // Write out the DLL source file list
     File.WriteAllText(knownDLLSourcesFile, JsonSerializer.Serialize(knownDLLs, new JsonSerializerOptions() { WriteIndented = true }));

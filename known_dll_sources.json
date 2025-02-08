@@ -49,6 +49,16 @@
     {
       "DLLType": "DLSS",
       "Version": "310.1.0.0",
+      "Hash": "452BBD6DB83CA6545E97D4B9F7DBB139",
+      "Sources": {
+        "Steam": [
+          "No Man\u0027s Sky"
+        ]
+      }
+    },
+    {
+      "DLLType": "DLSS",
+      "Version": "310.1.0.0",
       "Hash": "117595D4839DCAB18501249CBEEE9B7A",
       "Sources": {
         "EpicGamesStore": [
@@ -180,16 +190,6 @@
     },
     {
       "DLLType": "DLSS",
-      "Version": "310.1.0.0",
-      "Hash": "452BBD6DB83CA6545E97D4B9F7DBB139",
-      "Sources": {
-        "Steam": [
-          "No Man\u0027s Sky"
-        ]
-      }
-    },
-    {
-      "DLLType": "DLSS",
       "Version": "310.0.0.0",
       "Hash": "DE09DC3FC2D5F9411EA0293CB369CA35",
       "Sources": {
@@ -309,6 +309,33 @@
     {
       "DLLType": "DLSS",
       "Version": "3.7.20.0",
+      "Hash": "53DBEC92BB250E667CBC532D5D782316",
+      "Sources": {
+        "Steam": [
+          "DCS World Steam Edition",
+          "Microsoft Flight Simulator",
+          "Assetto Corsa Competizione",
+          "The Last of Us\u2122 Part I",
+          "God of War",
+          "Hogwarts Legacy",
+          "Horizon Forbidden West\u2122 Complete Edition",
+          "Marvel Rivals"
+        ]
+      }
+    },
+    {
+      "DLLType": "DLSS",
+      "Version": "3.7.20.0",
+      "Hash": "4FB7781091BF494D9077C856BED41BF3",
+      "Sources": {
+        "Steam": [
+          "NARAKA: BLADEPOINT"
+        ]
+      }
+    },
+    {
+      "DLLType": "DLSS",
+      "Version": "3.7.20.0",
       "Hash": "00C63DD7EF90420253CBB4281F35E713",
       "Sources": {
         "XboxApp": [
@@ -336,33 +363,6 @@
         ],
         "EpicGamesStore": [
           "God of War Ragnar\u00F6k"
-        ]
-      }
-    },
-    {
-      "DLLType": "DLSS",
-      "Version": "3.7.20.0",
-      "Hash": "4FB7781091BF494D9077C856BED41BF3",
-      "Sources": {
-        "Steam": [
-          "NARAKA: BLADEPOINT"
-        ]
-      }
-    },
-    {
-      "DLLType": "DLSS",
-      "Version": "3.7.20.0",
-      "Hash": "53DBEC92BB250E667CBC532D5D782316",
-      "Sources": {
-        "Steam": [
-          "DCS World Steam Edition",
-          "Microsoft Flight Simulator",
-          "Assetto Corsa Competizione",
-          "The Last of Us\u2122 Part I",
-          "God of War",
-          "Hogwarts Legacy",
-          "Horizon Forbidden West\u2122 Complete Edition",
-          "Marvel Rivals"
         ]
       }
     },
@@ -415,23 +415,6 @@
     {
       "DLLType": "DLSS",
       "Version": "3.7.10.0",
-      "Hash": "0A3D4BDC6BD8984E110711572B8029DC",
-      "Sources": {
-        "Steam": [
-          "Marvel\u0027s Spider-Man: Miles Morales",
-          "Marvel\u2019s Spider-Man Remastered",
-          "Marvel\u0027s Spider-Man Remastered"
-        ],
-        "ManuallyAdded": [
-          "Marvel\u0027s Spider-Man Remastered",
-          "Marvels SpiderMan Miles Morales",
-          "Marvels SpiderMan Remastered"
-        ]
-      }
-    },
-    {
-      "DLLType": "DLSS",
-      "Version": "3.7.10.0",
       "Hash": "12627AB9EE39858B6A28039A32D1B7C2",
       "Sources": {
         "Steam": [
@@ -448,23 +431,18 @@
     },
     {
       "DLLType": "DLSS",
-      "Version": "3.7.0.0",
-      "Hash": "956FAF7E5DE9C4634C5869389F91F11B",
+      "Version": "3.7.10.0",
+      "Hash": "0A3D4BDC6BD8984E110711572B8029DC",
       "Sources": {
         "Steam": [
-          "Warhammer 40,000: Space Marine 2",
-          "Squad",
-          "Battlefield\u2122 V",
-          "S.T.A.L.K.E.R. 2: Heart of Chornobyl",
-          "Ratchet \u0026 Clank: Rift Apart",
-          "Hogwarts Legacy"
-        ],
-        "XboxApp": [
-          "Creatures of Ava"
+          "Marvel\u0027s Spider-Man: Miles Morales",
+          "Marvel\u2019s Spider-Man Remastered",
+          "Marvel\u0027s Spider-Man Remastered"
         ],
         "ManuallyAdded": [
-          "DCS World OpenBeta",
-          "common"
+          "Marvel\u0027s Spider-Man Remastered",
+          "Marvels SpiderMan Miles Morales",
+          "Marvels SpiderMan Remastered"
         ]
       }
     },
@@ -491,6 +469,28 @@
           "Assetto Corsa Competizione",
           "Ghost of Tsushima",
           "Horizon Forbidden West\u2122 Complete Edition"
+        ]
+      }
+    },
+    {
+      "DLLType": "DLSS",
+      "Version": "3.7.0.0",
+      "Hash": "956FAF7E5DE9C4634C5869389F91F11B",
+      "Sources": {
+        "Steam": [
+          "Warhammer 40,000: Space Marine 2",
+          "Squad",
+          "Battlefield\u2122 V",
+          "S.T.A.L.K.E.R. 2: Heart of Chornobyl",
+          "Ratchet \u0026 Clank: Rift Apart",
+          "Hogwarts Legacy"
+        ],
+        "XboxApp": [
+          "Creatures of Ava"
+        ],
+        "ManuallyAdded": [
+          "DCS World OpenBeta",
+          "common"
         ]
       }
     },
@@ -568,6 +568,16 @@
     {
       "DLLType": "DLSS",
       "Version": "3.5.0.0",
+      "Hash": "A6B5079411A58630799478EBB6BAA722",
+      "Sources": {
+        "XboxApp": [
+          "Call of Duty\u00AE"
+        ]
+      }
+    },
+    {
+      "DLLType": "DLSS",
+      "Version": "3.5.0.0",
       "Hash": "666EDB2B2475B549E10BA6DF0820EF6C",
       "Sources": {
         "Steam": [
@@ -598,16 +608,6 @@
     {
       "DLLType": "DLSS",
       "Version": "3.5.0.0",
-      "Hash": "A6B5079411A58630799478EBB6BAA722",
-      "Sources": {
-        "XboxApp": [
-          "Call of Duty\u00AE"
-        ]
-      }
-    },
-    {
-      "DLLType": "DLSS",
-      "Version": "3.5.0.0",
       "Hash": "62675F592655B5A59CCE8DF66D2F9340",
       "Sources": {
         "EpicGamesStore": [
@@ -615,6 +615,22 @@
         ],
         "ManuallyAdded": [
           "Alan Wake 2"
+        ]
+      }
+    },
+    {
+      "DLLType": "DLSS",
+      "Version": "3.1.30.0",
+      "Hash": "96F5CED18C119946E4A674C14D908692",
+      "Sources": {
+        "Steam": [
+          "Lords of the Fallen",
+          "Tom Clancy\u0027s Rainbow Six Siege",
+          "Black Myth: Wukong",
+          "DEATH STRANDING DIRECTOR\u0027S CUT"
+        ],
+        "EpicGamesStore": [
+          "Red Dead Redemption 2"
         ]
       }
     },
@@ -643,22 +659,6 @@
     },
     {
       "DLLType": "DLSS",
-      "Version": "3.1.30.0",
-      "Hash": "96F5CED18C119946E4A674C14D908692",
-      "Sources": {
-        "Steam": [
-          "Lords of the Fallen",
-          "Tom Clancy\u0027s Rainbow Six Siege",
-          "Black Myth: Wukong",
-          "DEATH STRANDING DIRECTOR\u0027S CUT"
-        ],
-        "EpicGamesStore": [
-          "Red Dead Redemption 2"
-        ]
-      }
-    },
-    {
-      "DLLType": "DLSS",
       "Version": "3.1.13.0",
       "Hash": "B3A110CAA82EDAD927443AE47AA15E35",
       "Sources": {
@@ -681,16 +681,6 @@
     {
       "DLLType": "DLSS",
       "Version": "3.1.1.0",
-      "Hash": "40D468487EA4E0F56595F8DE1AC8ED7C",
-      "Sources": {
-        "Steam": [
-          "Atomic Heart"
-        ]
-      }
-    },
-    {
-      "DLLType": "DLSS",
-      "Version": "3.1.1.0",
       "Hash": "4BB567067B16B8FABF05D0817A9C971C",
       "Sources": {
         "Steam": [
@@ -702,6 +692,16 @@
         ],
         "ManuallyAdded": [
           "common"
+        ]
+      }
+    },
+    {
+      "DLLType": "DLSS",
+      "Version": "3.1.1.0",
+      "Hash": "40D468487EA4E0F56595F8DE1AC8ED7C",
+      "Sources": {
+        "Steam": [
+          "Atomic Heart"
         ]
       }
     },
@@ -729,6 +729,16 @@
     {
       "DLLType": "DLSS",
       "Version": "2.5.0.0",
+      "Hash": "C30FD88E8C1505A7460226BCAA070065",
+      "Sources": {
+        "Steam": [
+          "Dead Space"
+        ]
+      }
+    },
+    {
+      "DLLType": "DLSS",
+      "Version": "2.5.0.0",
       "Hash": "C0F92397C29561D1750B5881F7CAB319",
       "Sources": {
         "ManuallyAdded": [
@@ -749,16 +759,6 @@
         ],
         "Steam": [
           "Nioh 2 \u2013 The Complete Edition"
-        ]
-      }
-    },
-    {
-      "DLLType": "DLSS",
-      "Version": "2.5.0.0",
-      "Hash": "C30FD88E8C1505A7460226BCAA070065",
-      "Sources": {
-        "Steam": [
-          "Dead Space"
         ]
       }
     },
@@ -791,6 +791,16 @@
     {
       "DLLType": "DLSS",
       "Version": "2.4.2.0",
+      "Hash": "FC7F487079B5132E132729EA046DD017",
+      "Sources": {
+        "Steam": [
+          "Back 4 Blood"
+        ]
+      }
+    },
+    {
+      "DLLType": "DLSS",
+      "Version": "2.4.2.0",
       "Hash": "68B0E070CADB1A48237B027549F6A216",
       "Sources": {
         "Steam": [
@@ -801,55 +811,11 @@
     },
     {
       "DLLType": "DLSS",
-      "Version": "2.4.2.0",
-      "Hash": "FC7F487079B5132E132729EA046DD017",
-      "Sources": {
-        "Steam": [
-          "Back 4 Blood"
-        ]
-      }
-    },
-    {
-      "DLLType": "DLSS",
       "Version": "2.4.13.0",
       "Hash": "0C7636DD3233D59BE0290A1A3C1E4651",
       "Sources": {
         "Steam": [
           "WRC Generations - The FIA WRC Official Game"
-        ]
-      }
-    },
-    {
-      "DLLType": "DLSS",
-      "Version": "2.4.12.0",
-      "Hash": "A2314E838FA3ABC4B5EED1ECBDD3F587",
-      "Sources": {
-        "Steam": [
-          "Forspoken"
-        ]
-      }
-    },
-    {
-      "DLLType": "DLSS",
-      "Version": "2.4.12.0",
-      "Hash": "104D86A22307DA427F40F3992E9C1393",
-      "Sources": {
-        "ManuallyAdded": [
-          "Call of Duty"
-        ],
-        "Steam": [
-          "Call of Duty\u00AE"
-        ]
-      }
-    },
-    {
-      "DLLType": "DLSS",
-      "Version": "2.4.12.0",
-      "Hash": "2650BD4B2B79C705DE772FD7ECF89E3B",
-      "Sources": {
-        "Steam": [
-          "UNCHARTED\u2122: Legacy of Thieves Collection",
-          "Uncharted"
         ]
       }
     },
@@ -874,6 +840,40 @@
         "XboxApp": [
           "Microsoft Flight Simulator",
           "Microsoft Flight Simulator 2024"
+        ]
+      }
+    },
+    {
+      "DLLType": "DLSS",
+      "Version": "2.4.12.0",
+      "Hash": "A2314E838FA3ABC4B5EED1ECBDD3F587",
+      "Sources": {
+        "Steam": [
+          "Forspoken"
+        ]
+      }
+    },
+    {
+      "DLLType": "DLSS",
+      "Version": "2.4.12.0",
+      "Hash": "2650BD4B2B79C705DE772FD7ECF89E3B",
+      "Sources": {
+        "Steam": [
+          "UNCHARTED\u2122: Legacy of Thieves Collection",
+          "Uncharted"
+        ]
+      }
+    },
+    {
+      "DLLType": "DLSS",
+      "Version": "2.4.12.0",
+      "Hash": "104D86A22307DA427F40F3992E9C1393",
+      "Sources": {
+        "ManuallyAdded": [
+          "Call of Duty"
+        ],
+        "Steam": [
+          "Call of Duty\u00AE"
         ]
       }
     },
@@ -918,6 +918,19 @@
     {
       "DLLType": "DLSS",
       "Version": "2.3.7.0",
+      "Hash": "BD96B2118FDE94882B81EE3E6B0FC800",
+      "Sources": {
+        "UbisoftConnect": [
+          "Tom Clancy\u2019s Rainbow Six Extraction"
+        ],
+        "Steam": [
+          "Tom Clancy\u2019s Rainbow Six Extraction"
+        ]
+      }
+    },
+    {
+      "DLLType": "DLSS",
+      "Version": "2.3.7.0",
       "Hash": "9D1CA4DF5D46F3D46DE5E02EB6D82F20",
       "Sources": {
         "Steam": [
@@ -928,19 +941,6 @@
         ],
         "XboxApp": [
           "DSDC"
-        ]
-      }
-    },
-    {
-      "DLLType": "DLSS",
-      "Version": "2.3.7.0",
-      "Hash": "BD96B2118FDE94882B81EE3E6B0FC800",
-      "Sources": {
-        "UbisoftConnect": [
-          "Tom Clancy\u2019s Rainbow Six Extraction"
-        ],
-        "Steam": [
-          "Tom Clancy\u2019s Rainbow Six Extraction"
         ]
       }
     },
@@ -991,6 +991,16 @@
     {
       "DLLType": "DLSS",
       "Version": "2.3.4.0",
+      "Hash": "465D6AAC717EE7E6239CDAB8ADFE8A93",
+      "Sources": {
+        "Steam": [
+          "Call of Duty\u00AE: Modern Warfare\u00AE"
+        ]
+      }
+    },
+    {
+      "DLLType": "DLSS",
+      "Version": "2.3.4.0",
       "Hash": "0D3C6AD1E1C7E3D848574F84D7ECDE83",
       "Sources": {
         "Steam": [
@@ -1002,16 +1012,6 @@
           "GTA III - Definitive Edition",
           "GTA San Andreas - Definitive Edition",
           "GTA Vice City - Definitive Edition"
-        ]
-      }
-    },
-    {
-      "DLLType": "DLSS",
-      "Version": "2.3.4.0",
-      "Hash": "465D6AAC717EE7E6239CDAB8ADFE8A93",
-      "Sources": {
-        "Steam": [
-          "Call of Duty\u00AE: Modern Warfare\u00AE"
         ]
       }
     },
@@ -1065,24 +1065,46 @@
     {
       "DLLType": "DLSS",
       "Version": "2.3.1.0",
-      "Hash": "0FC1727AD4A52C29E2897567008B3407",
+      "Hash": "FF5A0F7A4A751F911D78FD9B6FCA27F2",
       "Sources": {
-        "XboxApp": [
-          "SIFU"
-        ],
-        "Steam": [
-          "Deep Rock Galactic",
-          "Sifu"
+        "EpicGamesStore": [
+          "F.I.S.T.: Forged In Shadow Torch"
         ]
       }
     },
     {
       "DLLType": "DLSS",
       "Version": "2.3.1.0",
-      "Hash": "FF5A0F7A4A751F911D78FD9B6FCA27F2",
+      "Hash": "EE80D6128F062FFB361E5D9DE8BE82E5",
       "Sources": {
+        "Steam": [
+          "Crysis 3 Remastered"
+        ],
         "EpicGamesStore": [
-          "F.I.S.T.: Forged In Shadow Torch"
+          "Crysis 3 Remastered"
+        ]
+      }
+    },
+    {
+      "DLLType": "DLSS",
+      "Version": "2.3.1.0",
+      "Hash": "D1D9C24B55BF4453689AB52E340400BD",
+      "Sources": {
+        "Steam": [
+          "Call of Duty\u00AE: Vanguard"
+        ]
+      }
+    },
+    {
+      "DLLType": "DLSS",
+      "Version": "2.3.1.0",
+      "Hash": "C5D9A3BAFE0F45EDE7F531D99B00A2EE",
+      "Sources": {
+        "Steam": [
+          "Crysis 2 Remastered"
+        ],
+        "EpicGamesStore": [
+          "Crysis 2 Remastered"
         ]
       }
     },
@@ -1105,36 +1127,14 @@
     {
       "DLLType": "DLSS",
       "Version": "2.3.1.0",
-      "Hash": "EE80D6128F062FFB361E5D9DE8BE82E5",
+      "Hash": "0FC1727AD4A52C29E2897567008B3407",
       "Sources": {
-        "Steam": [
-          "Crysis 3 Remastered"
+        "XboxApp": [
+          "SIFU"
         ],
-        "EpicGamesStore": [
-          "Crysis 3 Remastered"
-        ]
-      }
-    },
-    {
-      "DLLType": "DLSS",
-      "Version": "2.3.1.0",
-      "Hash": "C5D9A3BAFE0F45EDE7F531D99B00A2EE",
-      "Sources": {
         "Steam": [
-          "Crysis 2 Remastered"
-        ],
-        "EpicGamesStore": [
-          "Crysis 2 Remastered"
-        ]
-      }
-    },
-    {
-      "DLLType": "DLSS",
-      "Version": "2.3.1.0",
-      "Hash": "D1D9C24B55BF4453689AB52E340400BD",
-      "Sources": {
-        "Steam": [
-          "Call of Duty\u00AE: Vanguard"
+          "Deep Rock Galactic",
+          "Sifu"
         ]
       }
     },
@@ -1154,16 +1154,6 @@
     {
       "DLLType": "DLSS",
       "Version": "2.2.9.0",
-      "Hash": "7C6DC061CC7742872823893532BDFF16",
-      "Sources": {
-        "Steam": [
-          "F1 2021"
-        ]
-      }
-    },
-    {
-      "DLLType": "DLSS",
-      "Version": "2.2.9.0",
       "Hash": "AC22400F1B71467E24A1641736C09E8E",
       "Sources": {
         "Steam": [
@@ -1173,14 +1163,11 @@
     },
     {
       "DLLType": "DLSS",
-      "Version": "2.2.6.0",
-      "Hash": "754505EE9D2178E95A1F4530BDFAB3AB",
+      "Version": "2.2.9.0",
+      "Hash": "7C6DC061CC7742872823893532BDFF16",
       "Sources": {
-        "EpicGamesStore": [
-          "LEGO\u00AE Builder\u0027s Journey"
-        ],
         "Steam": [
-          "LEGO\u00AE Builder\u0027s Journey"
+          "F1 2021"
         ]
       }
     },
@@ -1196,14 +1183,14 @@
     },
     {
       "DLLType": "DLSS",
-      "Version": "2.2.18.0",
-      "Hash": "46BA865FA1AF4256EC3DDAF133A6F3FB",
+      "Version": "2.2.6.0",
+      "Hash": "754505EE9D2178E95A1F4530BDFAB3AB",
       "Sources": {
         "EpicGamesStore": [
-          "Alan Wake Remastered"
+          "LEGO\u00AE Builder\u0027s Journey"
         ],
-        "ManuallyAdded": [
-          "Alan Wake Remastered"
+        "Steam": [
+          "LEGO\u00AE Builder\u0027s Journey"
         ]
       }
     },
@@ -1227,6 +1214,19 @@
         ],
         "ManuallyAdded": [
           "Planetside2"
+        ]
+      }
+    },
+    {
+      "DLLType": "DLSS",
+      "Version": "2.2.18.0",
+      "Hash": "46BA865FA1AF4256EC3DDAF133A6F3FB",
+      "Sources": {
+        "EpicGamesStore": [
+          "Alan Wake Remastered"
+        ],
+        "ManuallyAdded": [
+          "Alan Wake Remastered"
         ]
       }
     },
@@ -1261,34 +1261,6 @@
         "Steam": [
           "The Ascent",
           "Phantasy Star Online 2 New Genesis"
-        ]
-      }
-    },
-    {
-      "DLLType": "DLSS",
-      "Version": "2.2.11.0",
-      "Hash": "893ABAF0273602CDCAA76A9A265CCA84",
-      "Sources": {
-        "GOG": [
-          "Showgunners"
-        ],
-        "ManuallyAdded": [
-          "Shadow Warrior 3"
-        ],
-        "Steam": [
-          "Faraday Protocol",
-          "Shadow Warrior 3: Definitive Edition",
-          "Observer: System Redux"
-        ]
-      }
-    },
-    {
-      "DLLType": "DLSS",
-      "Version": "2.2.11.0",
-      "Hash": "23481DA4775D5471EDDB4773F5934E81",
-      "Sources": {
-        "Steam": [
-          "Edge Of Eternity"
         ]
       }
     },
@@ -1340,6 +1312,34 @@
         ],
         "EpicGamesStore": [
           "Chivalry 2"
+        ]
+      }
+    },
+    {
+      "DLLType": "DLSS",
+      "Version": "2.2.11.0",
+      "Hash": "893ABAF0273602CDCAA76A9A265CCA84",
+      "Sources": {
+        "GOG": [
+          "Showgunners"
+        ],
+        "ManuallyAdded": [
+          "Shadow Warrior 3"
+        ],
+        "Steam": [
+          "Faraday Protocol",
+          "Shadow Warrior 3: Definitive Edition",
+          "Observer: System Redux"
+        ]
+      }
+    },
+    {
+      "DLLType": "DLSS",
+      "Version": "2.2.11.0",
+      "Hash": "23481DA4775D5471EDDB4773F5934E81",
+      "Sources": {
+        "Steam": [
+          "Edge Of Eternity"
         ]
       }
     },
@@ -1443,19 +1443,6 @@
     {
       "DLLType": "DLSS",
       "Version": "2.1.39.0",
-      "Hash": "7D94FE646080F5D4915E74EE28FF6A17",
-      "Sources": {
-        "UbisoftConnect": [
-          "Watch Dogs Legion"
-        ],
-        "Steam": [
-          "Watch Dogs: Legion"
-        ]
-      }
-    },
-    {
-      "DLLType": "DLSS",
-      "Version": "2.1.39.0",
       "Hash": "9ED9E83C1F0E3782859BB5847E8A8870",
       "Sources": {
         "Steam": [
@@ -1468,11 +1455,14 @@
     },
     {
       "DLLType": "DLSS",
-      "Version": "2.1.29.0",
-      "Hash": "5F4B894692E9FD415731F0C0AA4A33AF",
+      "Version": "2.1.39.0",
+      "Hash": "7D94FE646080F5D4915E74EE28FF6A17",
       "Sources": {
+        "UbisoftConnect": [
+          "Watch Dogs Legion"
+        ],
         "Steam": [
-          "3DMark"
+          "Watch Dogs: Legion"
         ]
       }
     },
@@ -1486,6 +1476,16 @@
         ],
         "XboxApp": [
           "Wolfenstein: Youngblood"
+        ]
+      }
+    },
+    {
+      "DLLType": "DLSS",
+      "Version": "2.1.29.0",
+      "Hash": "5F4B894692E9FD415731F0C0AA4A33AF",
+      "Sources": {
+        "Steam": [
+          "3DMark"
         ]
       }
     },
@@ -1598,16 +1598,6 @@
     {
       "DLLType": "DLSS_G",
       "Version": "310.1.0.0",
-      "Hash": "2ABCCBCE8FDCB537095AE9B78A440284",
-      "Sources": {
-        "Steam": [
-          "No Man\u0027s Sky"
-        ]
-      }
-    },
-    {
-      "DLLType": "DLSS_G",
-      "Version": "310.1.0.0",
       "Hash": "D6EB92970CB39150DC64DDBA2B01454E",
       "Sources": {
         "Steam": [
@@ -1615,6 +1605,16 @@
         ],
         "EpicGamesStore": [
           "Hogwarts Legacy"
+        ]
+      }
+    },
+    {
+      "DLLType": "DLSS_G",
+      "Version": "310.1.0.0",
+      "Hash": "2ABCCBCE8FDCB537095AE9B78A440284",
+      "Sources": {
+        "Steam": [
+          "No Man\u0027s Sky"
         ]
       }
     },
@@ -1668,19 +1668,6 @@
     {
       "DLLType": "DLSS_G",
       "Version": "3.8.1.0",
-      "Hash": "A1A777A922EE7C6B36B3F61F47FD209D",
-      "Sources": {
-        "Steam": [
-          "Black Myth: Wukong"
-        ],
-        "EpicGamesStore": [
-          "\u9ED1\u795E\u8BDD\uFF1A\u609F\u7A7A"
-        ]
-      }
-    },
-    {
-      "DLLType": "DLSS_G",
-      "Version": "3.8.1.0",
       "Hash": "DB7B5C2C8686E1586CC56D5BDB64965C",
       "Sources": {
         "EpicGamesStore": [
@@ -1695,6 +1682,31 @@
           "Portal with RTX",
           "A Plague Tale: Requiem",
           "S.T.A.L.K.E.R. 2: Heart of Chornobyl"
+        ]
+      }
+    },
+    {
+      "DLLType": "DLSS_G",
+      "Version": "3.8.1.0",
+      "Hash": "A1A777A922EE7C6B36B3F61F47FD209D",
+      "Sources": {
+        "Steam": [
+          "Black Myth: Wukong"
+        ],
+        "EpicGamesStore": [
+          "\u9ED1\u795E\u8BDD\uFF1A\u609F\u7A7A"
+        ]
+      }
+    },
+    {
+      "DLLType": "DLSS_G",
+      "Version": "3.7.10.0",
+      "Hash": "99EB5CB0720D58EA591B061EBD454EC9",
+      "Sources": {
+        "Steam": [
+          "Beautiful Light",
+          "LEGO\u00AE Horizon Adventures\u2122",
+          "Phantom Line Playtest"
         ]
       }
     },
@@ -1746,18 +1758,6 @@
         ],
         "UbisoftConnect": [
           "Star Wars Outlaws"
-        ]
-      }
-    },
-    {
-      "DLLType": "DLSS_G",
-      "Version": "3.7.10.0",
-      "Hash": "99EB5CB0720D58EA591B061EBD454EC9",
-      "Sources": {
-        "Steam": [
-          "Beautiful Light",
-          "LEGO\u00AE Horizon Adventures\u2122",
-          "Phantom Line Playtest"
         ]
       }
     },
@@ -1825,19 +1825,6 @@
     {
       "DLLType": "DLSS_G",
       "Version": "3.5.10.0",
-      "Hash": "14860860199C29F2336A761CF5BAE182",
-      "Sources": {
-        "EpicGamesStore": [
-          "Zenless Zone Zero"
-        ],
-        "ManuallyAdded": [
-          "ZenlessZoneZero Game"
-        ]
-      }
-    },
-    {
-      "DLLType": "DLSS_G",
-      "Version": "3.5.10.0",
       "Hash": "4DE45236C2AA62CD25F1D670E0C5DEAF",
       "Sources": {
         "Steam": [
@@ -1871,11 +1858,38 @@
     },
     {
       "DLLType": "DLSS_G",
+      "Version": "3.5.10.0",
+      "Hash": "14860860199C29F2336A761CF5BAE182",
+      "Sources": {
+        "EpicGamesStore": [
+          "Zenless Zone Zero"
+        ],
+        "ManuallyAdded": [
+          "ZenlessZoneZero Game"
+        ]
+      }
+    },
+    {
+      "DLLType": "DLSS_G",
       "Version": "3.5.0.0",
       "Hash": "ED76C30C0778B797C8DD43F189152122",
       "Sources": {
         "Steam": [
           "Warhammer Age of Sigmar: Realms of Ruin"
+        ]
+      }
+    },
+    {
+      "DLLType": "DLSS_G",
+      "Version": "3.5.0.0",
+      "Hash": "AB331F7FF5AAD0AD281EED8E8B047ED5",
+      "Sources": {
+        "EpicGamesStore": [
+          "Alan Wake 2"
+        ],
+        "ManuallyAdded": [
+          "Alan Wake 2 The Lake House",
+          "Alan Wake 2"
         ]
       }
     },
@@ -1897,20 +1911,6 @@
         ],
         "EpicGamesStore": [
           "Fortnite"
-        ]
-      }
-    },
-    {
-      "DLLType": "DLSS_G",
-      "Version": "3.5.0.0",
-      "Hash": "AB331F7FF5AAD0AD281EED8E8B047ED5",
-      "Sources": {
-        "EpicGamesStore": [
-          "Alan Wake 2"
-        ],
-        "ManuallyAdded": [
-          "Alan Wake 2 The Lake House",
-          "Alan Wake 2"
         ]
       }
     },
@@ -1941,28 +1941,6 @@
     {
       "DLLType": "DLSS_G",
       "Version": "3.1.13.0",
-      "Hash": "2A129C87FE9617A1B8FA314D3A12AF9F",
-      "Sources": {
-        "ManuallyAdded": [
-          "Banishers.Ghosts.of.New.Eden-InsaneRamZes",
-          "Banishers Ghosts of New Eden",
-          "Banishers - Ghosts of New Eden"
-        ],
-        "Steam": [
-          "Banishers: Ghosts of New Eden",
-          "Jusant"
-        ],
-        "XboxApp": [
-          "Jusant"
-        ],
-        "EpicGamesStore": [
-          "Banishers: Ghosts of New Eden"
-        ]
-      }
-    },
-    {
-      "DLLType": "DLSS_G",
-      "Version": "3.1.13.0",
       "Hash": "47C51B8AAF228FA7B2461A8086BB6FFF",
       "Sources": {
         "Steam": [
@@ -1981,6 +1959,28 @@
           "Jedi Survivor",
           "Games",
           "Banishers - Ghosts of New Eden"
+        ],
+        "XboxApp": [
+          "Jusant"
+        ],
+        "EpicGamesStore": [
+          "Banishers: Ghosts of New Eden"
+        ]
+      }
+    },
+    {
+      "DLLType": "DLSS_G",
+      "Version": "3.1.13.0",
+      "Hash": "2A129C87FE9617A1B8FA314D3A12AF9F",
+      "Sources": {
+        "ManuallyAdded": [
+          "Banishers.Ghosts.of.New.Eden-InsaneRamZes",
+          "Banishers Ghosts of New Eden",
+          "Banishers - Ghosts of New Eden"
+        ],
+        "Steam": [
+          "Banishers: Ghosts of New Eden",
+          "Jusant"
         ],
         "XboxApp": [
           "Jusant"
@@ -2051,16 +2051,6 @@
     {
       "DLLType": "DLSS_G",
       "Version": "1.0.3.0",
-      "Hash": "8D976632F60C755069932461F35683C9",
-      "Sources": {
-        "Steam": [
-          "Destroy All Humans! 2 - Reprobed"
-        ]
-      }
-    },
-    {
-      "DLLType": "DLSS_G",
-      "Version": "1.0.3.0",
       "Hash": "9A44C28A5E5A915F884E2ED7DFC5D4B4",
       "Sources": {
         "Steam": [
@@ -2072,6 +2062,16 @@
         ],
         "ManuallyAdded": [
           "Hogwarts Legacy"
+        ]
+      }
+    },
+    {
+      "DLLType": "DLSS_G",
+      "Version": "1.0.3.0",
+      "Hash": "8D976632F60C755069932461F35683C9",
+      "Sources": {
+        "Steam": [
+          "Destroy All Humans! 2 - Reprobed"
         ]
       }
     },
@@ -2230,19 +2230,6 @@
     {
       "DLLType": "DLSS_D",
       "Version": "3.5.10.0",
-      "Hash": "CE0D3F499230287FE9442E12DC3A0E15",
-      "Sources": {
-        "EpicGamesStore": [
-          "Zenless Zone Zero"
-        ],
-        "ManuallyAdded": [
-          "ZenlessZoneZero Game"
-        ]
-      }
-    },
-    {
-      "DLLType": "DLSS_D",
-      "Version": "3.5.10.0",
       "Hash": "CE8B65654872A30DC6B771AAE8CA98AD",
       "Sources": {
         "EpicGamesStore": [
@@ -2250,6 +2237,19 @@
         ],
         "XboxApp": [
           "Call of Duty\u00AE"
+        ]
+      }
+    },
+    {
+      "DLLType": "DLSS_D",
+      "Version": "3.5.10.0",
+      "Hash": "CE0D3F499230287FE9442E12DC3A0E15",
+      "Sources": {
+        "EpicGamesStore": [
+          "Zenless Zone Zero"
+        ],
+        "ManuallyAdded": [
+          "ZenlessZoneZero Game"
         ]
       }
     },
@@ -2359,9 +2359,9 @@
     {
       "DLLType": "FSR_31_DX12",
       "Version": "1.0.1.0",
-      "Hash": "261DF50AA5FBCF92EC51FE5713BD626A",
+      "Hash": "C89CA4E44D4641193D8030B9BAA12590",
       "Sources": {
-        "XboxApp": [
+        "ManuallyAdded": [
           "S.T.A.L.K.E.R. 2"
         ]
       }
@@ -2373,36 +2373,6 @@
       "Sources": {
         "Steam": [
           "S.T.A.L.K.E.R. 2: Heart of Chornobyl"
-        ]
-      }
-    },
-    {
-      "DLLType": "FSR_31_DX12",
-      "Version": "1.0.1.0",
-      "Hash": "28641D845681EAF64586E6FA6C667EF8",
-      "Sources": {
-        "XboxApp": [
-          "S.T.A.L.K.E.R. 2"
-        ]
-      }
-    },
-    {
-      "DLLType": "FSR_31_DX12",
-      "Version": "1.0.1.0",
-      "Hash": "0CF2F165FE9F0B5B7A5EE18DDF4D9B47",
-      "Sources": {
-        "Steam": [
-          "S.T.A.L.K.E.R. 2: Heart of Chornobyl"
-        ]
-      }
-    },
-    {
-      "DLLType": "FSR_31_DX12",
-      "Version": "1.0.1.0",
-      "Hash": "C89CA4E44D4641193D8030B9BAA12590",
-      "Sources": {
-        "ManuallyAdded": [
-          "S.T.A.L.K.E.R. 2"
         ]
       }
     },
@@ -2423,6 +2393,36 @@
       "Sources": {
         "Steam": [
           "Gray Zone Warfare"
+        ]
+      }
+    },
+    {
+      "DLLType": "FSR_31_DX12",
+      "Version": "1.0.1.0",
+      "Hash": "28641D845681EAF64586E6FA6C667EF8",
+      "Sources": {
+        "XboxApp": [
+          "S.T.A.L.K.E.R. 2"
+        ]
+      }
+    },
+    {
+      "DLLType": "FSR_31_DX12",
+      "Version": "1.0.1.0",
+      "Hash": "261DF50AA5FBCF92EC51FE5713BD626A",
+      "Sources": {
+        "XboxApp": [
+          "S.T.A.L.K.E.R. 2"
+        ]
+      }
+    },
+    {
+      "DLLType": "FSR_31_DX12",
+      "Version": "1.0.1.0",
+      "Hash": "0CF2F165FE9F0B5B7A5EE18DDF4D9B47",
+      "Sources": {
+        "Steam": [
+          "S.T.A.L.K.E.R. 2: Heart of Chornobyl"
         ]
       }
     },
@@ -2618,6 +2618,16 @@
     {
       "DLLType": "XeSS",
       "Version": "1.3.1.32",
+      "Hash": "BB536768C7982F0A0B01C536624C96B4",
+      "Sources": {
+        "Steam": [
+          "Remnant II"
+        ]
+      }
+    },
+    {
+      "DLLType": "XeSS",
+      "Version": "1.3.1.32",
       "Hash": "10623C59D5E4571BFD6118337AC69491",
       "Sources": {
         "Steam": [
@@ -2636,16 +2646,6 @@
         ],
         "XboxApp": [
           "S.T.A.L.K.E.R. 2"
-        ]
-      }
-    },
-    {
-      "DLLType": "XeSS",
-      "Version": "1.3.1.32",
-      "Hash": "BB536768C7982F0A0B01C536624C96B4",
-      "Sources": {
-        "Steam": [
-          "Remnant II"
         ]
       }
     },
@@ -2702,7 +2702,7 @@
     {
       "DLLType": "XeSS",
       "Version": "1.3.0.28",
-      "Hash": "3B8D2F60062A72A4C5ED5E8D75A5B691",
+      "Hash": "96276E7F47D6BC6E4C681302C8338128",
       "Sources": {
         "EpicGamesStore": [
           "Fortnite"
@@ -2722,7 +2722,7 @@
     {
       "DLLType": "XeSS",
       "Version": "1.3.0.28",
-      "Hash": "96276E7F47D6BC6E4C681302C8338128",
+      "Hash": "3B8D2F60062A72A4C5ED5E8D75A5B691",
       "Sources": {
         "EpicGamesStore": [
           "Fortnite"
