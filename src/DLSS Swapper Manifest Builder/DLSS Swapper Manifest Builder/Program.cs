@@ -38,7 +38,7 @@ var httpClient = new HttpClient();
 
 //if (File.Exists(DLLProcessor.InputManifestPath) == false)
 //{
-    var manifestData = await httpClient.GetStringAsync("https://downloads.dlss-swapper.beeradmoore.com/manifest.json");
+    var manifestData = await httpClient.GetStringAsync("https://dlss-swapper-downloads.beeradmoore.com/manifest.json");
     File.WriteAllText(DLLProcessor.InputManifestPath, manifestData);
 //}
 

@@ -307,7 +307,7 @@ public abstract class DLLProcessor
 
             dllRecord.ZipMD5Hash = GetMD5Hash(fileStream);
             dllRecord.ZipFileSize = fileStream.Length;
-            dllRecord.DownloadUrl = $"https://downloads.dlss-swapper.beeradmoore.com/{NamePath}/{newZipFilename}";
+            dllRecord.DownloadUrl = $"https://dlss-swapper-downloads.beeradmoore.com/{NamePath}/{newZipFilename}";
         }
 
         // Do this after we close the zip
@@ -316,7 +316,7 @@ public abstract class DLLProcessor
         {
             dllRecord.ZipMD5Hash = GetMD5Hash(fileStream);
             dllRecord.ZipFileSize = fileStream.Length;
-            dllRecord.DownloadUrl = $"https://downloads.dlss-swapper.beeradmoore.com/{NamePath}/{newZipFilename}";
+            dllRecord.DownloadUrl = $"https://dlss-swapper-downloads.beeradmoore.com/{NamePath}/{newZipFilename}";
         }
         */
     }
