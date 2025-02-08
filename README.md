@@ -63,9 +63,9 @@ A list of all known DLL hashes. This is copied into the main `manifest.json` whe
 
 #### known_dll_sources.json
 
-List of all DLLs that have been found and submitted by DLSS Swapper users.
+List of all DLLs that have been found and submitted by DLSS Swapper users. "Known DLL" does not mean it is in DLSS Swapper, it means that it is known to DLSS Swapper and may be added to the manifest over time.
+
 
 #### known_dll_sources_missing.json
 
-The same as `known_dll_sources.json`, but it is only DLLs not added to DLSS Swapper yet.
-
+The same as `known_dll_sources.json`, but it is only DLLs not added to DLSS Swapper yet. This is the list that is modified in `DLSS Swapper Manifest Builder` and combines `{library}-{game_title}` properties to create a hash unique to that game in that library for a given DLL hash which is then checked against in DLSS Swapper.
