@@ -32,4 +32,7 @@ internal class Manifest
 
     [JsonPropertyName("xess_fg")]
     public List<DLLRecord> XeSS_FG { get; set; } = new List<DLLRecord>();
+
+    [JsonPropertyName("known_dlls")]
+    public Dictionary<string, List<CompactKnownDLL>> KnownDLLs { get; set; } = new Dictionary<string, List<CompactKnownDLL>>();
 }

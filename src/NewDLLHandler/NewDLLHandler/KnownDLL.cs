@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Text.Json.Serialization;
 using System.Threading.Tasks;
@@ -30,4 +31,30 @@ internal class KnownDLL : IEquatable<KnownDLL>
 
         return Hash.Equals(other.Hash, StringComparison.InvariantCultureIgnoreCase);
     }
+
+#if !NEW_DLL_HANDLER_TOOL
+    public DLSS_Swapper_Manifest_Builder.CompactKnownDLL ToCompactKnownDLL()
+    {
+        var toReturn = new DLSS_Swapper_Manifest_Builder.CompactKnownDLL()
+        {
+            Hash = Hash,
+        };
+
+        foreach (var library in Sources.Keys)
+        {   
+            foreach (var game in Sources[library])
+            {
+                using (var md5 = MD5.Create())
+                {
+                    var inputBytes = Encoding.ASCII.GetBytes($"{library}-{game}");
+                    var hashBytes = md5.ComputeHash(inputBytes);
+                    toReturn.Sources.Add(BitConverter.ToString(hashBytes).Replace("-", "").ToUpperInvariant());
+                }
+            }
+        }
+
+
+        return toReturn;
+    }
+#endif
 }

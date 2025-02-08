@@ -9,6 +9,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Include="..\..\NewDLLHandler\NewDLLHandler\KnownDLL.cs" Link="KnownDLL.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="System.Security.Cryptography.Pkcs" Version="9.0.0" />
   </ItemGroup>
 

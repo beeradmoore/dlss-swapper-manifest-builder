@@ -1,5 +1,6 @@
 ﻿using DLSS_Swapper_Manifest_Builder;
 using DLSS_Swapper_Manifest_Builder.Processors;
+using NewDLLHandler;
 using System.Diagnostics;
 using System.Text.Json;
 
@@ -50,8 +51,6 @@ if (manifest == null)
     return 1;
 }
 
-
-
 var dlssProcessor = new DLSSProcessor();
 var dlssgProcessor = new DLSSGProcessor();
 var dlssdProcessor = new DLSSDProcessor();
@@ -84,6 +83,28 @@ manifest.XeLL = xellProcessor.ProcessLocalFiles(manifest.XeLL);
 
 await xessfgProcessor.DownloadExistingRecordsAsync(manifest.XeSS_FG);
 manifest.XeSS_FG = xessfgProcessor.ProcessLocalFiles(manifest.XeSS_FG);
+
+
+var knownDLLSourcesMissingPath = Path.Combine("..", "..", "..", "..", "..", "..", "known_dll_sources_missing.json");
+using (var stream = File.OpenRead(knownDLLSourcesMissingPath))
+{
+    var knownDLLSourcesMissing = await JsonSerializer.DeserializeAsync<Dictionary<string, List<KnownDLL>>>(stream);
+    if (knownDLLSourcesMissing is null)
+    {
+        Debugger.Break();
+        return 0;
+    }
+
+    manifest.KnownDLLs["DLSS"] = knownDLLSourcesMissing["DLSS"].Select(x => x.ToCompactKnownDLL()).ToList();
+    manifest.KnownDLLs["DLSS_G"] = knownDLLSourcesMissing["DLSS_G"].Select(x => x.ToCompactKnownDLL()).ToList();
+    manifest.KnownDLLs["DLSS_D"] = knownDLLSourcesMissing["DLSS_D"].Select(x => x.ToCompactKnownDLL()).ToList();
+    manifest.KnownDLLs["FSR_31_DX12"] = knownDLLSourcesMissing["FSR_31_DX12"].Select(x => x.ToCompactKnownDLL()).ToList();
+    manifest.KnownDLLs["FSR_31_VK"] = knownDLLSourcesMissing["FSR_31_VK"].Select(x => x.ToCompactKnownDLL()).ToList();
+    manifest.KnownDLLs["XeSS"] = knownDLLSourcesMissing["XeSS"].Select(x => x.ToCompactKnownDLL()).ToList();
+    manifest.KnownDLLs["XeLL"] = knownDLLSourcesMissing["XeLL"].Select(x => x.ToCompactKnownDLL()).ToList();
+    manifest.KnownDLLs["XeSS_FG"] = knownDLLSourcesMissing["XeSS_FG"].Select(x => x.ToCompactKnownDLL()).ToList();
+}
+
 var manifestJson = JsonSerializer.Serialize(manifest, new JsonSerializerOptions() { WriteIndented = true });
 
 File.WriteAllText(DLLProcessor.OutputManifestPath, manifestJson);
