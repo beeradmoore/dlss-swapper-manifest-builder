@@ -1,6 +1,6 @@
 # dlss-swapper-manifest-builder
 
-This repository is used to maintain tools to ingest DLLs and maintain `manifest.json` file used by DLSS Swapper.
+This repository is used to maintain tools to ingest DLLs and maintain `manifest.json` file used by [DLSS Swapper](https://github.com/beeradmoore/dlss-swapper).
 
 > [!NOTE]  
 > Tools in this repository are not meant to run as standalone applications, but instead run from within Visual Studio 2022 directly.
