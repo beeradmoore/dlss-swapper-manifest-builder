@@ -54,33 +54,14 @@ if (File.Exists(handledIssuesFile))
 }
 
 // Some issues are triggered as handled manually so they will be skipped lower.
-var manuallyHandledIssues = new List<int>()
+var manuallyHandledIssues = new int[]
 {
-    597,
-    592,
-    580,
-    523,
-    393,
-    318,
-    289,
-    281,
-    277,
-    273,
-    262,
-    260,
-    258,
-    255,
-    257,
-    226,
-    224,
-    198,
-    189,
-    161,
-    137,
-    136,
-    69,
-    35,
-    2,
+    621, 610, 561, 544, 543, 542, 499, 497, 456, 435,
+    434, 430, 422, 420, 398, 393, 392, 375, 349, 346,
+    340, 339, 328, 318, 289, 281, 277, 276, 273, 262,
+    260, 258, 255, 257, 238, 233, 228, 226, 224, 198,
+    189, 179, 162, 161, 160, 144, 142, 137, 136,  74,
+     69,  54,  35,  17,   7,   6,   2,
 };
 
 
@@ -205,6 +186,7 @@ try
 
         if (issue.Body is null)
         {
+            handledIssues.Add(issue.Number);
             Console.WriteLine($"Issue #{issue.Number} has a null body");
             Debugger.Break();
             continue;
@@ -220,6 +202,7 @@ try
 
         var currentLibrary = string.Empty;
         var currentGame = string.Empty;
+        var addedAtLeastOne = false;
         foreach (var bodyLine in bodyLines)
         {
             if (string.IsNullOrWhiteSpace(bodyLine) == true)
@@ -232,6 +215,7 @@ try
                 continue;
             }
 
+            // If the title is in the body but not with library following it we can skip the line.
             if (bodyLine.Contains("[NEW DLLs]") == true)
             {
                 var titleMatch = titleRegex.Match(bodyLine);
@@ -360,16 +344,31 @@ try
                     existingKnownDLL.Sources[currentLibrary].Add(currentGame);
                 }
 
-                if (handledIssues.Contains(issue.Number) == false)
-                {
-                    Console.WriteLine($"Handled issue #{issue.Number}");
-                    handledIssues.Add(issue.Number);
-                }
+                addedAtLeastOne = true;
             }
             else
             {
                 Debugger.Break();
             }
+        }
+
+        // Did not add any DLLs, needs manual review.
+        if (addedAtLeastOne == false)
+        {
+            //Debugger.Break();
+            Console.WriteLine($"Number: {issue.Number}");
+            Console.WriteLine($"https://github.com/beeradmoore/dlss-swapper-manifest-builder/issues/{issue.Number}");
+            Console.WriteLine($"============================");
+            Console.WriteLine(issue.Body);
+            Console.WriteLine($"============================");
+            continue;
+        }
+
+        // If errors were not reported from the above consider it handled.
+        if (handledIssues.Contains(issue.Number) == false)
+        {
+            //Console.WriteLine($"Handled issue #{issue.Number}");
+            handledIssues.Add(issue.Number);
         }
     }
 
