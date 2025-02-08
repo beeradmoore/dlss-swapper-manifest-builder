@@ -284,11 +284,7 @@ try
             if (match.Success)
             {
                 var dll = match.Groups["dll_name"].Value.Trim();
-                if (dll.EndsWith(".dlsss") == true)
-                {
-                    continue;
-                }
-
+               
                 var dllType = dll switch
                 {
                     "nvngx_dlss.dll" => "DLSS",
@@ -299,6 +295,14 @@ try
                     "libxess.dll" => "XeSS",
                     "libxell.dll" => "XeLL",
                     "libxess_fg.dll" => "XeSS_FG",
+                    "nvngx_dlss.dll.dlsss" => "DLSS",
+                    "nvngx_dlssg.dll.dlsss" => "DLSS_G",
+                    "nvngx_dlssd.dll.dlsss" => "DLSS_D",
+                    "amd_fidelityfx_dx12.dll.dlsss" => "FSR_31_DX12",
+                    "amd_fidelityfx_vk.dll.dlsss" => "FSR_31_VK",
+                    "libxess.dll.dlsss" => "XeSS",
+                    "libxell.dll.dlsss" => "XeLL",
+                    "libxess_fg.dll.dlsss" => "XeSS_FG",
                     _ => string.Empty,
                 };
 
