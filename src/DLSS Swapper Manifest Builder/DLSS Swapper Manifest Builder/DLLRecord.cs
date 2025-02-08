@@ -61,6 +61,7 @@ public class DLLRecord : IComparable<DLLRecord>
 
     }
 
+#if !NEW_DLL_HANDLER_TOOL
     public static DLLRecord FromFile(string filename)
     {
         var dllRecord = new DLLRecord();
@@ -117,6 +118,7 @@ public class DLLRecord : IComparable<DLLRecord>
 
         return dllRecord;
     }
+#endif
 
     public int CompareTo(DLLRecord? other)
     {

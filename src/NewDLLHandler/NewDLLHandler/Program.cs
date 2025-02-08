@@ -1,4 +1,5 @@
-﻿using NewDLLHandler;
+﻿using DLSS_Swapper_Manifest_Builder;
+using NewDLLHandler;
 using Octokit;
 using System.Diagnostics;
 using System.Text.Json;
@@ -13,6 +14,7 @@ var knownDLLs = new Dictionary<string, List<KnownDLL>>();
 var knownDLLHashesFile = "../../../../../../known_dll_hashes.txt";
 var handledIssuesFile = "../../../../handled_issues.json";
 var knownDLLSourcesFile = "../../../../../../known_dll_sources.json";
+var knownDLLSourcesMissingFile = "../../../../../../known_dll_sources_missing.json";
 var githubIssuesFile = "github_issues.json";
 
 // Load known DLL hashes
@@ -415,6 +417,48 @@ try
 
     File.WriteAllLines(knownDLLHashesFile, knownDllHashes);
     Console.WriteLine($"Wrote {knownDllHashes.Count} known DLL hashes to {knownDLLHashesFile}");
+
+    // Now that knownDLLs is written, we remove all DLLs not known to DLSS Swapper manifest.
+    using (var stream = File.OpenRead("../../../../../../manifest.json"))
+    {
+        var manifest = JsonSerializer.Deserialize<Manifest>(stream);
+        if (manifest is null)
+        {
+            Console.WriteLine($"ERROR: Could not load manifest.json");
+            Debugger.Break();
+            return;
+        }
+
+        void RemoveExisting(List<DLLRecord> manifestRecords, List<KnownDLL> knownDLLs)
+        {
+            var toRemoveList = new List<KnownDLL>();
+            foreach (var knownDLL in knownDLLs)
+            {
+                if (manifestRecords.Any(x => x.MD5Hash.Equals(knownDLL.Hash, StringComparison.InvariantCultureIgnoreCase)) == true)
+                {
+                    toRemoveList.Add(knownDLL);
+                }
+            }
+
+            foreach (var toRemove in toRemoveList)
+            {
+                knownDLLs.Remove(toRemove);
+            }
+        }
+
+        RemoveExisting(manifest.DLSS, knownDLLs["DLSS"]);
+        RemoveExisting(manifest.DLSS_G, knownDLLs["DLSS_G"]);
+        RemoveExisting(manifest.DLSS_D, knownDLLs["DLSS_D"]);
+        RemoveExisting(manifest.FSR_31_DX12, knownDLLs["FSR_31_DX12"]);
+        RemoveExisting(manifest.FSR_31_VK, knownDLLs["FSR_31_VK"]);
+        RemoveExisting(manifest.XeSS, knownDLLs["XeSS"]);
+        RemoveExisting(manifest.XeSS_FG, knownDLLs["XeSS_FG"]);
+        RemoveExisting(manifest.XeLL, knownDLLs["XeLL"]);
+    }
+
+    // Write it out.
+    File.WriteAllText(knownDLLSourcesMissingFile, JsonSerializer.Serialize(knownDLLs, new JsonSerializerOptions() { WriteIndented = true }));
+
 }
 catch (Exception ex)
 {

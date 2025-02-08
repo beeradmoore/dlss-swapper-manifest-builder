@@ -5,7 +5,13 @@
         <TargetFramework>net9.0</TargetFramework>
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
+		<DefineConstants>NEW_DLL_HANDLER_TOOL</DefineConstants>
     </PropertyGroup>
+
+    <ItemGroup>
+      <Compile Include="..\..\DLSS Swapper Manifest Builder\DLSS Swapper Manifest Builder\DLLRecord.cs" Link="DLLRecord.cs" />
+      <Compile Include="..\..\DLSS Swapper Manifest Builder\DLSS Swapper Manifest Builder\Manifest.cs" Link="Manifest.cs" />
+    </ItemGroup>
 
     <ItemGroup>
       <PackageReference Include="Octokit" Version="14.0.0" />
