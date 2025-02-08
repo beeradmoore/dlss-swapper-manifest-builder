@@ -89,7 +89,7 @@ var manifestJson = JsonSerializer.Serialize(manifest, new JsonSerializerOptions(
 File.WriteAllText(DLLProcessor.OutputManifestPath, manifestJson);
 
 // Copy to root of the repo
-var repoRootManifestPath = Path.Combine("..", "..", "..", "..", "..", "manifest.json");
+var repoRootManifestPath = Path.Combine("..", "..", "..", "..", "..", "..", "manifest.json");
 File.Copy(DLLProcessor.OutputManifestPath, repoRootManifestPath, true);
 
 return 1;
