@@ -58,6 +58,7 @@ if (File.Exists(handledIssuesFile))
 // Some issues are triggered as handled manually so they will be skipped lower.
 var manuallyHandledIssues = new int[]
 {
+    688, 672, 665, 656, 653, 646,
     621, 610, 561, 544, 543, 542, 499, 497, 456, 435,
     434, 430, 422, 420, 398, 393, 392, 375, 349, 346,
     340, 339, 328, 318, 289, 281, 277, 276, 273, 262,
@@ -138,7 +139,7 @@ try
     var issues = new List<LocalIssue>();
 
     // Cache issues data as we are using unauthenticated requests.
-    if (File.Exists(githubIssuesFile))
+    if (false && File.Exists(githubIssuesFile))
     {
         using (var stream = File.OpenRead(githubIssuesFile))
         {

@@ -33,26 +33,29 @@ internal class KnownDLL : IEquatable<KnownDLL>
     }
 
 #if !NEW_DLL_HANDLER_TOOL
-    public DLSS_Swapper_Manifest_Builder.CompactKnownDLL ToCompactKnownDLL()
+    public DLSS_Swapper_Manifest_Builder.HashedKnownDLL ToHashedKnownDLL()
     {
-        var toReturn = new DLSS_Swapper_Manifest_Builder.CompactKnownDLL()
+        var toReturn = new DLSS_Swapper_Manifest_Builder.HashedKnownDLL()
         {
             Hash = Hash,
+            Version = Version,
         };
 
         foreach (var library in Sources.Keys)
         {   
             foreach (var game in Sources[library])
             {
-                using (var md5 = MD5.Create())
+                if (toReturn.Sources.ContainsKey(library) == false)
                 {
-                    var inputBytes = Encoding.ASCII.GetBytes($"{library}-{game}");
-                    var hashBytes = md5.ComputeHash(inputBytes);
-                    toReturn.Sources.Add(BitConverter.ToString(hashBytes).Replace("-", "").ToUpperInvariant());
+                    toReturn.Sources[library] = new List<string>();
                 }
+
+                var gameBytes = Encoding.UTF8.GetBytes(game);
+
+                // We Base64 encode the game title
+                toReturn.Sources[library].Add(Convert.ToBase64String(gameBytes));                
             }
         }
-
 
         return toReturn;
     }

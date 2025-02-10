@@ -95,14 +95,14 @@ using (var stream = File.OpenRead(knownDLLSourcesMissingPath))
         return 0;
     }
 
-    manifest.KnownDLLs["DLSS"] = knownDLLSourcesMissing["DLSS"].Select(x => x.ToCompactKnownDLL()).ToList();
-    manifest.KnownDLLs["DLSS_G"] = knownDLLSourcesMissing["DLSS_G"].Select(x => x.ToCompactKnownDLL()).ToList();
-    manifest.KnownDLLs["DLSS_D"] = knownDLLSourcesMissing["DLSS_D"].Select(x => x.ToCompactKnownDLL()).ToList();
-    manifest.KnownDLLs["FSR_31_DX12"] = knownDLLSourcesMissing["FSR_31_DX12"].Select(x => x.ToCompactKnownDLL()).ToList();
-    manifest.KnownDLLs["FSR_31_VK"] = knownDLLSourcesMissing["FSR_31_VK"].Select(x => x.ToCompactKnownDLL()).ToList();
-    manifest.KnownDLLs["XeSS"] = knownDLLSourcesMissing["XeSS"].Select(x => x.ToCompactKnownDLL()).ToList();
-    manifest.KnownDLLs["XeLL"] = knownDLLSourcesMissing["XeLL"].Select(x => x.ToCompactKnownDLL()).ToList();
-    manifest.KnownDLLs["XeSS_FG"] = knownDLLSourcesMissing["XeSS_FG"].Select(x => x.ToCompactKnownDLL()).ToList();
+    manifest.KnownDLLs.DLSS = knownDLLSourcesMissing["DLSS"].Select(x => x.ToHashedKnownDLL()).ToList();
+    manifest.KnownDLLs.DLSS_G = knownDLLSourcesMissing["DLSS_G"].Select(x => x.ToHashedKnownDLL()).ToList();
+    manifest.KnownDLLs.DLSS_D = knownDLLSourcesMissing["DLSS_D"].Select(x => x.ToHashedKnownDLL()).ToList();
+    manifest.KnownDLLs.FSR_31_DX12 = knownDLLSourcesMissing["FSR_31_DX12"].Select(x => x.ToHashedKnownDLL()).ToList();
+    manifest.KnownDLLs.FSR_31_VK = knownDLLSourcesMissing["FSR_31_VK"].Select(x => x.ToHashedKnownDLL()).ToList();
+    manifest.KnownDLLs.XeSS = knownDLLSourcesMissing["XeSS"].Select(x => x.ToHashedKnownDLL()).ToList();
+    manifest.KnownDLLs.XeLL = knownDLLSourcesMissing["XeLL"].Select(x => x.ToHashedKnownDLL()).ToList();
+    manifest.KnownDLLs.XeSS_FG = knownDLLSourcesMissing["XeSS_FG"].Select(x => x.ToHashedKnownDLL()).ToList();
 }
 
 var manifestJson = JsonSerializer.Serialize(manifest, new JsonSerializerOptions() { WriteIndented = true });
