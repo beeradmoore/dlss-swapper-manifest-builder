@@ -10,12 +10,14 @@ var knownDllHashes = new List<string>();
 var handledIssues = new List<int>();
 var knownDLLs = new Dictionary<string, List<KnownDLL>>();
 
-
 var knownDLLHashesFile = "../../../../../../known_dll_hashes.txt";
 var handledIssuesFile = "../../../../handled_issues.json";
 var knownDLLSourcesFile = "../../../../../../known_dll_sources.json";
 var knownDLLSourcesMissingFile = "../../../../../../known_dll_sources_missing.json";
 var githubIssuesFile = "github_issues.json";
+
+// This is read-only token for issues on a publicly readable repository, so it isn't super secret
+var authTokenPath = "../../../../token.txt";
 
 // Load known DLL hashes
 if (File.Exists(knownDLLHashesFile))
@@ -58,6 +60,8 @@ if (File.Exists(handledIssuesFile))
 // Some issues are triggered as handled manually so they will be skipped lower.
 var manuallyHandledIssues = new int[]
 {
+    795, 791, 788, 785, 778, 772, 760, 768, 747, 734,
+    721, 718, 717, 716, 715, 708, 705,
     688, 672, 665, 656, 653, 646,
     621, 610, 561, 544, 543, 542, 499, 497, 456, 435,
     434, 430, 422, 420, 398, 393, 392, 375, 349, 346,
@@ -139,20 +143,33 @@ try
     var issues = new List<LocalIssue>();
 
     // Cache issues data as we are using unauthenticated requests.
-    if (false && File.Exists(githubIssuesFile))
+    if (File.Exists(githubIssuesFile))
     {
-        using (var stream = File.OpenRead(githubIssuesFile))
+        // Only load from cache if its less than an hour old, otherwise we will fetch new below.
+        var fileInfo = new FileInfo(githubIssuesFile);
+        var hoursSinceLastModified = (DateTime.Now - fileInfo.LastWriteTime).TotalHours;
+        if (hoursSinceLastModified < 1.0)
         {
-            var newIssues = JsonSerializer.Deserialize<List<LocalIssue>>(stream);
-            if (newIssues is not null)
+            using (var stream = File.OpenRead(githubIssuesFile))
             {
-                issues.AddRange(newIssues);
+                var newIssues = JsonSerializer.Deserialize<List<LocalIssue>>(stream);
+                if (newIssues is not null)
+                {
+                    issues.AddRange(newIssues);
+                }
             }
         }
     }
-    else
+
+    if (issues.Count == 0)
     {
         var client = new GitHubClient(new ProductHeaderValue("dlss-swapper-manifest-builder"));
+
+        if (File.Exists(authTokenPath))
+        {
+            var token = File.ReadAllText(authTokenPath);
+            client.Credentials = new Credentials(token);
+        }
 
         var owner = "beeradmoore";
         var repository = "dlss-swapper-manifest-builder";
@@ -162,7 +179,7 @@ try
             State = ItemStateFilter.All,
             SortProperty = IssueSort.Created,
             SortDirection = SortDirection.Descending,
-            Since = new DateTimeOffset(2025, 02, 07, 0, 0, 0, TimeSpan.Zero), // Last updateed
+            Since = new DateTimeOffset(2025, 02, 15, 0, 0, 0, TimeSpan.Zero), // Last updateed
         };
 
         var newIssues = await client.Issue.GetAllForRepository(owner, repository, issueRequest);
@@ -351,6 +368,11 @@ try
             }
             else
             {
+                Console.WriteLine($"Number: {issue.Number}");
+                Console.WriteLine($"https://github.com/beeradmoore/dlss-swapper-manifest-builder/issues/{issue.Number}");
+                Console.WriteLine($"============================");
+                Console.WriteLine(issue.Body);
+                Console.WriteLine($"============================");
                 Debugger.Break();
             }
         }
