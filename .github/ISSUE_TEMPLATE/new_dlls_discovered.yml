@@ -13,12 +13,12 @@ body:
   attributes:
     label: New DLL information
     description: |
-      Please paste the data from DLSS Swappers `Step 3: Copoy Body` here. Do not leave extra comments in this area, please do that below
+      Please paste the data from DLSS Swappers `Step 3: Copoy Body` here. Do not leave extra comments in this area, please do that in `Additional notes`
   validations:
     required: true
     
 - type: textarea
   id: additional_notes
   attributes:
-    label: Additional notes
-    description: If there is anything extra you'd like to let us know please leave it here
+    label: Additional notes (optional)
+    description: If there is anything extra you'd like to say about this report please leave it here
