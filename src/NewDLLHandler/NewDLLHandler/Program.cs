@@ -191,7 +191,7 @@ try
         }
     }
 
-    var dllVersionRegex = new Regex(@"^-- (?<dll_name>.*), Version: (?<version>.*), Hash: (?<hash>([A-F0-9]*))$");
+    var dllVersionRegex = new Regex(@"^-- (?<dll_name>.*), Version: (?<version>.*), Hash: (?<hash>([A-F0-9]{32}))$");
     var titleRegex = new Regex(@"^\[NEW DLLs\] Found on (\d*)-(\d*)-(\d*)$");
     var libraryRegex = new Regex(@"^(.*)Library: (?<library>.*)$");
     var libraryPrefix = "Library:";
@@ -275,6 +275,7 @@ try
             if (currentLibrary == string.Empty)
             {
                 Debugger.Break();
+                continue;
             }
 
 
