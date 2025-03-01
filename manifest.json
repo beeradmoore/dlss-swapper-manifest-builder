@@ -1767,6 +1767,20 @@
       "file_size": 7595560,
       "zip_file_size": 3791822,
       "dll_source": "NVIDIA Driver"
+    },
+    {
+      "version": "310.2.1.0",
+      "version_number": 87257251370303488,
+      "additional_label": "",
+      "md5_hash": "96CB06FF5A84E4E90591973BF99A7D45",
+      "zip_md5_hash": "4C556125C63F11C428CBF7C383022560",
+      "download_url": "https://dlss-swapper-downloads.beeradmoore.com/dlss_g/nvngx_dlssg_v310.2.1.0.zip",
+      "file_description": "NVIDIA DLSS-G MFGLW - DVS PRODUCTION",
+      "is_signature_valid": true,
+      "is_dev_file": false,
+      "file_size": 7597104,
+      "zip_file_size": 3792767,
+      "dll_source": ""
     }
   ],
   "fsr_31_dx12": [
