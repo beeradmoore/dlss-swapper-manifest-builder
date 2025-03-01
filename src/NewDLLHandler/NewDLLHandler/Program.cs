@@ -60,6 +60,8 @@ if (File.Exists(handledIssuesFile))
 // Some issues are triggered as handled manually so they will be skipped lower.
 var manuallyHandledIssues = new int[]
 {
+    1013,831,
+
     795, 791, 788, 785, 778, 772, 760, 768, 747, 734,
     721, 718, 717, 716, 715, 708, 705,
     688, 672, 665, 656, 653, 646,
