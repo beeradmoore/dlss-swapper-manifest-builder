@@ -1,0 +1,23 @@
+name: New DLLs Found
+description: Create a report to help us import these DLLs into DLSS Swapper
+title: "[NEW DLLs] "
+labels: ["New DLLs"]
+
+body:
+- type: markdown
+  attributes:
+    value: Thank you for taking the time to report new DLLs from DLSS Swapper
+
+- type: textarea
+  id: dlss_swapper_data
+  attributes:
+    label: New DLL information
+    description: Please paste the data from "Step 3: Body" in DLSS Swapper here. Do not leave extra comments in this area, please do that below
+  validations:
+    required: true
+    
+- type: textarea
+  id: additional_notes
+  attributes:
+    label: Additional notes
+    description: If there is anything extra you'd like to let us know please leave it here
