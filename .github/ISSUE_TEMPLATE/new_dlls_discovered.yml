@@ -12,7 +12,8 @@ body:
   id: dlss_swapper_data
   attributes:
     label: New DLL information
-    description: Please paste the data from DLSS Swappers "Step 3: Copoy Body" here. Do not leave extra comments in this area, please do that below
+    description: |
+      Please paste the data from DLSS Swappers `Step 3: Copoy Body` here. Do not leave extra comments in this area, please do that below
   validations:
     required: true
     
