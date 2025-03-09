@@ -60,6 +60,7 @@ if (File.Exists(handledIssuesFile))
 // Some issues are triggered as handled manually so they will be skipped lower.
 var manuallyHandledIssues = new int[]
 {
+    1096, 1083,1055,
     1013,831,
 
     795, 791, 788, 785, 778, 772, 760, 768, 747, 734,
@@ -225,6 +226,7 @@ try
         var currentLibrary = string.Empty;
         var currentGame = string.Empty;
         var addedAtLeastOne = false;
+        var isReadingAdditionalComments = false;
         foreach (var bodyLine in bodyLines)
         {
             if (string.IsNullOrWhiteSpace(bodyLine) == true)
@@ -245,6 +247,29 @@ try
                 {
                     continue;
                 }
+            }
+
+            if (isReadingAdditionalComments)
+            {
+                if (bodyLine == "_No response_")
+                {
+                    continue;
+                }
+
+                Console.WriteLine($"Additional notes: {bodyLine}");
+                continue;
+            }
+
+            // Just the header, skip it.
+            if (bodyLine == "### New DLL information")
+            {
+                continue;
+            }
+
+            if (bodyLine == "### Additional notes (optional)")
+            {
+                isReadingAdditionalComments = true;
+                continue;
             }
 
             if (bodyLine.Contains(libraryPrefix))
