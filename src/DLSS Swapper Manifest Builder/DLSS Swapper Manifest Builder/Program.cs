@@ -60,30 +60,35 @@ var xessProcessor = new XeSSProcessor();
 var xellProcessor = new XeLLProcessor();
 var xessfgProcessor = new XeSSFGProcessor();
 
+
 await dlssProcessor.DownloadExistingRecordsAsync(manifest.DLSS);
-manifest.DLSS = dlssProcessor.ProcessLocalFiles(manifest.DLSS);
-
 await dlssgProcessor.DownloadExistingRecordsAsync(manifest.DLSS_G);
-manifest.DLSS_G = dlssgProcessor.ProcessLocalFiles(manifest.DLSS_G);
-
 await dlssdProcessor.DownloadExistingRecordsAsync(manifest.DLSS_D);
-manifest.DLSS_D = dlssdProcessor.ProcessLocalFiles(manifest.DLSS_D);
-
 await fsr31dx12Processor.DownloadExistingRecordsAsync(manifest.FSR_31_DX12);
-manifest.FSR_31_DX12 = fsr31dx12Processor.ProcessLocalFiles(manifest.FSR_31_DX12);
-
 await fsr31vkProcessor.DownloadExistingRecordsAsync(manifest.FSR_31_VK);
-manifest.FSR_31_VK = fsr31vkProcessor.ProcessLocalFiles(manifest.FSR_31_VK);
-
 await xessProcessor.DownloadExistingRecordsAsync(manifest.XeSS);
-manifest.XeSS = xessProcessor.ProcessLocalFiles(manifest.XeSS);
-
 await xellProcessor.DownloadExistingRecordsAsync(manifest.XeLL);
-manifest.XeLL = xellProcessor.ProcessLocalFiles(manifest.XeLL);
-
 await xessfgProcessor.DownloadExistingRecordsAsync(manifest.XeSS_FG);
-manifest.XeSS_FG = xessfgProcessor.ProcessLocalFiles(manifest.XeSS_FG);
 
+/*
+manifest.DLSS.Clear();
+manifest.DLSS_G.Clear();
+manifest.DLSS_D.Clear();
+manifest.FSR_31_DX12.Clear();
+manifest.FSR_31_VK.Clear();
+manifest.XeSS.Clear();
+manifest.XeLL.Clear();
+manifest.XeSS_FG.Clear();
+*/
+
+manifest.DLSS = dlssProcessor.ProcessLocalFiles(manifest.DLSS);
+manifest.DLSS_G = dlssgProcessor.ProcessLocalFiles(manifest.DLSS_G);
+manifest.DLSS_D = dlssdProcessor.ProcessLocalFiles(manifest.DLSS_D);
+manifest.FSR_31_DX12 = fsr31dx12Processor.ProcessLocalFiles(manifest.FSR_31_DX12);
+manifest.FSR_31_VK = fsr31vkProcessor.ProcessLocalFiles(manifest.FSR_31_VK);
+manifest.XeSS = xessProcessor.ProcessLocalFiles(manifest.XeSS);
+manifest.XeLL = xellProcessor.ProcessLocalFiles(manifest.XeLL);
+manifest.XeSS_FG = xessfgProcessor.ProcessLocalFiles(manifest.XeSS_FG);
 
 var knownDLLSourcesMissingPath = Path.Combine("..", "..", "..", "..", "..", "..", "known_dll_sources_missing.json");
 using (var stream = File.OpenRead(knownDLLSourcesMissingPath))

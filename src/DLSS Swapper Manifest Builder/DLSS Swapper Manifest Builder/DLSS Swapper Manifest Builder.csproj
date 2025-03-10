@@ -9,6 +9,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Include="..\..\..\..\dlss-swapper\src\Data\GameAssetType.cs" Link="GameAssetType.cs" />
     <Compile Include="..\..\NewDLLHandler\NewDLLHandler\KnownDLL.cs" Link="KnownDLL.cs" />
   </ItemGroup>
 

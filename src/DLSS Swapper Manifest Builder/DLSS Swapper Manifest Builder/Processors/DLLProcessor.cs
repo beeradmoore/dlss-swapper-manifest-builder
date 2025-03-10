@@ -162,7 +162,7 @@ public abstract class DLLProcessor
                         var dllExtractFilename = Path.Combine(dllExtractPath, $"{dllEntry.Crc32}_{ExpectedDLLName}");
                         dllEntry.ExtractToFile(dllExtractFilename, false);
 
-                        var dllRecord = DLLRecord.FromFile(dllExtractFilename);
+                        var dllRecord = DLLRecord.FromFile(dllExtractFilename, ExpectedDLLName);
                         // If the file is imported from SDKs, add its source name here.
                         if (file.Contains(InputSDKsFilesPath) == true)
                         {
@@ -218,7 +218,7 @@ public abstract class DLLProcessor
                         var dllExtractFilename = Path.Combine(dllExtractPath, $"{dllEntry.Crc32}_{ExpectedDLLName}");
                         dllEntry.ExtractToFile(dllExtractFilename, false);
 
-                        var dllRecord = DLLRecord.FromFile(dllExtractFilename);
+                        var dllRecord = DLLRecord.FromFile(dllExtractFilename, ExpectedDLLName);
                         dllRecord.IsDevFile = true;
                         // Default to the filename to make it easy to track SDK source
 
@@ -259,8 +259,11 @@ public abstract class DLLProcessor
         return dllRecordsList;
     }
 
-    public string GetMD5Hash(Stream stream)
+    string GetMD5Hash(Stream stream)
     {
+        // If you don't reset the position the hash will be invalid.
+        stream.Position = 0;
+
         using (var md5 = MD5.Create())
         {
             var hash = md5.ComputeHash(stream);
@@ -270,6 +273,10 @@ public abstract class DLLProcessor
 
     protected void CreateZipFromRecord(DLLRecord dllRecord)
     {
+        // Old zip filename. Moving to new name to support Streamline and DirectStorage
+        // as well as match name in DLSS Swapper to make manual import easier.
+        var newZipFilename = $"{dllRecord.GetRecordSimpleType()}_v{dllRecord.Version}_{dllRecord.MD5Hash}.zip";
+        /*
         // Create zip output
         var newZipFilename = $"{Path.GetFileNameWithoutExtension(ExpectedDLLName)}_v{dllRecord.Version}";
 
@@ -284,7 +291,8 @@ public abstract class DLLProcessor
         }
 
         newZipFilename += ".zip";
-        
+        */
+
         var zipOutputFile = Path.Combine(OutputZipPath, newZipFilename);
 
         Console.WriteLine($"Creating zip: {zipOutputFile}");

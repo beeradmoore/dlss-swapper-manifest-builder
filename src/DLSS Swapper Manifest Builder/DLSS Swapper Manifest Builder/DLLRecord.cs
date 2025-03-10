@@ -1,13 +1,19 @@
-﻿using System;
+﻿using DLSS_Swapper.Data;
+#if !NEW_DLL_HANDLER_TOOL
+using DLSS_Swapper_Manifest_Builder.FSR31;
+#endif
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Diagnostics;
 using System.Linq;
+using System.Reflection.Metadata.Ecma335;
 using System.Runtime.InteropServices;
 using System.Security.Cryptography;
 using System.Security.Cryptography.Pkcs;
 using System.Text;
 using System.Text.Json.Serialization;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace DLSS_Swapper_Manifest_Builder;
@@ -22,6 +28,12 @@ public class DLLRecord : IComparable<DLLRecord>
 
     [JsonPropertyName("version_number")]
     public ulong VersionNumber { get; set; } = 0;
+
+    [JsonPropertyName("internal_name")]
+    public string InternalName { get; set; } = string.Empty;
+
+    [JsonPropertyName("internal_name_extra")]
+    public string InternalNameExtra { get; set; } = string.Empty;
 
     [JsonPropertyName("additional_label")]
     public string AdditionalLabel { get; set; } = string.Empty;
@@ -38,7 +50,7 @@ public class DLLRecord : IComparable<DLLRecord>
     [JsonPropertyName("file_description")]
     public string FileDescription { get; set; } = string.Empty;
 
-    [JsonIgnore]
+    [JsonPropertyName("signed_datetime")]
     public DateTime SignedDateTime { get; set; } = DateTime.MinValue;
 
     [JsonPropertyName("is_signature_valid")]
@@ -56,16 +68,43 @@ public class DLLRecord : IComparable<DLLRecord>
     [JsonPropertyName("dll_source")]
     public string DllSource { get; set; } = string.Empty;
 
+    [JsonIgnore]
+    public GameAssetType AssetType { get; set; } = GameAssetType.Unknown;
+
     public DLLRecord()
     {
 
     }
 
+    [JsonIgnore]
+    readonly static Regex _dlssCLMatcher = new Regex(@"^(?<CL>CL(\s*)(\d*))(\s*)(?<extra>.*)$", RegexOptions.Compiled | RegexOptions.IgnoreCase);
+
 #if !NEW_DLL_HANDLER_TOOL
-    public static DLLRecord FromFile(string filename)
+    public static DLLRecord FromFile(string filename, string expectedDLLName)
     {
         var dllRecord = new DLLRecord();
         dllRecord.Filename = filename;
+
+        dllRecord.AssetType = expectedDLLName switch
+        {
+            "nvngx_dlss.dll" => GameAssetType.DLSS,
+            "nvngx_dlssg.dll" => GameAssetType.DLSS_G,
+            "nvngx_dlssd.dll" => GameAssetType.DLSS_D,
+            "amd_fidelityfx_dx12.dll" => GameAssetType.FSR_31_DX12,
+            "amd_fidelityfx_vk.dll" => GameAssetType.FSR_31_VK,
+            "libxess.dll" => GameAssetType.XeSS,
+            "libxell.dll" => GameAssetType.XeLL,
+            "libxess_fg.dll" => GameAssetType.XeSS_FG,
+            _ => GameAssetType.Unknown,
+        };
+
+        if (dllRecord.AssetType == GameAssetType.Unknown)
+        {
+            throw new Exception($"Error processing dll: Unknown asset type, {filename}");
+        }
+
+
+        
         dllRecord.IsSignatureValid = WinTrust.VerifyEmbeddedSignature(filename);
         //if (ignoreInvalid == false && IsSignatureValid == false)
         if (dllRecord.IsSignatureValid == false)
@@ -85,6 +124,8 @@ public class DLLRecord : IComparable<DLLRecord>
         dllRecord.FileSize = fileInfo.Length;
 
         dllRecord.SignedDateTime = WinCrypt.GetSignedDateTime(filename);
+
+
 
         var versionInfo = FileVersionInfo.GetVersionInfo(filename);
 
@@ -116,6 +157,112 @@ public class DLLRecord : IComparable<DLLRecord>
             }
         }
 
+
+        // Internal name stuff here
+
+        if (dllRecord.AssetType == GameAssetType.DLSS)
+        {
+            if (versionInfo.OriginalFilename == "FineTune")
+            {
+                dllRecord.InternalName = "FineTune";
+            }
+            else if (string.IsNullOrEmpty(versionInfo.OriginalFilename) == false)
+            {
+                var match = _dlssCLMatcher.Match(versionInfo.OriginalFilename);
+                if (match.Success)
+                {
+                    dllRecord.InternalName = match.Groups["CL"].Value.Trim();
+                    dllRecord.InternalNameExtra = match.Groups["extra"].Value.Trim();
+                }
+                else
+                {
+                    Debugger.Break();
+                }
+            }
+            else
+            {
+                Debugger.Break();
+            }
+        }
+        else if (dllRecord.AssetType == GameAssetType.DLSS_G)
+        {
+            if (string.IsNullOrEmpty(versionInfo.OriginalFilename) == false)
+            {
+                if (versionInfo.OriginalFilename.StartsWith("SHA:"))
+                {
+                    // NOOP
+                }
+                else
+                {
+                    var match = _dlssCLMatcher.Match(versionInfo.OriginalFilename);
+                    if (match.Success)
+                    {
+                        dllRecord.InternalName = match.Groups["CL"].Value.Trim();
+                        dllRecord.InternalNameExtra = match.Groups["extra"].Value.Trim();
+                    }
+                    else
+                    {
+                        Debugger.Break();
+                    }
+                }
+            }
+            else
+            {
+                Debugger.Break();
+            }
+        }
+        else if (dllRecord.AssetType == GameAssetType.DLSS_D)
+        {
+            if (string.IsNullOrEmpty(versionInfo.OriginalFilename) == false)
+            {
+                var match = _dlssCLMatcher.Match(versionInfo.OriginalFilename);
+                if (match.Success)
+                {
+                    dllRecord.InternalName = match.Groups["CL"].Value.Trim();
+                    dllRecord.InternalNameExtra = match.Groups["extra"].Value.Trim();
+                }
+                else
+                {
+                    Debugger.Break();
+                }
+            }
+            else
+            {
+                Debugger.Break();
+            }
+        }
+        else if (dllRecord.AssetType == GameAssetType.FSR_31_DX12 || dllRecord.AssetType == GameAssetType.FSR_31_VK)
+        {
+            var fsr31Helper = new FSR31Helper();
+            var versions = fsr31Helper.GetVersions(dllRecord.Filename);
+
+            if (versions.Count == 2)
+            {
+                dllRecord.InternalName = versions[0] ?? string.Empty;
+                dllRecord.InternalNameExtra = versions[1] ?? string.Empty;
+            }
+            else
+            {
+                Debugger.Break();
+            }
+        }
+        else if (dllRecord.AssetType == GameAssetType.XeSS)
+        {
+            // NOOP
+        }
+        else if (dllRecord.AssetType == GameAssetType.XeLL)
+        {
+            // NOOP
+        }
+        else if (dllRecord.AssetType == GameAssetType.XeSS_FG)
+        {
+            // NOOP
+        }
+        else
+        {
+            Debugger.Break();
+        }
+        
         return dllRecord;
     }
 #endif
@@ -138,5 +285,21 @@ public class DLLRecord : IComparable<DLLRecord>
         }
 
         return VersionNumber.CompareTo(other.VersionNumber);
+    }
+
+    internal string GetRecordSimpleType()
+    {
+        return AssetType switch
+        {
+            GameAssetType.DLSS => "dlss",
+            GameAssetType.DLSS_G => "dlss_g",
+            GameAssetType.DLSS_D => "dlss_d",
+            GameAssetType.FSR_31_DX12 => "fsr_31_dx12",
+            GameAssetType.FSR_31_VK => "fsr_31_vk",
+            GameAssetType.XeSS => "xess",
+            GameAssetType.XeLL => "xell",
+            GameAssetType.XeSS_FG => "xess_fg",
+            _ => string.Empty,
+        };
     }
 }
