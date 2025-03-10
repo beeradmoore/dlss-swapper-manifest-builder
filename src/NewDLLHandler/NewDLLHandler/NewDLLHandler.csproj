@@ -9,6 +9,7 @@
     </PropertyGroup>
 
     <ItemGroup>
+      <Compile Include="..\..\..\..\dlss-swapper\src\Data\GameAssetType.cs" Link="GameAssetType.cs" />
       <Compile Include="..\..\DLSS Swapper Manifest Builder\DLSS Swapper Manifest Builder\DLLRecord.cs" Link="DLLRecord.cs" />
       <Compile Include="..\..\DLSS Swapper Manifest Builder\DLSS Swapper Manifest Builder\HashedKnownDLL.cs" Link="HashedKnownDLL.cs" />
       <Compile Include="..\..\DLSS Swapper Manifest Builder\DLSS Swapper Manifest Builder\KnownDLLs.cs" Link="KnownDLLs.cs" />

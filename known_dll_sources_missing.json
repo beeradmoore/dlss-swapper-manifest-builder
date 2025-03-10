@@ -16,7 +16,8 @@
           "Indiana Jones and the Great Circle"
         ],
         "ManuallyAdded": [
-          "Games"
+          "Games",
+          "Indiana Jones and the Great Circle"
         ]
       }
     },
@@ -440,6 +441,16 @@
     },
     {
       "dll_type": "DLSS",
+      "version": "3.1.11.0",
+      "hash": "13B27C26EE58D7BA32D3295DFCDB8DC1",
+      "sources": {
+        "ManuallyAdded": [
+          "The Hidden Ones"
+        ]
+      }
+    },
+    {
+      "dll_type": "DLSS",
       "version": "3.1.1.0",
       "hash": "1441710FCF5E9F64D745FFADE7EA02C1",
       "sources": {
@@ -603,6 +614,9 @@
         ],
         "EpicGamesStore": [
           "UNCHARTED\u2122: Legacy of Thieves Collection"
+        ],
+        "ManuallyAdded": [
+          "Uncharted"
         ]
       }
     },
@@ -1170,7 +1184,8 @@
           "Crysis Remastered"
         ],
         "ManuallyAdded": [
-          "Bin64"
+          "Bin64",
+          "Crysis Remastered"
         ]
       }
     },
@@ -1681,6 +1696,16 @@
     },
     {
       "dll_type": "DLSS_G",
+      "version": "1.0.2.0",
+      "hash": "7EB9CBF83ED11F437FE67BF2B41C55F7",
+      "sources": {
+        "Steam": [
+          "Conqueror\u0027s Blade"
+        ]
+      }
+    },
+    {
+      "dll_type": "DLSS_G",
       "version": "0.0.0.0",
       "hash": "D41D8CD98F00B204E9800998ECF8427E",
       "sources": {
@@ -2170,6 +2195,9 @@
       "sources": {
         "Steam": [
           "Grand Theft Auto V Enhanced"
+        ],
+        "ManuallyAdded": [
+          "Grand Theft Auto V Enhanced"
         ]
       }
     },
@@ -2639,6 +2667,16 @@
     },
     {
       "dll_type": "XeSS",
+      "version": "1.0.0.56",
+      "hash": "008FF6C024FA028B90CF0F8F1A57568E",
+      "sources": {
+        "Steam": [
+          "Conqueror\u0027s Blade"
+        ]
+      }
+    },
+    {
+      "dll_type": "XeSS",
       "version": "1.0.0.49",
       "hash": "378B3CDE70136725DB8A6320B0C9E75A",
       "sources": {
@@ -2699,6 +2737,12 @@
       "sources": {
         "EpicGamesStore": [
           "Marvel Rivals"
+        ],
+        "ManuallyAdded": [
+          "Diablo IV"
+        ],
+        "Steam": [
+          "Diablo\u00AE IV"
         ]
       }
     }
@@ -2728,6 +2772,12 @@
       "sources": {
         "EpicGamesStore": [
           "Marvel Rivals"
+        ],
+        "ManuallyAdded": [
+          "Diablo IV"
+        ],
+        "Steam": [
+          "Diablo\u00AE IV"
         ]
       }
     }
