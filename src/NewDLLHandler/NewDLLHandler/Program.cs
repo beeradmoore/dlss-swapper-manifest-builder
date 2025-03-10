@@ -182,7 +182,7 @@ try
             State = ItemStateFilter.All,
             SortProperty = IssueSort.Created,
             SortDirection = SortDirection.Descending,
-            Since = new DateTimeOffset(2025, 02, 15, 0, 0, 0, TimeSpan.Zero), // Last updateed
+            Since = new DateTimeOffset(2025, 03, 09, 0, 0, 0, TimeSpan.Zero), // Last updateed
         };
 
         var newIssues = await client.Issue.GetAllForRepository(owner, repository, issueRequest);
