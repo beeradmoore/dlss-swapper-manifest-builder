@@ -16,6 +16,7 @@ internal class XeLLProcessor : DLLProcessor
     };
     public override string[] ExpectedPrefix => new string[]
     {
+        "bin/",
         "/",
     };
     public override string[] ExpectedDevPrefix => new string[]

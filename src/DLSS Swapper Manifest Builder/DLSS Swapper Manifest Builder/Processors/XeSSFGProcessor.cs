@@ -16,6 +16,7 @@ internal class XeSSFGProcessor : DLLProcessor
     };
     public override string[] ExpectedPrefix => new string[]
     {
+        "bin/",
         "/",
     };
     public override string[] ExpectedDevPrefix => new string[]
