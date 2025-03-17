@@ -2474,6 +2474,23 @@
       "file_size": 120278928,
       "zip_file_size": 93400387,
       "dll_source": "Marvel Rivals"
+    },
+    {
+      "version": "2.0.1.41",
+      "version_number": 562949953486889,
+      "internal_name": "",
+      "internal_name_extra": "",
+      "additional_label": "",
+      "md5_hash": "F9E8BCAB719E249BA8BD50414D42143F",
+      "zip_md5_hash": "1107B37B4083E0D5737B5AF588A52C21",
+      "download_url": "https://dlss-swapper-downloads.beeradmoore.com/xess/xess_v2.0.1.41_F9E8BCAB719E249BA8BD50414D42143F.zip",
+      "file_description": "XeSS SDK",
+      "signed_datetime": "2025-03-12T17:49:25Z",
+      "is_signature_valid": true,
+      "is_dev_file": false,
+      "file_size": 77771112,
+      "zip_file_size": 59740958,
+      "dll_source": "XeSS_SDK_2.0.1.zip"
     }
   ],
   "xell": [
@@ -2493,6 +2510,23 @@
       "file_size": 237968,
       "zip_file_size": 76328,
       "dll_source": "Marvel Rivals"
+    },
+    {
+      "version": "1.1.0.6",
+      "version_number": 281479271677958,
+      "internal_name": "",
+      "internal_name_extra": "",
+      "additional_label": "",
+      "md5_hash": "B97327B6E9B8073DEAF4FA8CBB4286D2",
+      "zip_md5_hash": "340B6C3F9AFF06381A21FE001F0200F6",
+      "download_url": "https://dlss-swapper-downloads.beeradmoore.com/xell/xell_v1.1.0.6_B97327B6E9B8073DEAF4FA8CBB4286D2.zip",
+      "file_description": "XeLL SDK",
+      "signed_datetime": "2025-03-12T15:40:23Z",
+      "is_signature_valid": true,
+      "is_dev_file": false,
+      "file_size": 346984,
+      "zip_file_size": 113745,
+      "dll_source": "XeSS_SDK_2.0.1.zip"
     }
   ],
   "xess_fg": [
@@ -2512,6 +2546,23 @@
       "file_size": 59355536,
       "zip_file_size": 18026333,
       "dll_source": "Marvel Rivals"
+    },
+    {
+      "version": "1.1.0.19",
+      "version_number": 281479271677971,
+      "internal_name": "",
+      "internal_name_extra": "",
+      "additional_label": "",
+      "md5_hash": "947F3EB49F1B402374FE97F8B5728FFC",
+      "zip_md5_hash": "FB053FAABCF4D30738975752FF6AF127",
+      "download_url": "https://dlss-swapper-downloads.beeradmoore.com/xess_fg/xess_fg_v1.1.0.19_947F3EB49F1B402374FE97F8B5728FFC.zip",
+      "file_description": "XeSS Frame Generation SDK",
+      "signed_datetime": "2025-03-13T13:01:34Z",
+      "is_signature_valid": true,
+      "is_dev_file": false,
+      "file_size": 45557608,
+      "zip_file_size": 27493031,
+      "dll_source": "XeSS_SDK_2.0.1.zip"
     }
   ],
   "known_dlls": {
