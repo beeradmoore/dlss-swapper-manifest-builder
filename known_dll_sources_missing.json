@@ -1833,16 +1833,6 @@
   "DLSS_D": [
     {
       "dll_type": "DLSS_D",
-      "version": "310.2.1.0",
-      "hash": "E5311D6C46C2920E2D5347C029F60CB7",
-      "sources": {
-        "Steam": [
-          "Half-Life 2 RTX"
-        ]
-      }
-    },
-    {
-      "dll_type": "DLSS_D",
       "version": "310.1.0.0",
       "hash": "8BF9D0877BE6AA49779C8688A69C942B",
       "sources": {
