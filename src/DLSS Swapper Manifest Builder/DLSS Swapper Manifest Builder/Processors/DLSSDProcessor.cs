@@ -40,5 +40,6 @@ internal class DLSSDProcessor : DLLProcessor
         { "F2F968B15CD295D13D571D0D18170E10", "Star Wars Outlaws (via TechPowerUp)" }, // v3.7.20
         { "10C793F0B14EFEDC595838BB8A09FD28", "Cyberpunk 2077 2.21" }, // v310.1.0.0
         { "E6081B848EA68880DB8ADC83CDFB15DC", "NVIDIA Driver" }, // v310.2.0.0
+        { "E5311D6C46C2920E2D5347C029F60CB7", "Half-Life 2 RTX" }, // v310.2.1.0
     };
 }

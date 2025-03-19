@@ -1769,6 +1769,23 @@
       "file_size": 72957992,
       "zip_file_size": 36030730,
       "dll_source": "NVIDIA Driver"
+    },
+    {
+      "version": "310.2.1.0",
+      "version_number": 87257251370303488,
+      "internal_name": "CL 35520877",
+      "internal_name_extra": "",
+      "additional_label": "",
+      "md5_hash": "E5311D6C46C2920E2D5347C029F60CB7",
+      "zip_md5_hash": "22A38A04020F212ABDF1C9037C87DA5B",
+      "download_url": "https://dlss-swapper-downloads.beeradmoore.com/dlss_d/dlss_d_v310.2.1.0_E5311D6C46C2920E2D5347C029F60CB7.zip",
+      "file_description": "NVIDIA DLSS - DVS PRODUCTION",
+      "signed_datetime": "2025-02-10T19:14:02Z",
+      "is_signature_valid": true,
+      "is_dev_file": false,
+      "file_size": 72978992,
+      "zip_file_size": 36051529,
+      "dll_source": "Half-Life 2 RTX"
     }
   ],
   "dlss_g": [
