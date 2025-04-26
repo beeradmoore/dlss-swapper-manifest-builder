@@ -60,6 +60,10 @@ if (File.Exists(handledIssuesFile))
 // Some issues are triggered as handled manually so they will be skipped lower.
 var manuallyHandledIssues = new int[]
 {
+    1479, 1467, 1424, 1402, 1353, 1332, 1327, 1325,
+    1291, 1289, 1288, 1287, 1279, 1277, 1266, 1256,
+    1236, 1232, 1228, 1227, 1225, 1217, 1216, 
+
     1197, 1164, 1045,
     1096, 1083,1055,
     1013, 831,
@@ -348,6 +352,13 @@ try
 
                 var version = match.Groups["version"].Value.Trim();
                 var hash = match.Groups["hash"].Value.Trim();
+
+                if (version == "0.0.0.0")
+                {
+                    Console.WriteLine($"Unknown DLL version: {dll}");
+                    Debugger.Break();
+                    continue;
+                }
 
                 // Check if it is already added.
                 // If it is we update existing library/games
