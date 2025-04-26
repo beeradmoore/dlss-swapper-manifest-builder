@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DLSS_Swapper.Data;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Diagnostics;
@@ -337,5 +338,38 @@ public abstract class DLLProcessor
         }
 
         CreateZipFromRecord(dllRecord);
+    }
+
+    public void MoveOldToNew(IReadOnlyList<DLLRecord> dllRecords, GameAssetType assetType)
+    {
+        //var oldFiles = Directory.GetFiles(BaseInputPath, "*.zip").Select(x => x.Replace(BaseInputPath + "\\", string.Empty)).ToList();
+        foreach (var dllRecord in dllRecords)
+        {
+            dllRecord.AssetType = assetType;
+            var oldZipFilename = Path.Combine(BaseInputPath, Path.GetFileName(dllRecord.DownloadUrl));
+            if (File.Exists(oldZipFilename) == false)
+            {
+                Debugger.Break();
+            }
+            var newZipFilename = $"{dllRecord.GetRecordSimpleType()}_v{dllRecord.Version}_{dllRecord.MD5Hash}.zip";
+
+            var zipOutputFile = Path.Combine(OutputZipPath, newZipFilename);
+
+            using (var fileStream = File.OpenRead(oldZipFilename))
+            {
+                dllRecord.ZipFileSize = fileStream.Length;
+                dllRecord.DownloadUrl = $"https://dlss-swapper-downloads.beeradmoore.com/{NamePath}/{newZipFilename}";
+
+                // TODO: Extract data out of the zip
+
+                var newZip = GetMD5Hash(fileStream);
+                if (newZip != dllRecord.ZipMD5Hash)
+                {
+                    Debugger.Break();
+                }
+            }
+
+            File.Copy(oldZipFilename, zipOutputFile);
+        }
     }
 }
