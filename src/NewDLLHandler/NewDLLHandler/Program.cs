@@ -294,6 +294,7 @@ try
                       currentLibrary != "GOG" &&
                       currentLibrary != "EpicGamesStore" &&
                       currentLibrary != "XboxApp" &&
+                      currentLibrary != "BattleNet" &&
                       currentLibrary != "UbisoftConnect")
                 {
                     Console.WriteLine($"Unknown library: {currentLibrary}");
