@@ -2361,25 +2361,6 @@
   "FSR_31_DX12": [
     {
       "dll_type": "FSR_31_DX12",
-      "version": "1.0.2.38022",
-      "hash": "AB23D0E0887E0866578EF142EEB6EEC6",
-      "sources": {
-        "XboxApp": [
-          "Call of Duty\u00AE"
-        ],
-        "ManuallyAdded": [
-          "Call of Duty",
-          "common",
-          "cod",
-          "CoD:BO6"
-        ],
-        "Steam": [
-          "Call of Duty\u00AE"
-        ]
-      }
-    },
-    {
-      "dll_type": "FSR_31_DX12",
       "version": "1.0.2.37812",
       "hash": "91665105CA96F3DAF572425C470155AA",
       "sources": {
@@ -3059,16 +3040,6 @@
     {
       "dll_type": "FSR_31_VK",
       "version": "1.0.1.39321",
-      "hash": "794D0884D482DFD53EAC77977E5ADE8C",
-      "sources": {
-        "XboxApp": [
-          "Indiana Jones and the Great Circle"
-        ]
-      }
-    },
-    {
-      "dll_type": "FSR_31_VK",
-      "version": "1.0.1.39321",
       "hash": "3B37CFEA373DDFDBDA3B5CC20C4B6E80",
       "sources": {
         "XboxApp": [
@@ -3236,49 +3207,6 @@
     }
   ],
   "XeSS": [
-    {
-      "dll_type": "XeSS",
-      "version": "2.0.1.34",
-      "hash": "4EDD90EAA5C1D4C93853734B744C0137",
-      "sources": {
-        "Steam": [
-          "Marvel Rivals",
-          "FragPunk",
-          "Like a Dragon: Pirate Yakuza in Hawaii",
-          "Hogwarts Legacy",
-          "Sid Meier\u0027s Civilization VII",
-          "Clair Obscur: Expedition 33",
-          "Diablo\u00AE IV",
-          "KARMA: The Dark World",
-          "Marvel\u0027s Spider-Man 2",
-          "Virtua Fighter 5 R.E.V.O.",
-          "KARMA: The Dark World Demo"
-        ],
-        "EpicGamesStore": [
-          "Marvel Rivals"
-        ],
-        "ManuallyAdded": [
-          "\u754C\u5916\u72C2\u6F6E",
-          "Clair Obscur Expedition 33",
-          "Games",
-          "Expedition 33",
-          "Clair Obscur: Expedition 33",
-          "Marvel\u0027s Spider-Man 2",
-          "KARMA The Dark World",
-          "Diablo IV",
-          "Clair Obscur - Expedition 33"
-        ],
-        "XboxApp": [
-          "Clair Obscur: Expedition 33"
-        ],
-        "GOG": [
-          "KARMA: The Dark World"
-        ],
-        "BattleNet": [
-          "Diablo IV"
-        ]
-      }
-    },
     {
       "dll_type": "XeSS",
       "version": "2.0.1.32",
@@ -3881,46 +3809,6 @@
     {
       "dll_type": "XeLL",
       "version": "1.0.1.6",
-      "hash": "AC3C8AEBDF60F932CFDED7D2BCEF93F0",
-      "sources": {
-        "Steam": [
-          "Marvel Rivals",
-          "FragPunk",
-          "Like a Dragon: Pirate Yakuza in Hawaii",
-          "Hogwarts Legacy",
-          "Sid Meier\u0027s Civilization VII",
-          "Clair Obscur: Expedition 33",
-          "Diablo\u00AE IV",
-          "KARMA: The Dark World",
-          "Virtua Fighter 5 R.E.V.O.",
-          "KARMA: The Dark World Demo"
-        ],
-        "EpicGamesStore": [
-          "Marvel Rivals"
-        ],
-        "ManuallyAdded": [
-          "\u754C\u5916\u72C2\u6F6E",
-          "Clair Obscur Expedition 33",
-          "Games",
-          "Expedition 33",
-          "Clair Obscur: Expedition 33",
-          "KARMA The Dark World",
-          "Clair Obscur - Expedition 33"
-        ],
-        "XboxApp": [
-          "Clair Obscur: Expedition 33"
-        ],
-        "GOG": [
-          "KARMA: The Dark World"
-        ],
-        "BattleNet": [
-          "Diablo IV"
-        ]
-      }
-    },
-    {
-      "dll_type": "XeLL",
-      "version": "1.0.1.6",
       "hash": "6F76BD44EC1CCFF86BFF504CD0C5A8B2",
       "sources": {
         "ManuallyAdded": [
@@ -3946,47 +3834,6 @@
     }
   ],
   "XeSS_FG": [
-    {
-      "dll_type": "XeSS_FG",
-      "version": "1.0.1.31",
-      "hash": "A51047068F3D1F480F5FFB2BF10F963A",
-      "sources": {
-        "Steam": [
-          "Marvel Rivals",
-          "FragPunk",
-          "Like a Dragon: Pirate Yakuza in Hawaii",
-          "Hogwarts Legacy",
-          "Sid Meier\u0027s Civilization VII",
-          "Clair Obscur: Expedition 33",
-          "Diablo\u00AE IV",
-          "KARMA: The Dark World",
-          "Virtua Fighter 5 R.E.V.O.",
-          "KARMA: The Dark World Demo"
-        ],
-        "EpicGamesStore": [
-          "Marvel Rivals"
-        ],
-        "ManuallyAdded": [
-          "\u754C\u5916\u72C2\u6F6E",
-          "Clair Obscur Expedition 33",
-          "Games",
-          "Expedition 33",
-          "Clair Obscur: Expedition 33",
-          "KARMA The Dark World",
-          "Diablo IV",
-          "Clair Obscur - Expedition 33"
-        ],
-        "XboxApp": [
-          "Clair Obscur: Expedition 33"
-        ],
-        "GOG": [
-          "KARMA: The Dark World"
-        ],
-        "BattleNet": [
-          "Diablo IV"
-        ]
-      }
-    },
     {
       "dll_type": "XeSS_FG",
       "version": "1.0.1.26",
