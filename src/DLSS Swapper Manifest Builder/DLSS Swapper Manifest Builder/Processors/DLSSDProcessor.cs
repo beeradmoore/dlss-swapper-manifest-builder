@@ -17,12 +17,12 @@ internal class DLSSDProcessor : DLLProcessor
     };
     public override string[] ExpectedPrefix => new string[]
     {
-        "bin/x64/",
+        "bin/x64/", // used for streamline SDK
         "/",
     };
     public override string[] ExpectedDevPrefix => new string[]
     {
-        "bin/x64/development/",
+        "bin/x64/development/", // used for streamline SDK
     };
     public override Dictionary<string, string> CustomAdditionalLabels => new Dictionary<string, string>()
     {

@@ -22,10 +22,12 @@ public class DLSSProcessor : DLLProcessor
     {
         "Windows_x86_64/rel/",
         "/",
+        "bin/x64/",  // used for streamline SDK
     };
     public override string[] ExpectedDevPrefix => new string[]
     {
         "Windows_x86_64/dev/",
+        "bin/x64/development/", // used for streamline SDK
     };
     public override Dictionary<string, string> CustomAdditionalLabels => new Dictionary<string, string>()
     {
