@@ -340,6 +340,32 @@ public abstract class DLLProcessor
         CreateZipFromRecord(dllRecord);
     }
 
+    public void MoveToCorrectLocations(IReadOnlyList<DLLRecord> dllRecords, GameAssetType assetType)
+    {
+        foreach (var  dllRecord in dllRecords)
+        {
+            dllRecord.AssetType = assetType;
+
+            var currentFileName = Path.GetFileName(dllRecord.DownloadUrl);
+            var oldZipFilename = Path.Combine(BaseInputPath, currentFileName);
+            if (File.Exists(oldZipFilename) == false)
+            {
+                Debugger.Break();
+            }
+
+
+            var newZipFilename = $"{dllRecord.GetRecordSimpleType()}_v{dllRecord.Version}_{dllRecord.MD5Hash}.zip";
+
+            if (currentFileName != newZipFilename)
+            {
+                var zipOutputFile = Path.Combine(OutputZipPath, newZipFilename);
+                File.Copy(oldZipFilename, zipOutputFile);
+                dllRecord.DownloadUrl = $"https://dlss-swapper-downloads.beeradmoore.com/{NamePath}/{newZipFilename}";
+            }
+        }
+
+    }
+
     public void MoveOldToNew(IReadOnlyList<DLLRecord> dllRecords, GameAssetType assetType)
     {
         //var oldFiles = Directory.GetFiles(BaseInputPath, "*.zip").Select(x => x.Replace(BaseInputPath + "\\", string.Empty)).ToList();
