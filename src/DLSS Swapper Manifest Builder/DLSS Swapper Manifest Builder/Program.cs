@@ -71,6 +71,17 @@ await xellProcessor.DownloadExistingRecordsAsync(manifest.XeLL);
 await xessfgProcessor.DownloadExistingRecordsAsync(manifest.XeSS_FG);
 
 /*
+dlssProcessor.PostProcessRecords(manifest.DLSS, DLSS_Swapper.Data.GameAssetType.DLSS);
+dlssgProcessor.PostProcessRecords(manifest.DLSS_G, DLSS_Swapper.Data.GameAssetType.DLSS_G);
+dlssdProcessor.PostProcessRecords(manifest.DLSS_D, DLSS_Swapper.Data.GameAssetType.DLSS_D);
+fsr31dx12Processor.PostProcessRecords(manifest.FSR_31_DX12, DLSS_Swapper.Data.GameAssetType.FSR_31_DX12);
+fsr31vkProcessor.PostProcessRecords(manifest.FSR_31_VK, DLSS_Swapper.Data.GameAssetType.FSR_31_VK);
+xessProcessor.PostProcessRecords(manifest.XeSS, DLSS_Swapper.Data.GameAssetType.XeSS);
+xellProcessor.PostProcessRecords(manifest.XeLL, DLSS_Swapper.Data.GameAssetType.XeLL);
+xessfgProcessor.PostProcessRecords(manifest.XeSS_FG, DLSS_Swapper.Data.GameAssetType.XeSS_FG);
+*/
+
+/*
 dlssProcessor.MoveToCorrectLocations(manifest.DLSS, DLSS_Swapper.Data.GameAssetType.DLSS);
 dlssgProcessor.MoveToCorrectLocations(manifest.DLSS_G, DLSS_Swapper.Data.GameAssetType.DLSS_G);
 dlssdProcessor.MoveToCorrectLocations(manifest.DLSS_D, DLSS_Swapper.Data.GameAssetType.DLSS_D);

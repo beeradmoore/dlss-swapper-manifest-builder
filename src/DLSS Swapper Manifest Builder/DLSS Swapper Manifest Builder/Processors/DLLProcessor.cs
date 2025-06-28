@@ -340,6 +340,59 @@ public abstract class DLLProcessor
         CreateZipFromRecord(dllRecord);
     }
 
+    public void PostProcessRecords(IReadOnlyList<DLLRecord> dllRecords, GameAssetType assetType)
+    {
+        foreach (var dllRecord in dllRecords)
+        {
+            dllRecord.AssetType = assetType;
+
+            var currentFileName = Path.GetFileName(dllRecord.DownloadUrl);
+            var oldZipFilename = Path.Combine(BaseInputPath, currentFileName);
+            if (File.Exists(oldZipFilename) == false)
+            {
+                Debugger.Break();
+            }
+
+            Console.WriteLine($"PostProcessing: {oldZipFilename}");
+
+            // Create a path to extract the dll to
+            var dllExtractPath = Path.Combine(TempFilesPath, Path.GetFileNameWithoutExtension(oldZipFilename));
+            Directory.CreateDirectory(dllExtractPath);
+
+            using (var fileStream = File.OpenRead(oldZipFilename))
+            {
+                using (var archive = new ZipArchive(fileStream, ZipArchiveMode.Read, true))
+                {
+                    var entries = archive.Entries.ToList();
+                    if (entries.Count != 1)
+                    {
+                        Debugger.Break();
+                        continue;
+                    }
+
+                    var dllEntry = entries[0];
+                    var dllExtractFilename = Path.Combine(dllExtractPath, $"{dllEntry.Crc32}_{ExpectedDLLName}");
+                    dllEntry.ExtractToFile(dllExtractFilename);
+
+                    var loadedRecord = DLLRecord.FromFile(dllExtractFilename, ExpectedDLLName);
+                    dllRecord.InternalName = loadedRecord.InternalName ?? string.Empty;
+                    dllRecord.InternalNameExtra = loadedRecord.InternalNameExtra ?? string.Empty;
+                }
+                // TODO: Extract data out of the zip
+
+                var newZip = GetMD5Hash(fileStream);
+                if (newZip != dllRecord.ZipMD5Hash)
+                {
+                    Debugger.Break();
+                }
+            }
+
+            //var dllRecord = DLLRecord.FromFile(dllExtractFilename, ExpectedDLLName);
+
+        }
+
+    }
+
     public void MoveToCorrectLocations(IReadOnlyList<DLLRecord> dllRecords, GameAssetType assetType)
     {
         foreach (var  dllRecord in dllRecords)
