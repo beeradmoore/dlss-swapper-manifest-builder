@@ -104,33 +104,33 @@ public class DLLRecord : IComparable<DLLRecord>
         }
 
 
-        
+        var fileInfo = new FileInfo(filename);
+        var versionInfo = FileVersionInfo.GetVersionInfo(filename);
+        dllRecord.Version = $"{versionInfo.FileMajorPart}.{versionInfo.FileMinorPart}.{versionInfo.FileBuildPart}.{versionInfo.FilePrivatePart}";
+        dllRecord.FileDescription = versionInfo.FileDescription ?? string.Empty;
+
         dllRecord.IsSignatureValid = WinTrust.VerifyEmbeddedSignature(filename);
-        //if (ignoreInvalid == false && IsSignatureValid == false)
         if (dllRecord.IsSignatureValid == false)
         {
-            if (filename.EndsWith("nvngx_dlss_1.0.11.0\\nvngx_dlss.dll", StringComparison.OrdinalIgnoreCase) ||
-                filename.EndsWith("nvngx_dlss_1.0.13.0\\nvngx_dlss.dll", StringComparison.OrdinalIgnoreCase))
+            if ((dllRecord.AssetType == GameAssetType.DLSS && dllRecord.Version == "1.0.11.0") ||
+                (dllRecord.AssetType == GameAssetType.DLSS && dllRecord.Version == "1.0.13.0"))
             {
                 // NO-OP
             }
             else
             {
+                Debugger.Break();
              //   throw new Exception($"Error processing dll: Invalid signature found, {filename}");
             }
         }
 
-        var fileInfo = new FileInfo(filename);
         dllRecord.FileSize = fileInfo.Length;
 
         dllRecord.SignedDateTime = WinCrypt.GetSignedDateTime(filename);
 
 
 
-        var versionInfo = FileVersionInfo.GetVersionInfo(filename);
 
-        dllRecord.Version = $"{versionInfo.FileMajorPart}.{versionInfo.FileMinorPart}.{versionInfo.FileBuildPart}.{versionInfo.FilePrivatePart}";
-        dllRecord.FileDescription = versionInfo.FileDescription ?? string.Empty;
 
 
         // VersionNumber is used for ordering dlls in the case where 2.1.18.0 would order below 2.1.2.0.
