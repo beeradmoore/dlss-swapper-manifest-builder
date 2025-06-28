@@ -72,10 +72,10 @@ await xessfgProcessor.DownloadExistingRecordsAsync(manifest.XeSS_FG);
 
 /*
 dlssProcessor.MoveOldToNew(manifest.DLSS, DLSS_Swapper.Data.GameAssetType.DLSS);
-dlssgProcessor.MoveOldToNew(manifest.DLSS_G, DLSS_Swapper.Data.GameAssetType.DLSS);
-dlssdProcessor.MoveOldToNew(manifest.DLSS_D, DLSS_Swapper.Data.GameAssetType.DLSS);
-fsr31dx12Processor.MoveOldToNew(manifest.FSR_31_DX12, DLSS_Swapper.Data.GameAssetType.DLSS);
-fsr31vkProcessor.MoveOldToNew(manifest.FSR_31_VK, DLSS_Swapper.Data.GameAssetType.FSR_31_DX12);
+dlssgProcessor.MoveOldToNew(manifest.DLSS_G, DLSS_Swapper.Data.GameAssetType.DLSS_G);
+dlssdProcessor.MoveOldToNew(manifest.DLSS_D, DLSS_Swapper.Data.GameAssetType.DLSS_D);
+fsr31dx12Processor.MoveOldToNew(manifest.FSR_31_DX12, DLSS_Swapper.Data.GameAssetType.FSR_31_DX12);
+fsr31vkProcessor.MoveOldToNew(manifest.FSR_31_VK, DLSS_Swapper.Data.GameAssetType.FSR_31_VK);
 xessProcessor.MoveOldToNew(manifest.XeSS, DLSS_Swapper.Data.GameAssetType.XeSS);
 xellProcessor.MoveOldToNew(manifest.XeLL, DLSS_Swapper.Data.GameAssetType.XeLL);
 xessfgProcessor.MoveOldToNew(manifest.XeSS_FG, DLSS_Swapper.Data.GameAssetType.XeSS_FG);
