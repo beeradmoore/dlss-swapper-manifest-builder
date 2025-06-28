@@ -17,7 +17,7 @@ public abstract class DLLProcessor
     // In debug mode, don't place these in the built directories as they will be removed when cleaned
     public static string InputFilesPath => Path.Combine("..", "..", "..", "..", "generated_files", "input_files");
     public static string OutputFilesPath => Path.Combine("..", "..", "..", "..", "generated_files", "output_files");
-    public static string TempFilesPath => Path.Combine("..", "..", "..", "..", "generated_files", "temp_files");
+    public static string TempFilesPath => Path.Combine(Path.GetTempPath(), "dlss_swapper_manifest_builder");
 #else
     public static string BaseInputPath => "input_files";
     public static string BaseOutputPath => "output_files";

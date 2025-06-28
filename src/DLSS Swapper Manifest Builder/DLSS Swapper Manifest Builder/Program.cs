@@ -127,4 +127,10 @@ File.WriteAllText(DLLProcessor.OutputManifestPath, manifestJson);
 var repoRootManifestPath = Path.Combine("..", "..", "..", "..", "..", "..", "manifest.json");
 File.Copy(DLLProcessor.OutputManifestPath, repoRootManifestPath, true);
 
+
+if (Directory.Exists(DLLProcessor.TempFilesPath))
+{
+    Directory.Delete(DLLProcessor.TempFilesPath, true);
+}
+
 return 1;
