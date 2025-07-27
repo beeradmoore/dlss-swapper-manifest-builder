@@ -111,7 +111,7 @@ public abstract class DLLProcessor
         var files = new List<string>();
         files.AddRange(Directory.GetFiles(BaseInputPath, "*.zip", SearchOption.TopDirectoryOnly));
         files.AddRange(Directory.GetFiles(InputSDKsFilesPath, "*.zip", SearchOption.AllDirectories));
-        files.AddRange(Directory.GetFiles(ImportPath, "*.zip", SearchOption.TopDirectoryOnly));
+        files.AddRange(Directory.GetFiles(ImportPath, "*.zip", SearchOption.AllDirectories));
         return files.ToArray();
     }
 
