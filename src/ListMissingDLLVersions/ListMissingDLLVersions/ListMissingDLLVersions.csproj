@@ -1,0 +1,28 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net9.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+	<DefineConstants>LIST_MISSING_DLL_VERSIONS</DefineConstants>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Include="..\..\..\..\dlss-swapper\src\Data\GameAssetType.cs" Link="GameAssetType.cs" />
+    <Compile Include="..\..\DLSS Swapper Manifest Builder\DLSS Swapper Manifest Builder\DLLRecord.cs" Link="DLLRecord.cs" />
+    <Compile Include="..\..\DLSS Swapper Manifest Builder\DLSS Swapper Manifest Builder\FSR31\FSR31Helper.cs" Link="FSR31Helper.cs" />
+    <Compile Include="..\..\DLSS Swapper Manifest Builder\DLSS Swapper Manifest Builder\FSR31\FxxConsts.cs" Link="FxxConsts.cs" />
+    <Compile Include="..\..\DLSS Swapper Manifest Builder\DLSS Swapper Manifest Builder\HashedKnownDLL.cs" Link="HashedKnownDLL.cs" />
+    <Compile Include="..\..\DLSS Swapper Manifest Builder\DLSS Swapper Manifest Builder\KnownDLLs.cs" Link="KnownDLLs.cs" />
+    <Compile Include="..\..\DLSS Swapper Manifest Builder\DLSS Swapper Manifest Builder\Manifest.cs" Link="Manifest.cs" />
+    <Compile Include="..\..\DLSS Swapper Manifest Builder\DLSS Swapper Manifest Builder\WinCrypt.cs" Link="WinCrypt.cs" />
+    <Compile Include="..\..\DLSS Swapper Manifest Builder\DLSS Swapper Manifest Builder\WinTrust.cs" Link="WinTrust.cs" />
+    <Compile Include="..\..\NewDLLHandler\NewDLLHandler\KnownDLL.cs" Link="KnownDLL.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="System.Security.Cryptography.Pkcs" Version="9.0.7" />
+  </ItemGroup>
+
+</Project>

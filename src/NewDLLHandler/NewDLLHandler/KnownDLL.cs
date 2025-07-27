@@ -22,6 +22,11 @@ internal class KnownDLL : IEquatable<KnownDLL>
     [JsonPropertyName("sources")]
     public Dictionary<string, List<string>> Sources { get; set; } = new Dictionary<string, List<string>>();
 
+    Version? _version;
+    [JsonIgnore]
+    public Version VersionObject => _version ??= new Version(Version);
+
+
     public bool Equals(KnownDLL? other)
     {
         if (other is null)
