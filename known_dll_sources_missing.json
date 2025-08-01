@@ -65,7 +65,11 @@
           "Riven",
           "Nuclear Nightmare",
           "Robots at Midnight",
-          "ARK: Survival Ascended"
+          "ARK: Survival Ascended",
+          "Clair Obscur: Expedition 33",
+          "X4: Foundations",
+          "Night of the Dead",
+          "Longvinter"
         ],
         "XboxApp": [
           "DOOM: The Dark Ages",
@@ -77,7 +81,9 @@
           "Call of Duty\u00AE",
           "Splitgate 2",
           "Grand Theft Auto V Enhanced",
-          "FBC: Firebreak"
+          "FBC: Firebreak",
+          "EVERSPACE\u2122 2",
+          "ARK: Survival Ascended"
         ],
         "ManuallyAdded": [
           "MindsEye",
@@ -87,17 +93,26 @@
           "Grand Theft Auto V Enhanced",
           "Warhammer 40000 Space Marine 2",
           "RoadCraft",
-          "DOOMTheDarkAges"
+          "DOOMTheDarkAges",
+          "Wuchang Fallen Feathers",
+          "RoboCop Rogue City Unfinished Business",
+          "WUCHANG - Fallen Feathers"
         ],
         "BattleNet": [
           "Diablo IV"
         ],
         "GOG": [
           "RoboCop: Rogue City - Unfinished Business",
-          "No Man\u0027s Sky"
+          "No Man\u0027s Sky",
+          "Myst"
         ],
         "EpicGamesStore": [
-          "Grand Theft Auto V Enhanced"
+          "Grand Theft Auto V Enhanced",
+          "Ertugrul of Ulukayin",
+          "Starship Troopers: Extermination"
+        ],
+        "UbisoftConnect": [
+          "ForHonor"
         ]
       }
     },
@@ -177,6 +192,9 @@
       "sources": {
         "XboxApp": [
           "SMITE 2"
+        ],
+        "Steam": [
+          "DIRECT CONTACT"
         ]
       }
     },
@@ -272,7 +290,14 @@
           "Ascend to ZERO Demo",
           "Funguys Swarm Demo",
           "Neighbors: Suburban Warfare",
-          "Still Wakes the Deep"
+          "Still Wakes the Deep",
+          "DARK SOULS\u2122 II: Scholar of the First Sin",
+          "Killing Floor 3",
+          "DIRECT CONTACT",
+          "No One Survived",
+          "Somber Echoes",
+          "Private Military Manager: Tactical Auto Battler",
+          "Rocket Squad: Infinity"
         ],
         "XboxApp": [
           "No Man\u0027s Sky",
@@ -321,7 +346,8 @@
           "CalabiyauGame",
           "Win64rh",
           "yysls",
-          "Avowed (2025)"
+          "Avowed (2025)",
+          "The Talos Principle - Reawakened"
         ],
         "GOG": [
           "No Man\u0027s Sky",
@@ -603,7 +629,12 @@
           "The Last of Us Part II",
           "Resident Evil 2 Viet Hoa",
           "Resident Evil 3 Viet Hoa",
-          "\u5BF9\u9A6C\u5C9B\u4E4B\u9B42"
+          "\u5BF9\u9A6C\u5C9B\u4E4B\u9B42",
+          "God of War",
+          "Judgment",
+          "Final Fantasy XV",
+          "Horizon Forbidden West Complete Edition",
+          "Wo Long Fallen Dynasty"
         ],
         "Steam": [
           "No Rest for the Wicked",
@@ -632,7 +663,10 @@
           "Resident Evil 2",
           "Microsoft Flight Simulator",
           "The Last of Us\u2122 Part I",
-          "Cyberpunk 2077"
+          "Cyberpunk 2077",
+          "Crysis Remastered",
+          "Crysis 2 Remastered",
+          "Crysis 3 Remastered"
         ],
         "EpicGamesStore": [
           "Ghost of Tsushima DIRECTOR\u0027S CUT",
@@ -737,7 +771,9 @@
           "L123",
           "Forza Motorsport",
           "Virtua.Fighter.5.R.E.V.O.SteamGG.net",
-          "\u5730\u5E73\u7EBF \u96F6\u4E4B\u66D9\u5149 \u91CD\u5236\u7248"
+          "\u5730\u5E73\u7EBF \u96F6\u4E4B\u66D9\u5149 \u91CD\u5236\u7248",
+          "Horizon - Forbidden West CE",
+          "KunitsuGami Path of the Goddess"
         ],
         "UbisoftConnect": [
           "Assassin\u0027s Creed Mirage"
@@ -758,7 +794,8 @@
           "Starfield: Creation Kit",
           "Need for Speed\u2122 Unbound",
           "Marvel\u0027s Spider-Man: Miles Morales",
-          "The Last of Us\u2122 Part I"
+          "The Last of Us\u2122 Part I",
+          "HITMAN 3"
         ],
         "XboxApp": [
           "Warhammer 40,000: Darktide",
@@ -884,6 +921,16 @@
     {
       "dll_type": "DLSS",
       "version": "3.1.1.0",
+      "hash": "B097E4C1EFF1322DB78B13F6C6182C5C",
+      "sources": {
+        "Steam": [
+          "PERISH"
+        ]
+      }
+    },
+    {
+      "dll_type": "DLSS",
+      "version": "3.1.1.0",
       "hash": "1441710FCF5E9F64D745FFADE7EA02C1",
       "sources": {
         "Steam": [
@@ -991,7 +1038,8 @@
           "MONSTER HUNTER RISE"
         ],
         "ManuallyAdded": [
-          "MonsterHunterRise"
+          "MonsterHunterRise",
+          "Monster Hunter Rise"
         ],
         "XboxApp": [
           "Monster Hunter Rise"
@@ -1067,6 +1115,9 @@
       "sources": {
         "Steam": [
           "Marvel\u2019s Spider-Man Remastered"
+        ],
+        "ManuallyAdded": [
+          "Marvels SpiderMan Remastered"
         ]
       }
     },
@@ -1078,6 +1129,9 @@
         "Steam": [
           "Forspoken",
           "Forspoken Demo"
+        ],
+        "EpicGamesStore": [
+          "Forspoken"
         ]
       }
     },
@@ -1116,10 +1170,13 @@
         "ManuallyAdded": [
           "Uncharted",
           "UNCHARTED - Legacy of Thieves Collection",
-          "Uncharted 4 Legacy of Thieves Collection"
+          "Uncharted 4 Legacy of Thieves Collection",
+          "Uncharted 4",
+          "A Plague Tale Requiem"
         ],
         "GOG": [
-          "UNCHARTED\u2122 Legacy of Thieves Collection"
+          "UNCHARTED\u2122 Legacy of Thieves Collection",
+          "A Plague Tale: Requiem"
         ]
       }
     },
@@ -1177,6 +1234,9 @@
       "sources": {
         "EpicGamesStore": [
           "The Lord of the Rings - Gollum\u2122"
+        ],
+        "Steam": [
+          "The Lord of the Rings: Gollum\u2122"
         ]
       }
     },
@@ -1311,6 +1371,11 @@
           "GTA III - Definitive Edition",
           "GTA San Andreas - Definitive Edition",
           "GTA Vice City - Definitive Edition"
+        ],
+        "EpicGamesStore": [
+          "Grand Theft Auto III \u2013 The Definitive Edition",
+          "Grand Theft Auto: San Andreas \u2013 The Definitive Edition",
+          "Grand Theft Auto: Vice City \u2013 The Definitive Edition"
         ]
       }
     },
@@ -1408,6 +1473,9 @@
           "Call of Duty Vanguard",
           "Call of Duty - Vanguard",
           "Call of Duty Vanguard Campaign"
+        ],
+        "BattleNet": [
+          "Call of Duty: Vanguard"
         ]
       }
     },
@@ -1512,6 +1580,9 @@
       "sources": {
         "Steam": [
           "Destroy All Humans! 2 - Reprobed"
+        ],
+        "EpicGamesStore": [
+          "GRIT"
         ]
       }
     },
@@ -1640,7 +1711,10 @@
           "Car For Sale Simulator 2023",
           "Badlands Crew Demo",
           "Satellite Odyssey: Prologue",
-          "Project Castaway"
+          "Project Castaway",
+          "I Had a Plan!",
+          "Chornobyl Liquidators",
+          "The Valiant"
         ],
         "GOG": [
           "IXION",
@@ -1649,7 +1723,8 @@
         "EpicGamesStore": [
           "Electrician Simulator",
           "PC Building Simulator 2",
-          "PC Building Simulator 2 Beta"
+          "PC Building Simulator 2 Beta",
+          "IXION"
         ],
         "XboxApp": [
           "The Lamplighters League - PC Edition",
@@ -1659,7 +1734,8 @@
         "ManuallyAdded": [
           "Shadows of Doubt",
           "IXION",
-          "The Mortuary Assistant Definitive Edition"
+          "The Mortuary Assistant Definitive Edition",
+          "PGA Tour 2K23"
         ]
       }
     },
@@ -1819,6 +1895,9 @@
         ],
         "GOG": [
           "The Medium"
+        ],
+        "ManuallyAdded": [
+          "Medium"
         ]
       }
     },
@@ -1904,6 +1983,16 @@
         ],
         "ManuallyAdded": [
           "Watch Dogs Legion"
+        ]
+      }
+    },
+    {
+      "dll_type": "DLSS",
+      "version": "2.1.39.0",
+      "hash": "1D05D8121CD67B6E7AB31949DB4F1F3C",
+      "sources": {
+        "Steam": [
+          "Xuan-Yuan Sword VII"
         ]
       }
     },
@@ -2122,7 +2211,8 @@
       "sources": {
         "Steam": [
           "Stellar Blade\u2122",
-          "Stellar Blade\u2122 Demo"
+          "Stellar Blade\u2122 Demo",
+          "DIRECT CONTACT"
         ]
       }
     },
@@ -2207,7 +2297,12 @@
           "SMITE 2",
           "Hogwarts Legacy",
           "Funguys Swarm Demo",
-          "Still Wakes the Deep"
+          "Still Wakes the Deep",
+          "Killing Floor 3",
+          "DIRECT CONTACT",
+          "No One Survived",
+          "Private Military Manager: Tactical Auto Battler",
+          "Rocket Squad: Infinity"
         ],
         "XboxApp": [
           "No Man\u0027s Sky",
@@ -2220,7 +2315,8 @@
           "Eternal Strands",
           "Still Wakes the Deep",
           "Mecha BREAK",
-          "NARAKA: BLADEPOINT"
+          "NARAKA: BLADEPOINT",
+          "EVERSPACE\u2122 2"
         ],
         "EpicGamesStore": [
           "Marvel Rivals",
@@ -2483,7 +2579,8 @@
           "Ratchet \u0026 Clank - Rift Apart",
           "Ratchet and Clank - Rift Apart",
           "STAR WARS Jedi - Survivor",
-          "ZXSJclient"
+          "ZXSJclient",
+          "Jusant"
         ],
         "XboxApp": [
           "Jusant"
@@ -2502,7 +2599,8 @@
           "Banishers.Ghosts.of.New.Eden-InsaneRamZes",
           "Banishers Ghosts of New Eden",
           "Banishers - Ghosts of New Eden",
-          "ZXSJclient"
+          "ZXSJclient",
+          "Jusant"
         ],
         "Steam": [
           "Banishers: Ghosts of New Eden",
@@ -2587,7 +2685,8 @@
       "hash": "8D976632F60C755069932461F35683C9",
       "sources": {
         "Steam": [
-          "Destroy All Humans! 2 - Reprobed"
+          "Destroy All Humans! 2 - Reprobed",
+          "PERISH"
         ]
       }
     },
@@ -2708,19 +2807,30 @@
           "Riven",
           "Firmament",
           "Robots at Midnight",
-          "ARK: Survival Ascended"
+          "ARK: Survival Ascended",
+          "Clair Obscur: Expedition 33",
+          "Night of the Dead",
+          "Longvinter"
         ],
         "ManuallyAdded": [
           "MindsEye",
-          "Luto"
+          "Luto",
+          "RoboCop Rogue City Unfinished Business"
         ],
         "XboxApp": [
           "Frostpunk 2: PC Edition",
           "Splitgate 2",
-          "MechWarrior 5: Clans"
+          "MechWarrior 5: Clans",
+          "EVERSPACE\u2122 2",
+          "ARK: Survival Ascended"
         ],
         "GOG": [
-          "RoboCop: Rogue City - Unfinished Business"
+          "RoboCop: Rogue City - Unfinished Business",
+          "Myst"
+        ],
+        "EpicGamesStore": [
+          "Ertugrul of Ulukayin",
+          "Starship Troopers: Extermination"
         ]
       }
     },
@@ -2807,7 +2917,13 @@
           "Hogwarts Legacy",
           "Funguys Swarm Demo",
           "Neighbors: Suburban Warfare",
-          "Still Wakes the Deep"
+          "Still Wakes the Deep",
+          "Killing Floor 3",
+          "DIRECT CONTACT",
+          "No One Survived",
+          "Somber Echoes",
+          "Private Military Manager: Tactical Auto Battler",
+          "Rocket Squad: Infinity"
         ],
         "XboxApp": [
           "Avowed",
@@ -2829,6 +2945,16 @@
         "GOG": [
           "Somber Echoes",
           "Oddsparks"
+        ]
+      }
+    },
+    {
+      "dll_type": "DLSS_D",
+      "version": "310.1.0.0",
+      "hash": "3BB531D364F916FF08240440C5C40327",
+      "sources": {
+        "Steam": [
+          "DIRECT CONTACT"
         ]
       }
     },
@@ -2963,28 +3089,6 @@
         "Steam": [
           "The Last of Us\u2122 Part II Remastered",
           "Monster Hunter Wilds"
-        ]
-      }
-    },
-    {
-      "dll_type": "FSR_31_DX12",
-      "version": "1.0.1.40157",
-      "hash": "6DEFFA8D3E83449C961558E26781687B",
-      "sources": {
-        "Steam": [
-          "NARAKA: BLADEPOINT",
-          "Mecha BREAK"
-        ],
-        "EpicGamesStore": [
-          "NARAKA: BLADEPOINT"
-        ],
-        "ManuallyAdded": [
-          "\u6C38\u52AB\u65E0\u95F4",
-          "Naraka"
-        ],
-        "XboxApp": [
-          "Mecha BREAK",
-          "NARAKA: BLADEPOINT"
         ]
       }
     },
@@ -3168,6 +3272,16 @@
     {
       "dll_type": "FSR_31_DX12",
       "version": "1.0.1.0",
+      "hash": "D4D4F62D5E79B1D555DA743850C43DE5",
+      "sources": {
+        "Steam": [
+          "Splitgate 2"
+        ]
+      }
+    },
+    {
+      "dll_type": "FSR_31_DX12",
+      "version": "1.0.1.0",
       "hash": "C89CA4E44D4641193D8030B9BAA12590",
       "sources": {
         "ManuallyAdded": [
@@ -3261,7 +3375,8 @@
       "hash": "9AE1E8245EBC69E258066C4D0B8AB041",
       "sources": {
         "ManuallyAdded": [
-          "The Talos Principle Reawakened"
+          "The Talos Principle Reawakened",
+          "The Talos Principle - Reawakened"
         ],
         "Steam": [
           "The Talos Principle: Reawakened"
@@ -3319,7 +3434,8 @@
           "MindsEye",
           "Revenge of the Savage Planet",
           "Hell is Us Demo",
-          "Funguys Swarm Demo"
+          "Funguys Swarm Demo",
+          "Somber Echoes"
         ],
         "GOG": [
           "KARMA: The Dark World",
@@ -3732,7 +3848,8 @@
           "The Sinking City Remastered"
         ],
         "Steam": [
-          "The Sinking City Remastered"
+          "The Sinking City Remastered",
+          "The Sinking City"
         ]
       }
     },
@@ -3770,16 +3887,6 @@
       "hash": "F33AB19E877F2101EC6360A3647E21C2",
       "sources": {
         "Steam": [
-          "DOOM: The Dark Ages"
-        ]
-      }
-    },
-    {
-      "dll_type": "FSR_31_VK",
-      "version": "1.0.1.42386",
-      "hash": "8F036C984D570B58C1CD312BB5C780AB",
-      "sources": {
-        "XboxApp": [
           "DOOM: The Dark Ages"
         ]
       }
@@ -4300,41 +4407,10 @@
     {
       "dll_type": "XeSS",
       "version": "2.0.1.32",
-      "hash": "306786B7961439B5330EC10AB9D594B5",
-      "sources": {
-        "XboxApp": [
-          "DOOM: The Dark Ages"
-        ]
-      }
-    },
-    {
-      "dll_type": "XeSS",
-      "version": "2.0.1.32",
       "hash": "03EA05128B642B1EA0D6E35C0BFC6A97",
       "sources": {
         "Steam": [
           "DOOM: The Dark Ages"
-        ]
-      }
-    },
-    {
-      "dll_type": "XeSS",
-      "version": "2.0.1.29",
-      "hash": "8D1ADEBE2F3FD417FE6AC599114098AC",
-      "sources": {
-        "EpicGamesStore": [
-          "NARAKA: BLADEPOINT"
-        ],
-        "Steam": [
-          "NARAKA: BLADEPOINT",
-          "Assassin\u0027s Creed Shadows"
-        ],
-        "UbisoftConnect": [
-          "Assassin\u0027s Creed Shadows"
-        ],
-        "ManuallyAdded": [
-          "Naraka",
-          "Assassin\u0027s Creed Shadows"
         ]
       }
     },
@@ -4789,38 +4865,21 @@
     {
       "dll_type": "XeSS",
       "version": "1.2.0.13",
-      "hash": "8FF3878C8B7CAB9963210C87876D1A24",
+      "hash": "EBAAEBC54039C2FCFDCBF8EDA5BA37E9",
       "sources": {
-        "ManuallyAdded": [
-          "\u5929\u6DAF\u660E\u6708\u5200",
-          "XVersion"
+        "EpicGamesStore": [
+          "The Front"
         ]
       }
     },
     {
       "dll_type": "XeSS",
-      "version": "1.2.0.10",
-      "hash": "4C8D7344A1DCF91AF9C01B6321C2BA8A",
+      "version": "1.2.0.13",
+      "hash": "8FF3878C8B7CAB9963210C87876D1A24",
       "sources": {
-        "Steam": [
-          "The Riftbreaker",
-          "The Riftbreaker: Prologue",
-          "Marvel\u0027s Spider-Man: Miles Morales",
-          "The Riftbreaker Demo",
-          "The Riftbreaker: Multiplayer Playtest"
-        ],
         "ManuallyAdded": [
-          "Marvel\u0027s Spider-Man Miles Morales",
-          "Marvel\u0027s Spider-Man Remastered",
-          "Horizon - Forbidden West CE",
-          "Ratchet \u0026 Clank - Rift Apart",
-          "Ratchet and Clank - Rift Apart",
-          "Horizon.Forbidden.West.CE.REPACK-KaOs",
-          "The Riftbreaker",
-          "Horizon Forbidden West"
-        ],
-        "GOG": [
-          "The Riftbreaker"
+          "\u5929\u6DAF\u660E\u6708\u5200",
+          "XVersion"
         ]
       }
     },
@@ -4980,7 +5039,8 @@
         "ManuallyAdded": [
           "Gotham Knights",
           "Marvel\u0027s Spider-Man Miles Morales",
-          "Marvels SpiderMan Remastered"
+          "Marvels SpiderMan Remastered",
+          "Marvels SpiderMan Miles Morales"
         ],
         "EpicGamesStore": [
           "Shadow of the Tomb Raider: Definitive Edition",
@@ -5111,41 +5171,6 @@
       "sources": {
         "ManuallyAdded": [
           "Skate"
-        ]
-      }
-    },
-    {
-      "dll_type": "XeSS_FG",
-      "version": "1.0.1.26",
-      "hash": "638BC6E8D34559CAED89C7015932567E",
-      "sources": {
-        "UbisoftConnect": [
-          "Assassin\u0027s Creed Shadows"
-        ],
-        "Steam": [
-          "Assassin\u0027s Creed Shadows"
-        ],
-        "ManuallyAdded": [
-          "Assassin\u0027s Creed Shadows"
-        ]
-      }
-    },
-    {
-      "dll_type": "XeSS_FG",
-      "version": "0.9.11.9",
-      "hash": "7C15036490A8C4679D49429773F542EA",
-      "sources": {
-        "EpicGamesStore": [
-          "Marvel Rivals"
-        ],
-        "ManuallyAdded": [
-          "Diablo IV"
-        ],
-        "Steam": [
-          "Diablo\u00AE IV"
-        ],
-        "BattleNet": [
-          "Diablo IV"
         ]
       }
     }
