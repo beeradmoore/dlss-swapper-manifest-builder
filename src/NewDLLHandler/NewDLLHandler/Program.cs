@@ -60,6 +60,8 @@ if (File.Exists(handledIssuesFile))
 // Some issues are triggered as handled manually so they will be skipped lower.
 var manuallyHandledIssues = new int[]
 {
+    2142, 2108, 2079,
+
     2032, 2023, 2017, 1989, 1935, 1922, 1907, 1841,
     1829, 1828, 1825, 1800, 1799, 
 

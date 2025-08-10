@@ -17,6 +17,20 @@
       "sources": {
         "ManuallyAdded": [
           "Wuthering Waves"
+        ],
+        "Steam": [
+          "Metro Exodus Enhanced Edition",
+          "Party Animals"
+        ]
+      }
+    },
+    {
+      "dll_type": "DLSS",
+      "version": "310.3.0.0",
+      "hash": "436BD84602A538C63C4953F78B668204",
+      "sources": {
+        "Steam": [
+          "No Man\u0027s Sky"
         ]
       }
     },
@@ -69,7 +83,17 @@
           "Clair Obscur: Expedition 33",
           "X4: Foundations",
           "Night of the Dead",
-          "Longvinter"
+          "Longvinter",
+          "Splitgate 2 Beta",
+          "Battlefield\u2122 6 Open Beta",
+          "Mafia: The Old Country",
+          "Dead Take",
+          "Stormgate",
+          "Greedland",
+          "Dune: Awakening Public Test Client",
+          "Death Relives",
+          "RoboCop: Rogue City - Unfinished Business",
+          "Starship Troopers: Extermination"
         ],
         "XboxApp": [
           "DOOM: The Dark Ages",
@@ -83,7 +107,8 @@
           "Grand Theft Auto V Enhanced",
           "FBC: Firebreak",
           "EVERSPACE\u2122 2",
-          "ARK: Survival Ascended"
+          "ARK: Survival Ascended",
+          "Clair Obscur: Expedition 33"
         ],
         "ManuallyAdded": [
           "MindsEye",
@@ -96,10 +121,15 @@
           "DOOMTheDarkAges",
           "Wuchang Fallen Feathers",
           "RoboCop Rogue City Unfinished Business",
-          "WUCHANG - Fallen Feathers"
+          "WUCHANG - Fallen Feathers",
+          "Clair Obscure Expedition 33",
+          "Wuchang.Fallen.Feathers",
+          "Battlefield 6 Event",
+          "Clair Obscur. Expedition 33 (2025)"
         ],
         "BattleNet": [
-          "Diablo IV"
+          "Diablo IV",
+          "Call of Duty"
         ],
         "GOG": [
           "RoboCop: Rogue City - Unfinished Business",
@@ -338,7 +368,10 @@
           "No One Survived",
           "Somber Echoes",
           "Private Military Manager: Tactical Auto Battler",
-          "Rocket Squad: Infinity"
+          "Rocket Squad: Infinity",
+          "Titan Quest II",
+          "VOIN",
+          "Prologue: Go Wayback! Demo"
         ],
         "XboxApp": [
           "No Man\u0027s Sky",
@@ -350,7 +383,8 @@
           "Rematch",
           "Eternal Strands",
           "Still Wakes the Deep",
-          "NARAKA: BLADEPOINT"
+          "NARAKA: BLADEPOINT",
+          "Farming Simulator 25 (PC)"
         ],
         "ManuallyAdded": [
           "Marvels SpiderMan 2",
@@ -388,7 +422,10 @@
           "Win64rh",
           "yysls",
           "Avowed (2025)",
-          "The Talos Principle - Reawakened"
+          "The Talos Principle - Reawakened",
+          "InfinityNikki",
+          "\u738B\u8005\u8363\u8000\u4E16\u754C",
+          "Titan Quest II"
         ],
         "GOG": [
           "No Man\u0027s Sky",
@@ -1494,6 +1531,9 @@
       "sources": {
         "ManuallyAdded": [
           "Blade \u0026 Soul_NEO_TW"
+        ],
+        "Steam": [
+          "Blade \u0026 Soul NEO"
         ]
       }
     },
@@ -1714,7 +1754,8 @@
           "UNCHARTED - Legacy of Thieves Collection",
           "Uncharted 4 Legacy of Thieves Collection",
           "Uncharted 4",
-          "A Plague Tale Requiem"
+          "A Plague Tale Requiem",
+          "Uncharted LOT Collection-SteamGG.NET"
         ],
         "GOG": [
           "UNCHARTED\u2122 Legacy of Thieves Collection",
@@ -1728,10 +1769,12 @@
       "hash": "104D86A22307DA427F40F3992E9C1393",
       "sources": {
         "ManuallyAdded": [
-          "Call of Duty"
+          "Call of Duty",
+          "Call of Duty Modern Warfare II"
         ],
         "Steam": [
-          "Call of Duty\u00AE"
+          "Call of Duty\u00AE",
+          "Call of Duty\u00AE: Modern Warfare\u00AE II"
         ],
         "XboxApp": [
           "Call of Duty\u00AE"
@@ -2176,7 +2219,8 @@
       "hash": "A9D04D12501BBEDDC6F26F70B29D3945",
       "sources": {
         "EpicGamesStore": [
-          "Fortnite"
+          "Fortnite",
+          "\u300AFortnite\u300B"
         ],
         "ManuallyAdded": [
           "Fortnite"
@@ -2251,7 +2295,8 @@
           "The Elder Scrolls Online"
         ],
         "ManuallyAdded": [
-          "The Elder Scrolls Online"
+          "The Elder Scrolls Online",
+          "Elder Scrolls Online"
         ]
       }
     },
@@ -2350,7 +2395,10 @@
           "Project Castaway",
           "I Had a Plan!",
           "Chornobyl Liquidators",
-          "The Valiant"
+          "The Valiant",
+          "Coin Pusher Casino",
+          "Love challenge",
+          "Screaming Chicken: Ultimate Showdown"
         ],
         "GOG": [
           "IXION",
@@ -3025,7 +3073,9 @@
           "DIRECT CONTACT",
           "No One Survived",
           "Private Military Manager: Tactical Auto Battler",
-          "Rocket Squad: Infinity"
+          "Rocket Squad: Infinity",
+          "Titan Quest II",
+          "Prologue: Go Wayback! Demo"
         ],
         "XboxApp": [
           "No Man\u0027s Sky",
@@ -3092,7 +3142,11 @@
           "The Elder Scrolls IV Oblivion Remastered (2006-2025)",
           "yysls",
           "Oblivion Remastered",
-          "Avowed (2025)"
+          "Avowed (2025)",
+          "\u89E3\u9650\u673A",
+          "InfinityNikki",
+          "Titan Quest II",
+          "Delta Force"
         ],
         "GOG": [
           "No Man\u0027s Sky",
@@ -3795,13 +3849,18 @@
           "Wreckfest 2",
           "Call of Duty\u00AE",
           "Monster Hunter Wilds",
-          "Clair Obscur: Expedition 33"
+          "Clair Obscur: Expedition 33",
+          "Battlefield\u2122 6 Open Beta"
         ],
         "ManuallyAdded": [
-          "\u9006\u6C34\u5BD2\u624B\u6E38"
+          "\u9006\u6C34\u5BD2\u624B\u6E38",
+          "Battlefield 6 Event"
         ],
         "XboxApp": [
           "Call of Duty\u00AE"
+        ],
+        "BattleNet": [
+          "Call of Duty"
         ]
       }
     },
@@ -3858,19 +3917,31 @@
           "ARK: Survival Ascended",
           "Clair Obscur: Expedition 33",
           "Night of the Dead",
-          "Longvinter"
+          "Longvinter",
+          "Splitgate 2 Beta",
+          "Mafia: The Old Country",
+          "Dead Take",
+          "Stormgate",
+          "Greedland",
+          "Dune: Awakening Public Test Client",
+          "Death Relives",
+          "RoboCop: Rogue City - Unfinished Business",
+          "Starship Troopers: Extermination"
         ],
         "ManuallyAdded": [
           "MindsEye",
           "Luto",
-          "RoboCop Rogue City Unfinished Business"
+          "RoboCop Rogue City Unfinished Business",
+          "Clair Obscure Expedition 33",
+          "Clair Obscur. Expedition 33 (2025)"
         ],
         "XboxApp": [
           "Frostpunk 2: PC Edition",
           "Splitgate 2",
           "MechWarrior 5: Clans",
           "EVERSPACE\u2122 2",
-          "ARK: Survival Ascended"
+          "ARK: Survival Ascended",
+          "Clair Obscur: Expedition 33"
         ],
         "GOG": [
           "RoboCop: Rogue City - Unfinished Business",
@@ -3928,7 +3999,8 @@
           "\u547D\u8FD0\u6273\u673A(2002428)",
           "Win64rh",
           "yysls",
-          "Avowed (2025)"
+          "Avowed (2025)",
+          "Titan Quest II"
         ],
         "Steam": [
           "Marvel\u0027s Spider-Man 2",
@@ -3990,7 +4062,10 @@
           "No One Survived",
           "Somber Echoes",
           "Private Military Manager: Tactical Auto Battler",
-          "Rocket Squad: Infinity"
+          "Rocket Squad: Infinity",
+          "Titan Quest II",
+          "VOIN",
+          "Prologue: Go Wayback! Demo"
         ],
         "XboxApp": [
           "Avowed",
@@ -4219,7 +4294,8 @@
           "Call of Duty"
         ],
         "Steam": [
-          "Call of Duty\u00AE"
+          "Call of Duty\u00AE",
+          "Call of Duty\u00AE: Modern Warfare\u00AE III"
         ]
       }
     },
@@ -4294,7 +4370,8 @@
       "hash": "49230AD94ED6169933CD0457501D9CB4",
       "sources": {
         "Steam": [
-          "Grand Theft Auto V Enhanced"
+          "Grand Theft Auto V Enhanced",
+          "Cyberpunk 2077"
         ]
       }
     },
@@ -4487,6 +4564,16 @@
     {
       "dll_type": "FSR_31_DX12",
       "version": "1.0.1.0",
+      "hash": "EB5223BA00E1840A09CAD9CD307A5083",
+      "sources": {
+        "Steam": [
+          "Dune: Awakening"
+        ]
+      }
+    },
+    {
+      "dll_type": "FSR_31_DX12",
+      "version": "1.0.1.0",
       "hash": "E9C0089227CA3412C70370DC6088796D",
       "sources": {
         "Steam": [
@@ -4577,6 +4664,17 @@
       "sources": {
         "Steam": [
           "Dune: Awakening"
+        ]
+      }
+    },
+    {
+      "dll_type": "FSR_31_DX12",
+      "version": "1.0.1.0",
+      "hash": "BC72AB1A773F368243917972C232AFAB",
+      "sources": {
+        "Steam": [
+          "Splitgate 2 Beta",
+          "Splitgate 2"
         ]
       }
     },
@@ -4849,7 +4947,8 @@
       "hash": "1FD4D6878213A7C69E4B486AD58246BA",
       "sources": {
         "ManuallyAdded": [
-          "Win64"
+          "Win64",
+          "Arena Breakout Infinite"
         ]
       }
     },
@@ -4900,6 +4999,16 @@
       "sources": {
         "Steam": [
           "Dune: Awakening"
+        ]
+      }
+    },
+    {
+      "dll_type": "FSR_31_DX12",
+      "version": "1.0.1.0",
+      "hash": "0CB7BF2C7D46361B01A17E0B58AAFF35",
+      "sources": {
+        "Steam": [
+          "Dune: Awakening Public Test Client"
         ]
       }
     },
@@ -5232,7 +5341,15 @@
       "hash": "8F036C984D570B58C1CD312BB5C780AB",
       "sources": {
         "XboxApp": [
-          "DOOM: The Dark Ages"
+          "DOOM: The Dark Ages",
+          "Forza Motorsport",
+          "Clair Obscur: Expedition 33"
+        ],
+        "Steam": [
+          "Monster Hunter Wilds"
+        ],
+        "UbisoftConnect": [
+          "Assassin\u0027s Creed Shadows"
         ]
       }
     },
@@ -5507,7 +5624,9 @@
           "Microsoft Flight Simulator 2024",
           "FINAL FANTASY VII REBIRTH",
           "FINAL FANTASY XIV Online",
-          "Baldur\u0027s Gate 3"
+          "Baldur\u0027s Gate 3",
+          "Cyberpunk 2077",
+          "Portal with RTX"
         ],
         "ManuallyAdded": [
           "FINAL FANTASY VII REBIRTH",
@@ -5622,7 +5741,43 @@
       "hash": "B6D2A108369FE3CD7FC82AF14DD8C60C",
       "sources": {
         "GOG": [
-          "Baldur\u0027s Gate 3"
+          "Baldur\u0027s Gate 3",
+          "Control Ultimate Edition"
+        ],
+        "EpicGamesStore": [
+          "Cyberpunk 2077",
+          "Fortnite"
+        ],
+        "Steam": [
+          "Cyberpunk 2077",
+          "Black Myth: Wukong",
+          "Marvel\u2019s Spider-Man Remastered",
+          "God of War Ragnar\u00F6k",
+          "Marvel Rivals",
+          "Marvel\u0027s Spider-Man: Miles Morales",
+          "Monster Hunter Wilds",
+          "FINAL FANTASY XVI",
+          "Horizon Zero Dawn\u2122 Remastered",
+          "The Witcher 3: Wild Hunt",
+          "RoboCop: Rogue City",
+          "Mecha BREAK",
+          "THE FINALS"
+        ],
+        "UbisoftConnect": [
+          "AFOP",
+          "Assassin\u0027s Creed Mirage",
+          "Assassin\u0027s Creed Shadows",
+          "Star Wars Outlaws"
+        ],
+        "XboxApp": [
+          "Indiana Jones and the Great Circle",
+          "Forza Horizon 5",
+          "DOOM: The Dark Ages",
+          "Warhammer 40,000: Darktide",
+          "The Alters",
+          "Call of Duty\u00AE",
+          "Forza Motorsport",
+          "Clair Obscur: Expedition 33"
         ]
       }
     },
@@ -5635,7 +5790,8 @@
           "Ship Graveyard Simulator 2",
           "Black Myth: Wukong",
           "Atelier Yumia: The Alchemist of Memories \u0026 the Envisioned Land",
-          "Gray Zone Warfare"
+          "Gray Zone Warfare",
+          "Cyberpunk 2077"
         ]
       }
     },
@@ -5665,7 +5821,8 @@
           "KARMA: The Dark World",
           "Marvel\u0027s Spider-Man 2",
           "Virtua Fighter 5 R.E.V.O.",
-          "KARMA: The Dark World Demo"
+          "KARMA: The Dark World Demo",
+          "Mecha BREAK"
         ],
         "EpicGamesStore": [
           "Marvel Rivals"
@@ -5876,7 +6033,8 @@
           "POPUCOM"
         ],
         "ManuallyAdded": [
-          "Win64rh"
+          "Win64rh",
+          "yysls"
         ]
       }
     },
@@ -6198,6 +6356,16 @@
     {
       "dll_type": "XeSS",
       "version": "1.3.0.28",
+      "hash": "C85DF579AEF9B0461F1D74C6E6520AAA",
+      "sources": {
+        "EpicGamesStore": [
+          "Fortnite"
+        ]
+      }
+    },
+    {
+      "dll_type": "XeSS",
+      "version": "1.3.0.28",
       "hash": "BD0856F19162546FD27B3B07E43058F2",
       "sources": {
         "EpicGamesStore": [
@@ -6292,6 +6460,16 @@
       "sources": {
         "EpicGamesStore": [
           "Fortnite"
+        ]
+      }
+    },
+    {
+      "dll_type": "XeSS",
+      "version": "1.3.0.28",
+      "hash": "5780C33262EAAEA1E92C39FA47B672A4",
+      "sources": {
+        "EpicGamesStore": [
+          "\u300AFortnite\u300B"
         ]
       }
     },
@@ -6633,6 +6811,16 @@
     {
       "dll_type": "XeSS",
       "version": "1.0.1.12",
+      "hash": "E265B3D5E11CCBCDC66BDA2E1648078B",
+      "sources": {
+        "Steam": [
+          "EA SPORTS FC 25"
+        ]
+      }
+    },
+    {
+      "dll_type": "XeSS",
+      "version": "1.0.1.12",
       "hash": "DF02CAEEA2523D62A60C3DC6E571FA82",
       "sources": {
         "Steam": [
@@ -6732,6 +6920,16 @@
         ],
         "ManuallyAdded": [
           "common"
+        ]
+      }
+    },
+    {
+      "dll_type": "XeSS",
+      "version": "1.0.1.12",
+      "hash": "11CB777E67B9AA3D779ECAA57C802FD8",
+      "sources": {
+        "Steam": [
+          "EA SPORTS FC 25"
         ]
       }
     },
@@ -6857,7 +7055,23 @@
       "hash": "7371177F39EFBBB60A3F1274244C3ECA",
       "sources": {
         "GOG": [
-          "Baldur\u0027s Gate 3"
+          "Baldur\u0027s Gate 3",
+          "Control Ultimate Edition"
+        ],
+        "EpicGamesStore": [
+          "Cyberpunk 2077"
+        ],
+        "Steam": [
+          "Cyberpunk 2077",
+          "Black Myth: Wukong",
+          "Marvel Rivals",
+          "RoboCop: Rogue City"
+        ],
+        "UbisoftConnect": [
+          "Assassin\u0027s Creed Shadows"
+        ],
+        "XboxApp": [
+          "Clair Obscur: Expedition 33"
         ]
       }
     },
@@ -6869,7 +7083,8 @@
         "Steam": [
           "Ship Graveyard Simulator 2",
           "Black Myth: Wukong",
-          "Gray Zone Warfare"
+          "Gray Zone Warfare",
+          "Cyberpunk 2077"
         ],
         "UbisoftConnect": [
           "Star Wars Outlaws"
@@ -6981,7 +7196,23 @@
       "hash": "904116C83B5C6115CBE41FF3BE513997",
       "sources": {
         "GOG": [
-          "Baldur\u0027s Gate 3"
+          "Baldur\u0027s Gate 3",
+          "Control Ultimate Edition"
+        ],
+        "EpicGamesStore": [
+          "Cyberpunk 2077"
+        ],
+        "Steam": [
+          "Cyberpunk 2077",
+          "Black Myth: Wukong",
+          "Marvel Rivals",
+          "RoboCop: Rogue City"
+        ],
+        "UbisoftConnect": [
+          "Assassin\u0027s Creed Shadows"
+        ],
+        "XboxApp": [
+          "Clair Obscur: Expedition 33"
         ]
       }
     },
@@ -6993,7 +7224,8 @@
         "Steam": [
           "Ship Graveyard Simulator 2",
           "Black Myth: Wukong",
-          "Gray Zone Warfare"
+          "Gray Zone Warfare",
+          "Cyberpunk 2077"
         ]
       }
     },
