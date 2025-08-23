@@ -37,11 +37,22 @@ if (Directory.Exists(DLLProcessor.InputSDKsFilesPath) == false)
 
 var httpClient = new HttpClient();
 
-//if (File.Exists(DLLProcessor.InputManifestPath) == false)
-//{
+var shouldUpdateManifest = true;
+if (File.Exists(DLLProcessor.InputManifestPath) == true)
+{
+    var fileInfo = new FileInfo(DLLProcessor.InputManifestPath);
+    var lastModified = (DateTime.Now - fileInfo.LastWriteTime).TotalMinutes;
+    if (lastModified < 60)
+    {
+        shouldUpdateManifest = false;
+    }
+}
+
+if (shouldUpdateManifest)
+{
     var manifestData = await httpClient.GetStringAsync("https://raw.githubusercontent.com/beeradmoore/dlss-swapper-manifest-builder/refs/heads/main/manifest.json");
     File.WriteAllText(DLLProcessor.InputManifestPath, manifestData);
-//}
+}
 
 
 var manifest = JsonSerializer.Deserialize<Manifest>(File.ReadAllText(DLLProcessor.InputManifestPath));
