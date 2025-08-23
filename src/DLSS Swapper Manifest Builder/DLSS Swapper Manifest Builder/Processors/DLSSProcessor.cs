@@ -1,5 +1,6 @@
 ﻿using System.Diagnostics;
 using System.IO.Compression;
+using System.Security.Cryptography;
 
 namespace DLSS_Swapper_Manifest_Builder.Processors;
 
@@ -113,4 +114,55 @@ public class DLSSProcessor : DLLProcessor
         { "117595D4839DCAB18501249CBEEE9B7A", "Cyberpunk 2077 2.21" }, // 310.1.0.0
         { "3A875F45C315D09E5F4548CC9288F178" , "NVIDIA Driver" }, // v310.2.0.0
     };
+
+    public override List<DLLRecord> ProcessLocalFiles(IReadOnlyList<DLLRecord> existingRecords)
+    {
+        var modelPath = @"C:\ProgramData\NVIDIA\NGX\models\dlss\versions\";
+        var binFiles = Directory.GetFiles(modelPath, "*.bin", SearchOption.AllDirectories);
+
+        foreach (var binFile in binFiles)
+        {
+            var md5Hash = string.Empty;
+            using (var fileStream = File.OpenRead(binFile))
+            {
+                using (var md5 = MD5.Create())
+                {
+                    var hash = md5.ComputeHash(fileStream);
+                    md5Hash = BitConverter.ToString(hash).Replace("-", "").ToUpperInvariant();
+
+                    // Check if the file is an exact match.
+                    if (existingRecords.Any(x => x.MD5Hash.Equals(md5Hash, StringComparison.InvariantCultureIgnoreCase)))
+                    {
+                        // If exact match, skip it.
+                        continue;
+                    }
+                }
+            }
+
+            // Check if we have an existing DLL of the same version.
+            var fileInfo = new FileInfo(binFile);
+            var fileVersionInfo = FileVersionInfo.GetVersionInfo(binFile);
+            var productVersion = fileVersionInfo.ProductVersion?.Replace(',', '.') ?? string.Empty;
+
+            if (string.IsNullOrWhiteSpace(productVersion))
+            {
+                // We should never get here.
+                Debugger.Break();
+                continue;
+            }
+
+            // Even though the DLL is different we don't want 50 copies of the same v1.2.3.4
+            if (existingRecords.Any(x => x.Version.Equals(productVersion, StringComparison.InvariantCultureIgnoreCase)))
+            {
+                continue;
+            }
+
+            Console.WriteLine($"dlss - {productVersion} - {md5Hash}");
+
+            // TODO: Handle new files.
+        }
+
+        var processedFiles = base.ProcessLocalFiles(existingRecords);
+        return processedFiles;
+    }
 }

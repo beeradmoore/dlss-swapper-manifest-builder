@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -77,4 +79,55 @@ internal class DLSSGProcessor : DLLProcessor
         // Not showing E8E78491DC415315A2C3785916185CF1 (1.10.0 , 3.1.10)
         // as it says NVIDIA CONFIDENTIAL - PROVIDED UNDER NDA - DO NOT DISTRIBUTE IN ANY WAY
     };
+
+    public override List<DLLRecord> ProcessLocalFiles(IReadOnlyList<DLLRecord> existingRecords)
+    {
+        var modelPath = @"C:\ProgramData\NVIDIA\NGX\models\dlssg\versions\";
+        var binFiles = Directory.GetFiles(modelPath, "*.bin", SearchOption.AllDirectories);
+
+        foreach (var binFile in binFiles)
+        {
+            var md5Hash = string.Empty;
+            using (var fileStream = File.OpenRead(binFile))
+            {
+                using (var md5 = MD5.Create())
+                {
+                    var hash = md5.ComputeHash(fileStream);
+                    md5Hash = BitConverter.ToString(hash).Replace("-", "").ToUpperInvariant();
+
+                    // Check if the file is an exact match.
+                    if (existingRecords.Any(x => x.MD5Hash.Equals(md5Hash, StringComparison.InvariantCultureIgnoreCase)))
+                    {
+                        // If exact match, skip it.
+                        continue;
+                    }
+                }
+            }
+
+            // Check if we have an existing DLL of the same version.
+            var fileInfo = new FileInfo(binFile);
+            var fileVersionInfo = FileVersionInfo.GetVersionInfo(binFile);
+            var productVersion = fileVersionInfo.ProductVersion?.Replace(',', '.') ?? string.Empty;
+
+            if (string.IsNullOrWhiteSpace(productVersion))
+            {
+                // We should never get here.
+                Debugger.Break();
+                continue;
+            }
+
+            // Even though the DLL is different we don't want 50 copies of the same v1.2.3.4
+            if (existingRecords.Any(x => x.Version.Equals(productVersion, StringComparison.InvariantCultureIgnoreCase)))
+            {
+                continue;
+            }
+
+            Console.WriteLine($"dlss_g - {productVersion} - {md5Hash}");
+
+            // TODO: Handle new files.
+        }
+        
+        var processedFiles = base.ProcessLocalFiles(existingRecords);
+        return processedFiles;
+    }
 }
