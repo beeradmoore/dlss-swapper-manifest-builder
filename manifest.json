@@ -1648,6 +1648,40 @@
       "file_size": 49165856,
       "zip_file_size": 35651452,
       "dll_source": "streamline-sdk-v2.8.0.zip"
+    },
+    {
+      "version": "310.4.0.0",
+      "version_number": 87257259960172544,
+      "internal_name": "CL 36386704",
+      "internal_name_extra": "",
+      "additional_label": "",
+      "md5_hash": "F2956394EB8A8474C79B7DE83AF4D473",
+      "zip_md5_hash": "69D141624F540D7C00B787A2B65CFD8C",
+      "download_url": "https://dlss-swapper-downloads.beeradmoore.com/dlss/dlss_v310.4.0.0_F2956394EB8A8474C79B7DE83AF4D473.zip",
+      "file_description": "NVIDIA DLSS - DVS PRODUCTION",
+      "signed_datetime": "2025-08-12T21:48:02Z",
+      "is_signature_valid": true,
+      "is_dev_file": false,
+      "file_size": 29981808,
+      "zip_file_size": 17837866,
+      "dll_source": "DLSS-310.4.0.zip"
+    },
+    {
+      "version": "310.4.0.0",
+      "version_number": 87257259960172544,
+      "internal_name": "CL 36386704",
+      "internal_name_extra": "",
+      "additional_label": "",
+      "md5_hash": "8440DAA19AE3DF3402F24D1F26ED23B9",
+      "zip_md5_hash": "E847DA8688411567078AB583CBA2BF96",
+      "download_url": "https://dlss-swapper-downloads.beeradmoore.com/dlss/dlss_v310.4.0.0_8440DAA19AE3DF3402F24D1F26ED23B9.zip",
+      "file_description": "NVIDIA DLSS - DVS PRODUCTION",
+      "signed_datetime": "2025-08-12T21:48:27Z",
+      "is_signature_valid": true,
+      "is_dev_file": true,
+      "file_size": 30135840,
+      "zip_file_size": 17903428,
+      "dll_source": "DLSS-310.4.0.zip"
     }
   ],
   "dlss_d": [
@@ -1854,6 +1888,23 @@
       "file_size": 83528224,
       "zip_file_size": 40029292,
       "dll_source": "streamline-sdk-v2.8.0.zip"
+    },
+    {
+      "version": "310.4.0.0",
+      "version_number": 87257259960172544,
+      "internal_name": "CL 36386704",
+      "internal_name_extra": "",
+      "additional_label": "",
+      "md5_hash": "4D2D5AA25FEFDAFE119666AB33B38138",
+      "zip_md5_hash": "AA87E5BC7C1EC1B112D75C1EBF623928",
+      "download_url": "https://dlss-swapper-downloads.beeradmoore.com/dlss_d/dlss_d_v310.4.0.0_4D2D5AA25FEFDAFE119666AB33B38138.zip",
+      "file_description": "NVIDIA DLSS - DVS PRODUCTION",
+      "signed_datetime": "2025-08-12T21:47:11Z",
+      "is_signature_valid": true,
+      "is_dev_file": false,
+      "file_size": 28548208,
+      "zip_file_size": 11104114,
+      "dll_source": ""
     }
   ],
   "dlss_g": [
@@ -2281,6 +2332,23 @@
       "file_size": 7933496,
       "zip_file_size": 3947526,
       "dll_source": "streamline-sdk-v2.8.0.zip"
+    },
+    {
+      "version": "310.4.0.0",
+      "version_number": 87257259960172544,
+      "internal_name": "CL 36386704",
+      "internal_name_extra": "",
+      "additional_label": "",
+      "md5_hash": "9FD3C2A5AF635D573CB313BDE86E7058",
+      "zip_md5_hash": "EE08EC34DCA91B143654572BCE4CDBC1",
+      "download_url": "https://dlss-swapper-downloads.beeradmoore.com/dlss_g/dlss_g_v310.4.0.0_9FD3C2A5AF635D573CB313BDE86E7058.zip",
+      "file_description": "NVIDIA DLSS-G MFGLW - DVS PRODUCTION",
+      "signed_datetime": "2025-08-12T21:47:16Z",
+      "is_signature_valid": true,
+      "is_dev_file": false,
+      "file_size": 7509024,
+      "zip_file_size": 3740762,
+      "dll_source": ""
     }
   ],
   "fsr_31_dx12": [
@@ -6155,7 +6223,8 @@
             "Uy5ULkEuTC5LLkUuUi4gMjogSGVhcnQgb2YgQ2hvcm5vYnls"
           ],
           "ManuallyAdded": [
-            "Uy5ULkEuTC5LLkUuUi4gMiBIZWFydCBvZiBDaG9ybm9ieWw="
+            "Uy5ULkEuTC5LLkUuUi4gMiBIZWFydCBvZiBDaG9ybm9ieWw=",
+            "Uy5ULkEuTC5LLkUuUi4gMi5IZWFydC5vZi5DaG9ybm9ieWwuVWx0aW1hdGUuRWRpdG9uLUluc2FuZVJhbVplcw=="
           ]
         }
       },
@@ -6256,8 +6325,7 @@
             "Uy5ULkEuTC5LLkUuUi4gMjogSGVhcnQgb2YgQ2hvcm5vYnls"
           ],
           "ManuallyAdded": [
-            "Uy5ULkEuTC5LLkUuUi4gMiBIZWFydCBvZiBDaG9ybm9ieWw=",
-            "Uy5ULkEuTC5LLkUuUi4gMi5IZWFydC5vZi5DaG9ybm9ieWwuVWx0aW1hdGUuRWRpdG9uLUluc2FuZVJhbVplcw=="
+            "Uy5ULkEuTC5LLkUuUi4gMiBIZWFydCBvZiBDaG9ybm9ieWw="
           ]
         }
       },
