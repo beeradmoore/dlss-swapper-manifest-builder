@@ -2865,6 +2865,23 @@
       "file_size": 77788528,
       "zip_file_size": 59744954,
       "dll_source": "XeSS_SDK_2.1.0.zip"
+    },
+    {
+      "version": "2.0.2.68",
+      "version_number": 562949953552452,
+      "internal_name": "",
+      "internal_name_extra": "",
+      "additional_label": "",
+      "md5_hash": "D9E2ACA10667501DCED0E5B69B7D3EA5",
+      "zip_md5_hash": "EDCA93E56D28F0F75807F5823BF298C5",
+      "download_url": "https://dlss-swapper-downloads.beeradmoore.com/xess/xess_v2.0.2.68_D9E2ACA10667501DCED0E5B69B7D3EA5.zip",
+      "file_description": "XeSS SDK",
+      "signed_datetime": "2025-10-17T14:23:43Z",
+      "is_signature_valid": true,
+      "is_dev_file": false,
+      "file_size": 77795704,
+      "zip_file_size": 59746078,
+      "dll_source": "XeSS_SDK_2.1.1.zip"
     }
   ],
   "xell": [
@@ -2935,6 +2952,23 @@
       "file_size": 359792,
       "zip_file_size": 117388,
       "dll_source": "XeSS_SDK_2.1.0.zip"
+    },
+    {
+      "version": "1.2.1.13",
+      "version_number": 281483566710797,
+      "internal_name": "",
+      "internal_name_extra": "",
+      "additional_label": "",
+      "md5_hash": "32EAEC31D4F314B0A0E92EF5AAAE2D6F",
+      "zip_md5_hash": "1D0147B50E8814E28D56F915FCB6CD12",
+      "download_url": "https://dlss-swapper-downloads.beeradmoore.com/xell/xell_v1.2.1.13_32EAEC31D4F314B0A0E92EF5AAAE2D6F.zip",
+      "file_description": "XeLL SDK",
+      "signed_datetime": "2025-10-13T11:35:04Z",
+      "is_signature_valid": true,
+      "is_dev_file": false,
+      "file_size": 360312,
+      "zip_file_size": 117456,
+      "dll_source": "XeSS_SDK_2.1.1.zip"
     }
   ],
   "xess_fg": [
@@ -3039,6 +3073,23 @@
       "file_size": 45541752,
       "zip_file_size": 27478608,
       "dll_source": "XeSS_SDK_2.1.0.zip"
+    },
+    {
+      "version": "1.2.2.118",
+      "version_number": 281483566776438,
+      "internal_name": "",
+      "internal_name_extra": "",
+      "additional_label": "",
+      "md5_hash": "B68EDB6F20585DBC44B96333BF416622",
+      "zip_md5_hash": "CFEA30B6DC37AA2D791BE38C87D7F502",
+      "download_url": "https://dlss-swapper-downloads.beeradmoore.com/xess_fg/xess_fg_v1.2.2.118_B68EDB6F20585DBC44B96333BF416622.zip",
+      "file_description": "XeSS Frame Generation SDK",
+      "signed_datetime": "2025-10-21T22:14:42Z",
+      "is_signature_valid": true,
+      "is_dev_file": false,
+      "file_size": 47119216,
+      "zip_file_size": 28426087,
+      "dll_source": "XeSS_SDK_2.1.1.zip"
     }
   ],
   "known_dlls": {
