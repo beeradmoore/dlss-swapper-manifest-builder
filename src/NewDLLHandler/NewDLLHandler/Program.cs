@@ -60,7 +60,14 @@ if (File.Exists(handledIssuesFile))
 // Some issues are triggered as handled manually so they will be skipped lower.
 var manuallyHandledIssues = new int[]
 {
-    2207, 2202, 2200, 2175, 2170,
+	3016, 3015, 3007, 2919, 2915, 2907, 2883, 2877, 2858, 2853,
+	2810, 2767, 2754, 2739, 2722, 2703, 2687, 2686, 2669, 2656,
+    2643, 2638, 2635, 2634, 2615, 2609, 2597, 2591, 2550, 2544, 
+    2542, 2541, 2535, 2533, 2532, 2531, 2530, 2529, 2522, 2512, 
+    2500, 2495, 2492, 2485, 2453, 2411, 2383, 2371, 2368, 2339, 
+    2311, 2287, 2266, 2263, 2262, 2254, 2237, 
+
+	2207, 2202, 2200, 2175, 2170,
 
     2142, 2108, 2079,
 
@@ -196,7 +203,7 @@ try
 
         var issueRequest = new RepositoryIssueRequest()
         {
-            State = ItemStateFilter.All,
+            State = ItemStateFilter.Open,
             SortProperty = IssueSort.Created,
             SortDirection = SortDirection.Descending,
             Since = new DateTimeOffset(2025, 03, 09, 0, 0, 0, TimeSpan.Zero), // Last updateed
@@ -219,7 +226,7 @@ try
 
     foreach (var issue in issues)
     {
-        if (handledIssues.Contains(issue.Number))
+		if (handledIssues.Contains(issue.Number))
         {
             continue;
         }
@@ -368,8 +375,8 @@ try
 
                 if (version == "0.0.0.0")
                 {
-                    Console.WriteLine($"Unknown DLL version: {dll}");
-                    Debugger.Break();
+                    //Console.WriteLine($"Unknown DLL version: {dll}");
+                    //Debugger.Break();
                     continue;
                 }
 
