@@ -61,15 +61,21 @@
           "Marathon Closed Technical Test",
           "Backrooms: Escape Together",
           "Echoes of the End",
-          "30 Days on Ship Demo"
+          "30 Days on Ship Demo",
+          "Cronos: The New Dawn - Demo",
+          "No More Room in Hell 2",
+          "Deep Rock Galactic: Rogue Core Playtest",
+          "Boba Cafe Simulator Demo"
         ],
         "ManuallyAdded": [
           "Cronos The New Dawn",
           "Cronos",
-          "Cronos. The New Dawn"
+          "Cronos. The New Dawn",
+          "Cronos.The.New.Dawn.Deluxe.Edition-InsaneRamZes"
         ],
         "EpicGamesStore": [
-          "RENNSPORT"
+          "RENNSPORT",
+          "Ertugrul of Ulukayin"
         ],
         "XboxApp": [
           "Pax Dei",
@@ -186,7 +192,12 @@
           "Exoborne Playtest",
           "Last Flag Demo",
           "Ship Explorer",
-          "Trench Tales"
+          "Trench Tales",
+          "Wicked Island Demo",
+          "Dream Eaters.exe Demo",
+          "Avowed",
+          "Project Motor Racing",
+          "Tsarevna Playtest"
         ],
         "XboxApp": [
           "DOOM: The Dark Ages",
@@ -208,7 +219,8 @@
           "Farming Simulator 25 (PC)",
           "Keeper",
           "ARC Raiders",
-          "NINJAGAIDEN4"
+          "NINJAGAIDEN4",
+          "Avowed"
         ],
         "ManuallyAdded": [
           "MindsEye",
@@ -264,7 +276,11 @@
           "InfinityNikki Launcher",
           "RoboCop Rogue City - Unfinished Business",
           "Call of Duty HQ",
-          "Otherskin"
+          "Otherskin",
+          "Frostpunk 2",
+          "Expedition 33",
+          "\u65E0\u9650\u6696\u6696",
+          "Clair Obscur - Expedition 33"
         ],
         "BattleNet": [
           "Diablo IV",
@@ -575,7 +591,8 @@
           "Still Wakes the Deep",
           "NARAKA: BLADEPOINT",
           "Farming Simulator 25 (PC)",
-          "Enlisted"
+          "Enlisted",
+          "Mortal Kombat\u2122 1"
         ],
         "ManuallyAdded": [
           "Marvels SpiderMan 2",
@@ -676,7 +693,8 @@
           "Farming Simulator 25",
           "Wuthering Waves",
           "Duet Night Abyss",
-          "3DMark"
+          "3DMark",
+          "Where Winds Meet"
         ],
         "BattleNet": [
           "Call of Duty"
@@ -1064,6 +1082,9 @@
         ],
         "BattleNet": [
           "Diablo IV"
+        ],
+        "XboxApp": [
+          "Red Dead Redemption (PC)"
         ]
       }
     },
@@ -2196,7 +2217,8 @@
           "Lessaria",
           "LEGO\u00AE Builder\u0027s Journey",
           "REKA",
-          "\u4E0B\u4E00\u7AD9\u6C5F\u6E56\u2161"
+          "\u4E0B\u4E00\u7AD9\u6C5F\u6E56\u2161",
+          "Snow x Hime"
         ],
         "GOG": [
           "IXION",
@@ -2500,6 +2522,16 @@
     {
       "dll_type": "DLSS",
       "version": "2.1.39.0",
+      "hash": "797725326E6E8B044F0D2C4BB14C9BF1",
+      "sources": {
+        "Steam": [
+          "Mount \u0026 Blade II: Bannerlord"
+        ]
+      }
+    },
+    {
+      "dll_type": "DLSS",
+      "version": "2.1.39.0",
       "hash": "5FE1007A733BD346B40F8E2738F09FC2",
       "sources": {
         "Steam": [
@@ -2684,7 +2716,8 @@
           "DOOM: The Dark Ages",
           "Ready or Not",
           "Delta Force",
-          "Marvel Rivals"
+          "Marvel Rivals",
+          "INDUSTRIA 2 Playtest"
         ]
       }
     },
@@ -2977,7 +3010,8 @@
           "Game of Thrones: Kingsroad",
           "Wuthering Waves",
           "Duet Night Abyss",
-          "3DMark"
+          "3DMark",
+          "Where Winds Meet"
         ],
         "ManuallyAdded": [
           "Marvels SpiderMan 2",
@@ -3461,7 +3495,8 @@
           "Cyberpunk 2077",
           "Clair Obscur: Expedition 33",
           "DOOM: The Dark Ages",
-          "Marvel Rivals"
+          "Marvel Rivals",
+          "INDUSTRIA 2 Playtest"
         ]
       }
     },
@@ -3656,7 +3691,11 @@
           "Exoborne Playtest",
           "Last Flag Demo",
           "Ship Explorer",
-          "Trench Tales"
+          "Trench Tales",
+          "Wicked Island Demo",
+          "Dream Eaters.exe Demo",
+          "Avowed",
+          "Tsarevna Playtest"
         ],
         "ManuallyAdded": [
           "MindsEye",
@@ -3679,7 +3718,10 @@
           "Mafia The Old Country",
           "InfinityNikki Launcher",
           "RoboCop Rogue City - Unfinished Business",
-          "Otherskin"
+          "Otherskin",
+          "Frostpunk 2",
+          "Expedition 33",
+          "\u65E0\u9650\u6696\u6696"
         ],
         "XboxApp": [
           "Frostpunk 2: PC Edition",
@@ -3691,7 +3733,8 @@
           "Senua\u2019s Saga: Hellblade 2",
           "VOID/BREAKER",
           "Keeper",
-          "ARC Raiders"
+          "ARC Raiders",
+          "Avowed"
         ],
         "GOG": [
           "RoboCop: Rogue City - Unfinished Business",
@@ -3855,7 +3898,8 @@
           "NARAKA: BLADEPOINT",
           "Nyan Heroes | Open Pre-Alpha Playtest 4",
           "Zenless Zone Zero",
-          "Game of Thrones: Kingsroad"
+          "Game of Thrones: Kingsroad",
+          "Where Winds Meet"
         ],
         "BattleNet": [
           "Call of Duty"
@@ -4070,7 +4114,10 @@
           "God of War Ragnarok",
           "Horizon Forbidden West Complete Edition",
           "Hell is Us",
-          "Enshrouded"
+          "Enshrouded",
+          "HoYoPlay",
+          "Star Rail Games",
+          "PAYDAY 3"
         ],
         "Steam": [
           "The Outlast Trials",
@@ -4127,11 +4174,17 @@
           "Arma Reforger",
           "The Riftbreaker",
           "Kingdom Come: Deliverance II",
-          "Echoes of the End"
+          "Echoes of the End",
+          "Hogwarts Legacy",
+          "Deconstruction Simulator",
+          "Ship Graveyard Simulator 2",
+          "Euro Truck Simulator 2"
         ],
         "EpicGamesStore": [
           "F1\u00AE Manager\u00A02024",
-          "Control"
+          "Control",
+          "PC Building Simulator 2",
+          "Fortnite"
         ],
         "GOG": [
           "Cyberpunk 2077"
@@ -4163,6 +4216,9 @@
       "sources": {
         "XboxApp": [
           "S.T.A.L.K.E.R. 2"
+        ],
+        "Steam": [
+          "S.T.A.L.K.E.R. 2: Heart of Chornobyl"
         ]
       }
     },
@@ -4640,6 +4696,16 @@
     {
       "dll_type": "FSR_31_DX12",
       "version": "1.0.1.0",
+      "hash": "8DCDBF0EADF60B0AD29B76DEF4F3968B",
+      "sources": {
+        "Steam": [
+          "Dune: Awakening"
+        ]
+      }
+    },
+    {
+      "dll_type": "FSR_31_DX12",
+      "version": "1.0.1.0",
       "hash": "8ADD2892ED8B808E4D84568E6B558F27",
       "sources": {
         "ManuallyAdded": [
@@ -4720,7 +4786,8 @@
           "Master of Realms Playtest",
           "Star Overdrive Demo",
           "Gods, Death \u0026 Reapers Playtest",
-          "Spirit of the North 2"
+          "Spirit of the North 2",
+          "Darkfallen Survivors Playtest"
         ],
         "GOG": [
           "KARMA: The Dark World",
@@ -4958,6 +5025,9 @@
       "sources": {
         "Steam": [
           "Mortal Kombat 1"
+        ],
+        "XboxApp": [
+          "Mortal Kombat\u2122 1"
         ]
       }
     },
@@ -5999,6 +6069,26 @@
     },
     {
       "dll_type": "XeSS",
+      "version": "2.0.2.53",
+      "hash": "4E2BFA16708A2D17D5E25246F964BCB9",
+      "sources": {
+        "Steam": [
+          "skate."
+        ]
+      }
+    },
+    {
+      "dll_type": "XeSS",
+      "version": "2.0.2.53",
+      "hash": "2BDE45D70899F0E3BB21EA60093DC71B",
+      "sources": {
+        "Steam": [
+          "skate."
+        ]
+      }
+    },
+    {
+      "dll_type": "XeSS",
       "version": "2.0.1.41",
       "hash": "C5A79DC3D5ECA3F513DBD9E3099A343A",
       "sources": {
@@ -6014,6 +6104,16 @@
       "sources": {
         "Steam": [
           "skate."
+        ]
+      }
+    },
+    {
+      "dll_type": "XeSS",
+      "version": "2.0.1.41",
+      "hash": "96DBD0FA767B10B38B02E31C1711C7FD",
+      "sources": {
+        "ManuallyAdded": [
+          "Skate"
         ]
       }
     },
@@ -6352,6 +6452,9 @@
           "Where Winds Meet",
           "wwm_standard",
           "yysls_medium"
+        ],
+        "EpicGamesStore": [
+          "Where Winds Meet"
         ]
       }
     },
@@ -7448,6 +7551,26 @@
   "XeLL": [
     {
       "dll_type": "XeLL",
+      "version": "1.2.0.9",
+      "hash": "86B6388C18FA5DCAD9A2293C9437507E",
+      "sources": {
+        "Steam": [
+          "skate."
+        ]
+      }
+    },
+    {
+      "dll_type": "XeLL",
+      "version": "1.2.0.9",
+      "hash": "3AF1BB4BCC9775501B3F13FCB419A33D",
+      "sources": {
+        "Steam": [
+          "skate."
+        ]
+      }
+    },
+    {
+      "dll_type": "XeLL",
       "version": "1.2.0.10",
       "hash": "9DFE6ED8DD6F2F8786FACF2565FD8898",
       "sources": {
@@ -7506,6 +7629,16 @@
       "sources": {
         "Steam": [
           "skate."
+        ]
+      }
+    },
+    {
+      "dll_type": "XeLL",
+      "version": "1.1.0.6",
+      "hash": "34D655B5D1668D9B1FBAF66C1BEA1715",
+      "sources": {
+        "ManuallyAdded": [
+          "Skate"
         ]
       }
     },
@@ -7575,6 +7708,26 @@
     },
     {
       "dll_type": "XeSS_FG",
+      "version": "1.2.0.87",
+      "hash": "6A0513EED34579F39A67B84F1D30962C",
+      "sources": {
+        "Steam": [
+          "skate."
+        ]
+      }
+    },
+    {
+      "dll_type": "XeSS_FG",
+      "version": "1.2.0.87",
+      "hash": "2FDEF4D5ED644598C60CE3F8743E2122",
+      "sources": {
+        "Steam": [
+          "skate."
+        ]
+      }
+    },
+    {
+      "dll_type": "XeSS_FG",
       "version": "1.1.0.19",
       "hash": "B733B9BF61BAC29B68C818BC1AB59BA0",
       "sources": {
@@ -7597,6 +7750,16 @@
       "dll_type": "XeSS_FG",
       "version": "1.1.0.19",
       "hash": "9377073B20C50809EDEABBE0AF0FCAB4",
+      "sources": {
+        "ManuallyAdded": [
+          "Skate"
+        ]
+      }
+    },
+    {
+      "dll_type": "XeSS_FG",
+      "version": "1.1.0.19",
+      "hash": "6D9609423E756830321C8154229AE8CF",
       "sources": {
         "ManuallyAdded": [
           "Skate"
