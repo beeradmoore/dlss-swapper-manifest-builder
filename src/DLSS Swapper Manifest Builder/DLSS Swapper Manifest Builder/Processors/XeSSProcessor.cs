@@ -17,7 +17,8 @@ public class XeSSProcessor : DLLProcessor
     {
         "bin/",
         "/",
-    };
+		"Binaries/ThirdParty/Win64/",
+	};
     public override string[] ExpectedDevPrefix => new string[]
     {
 
