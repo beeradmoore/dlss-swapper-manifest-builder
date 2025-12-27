@@ -70,6 +70,7 @@ var fsr31vkProcessor = new FSR31VKProcessor();
 var xessProcessor = new XeSSProcessor();
 var xellProcessor = new XeLLProcessor();
 var xessfgProcessor = new XeSSFGProcessor();
+var xessDX11Processor = new XeSSDX11Processor();
 
 
 await dlssProcessor.DownloadExistingRecordsAsync(manifest.DLSS);
@@ -80,6 +81,7 @@ await fsr31vkProcessor.DownloadExistingRecordsAsync(manifest.FSR_31_VK);
 await xessProcessor.DownloadExistingRecordsAsync(manifest.XeSS);
 await xellProcessor.DownloadExistingRecordsAsync(manifest.XeLL);
 await xessfgProcessor.DownloadExistingRecordsAsync(manifest.XeSS_FG);
+await xessDX11Processor.DownloadExistingRecordsAsync(manifest.XeSS_DX11);
 
 /*
 dlssProcessor.PostProcessRecords(manifest.DLSS, DLSS_Swapper.Data.GameAssetType.DLSS);
@@ -90,6 +92,7 @@ fsr31vkProcessor.PostProcessRecords(manifest.FSR_31_VK, DLSS_Swapper.Data.GameAs
 xessProcessor.PostProcessRecords(manifest.XeSS, DLSS_Swapper.Data.GameAssetType.XeSS);
 xellProcessor.PostProcessRecords(manifest.XeLL, DLSS_Swapper.Data.GameAssetType.XeLL);
 xessfgProcessor.PostProcessRecords(manifest.XeSS_FG, DLSS_Swapper.Data.GameAssetType.XeSS_FG);
+xessDX11Processor.PostProcessRecords(manifest.XeSS_DX11, DLSS_Swapper.Data.GameAssetType.XeSS_DX11);
 */
 
 /*
@@ -101,6 +104,7 @@ fsr31vkProcessor.MoveToCorrectLocations(manifest.FSR_31_VK, DLSS_Swapper.Data.Ga
 xessProcessor.MoveToCorrectLocations(manifest.XeSS, DLSS_Swapper.Data.GameAssetType.XeSS);
 xellProcessor.MoveToCorrectLocations(manifest.XeLL, DLSS_Swapper.Data.GameAssetType.XeLL);
 xessfgProcessor.MoveToCorrectLocations(manifest.XeSS_FG, DLSS_Swapper.Data.GameAssetType.XeSS_FG);
+xessDX11Processor.MoveToCorrectLocations(manifest.XeSS_DX11, DLSS_Swapper.Data.GameAssetType.XeSS_DX11);
 */
 
 /*
@@ -112,6 +116,7 @@ fsr31vkProcessor.MoveOldToNew(manifest.FSR_31_VK, DLSS_Swapper.Data.GameAssetTyp
 xessProcessor.MoveOldToNew(manifest.XeSS, DLSS_Swapper.Data.GameAssetType.XeSS);
 xellProcessor.MoveOldToNew(manifest.XeLL, DLSS_Swapper.Data.GameAssetType.XeLL);
 xessfgProcessor.MoveOldToNew(manifest.XeSS_FG, DLSS_Swapper.Data.GameAssetType.XeSS_FG);
+xessDX11Processor.MoveOldToNew(manifest.XeSS_DX11, DLSS_Swapper.Data.GameAssetType.XeSS_DX11);
 
 manifest.DLSS.Clear();
 manifest.DLSS_G.Clear();
@@ -121,7 +126,9 @@ manifest.FSR_31_VK.Clear();
 manifest.XeSS.Clear();
 manifest.XeLL.Clear();
 manifest.XeSS_FG.Clear();
+manifest.XeSS_DX11.Clear();
 */
+
 
 manifest.DLSS = dlssProcessor.ProcessLocalFiles(manifest.DLSS);
 manifest.DLSS_G = dlssgProcessor.ProcessLocalFiles(manifest.DLSS_G);
@@ -131,6 +138,7 @@ manifest.FSR_31_VK = fsr31vkProcessor.ProcessLocalFiles(manifest.FSR_31_VK);
 manifest.XeSS = xessProcessor.ProcessLocalFiles(manifest.XeSS);
 manifest.XeLL = xellProcessor.ProcessLocalFiles(manifest.XeLL);
 manifest.XeSS_FG = xessfgProcessor.ProcessLocalFiles(manifest.XeSS_FG);
+manifest.XeSS_DX11 = xessDX11Processor.ProcessLocalFiles(manifest.XeSS_DX11);
 
 var knownDLLSourcesMissingPath = Path.Combine("..", "..", "..", "..", "..", "..", "known_dll_sources_missing.json");
 using (var stream = File.OpenRead(knownDLLSourcesMissingPath))
@@ -140,16 +148,52 @@ using (var stream = File.OpenRead(knownDLLSourcesMissingPath))
     {
         Debugger.Break();
         return 0;
-    }
+	}
 
-    manifest.KnownDLLs.DLSS = knownDLLSourcesMissing["DLSS"].Select(x => x.ToHashedKnownDLL()).ToList();
-    manifest.KnownDLLs.DLSS_G = knownDLLSourcesMissing["DLSS_G"].Select(x => x.ToHashedKnownDLL()).ToList();
-    manifest.KnownDLLs.DLSS_D = knownDLLSourcesMissing["DLSS_D"].Select(x => x.ToHashedKnownDLL()).ToList();
-    manifest.KnownDLLs.FSR_31_DX12 = knownDLLSourcesMissing["FSR_31_DX12"].Select(x => x.ToHashedKnownDLL()).ToList();
-    manifest.KnownDLLs.FSR_31_VK = knownDLLSourcesMissing["FSR_31_VK"].Select(x => x.ToHashedKnownDLL()).ToList();
-    manifest.KnownDLLs.XeSS = knownDLLSourcesMissing["XeSS"].Select(x => x.ToHashedKnownDLL()).ToList();
-    manifest.KnownDLLs.XeLL = knownDLLSourcesMissing["XeLL"].Select(x => x.ToHashedKnownDLL()).ToList();
-    manifest.KnownDLLs.XeSS_FG = knownDLLSourcesMissing["XeSS_FG"].Select(x => x.ToHashedKnownDLL()).ToList();
+	if (knownDLLSourcesMissing.TryGetValue("DLSS", out var DLSS))
+	{
+		manifest.KnownDLLs.DLSS = DLSS.Select(x => x.ToHashedKnownDLL()).ToList();
+	}
+
+	if (knownDLLSourcesMissing.TryGetValue("DLSS_G", out var DLSS_G))
+	{	
+		manifest.KnownDLLs.DLSS_G = DLSS_G.Select(x => x.ToHashedKnownDLL()).ToList();
+	}
+
+	if (knownDLLSourcesMissing.TryGetValue("DLSS_D", out var DLSS_D))
+	{
+		manifest.KnownDLLs.DLSS_D = DLSS_D.Select(x => x.ToHashedKnownDLL()).ToList();
+	}
+
+	if (knownDLLSourcesMissing.TryGetValue("FSR_31_DX12", out var FSR_31_DX12))
+	{
+		manifest.KnownDLLs.FSR_31_DX12 = FSR_31_DX12.Select(x => x.ToHashedKnownDLL()).ToList();
+	}
+
+	if (knownDLLSourcesMissing.TryGetValue("FSR_31_VK", out var FSR_31_VK))
+	{
+		manifest.KnownDLLs.FSR_31_VK = FSR_31_VK.Select(x => x.ToHashedKnownDLL()).ToList();
+	}
+
+	if (knownDLLSourcesMissing.TryGetValue("XeSS", out var XeSS))
+	{
+		manifest.KnownDLLs.XeSS = XeSS.Select(x => x.ToHashedKnownDLL()).ToList();
+	}
+
+	if (knownDLLSourcesMissing.TryGetValue("XeLL", out var XeLL))
+	{
+		manifest.KnownDLLs.XeLL = XeLL.Select(x => x.ToHashedKnownDLL()).ToList();
+	}
+
+	if (knownDLLSourcesMissing.TryGetValue("XeSS_FG", out var XeSS_FG))
+	{
+		manifest.KnownDLLs.XeSS_FG = XeSS_FG.Select(x => x.ToHashedKnownDLL()).ToList();
+	}
+
+	if (knownDLLSourcesMissing.TryGetValue("XeSS_DX11", out var XeSS_DX11))
+	{
+		manifest.KnownDLLs.XeSS_DX11 = XeSS_DX11.Select(x => x.ToHashedKnownDLL()).ToList();
+	}
 }
 
 var manifestJson = JsonSerializer.Serialize(manifest, new JsonSerializerOptions() { WriteIndented = true });

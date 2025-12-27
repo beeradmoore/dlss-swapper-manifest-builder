@@ -95,7 +95,8 @@ public class DLLRecord : IComparable<DLLRecord>
             "libxess.dll" => GameAssetType.XeSS,
             "libxell.dll" => GameAssetType.XeLL,
             "libxess_fg.dll" => GameAssetType.XeSS_FG,
-            _ => GameAssetType.Unknown,
+			"libxess_dx11.dll" => GameAssetType.XeSS_DX11,
+			_ => GameAssetType.Unknown,
         };
 
         if (dllRecord.AssetType == GameAssetType.Unknown)
@@ -252,13 +253,17 @@ public class DLLRecord : IComparable<DLLRecord>
         }
         else if (dllRecord.AssetType == GameAssetType.XeLL)
         {
-            // NOOP
-        }
-        else if (dllRecord.AssetType == GameAssetType.XeSS_FG)
-        {
-            // NOOP
-        }
-        else
+			// NOOP
+		}
+		else if (dllRecord.AssetType == GameAssetType.XeSS_FG)
+		{
+			// NOOP
+		}
+		else if (dllRecord.AssetType == GameAssetType.XeSS_DX11)
+		{
+			// NOOP
+		}
+		else
         {
             Debugger.Break();
         }
@@ -299,7 +304,8 @@ public class DLLRecord : IComparable<DLLRecord>
             GameAssetType.XeSS => "xess",
             GameAssetType.XeLL => "xell",
             GameAssetType.XeSS_FG => "xess_fg",
-            _ => string.Empty,
+            GameAssetType.XeSS_DX11 => "xess_dx11",
+			_ => string.Empty,
         };
     }
 }

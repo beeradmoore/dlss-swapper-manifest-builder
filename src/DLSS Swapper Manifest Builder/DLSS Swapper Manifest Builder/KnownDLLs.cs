@@ -30,6 +30,9 @@ public class KnownDLLs
     [JsonPropertyName("xell")]
     public List<HashedKnownDLL> XeLL { get; set; } = new List<HashedKnownDLL>();
 
-    [JsonPropertyName("xess_fg")]
-    public List<HashedKnownDLL> XeSS_FG { get; set; } = new List<HashedKnownDLL>();
+	[JsonPropertyName("xess_fg")]
+	public List<HashedKnownDLL> XeSS_FG { get; set; } = new List<HashedKnownDLL>();
+
+	[JsonPropertyName("xess_dx11")]
+	public List<HashedKnownDLL> XeSS_DX11 { get; set; } = new List<HashedKnownDLL>();
 }
