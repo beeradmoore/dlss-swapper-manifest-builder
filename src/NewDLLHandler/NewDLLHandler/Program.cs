@@ -251,7 +251,6 @@ try
         {
             handledIssues.Add(issue.Number);
             Log.Information($"Issue #{issue.Number} has a null body");
-            Debugger.Break();
             continue;
         }
 
