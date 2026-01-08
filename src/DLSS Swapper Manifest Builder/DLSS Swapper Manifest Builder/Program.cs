@@ -1,8 +1,17 @@
-﻿using DLSS_Swapper_Manifest_Builder;
+﻿using System.Diagnostics;
+using System.Text.Json;
+using DLSS_Swapper_Manifest_Builder;
 using DLSS_Swapper_Manifest_Builder.Processors;
 using NewDLLHandler;
-using System.Diagnostics;
-using System.Text.Json;
+using Serilog;
+
+Log.Logger = new LoggerConfiguration()
+	.WriteTo.File("log.txt", rollingInterval: RollingInterval.Day)
+	.WriteTo.Console()
+	.CreateLogger();
+
+Log.Information("Starting processing");
+//Log.Debug(
 
 // Deleting directory is not instant, moving it is :|
 if (Directory.Exists(DLLProcessor.OutputFilesPath))
@@ -50,7 +59,7 @@ if (File.Exists(DLLProcessor.InputManifestPath) == true)
 
 if (shouldUpdateManifest)
 {
-    var manifestData = await httpClient.GetStringAsync("https://raw.githubusercontent.com/beeradmoore/dlss-swapper-manifest-builder/refs/heads/main/manifest.json");
+    var manifestData = await httpClient.GetStringAsync("https://beeradmoore.github.io/dlss-swapper/manifest.json");
     File.WriteAllText(DLLProcessor.InputManifestPath, manifestData);
 }
 
@@ -58,7 +67,7 @@ if (shouldUpdateManifest)
 var manifest = JsonSerializer.Deserialize<Manifest>(File.ReadAllText(DLLProcessor.InputManifestPath));
 if (manifest == null)
 {
-    Console.WriteLine($"Could not load {DLLProcessor.InputManifestPath}.");
+    Log.Information($"Could not load {DLLProcessor.InputManifestPath}.");
     return 1;
 }
 

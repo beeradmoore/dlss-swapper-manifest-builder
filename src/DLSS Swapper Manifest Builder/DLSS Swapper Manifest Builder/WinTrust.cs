@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Runtime.InteropServices;
 using System.Text;
+using Serilog;
+using Serilog.Core;
 
 namespace DLSS_Swapper_Manifest_Builder;
 
@@ -339,7 +341,7 @@ internal static class WinTrust
                             subject.
                     */
                     validSignature = true;
-                    System.Diagnostics.Debug.WriteLine($"The file \"{fileName}\" is signed and the signature was verified.");
+                    Log.Debug($"The file \"{fileName}\" is signed and the signature was verified.");
                     break;
 
                 case WinVerifyTrustResult.TRUST_E_NOSIGNATURE:
@@ -353,13 +355,13 @@ internal static class WinTrust
                         (uint)WinVerifyTrustResult.TRUST_E_PROVIDER_UNKNOWN == dwLastError)
                     {
                         // The file was not signed.
-                        System.Diagnostics.Debug.WriteLine($"The file \"{fileName}\" is not signed.");
+                        Log.Debug($"The file \"{fileName}\" is not signed.");
                     }
                     else
                     {
                         // The signature was not valid or there was an error 
                         // opening the file.
-                        System.Diagnostics.Debug.WriteLine($"An unknown error occurred trying to verify the signature of the \"{fileName}\" file.");
+                        Log.Debug($"An unknown error occurred trying to verify the signature of the \"{fileName}\" file.");
                     }
                     System.Diagnostics.Debugger.Break();
 
@@ -368,13 +370,13 @@ internal static class WinTrust
                 case WinVerifyTrustResult.TRUST_E_EXPLICIT_DISTRUST:
                     // The hash that represents the subject or the publisher 
                     // is not allowed by the admin or user.
-                    System.Diagnostics.Debug.WriteLine($"The signature is present, but specifically disallowed. ({fileName})");
+                    Log.Debug($"The signature is present, but specifically disallowed. ({fileName})");
                     System.Diagnostics.Debugger.Break();
                     break;
 
                 case WinVerifyTrustResult.TRUST_E_SUBJECT_NOT_TRUSTED:
                     // The user clicked "No" when asked to install and run.
-                    System.Diagnostics.Debug.WriteLine($"The signature is present, but not trusted. ({fileName})");
+                    Log.Debug($"The signature is present, but not trusted. ({fileName})");
                     System.Diagnostics.Debugger.Break();
                     break;
 
@@ -385,18 +387,18 @@ internal static class WinTrust
                     admin policy has disabled user trust. No signature, 
                     publisher or time stamp errors.
                     */
-                    System.Diagnostics.Debug.WriteLine($"CRYPT_E_SECURITY_SETTINGS - The hash representing the subject or the publisher wasn't explicitly trusted by the admin and admin policy has disabled user trust. No signature, publisher or timestamp errors. ({fileName})");
+                    Log.Debug($"CRYPT_E_SECURITY_SETTINGS - The hash representing the subject or the publisher wasn't explicitly trusted by the admin and admin policy has disabled user trust. No signature, publisher or timestamp errors. ({fileName})");
                     System.Diagnostics.Debugger.Break();
                     break;
 
                 case WinVerifyTrustResult.CRYPT_E_FILE_ERROR:
                     //An error occurred while reading or writing to a file.
-                    System.Diagnostics.Debug.WriteLine($"CRYPT_E_FILE_ERROR - An error occurred while reading or writing to a file. ({fileName})");
+                    Log.Debug($"CRYPT_E_FILE_ERROR - An error occurred while reading or writing to a file. ({fileName})");
                     System.Diagnostics.Debugger.Break();
                     break;
 
                 case WinVerifyTrustResult.CERT_E_CHAINING:
-                    System.Diagnostics.Debug.WriteLine($"CERT_E_CHAINING - A certificate chain could not be built to a trusted root authority. ({fileName})");
+                    Log.Debug($"CERT_E_CHAINING - A certificate chain could not be built to a trusted root authority. ({fileName})");
                     //System.Diagnostics.Debugger.Break();
                     break;
 
@@ -404,7 +406,7 @@ internal static class WinTrust
                     // The UI was disabled in dwUIChoice or the admin policy 
                     // has disabled user trust. lStatus contains the 
                     // publisher or time stamp chain error.
-                    System.Diagnostics.Debug.WriteLine($"Error is: 0x{0:X} ({fileName})\n", lStatus);
+                    Log.Debug($"Error is: 0x{0:X} ({fileName})\n", lStatus);
                     System.Diagnostics.Debugger.Break();
                     break;
             }
@@ -416,7 +418,7 @@ internal static class WinTrust
         }
         catch (Exception err)
         {
-            System.Diagnostics.Debug.WriteLine($"VerifyEmbeddedSignature Error: {err.Message}");
+            Log.Debug($"VerifyEmbeddedSignature Error: {err.Message}");
             System.Diagnostics.Debugger.Break();
         }
         finally
@@ -459,7 +461,7 @@ internal static class WinTrust
         }
         catch (Exception err)
         {
-            System.Diagnostics.Debug.WriteLine($"VerifyEmbeddedSignature Error: {err.Message}");
+            Log.Debug($"VerifyEmbeddedSignature Error: {err.Message}");
             return false;
         }
         finally

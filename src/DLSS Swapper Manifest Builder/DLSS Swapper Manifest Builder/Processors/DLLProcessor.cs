@@ -1,4 +1,5 @@
 ﻿using DLSS_Swapper.Data;
+using Serilog;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -67,7 +68,7 @@ public abstract class DLLProcessor
 
     public async Task DownloadExistingRecordsAsync(IReadOnlyList<DLLRecord> dllRecords)
     {
-        Console.WriteLine($"Downloading existing records: {NamePath}");
+        Log.Information($"Downloading existing records: {NamePath}");
         foreach (var dllRecord in dllRecords)
         {
             if (string.IsNullOrEmpty(dllRecord.DownloadUrl))
@@ -81,7 +82,7 @@ public abstract class DLLProcessor
             if (File.Exists(expectedZipPath) == false)
             {
                 var httpClient = new HttpClient();
-                Console.WriteLine($"Downloading {dllRecord.Filename}");
+                Log.Information($"Downloading {dllRecord.Filename}");
                 using (var localStream = File.Create(expectedZipPath))
                 {
                     using (var remoteStream = await httpClient.GetStreamAsync(dllRecord.DownloadUrl))
@@ -92,7 +93,7 @@ public abstract class DLLProcessor
             }
             else
             {
-                Console.WriteLine($"Skipping download of {dllRecord.Filename}");
+                Log.Information($"Skipping download of {dllRecord.Filename}");
             }
 
             using (var localStream = File.OpenRead(expectedZipPath))
@@ -175,7 +176,7 @@ public abstract class DLLProcessor
                         }
                         else
                         {
-                            Console.WriteLine($"! {ExpectedDLLName} {dllRecord.Version} {dllRecord.MD5Hash} does not have a source attributed.");
+                            Log.Information($"! {ExpectedDLLName} {dllRecord.Version} {dllRecord.MD5Hash} does not have a source attributed.");
                         }
 
 
@@ -191,7 +192,7 @@ public abstract class DLLProcessor
                         }
                         else
                         {
-                            Console.WriteLine($"Skipping {dllRecord.Version}, hash already exists. File: {file}, Dll: {dllExtractFilename}");
+                            Log.Information($"Skipping {dllRecord.Version}, hash already exists. File: {file}, Dll: {dllExtractFilename}");
                         }
                     }
                     else if (dllEntries.Count == 0)
@@ -240,7 +241,7 @@ public abstract class DLLProcessor
                         }
                         else
                         {
-                            Console.WriteLine($"Skipping {dllRecord.Version}, hash already exists. File: {file}, Dll: {dllExtractFilename}");
+                            Log.Information($"Skipping {dllRecord.Version}, hash already exists. File: {file}, Dll: {dllExtractFilename}");
                         }
                     }
                     else if (dllEntries.Count == 0)
@@ -296,11 +297,11 @@ public abstract class DLLProcessor
 
         var zipOutputFile = Path.Combine(OutputZipPath, newZipFilename);
 
-        Console.WriteLine($"Creating zip: {zipOutputFile}");
+        Log.Information($"Creating zip: {zipOutputFile}");
 
         if (File.Exists(zipOutputFile))
         {
-            Console.WriteLine($"File already exists {zipOutputFile}");
+            Log.Information($"File already exists {zipOutputFile}");
             Debugger.Break();
         }
         using (var fileStream = File.Create(zipOutputFile))
@@ -353,7 +354,7 @@ public abstract class DLLProcessor
                 Debugger.Break();
             }
 
-            Console.WriteLine($"PostProcessing: {oldZipFilename}");
+            Log.Information($"PostProcessing: {oldZipFilename}");
 
             // Create a path to extract the dll to
             var dllExtractPath = Path.Combine(TempFilesPath, Path.GetFileNameWithoutExtension(oldZipFilename));

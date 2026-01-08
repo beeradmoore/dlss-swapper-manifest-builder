@@ -1,6 +1,7 @@
 ﻿using System.Diagnostics;
 using System.IO.Compression;
 using System.Security.Cryptography;
+using Serilog;
 
 namespace DLSS_Swapper_Manifest_Builder.Processors;
 
@@ -157,7 +158,7 @@ public class DLSSProcessor : DLLProcessor
                 continue;
             }
 
-            Console.WriteLine($"dlss - {productVersion} - {md5Hash}");
+            Log.Information($"dlss - {productVersion} - {md5Hash}");
 
             // TODO: Handle new files.
         }

@@ -5,6 +5,7 @@ using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
+using Serilog;
 
 namespace DLSS_Swapper_Manifest_Builder.Processors;
 
@@ -122,7 +123,7 @@ internal class DLSSGProcessor : DLLProcessor
                 continue;
             }
 
-            Console.WriteLine($"dlss_g - {productVersion} - {md5Hash}");
+            Log.Information($"dlss_g - {productVersion} - {md5Hash}");
 
             // TODO: Handle new files.
         }
