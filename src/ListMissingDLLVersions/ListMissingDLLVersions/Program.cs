@@ -1,8 +1,16 @@
 ﻿
 using DLSS_Swapper_Manifest_Builder;
 using NewDLLHandler;
+using Serilog;
 using System.Diagnostics;
 using System.Text.Json;
+
+Log.Logger = new LoggerConfiguration()
+	.WriteTo.File("log.txt", rollingInterval: RollingInterval.Day)
+	.WriteTo.Console()
+	.CreateLogger();
+
+Log.Information("Starting processing");
 
 
 Dictionary<string, List<KnownDLL>>? missingKnownDLLs;
@@ -13,7 +21,7 @@ using (var fileStream = File.OpenRead("../../../../../../known_dll_sources_missi
     var tempMissingKnownDLLs = JsonSerializer.Deserialize<Dictionary<string, List<KnownDLL>>>(fileStream);
     if (tempMissingKnownDLLs is null)
     {
-        Console.WriteLine("Failed to deserialize known missing DLLs from json file.");
+        Log.Error("Failed to deserialize known missing DLLs from json file.");
         return 1;
     }
 
@@ -25,7 +33,7 @@ using (var fileStream = File.OpenRead("../../../../../../manifest.json"))
     var tempManifest = JsonSerializer.Deserialize<Manifest>(fileStream);
     if (tempManifest is null)
     {
-        Console.WriteLine("Failed to deserialize manifest json file.");
+		Log.Error("Failed to deserialize manifest json file.");
         return 1;
     }
 
@@ -39,13 +47,14 @@ ProcessData("FSR_31_DX12", manifest.FSR_31_DX12, missingKnownDLLs["FSR_31_DX12"]
 ProcessData("FSR_31_VK", manifest.FSR_31_VK, missingKnownDLLs["FSR_31_VK"]);
 ProcessData("XeSS", manifest.XeSS, missingKnownDLLs["XeSS"]);
 ProcessData("XeSS_FG", manifest.XeSS_FG, missingKnownDLLs["XeSS_FG"]);
+ProcessData("XeSS_DX11", manifest.XeSS_DX11, missingKnownDLLs["XeSS_DX11"]);
 ProcessData("XeLL", manifest.XeLL, missingKnownDLLs["XeLL"]);
 
 void ProcessData(string upscaler, List<DLLRecord> manifestDLLRecords, List<KnownDLL> missingKnownDLLList)
 {
     var latestVersion = new Version(0, 0);
 
-    Console.WriteLine(upscaler);
+    Log.Information(upscaler);
 
     var knownDLLsToFind = new Dictionary<Version, List<KnownDLL>>();
     foreach (var missingKnownDLL in missingKnownDLLList)
@@ -72,7 +81,7 @@ void ProcessData(string upscaler, List<DLLRecord> manifestDLLRecords, List<Known
 
     if (knownDLLsToFind.Count == 0)
     {
-        Console.WriteLine("No unknown DLLs found.");
+		Log.Information("No unknown DLLs found.");
     }
     else
     {
@@ -83,8 +92,8 @@ void ProcessData(string upscaler, List<DLLRecord> manifestDLLRecords, List<Known
         {
             var latestString = (version == latestVersion) ? " LATEST" : string.Empty;
             var knownDLLs = knownDLLsToFind[version];
-            Console.WriteLine($"- {version}{latestString}");
-            Console.WriteLine($"- Variants: {knownDLLs.Count}");
+			Log.Information($"- {version}{latestString}");
+			Log.Information($"- Variants: {knownDLLs.Count}");
 
             var sources = new Dictionary<string, List<string>>();
 
@@ -109,21 +118,21 @@ void ProcessData(string upscaler, List<DLLRecord> manifestDLLRecords, List<Known
 
             foreach (var source in sources)
             {
-                Console.WriteLine($"  - {source.Key}: {source.Value.Count} games");
+                Log.Information($"  - {source.Key}: {source.Value.Count} games");
                 foreach (var game in source.Value)
                 {
-                    Console.WriteLine($"    - {game}");
+                    Log.Information($"    - {game}");
                 }
             }
 
-            Console.WriteLine();
+            Log.Information(string.Empty);
         }
 
-        Console.WriteLine();
+        Log.Information(string.Empty);
     }
 
-    Console.WriteLine();
-    Console.WriteLine();
+    Log.Information(string.Empty);
+    Log.Information(string.Empty);
 }
 
 
