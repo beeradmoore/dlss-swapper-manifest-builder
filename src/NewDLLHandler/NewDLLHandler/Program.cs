@@ -1,9 +1,17 @@
 ﻿using DLSS_Swapper_Manifest_Builder;
 using NewDLLHandler;
 using Octokit;
+using Serilog;
 using System.Diagnostics;
 using System.Text.Json;
 using System.Text.RegularExpressions;
+
+Log.Logger = new LoggerConfiguration()
+	.WriteTo.File("log.txt", rollingInterval: RollingInterval.Day)
+	.WriteTo.Console()
+	.CreateLogger();
+
+Log.Information("Starting processing");
 
 
 var knownDllHashes = new List<string>();
@@ -42,7 +50,7 @@ if (File.Exists(handledIssuesFile))
         var tempHandledIssues = JsonSerializer.Deserialize<List<int>>(stream);
         if (tempHandledIssues is null)
         {
-            Console.WriteLine($"ERROR: Could not load {handledIssuesFile}");
+            Log.Error($"Could not load {handledIssuesFile}");
             Debugger.Break();
             return;
         }
@@ -60,6 +68,7 @@ if (File.Exists(handledIssuesFile))
 // Some issues are triggered as handled manually so they will be skipped lower.
 var manuallyHandledIssues = new int[]
 {
+	3226, 3164, 3160, 3146, 3141, 3139, 3138, 
 	3061, 
 
 	3016, 3015, 3007, 2919, 2915, 2907, 2883, 2877, 2858, 2853,
@@ -117,7 +126,7 @@ if (File.Exists(knownDLLSourcesFile))
         var tempKnownDLLs = JsonSerializer.Deserialize<Dictionary<string, List<KnownDLL>>>(stream);
         if (tempKnownDLLs is null)
         {
-            Console.WriteLine($"ERROR: Could not load {knownDLLSourcesFile}");
+            Log.Error($"Could not load {knownDLLSourcesFile}");
             Debugger.Break();
             return;
         }
@@ -165,6 +174,11 @@ if (knownDLLs.ContainsKey("XeLL") == false)
 if (knownDLLs.ContainsKey("XeSS_FG") == false)
 {
     knownDLLs["XeSS_FG"] = new List<KnownDLL>();
+}
+
+if (knownDLLs.ContainsKey("XeSS_DX11") == false)
+{
+	knownDLLs["XeSS_DX11"] = new List<KnownDLL>();
 }
 
 try
@@ -236,7 +250,7 @@ try
         if (issue.Body is null)
         {
             handledIssues.Add(issue.Number);
-            Console.WriteLine($"Issue #{issue.Number} has a null body");
+            Log.Information($"Issue #{issue.Number} has a null body");
             Debugger.Break();
             continue;
         }
@@ -282,7 +296,7 @@ try
                     continue;
                 }
 
-                Console.WriteLine($"Additional notes: {bodyLine}");
+                Log.Information($"Additional notes: {bodyLine}");
                 continue;
             }
 
@@ -316,9 +330,10 @@ try
                       currentLibrary != "EpicGamesStore" &&
                       currentLibrary != "XboxApp" &&
                       currentLibrary != "BattleNet" &&
+                      currentLibrary != "EAApp" &&
                       currentLibrary != "UbisoftConnect")
                 {
-                    Console.WriteLine($"Unknown library: {currentLibrary}");
+                    Log.Information($"Unknown library: {currentLibrary}");
                     Debugger.Break();
                     continue;
                 }
@@ -353,21 +368,23 @@ try
                     "amd_fidelityfx_vk.dll" => "FSR_31_VK",
                     "libxess.dll" => "XeSS",
                     "libxell.dll" => "XeLL",
-                    "libxess_fg.dll" => "XeSS_FG",
+					"libxess_dx11.dll" => "XeSS_DX11",
+					"libxess_fg.dll" => "XeSS_FG",
                     "nvngx_dlss.dll.dlsss" => "DLSS",
                     "nvngx_dlssg.dll.dlsss" => "DLSS_G",
                     "nvngx_dlssd.dll.dlsss" => "DLSS_D",
                     "amd_fidelityfx_dx12.dll.dlsss" => "FSR_31_DX12",
                     "amd_fidelityfx_vk.dll.dlsss" => "FSR_31_VK",
                     "libxess.dll.dlsss" => "XeSS",
-                    "libxell.dll.dlsss" => "XeLL",
+					"libxess_dx11.dll.dlsss" => "XeSS_DX11",
+					"libxell.dll.dlsss" => "XeLL",
                     "libxess_fg.dll.dlsss" => "XeSS_FG",
                     _ => string.Empty,
                 };
 
                 if (string.IsNullOrWhiteSpace(dllType) == true)
                 {
-                    Console.WriteLine($"Unknown DLL: {dll}");
+                    Log.Information($"Unknown DLL: {dll}");
                     Debugger.Break();
                     continue;
                 }
@@ -377,7 +394,7 @@ try
 
                 if (version == "0.0.0.0")
                 {
-                    //Console.WriteLine($"Unknown DLL version: {dll}");
+                    //Log.Information($"Unknown DLL version: {dll}");
                     //Debugger.Break();
                     continue;
                 }
@@ -400,19 +417,19 @@ try
                 {
                     if (existingKnownDLL.DLLType != dllType)
                     {
-                        Console.WriteLine($"DLL Type mismatch: {existingKnownDLL.DLLType} != {dllType}");
+                        Log.Information($"DLL Type mismatch: {existingKnownDLL.DLLType} != {dllType}");
                         Debugger.Break();
                     }
                     else if (existingKnownDLL.Version != version)
                     {
-                        Console.WriteLine($"Version mismatch: {existingKnownDLL.Version} != {version}");
+                        Log.Information($"Version mismatch: {existingKnownDLL.Version} != {version}");
                         Debugger.Break();
                     }
                 }
 
                 if (string.IsNullOrWhiteSpace(currentLibrary) == true)
                 {
-                    Console.WriteLine($"No library for DLL: {dll}");
+                    Log.Information($"No library for DLL: {dll}");
                     Debugger.Break();
                     continue;
                 }
@@ -430,11 +447,11 @@ try
             }
             else
             {
-                Console.WriteLine($"Number: {issue.Number}");
-                Console.WriteLine($"https://github.com/beeradmoore/dlss-swapper-manifest-builder/issues/{issue.Number}");
-                Console.WriteLine($"============================");
-                Console.WriteLine(issue.Body);
-                Console.WriteLine($"============================");
+                Log.Information($"Number: {issue.Number}");
+                Log.Information($"https://github.com/beeradmoore/dlss-swapper-manifest-builder/issues/{issue.Number}");
+                Log.Information($"============================");
+                Log.Information(issue.Body);
+                Log.Information($"============================");
                 Debugger.Break();
             }
         }
@@ -443,18 +460,18 @@ try
         if (addedAtLeastOne == false)
         {
             //Debugger.Break();
-            Console.WriteLine($"Number: {issue.Number}");
-            Console.WriteLine($"https://github.com/beeradmoore/dlss-swapper-manifest-builder/issues/{issue.Number}");
-            Console.WriteLine($"============================");
-            Console.WriteLine(issue.Body);
-            Console.WriteLine($"============================");
+            Log.Information($"Number: {issue.Number}");
+            Log.Information($"https://github.com/beeradmoore/dlss-swapper-manifest-builder/issues/{issue.Number}");
+            Log.Information($"============================");
+            Log.Information(issue.Body);
+            Log.Information($"============================");
             continue;
         }
 
         // If errors were not reported from the above consider it handled.
         if (handledIssues.Contains(issue.Number) == false)
         {
-            //Console.WriteLine($"Handled issue #{issue.Number}");
+            //Log.Information($"Handled issue #{issue.Number}");
             handledIssues.Add(issue.Number);
         }
     }
@@ -479,9 +496,10 @@ try
     knownDLLs["XeSS"].Sort(SortDLLs);
     knownDLLs["XeLL"].Sort(SortDLLs);
     knownDLLs["XeSS_FG"].Sort(SortDLLs);
+    knownDLLs["XeSS_DX11"].Sort(SortDLLs);
 
-    // Write out the DLL source file list
-    File.WriteAllText(knownDLLSourcesFile, JsonSerializer.Serialize(knownDLLs, new JsonSerializerOptions() { WriteIndented = true }));
+	// Write out the DLL source file list
+	File.WriteAllText(knownDLLSourcesFile, JsonSerializer.Serialize(knownDLLs, new JsonSerializerOptions() { WriteIndented = true }));
 
     // Write handled issues to file
     File.WriteAllText(handledIssuesFile, JsonSerializer.Serialize(handledIssues, new JsonSerializerOptions() { WriteIndented = true }));
@@ -501,7 +519,7 @@ try
     }
 
     File.WriteAllLines(knownDLLHashesFile, knownDllHashes);
-    Console.WriteLine($"Wrote {knownDllHashes.Count} known DLL hashes to {knownDLLHashesFile}");
+    Log.Information($"Wrote {knownDllHashes.Count} known DLL hashes to {knownDLLHashesFile}");
 
     // Now that knownDLLs is written, we remove all DLLs not known to DLSS Swapper manifest.
     using (var stream = File.OpenRead("../../../../../../manifest.json"))
@@ -509,7 +527,7 @@ try
         var manifest = JsonSerializer.Deserialize<Manifest>(stream);
         if (manifest is null)
         {
-            Console.WriteLine($"ERROR: Could not load manifest.json");
+            Log.Error($"Could not load manifest.json");
             Debugger.Break();
             return;
         }
@@ -538,7 +556,8 @@ try
         RemoveExisting(manifest.FSR_31_VK, knownDLLs["FSR_31_VK"]);
         RemoveExisting(manifest.XeSS, knownDLLs["XeSS"]);
         RemoveExisting(manifest.XeSS_FG, knownDLLs["XeSS_FG"]);
-        RemoveExisting(manifest.XeLL, knownDLLs["XeLL"]);
+        RemoveExisting(manifest.XeSS_DX11, knownDLLs["XeSS_DX11"]);
+		RemoveExisting(manifest.XeLL, knownDLLs["XeLL"]);
     }
 
     // Write it out.
@@ -547,5 +566,5 @@ try
 }
 catch (Exception ex)
 {
-    Console.WriteLine($"Error: {ex.Message}");
+    Log.Error(ex, "Error");
 }
