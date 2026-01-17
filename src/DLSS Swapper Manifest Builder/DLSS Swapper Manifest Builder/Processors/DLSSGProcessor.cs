@@ -85,8 +85,9 @@ internal class DLSSGProcessor : DLLProcessor
     {
         var modelPath = @"C:\ProgramData\NVIDIA\NGX\models\dlssg\versions\";
         var binFiles = Directory.GetFiles(modelPath, "*.bin", SearchOption.AllDirectories);
+		Log.Information($"Checking NVIDIA driver for DLSS G, found {binFiles.Length} files");
 
-        foreach (var binFile in binFiles)
+		foreach (var binFile in binFiles)
         {
             var md5Hash = string.Empty;
             using (var fileStream = File.OpenRead(binFile))
@@ -97,12 +98,14 @@ internal class DLSSGProcessor : DLLProcessor
                     md5Hash = BitConverter.ToString(hash).Replace("-", "").ToUpperInvariant();
 
                     // Check if the file is an exact match.
-                    if (existingRecords.Any(x => x.MD5Hash.Equals(md5Hash, StringComparison.InvariantCultureIgnoreCase)))
-                    {
-                        // If exact match, skip it.
-                        continue;
-                    }
-                }
+                    var existingRecord = existingRecords.FirstOrDefault(x => x.MD5Hash.Equals(md5Hash, StringComparison.InvariantCultureIgnoreCase));
+					if (existingRecord is not null)
+					{
+						Log.Information($"Skipping {Path.GetFileName(binFile)}, hash exists for DLSS G {existingRecord.Version}.");
+						// If exact match, skip it.
+						continue;
+					}
+				}
             }
 
             // Check if we have an existing DLL of the same version.
@@ -114,12 +117,6 @@ internal class DLSSGProcessor : DLLProcessor
             {
                 // We should never get here.
                 Debugger.Break();
-                continue;
-            }
-
-            // Even though the DLL is different we don't want 50 copies of the same v1.2.3.4
-            if (existingRecords.Any(x => x.Version.Equals(productVersion, StringComparison.InvariantCultureIgnoreCase)))
-            {
                 continue;
             }
 
