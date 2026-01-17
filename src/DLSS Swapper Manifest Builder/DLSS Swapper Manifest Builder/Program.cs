@@ -212,6 +212,14 @@ File.WriteAllText(DLLProcessor.OutputManifestPath, manifestJson);
 var repoRootManifestPath = Path.Combine("..", "..", "..", "..", "..", "..", "manifest.json");
 File.Copy(DLLProcessor.OutputManifestPath, repoRootManifestPath, true);
 
+//Copy to DLSS Swapper docs if the folder is in a relative location.
+var dlssSwapperRepoManifestPath = Path.Combine("..", "..", "..", "..", "..", "..", "..", "dlss-swapper", "docs", "manifest.json");
+if (File.Exists(dlssSwapperRepoManifestPath))
+{
+	File.Copy(DLLProcessor.OutputManifestPath, dlssSwapperRepoManifestPath, true);
+}
+
+// Cleanup.
 
 if (Directory.Exists(DLLProcessor.TempFilesPath))
 {
