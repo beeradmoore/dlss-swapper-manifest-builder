@@ -11,7 +11,6 @@ Log.Logger = new LoggerConfiguration()
 	.CreateLogger();
 
 Log.Information("Starting processing");
-//Log.Debug(
 
 // Deleting directory is not instant, moving it is :|
 if (Directory.Exists(DLLProcessor.OutputFilesPath))
