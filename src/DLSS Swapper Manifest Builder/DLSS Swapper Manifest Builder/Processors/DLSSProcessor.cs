@@ -28,8 +28,8 @@ public class DLSSProcessor : DLLProcessor
     };
     public override string[] ExpectedDevPrefix => new string[]
     {
-        "Windows_x86_64/dev/",
-        "bin/x64/development/", // used for streamline SDK
+        "Windows_x86_64/dev/", // used for DLSS SDK
+        "bin/x64/development/", // used for Streamline SDK
     };
     public override Dictionary<string, string> CustomAdditionalLabels => new Dictionary<string, string>()
     {
