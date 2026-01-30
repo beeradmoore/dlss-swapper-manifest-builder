@@ -19,8 +19,9 @@ internal class DLSSDProcessor : DLLProcessor
         "NVIDIA DLSS - DVS PRODUCTION",
     };
     public override string[] ExpectedPrefix => new string[]
-    {
-        "bin/x64/", // used for streamline SDK
+	{
+		"Windows_x86_64/rel/", // used for DLSS SDK
+        "bin/x64/", // used for Streamline SDK
         "/",
     };
     public override string[] ExpectedDevPrefix => new string[]

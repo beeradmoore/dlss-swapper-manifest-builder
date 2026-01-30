@@ -21,10 +21,10 @@ public class DLSSProcessor : DLLProcessor
         "NVIDIA DLSS - DVS PRODUCTION",
     };
     public override string[] ExpectedPrefix => new string[]
-    {
-        "Windows_x86_64/rel/",
+	{
+		"Windows_x86_64/rel/", // used for DLSS SDK
+        "bin/x64/",  // used for Streamline SDK
         "/",
-        "bin/x64/",  // used for streamline SDK
     };
     public override string[] ExpectedDevPrefix => new string[]
     {
