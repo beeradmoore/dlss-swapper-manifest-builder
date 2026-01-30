@@ -24,7 +24,7 @@ public abstract class DLLProcessor
     public static string BaseOutputPath => "output_files";
     public static string TempFilesPath => "temp_files";
 #endif
-    public static string InputManifestPath => Path.Combine(InputFilesPath, "manifest.json");
+    public static string InputManifestPath => Path.Combine("..", "..", "..", "..", "..", "..", "manifest.json");
     public static string OutputManifestPath => Path.Combine(OutputFilesPath, "manifest.json");
     public static string InputSDKsFilesPath => Path.Combine(InputFilesPath, "sdks");
 
