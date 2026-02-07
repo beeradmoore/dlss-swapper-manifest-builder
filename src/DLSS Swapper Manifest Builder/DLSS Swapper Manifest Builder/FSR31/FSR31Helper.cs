@@ -113,7 +113,7 @@ public class FSR31Helper
                         //Marshal.WriteInt64(versionIdsPtrs[i], (long)versionIds[i]);
                         //Marshal.WriteIntPtr(versionQuery.versionIds, i * IntPtr.Size, versionIdsPtrs[i]);
 
-                        Marshal.WriteInt64(versionQuery.versionIds, i * sizeof(UInt64), 0l);
+                        Marshal.WriteInt64(versionQuery.versionIds, i * sizeof(UInt64), 0L);
 
                         versionNamesPtrs[i] = Marshal.StringToHGlobalAnsi(versionNames[i]);
                         Marshal.WriteIntPtr(versionQuery.versionNames, i * IntPtr.Size, versionNamesPtrs[i]);
