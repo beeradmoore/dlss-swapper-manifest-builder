@@ -68,6 +68,9 @@ if (File.Exists(handledIssuesFile))
 // Some issues are triggered as handled manually so they will be skipped lower.
 var manuallyHandledIssues = new int[]
 {
+	3835, 3792, 3779, 3773, 3772, 3758, 3757, 3751, 3746, 3745,
+	3619, 3531, 3522, 3517, 3507, 3506, 3500, 3493, 
+
 	3420, 3416, 3411, 3393, 3376, 3336,
 
 	3320, 3306, 3290,
@@ -229,7 +232,15 @@ try
             Since = new DateTimeOffset(2025, 03, 09, 0, 0, 0, TimeSpan.Zero), // Last updateed
         };
 
-        var newIssues = await client.Issue.GetAllForRepository(owner, repository, issueRequest);
+		var newIssues = (await client.Issue.GetAllForRepository(owner, repository, issueRequest)).ToList();
+
+		// Remove pull requests from newIssues list.
+		var pullRequests = newIssues.Where(x => x.PullRequest is not null).ToList();
+		foreach (var pullRequest in pullRequests)
+		{
+			newIssues.Remove(pullRequest);
+		}
+
         File.WriteAllText(githubIssuesFile, JsonSerializer.Serialize(newIssues, new JsonSerializerOptions() { WriteIndented = true } ));
         
         foreach (var issue in newIssues)
