@@ -473,7 +473,8 @@
           "\u300AFortnite\u300B",
           "Fortnite",
           "\u5821\u5792\u4E4B\u591C",
-          "ARC Raiders"
+          "ARC Raiders",
+          "Clair Obscur: Expedition 33"
         ],
         "UbisoftConnect": [
           "ForHonor"
@@ -2649,7 +2650,8 @@
           "Vellum: Raid Night Study Hall",
           "Gedonia 2",
           "Carth",
-          "Badlands Crew"
+          "Badlands Crew",
+          "Possible One: Lunar Industries Demo"
         ],
         "GOG": [
           "IXION",
@@ -3235,7 +3237,8 @@
           "ROMEO IS A DEAD MAN",
           "Dragon\u0027s Dogma 2",
           "S.T.A.L.K.E.R. 2: Heart of Chornobyl",
-          "Battlefield"
+          "Battlefield",
+          "VOID/BREAKER"
         ],
         "XboxApp": [
           "No Man\u0027s Sky",
@@ -3255,7 +3258,8 @@
           "Death.Stranding.2.On.the.Beach.v1.0.45.0-P2P",
           "Palworld",
           "Warhammer 40000 - Space Marine 2",
-          "Ghost of Tsushima DC"
+          "Ghost of Tsushima DC",
+          "Samson"
         ],
         "EAApp": [
           "Battlefield\u2122 6",
@@ -3311,7 +3315,8 @@
           "Marvel Rivals",
           "INDUSTRIA 2 Playtest",
           "3DMark",
-          "Enginefall Playtest"
+          "Enginefall Playtest",
+          "MIGHTREYA Demo"
         ],
         "EpicGamesStore": [
           "Game of Thrones: Kingsroad"
@@ -4115,7 +4120,8 @@
           "Venus Vacation PRISM - DoA Xtreme",
           "Wo Long Fallen Dynasty",
           "Venus Vacation PRISM - DEAD OR ALIVE Xtreme",
-          "FatalFrameII"
+          "FatalFrameII",
+          "Wo Long. Fallen Dynasty"
         ]
       }
     },
@@ -4237,10 +4243,12 @@
           "Subliminal Demo",
           "ROMEO IS A DEAD MAN",
           "ROUTINE",
-          "Archean"
+          "Archean",
+          "VOID/BREAKER"
         ],
         "ManuallyAdded": [
-          "Routine"
+          "Routine",
+          "Samson"
         ]
       }
     },
@@ -4263,7 +4271,8 @@
           "Marvel Rivals",
           "INDUSTRIA 2 Playtest",
           "3DMark",
-          "Enginefall Playtest"
+          "Enginefall Playtest",
+          "MIGHTREYA Demo"
         ],
         "EpicGamesStore": [
           "Game of Thrones: Kingsroad"
@@ -5020,14 +5029,22 @@
         "Steam": [
           "Grand Theft Auto V Enhanced",
           "Divinity: Original Sin 2",
-          "Grim Dawn"
+          "Grim Dawn",
+          "Crimson Desert"
         ],
         "ManuallyAdded": [
           "Bin",
-          "S.T.A.L.K.E.R. 2.Heart.of.Chornobyl.Ultimate.Editon-InsaneRamZes"
+          "S.T.A.L.K.E.R. 2.Heart.of.Chornobyl.Ultimate.Editon-InsaneRamZes",
+          "Crimson Desert",
+          "UTW_Gothic_DeborahsRoom_Ver_0_3_0",
+          "Ghost of Tsushima DIRECTORS CUT"
         ],
         "EpicGamesStore": [
-          "SnowRunner"
+          "SnowRunner",
+          "Clair Obscur: Expedition 33"
+        ],
+        "BattleNet": [
+          "Call of Duty: Modern Warfare"
         ]
       }
     },
@@ -5137,7 +5154,9 @@
           "Forza",
           "BlackMythWukong(2002122)",
           "Ghost of Tsushima DC",
-          "Resident Evil Village 1.1.0.5"
+          "Resident Evil Village 1.1.0.5",
+          "Marvels Spider-Man Remastered",
+          "Marvel\u2019s Spider-Man - Miles Morales"
         ],
         "Steam": [
           "The Outlast Trials",
@@ -5395,6 +5414,16 @@
       "sources": {
         "GOG": [
           "S.T.A.L.K.E.R. 2: Heart of Chornobyl"
+        ]
+      }
+    },
+    {
+      "dll_type": "FSR_31_DX12",
+      "version": "1.0.1.38338",
+      "hash": "671A397117723C6EFA5AB5B63DC4C9CD",
+      "sources": {
+        "Steam": [
+          "Space Engineers 2"
         ]
       }
     },
@@ -5906,6 +5935,9 @@
       "sources": {
         "ManuallyAdded": [
           "DeltaForce(2001918)"
+        ],
+        "Steam": [
+          "Delta Force"
         ]
       }
     },
@@ -7370,7 +7402,8 @@
           "Red Dead Redemption",
           "Clair Obscur Expedition 33",
           "Red Dead Redemption 2",
-          "Wuthering Waves Game"
+          "Wuthering Waves Game",
+          "Resident Evil - Village"
         ],
         "XboxApp": [
           "Indiana Jones and the Great Circle"
