@@ -1,4 +1,5 @@
 ﻿using DLSS_Swapper.Data;
+using DLSS_Swapper_Manifest_Builder.Downloaders;
 using Serilog;
 using System;
 using System.Collections.Generic;
@@ -14,19 +15,6 @@ namespace DLSS_Swapper_Manifest_Builder.Processors;
 
 public abstract class DLLProcessor
 {
-#if DEBUG
-    // In debug mode, don't place these in the built directories as they will be removed when cleaned
-    public static string InputFilesPath => Path.Combine("..", "..", "..", "..", "generated_files", "input_files");
-    public static string OutputFilesPath => Path.Combine("..", "..", "..", "..", "generated_files", "output_files");
-    public static string TempFilesPath => Path.Combine(Path.GetTempPath(), "dlss_swapper_manifest_builder");
-#else
-    public static string BaseInputPath => "input_files";
-    public static string BaseOutputPath => "output_files";
-    public static string TempFilesPath => "temp_files";
-#endif
-    public static string InputManifestPath => Path.Combine("..", "..", "..", "..", "..", "..", "manifest.json");
-    public static string OutputManifestPath => Path.Combine(OutputFilesPath, "manifest.json");
-    public static string InputSDKsFilesPath => Path.Combine(InputFilesPath, "sdks");
 
     public abstract string NamePath { get; }
     public abstract string ExpectedDLLName { get; }
@@ -37,10 +25,10 @@ public abstract class DLLProcessor
     public abstract Dictionary<string, string> DllSource { get; }
 
 
-    public string BaseInputPath => Path.Combine(InputFilesPath, "base", NamePath);
-    public string ImportPath => Path.Combine(InputFilesPath, "import", NamePath);
-    public string OutputZipPath => Path.Combine(OutputFilesPath, NamePath);
-    public string OutputDllPath => Path.Combine(TempFilesPath, NamePath);
+    public string BaseInputPath => Path.Combine(Storage.InputFilesPath, "base", NamePath);
+    public string ImportPath => Path.Combine(Storage.InputFilesPath, "import", NamePath);
+    public string OutputZipPath => Path.Combine(Storage.OutputFilesPath, NamePath);
+    public string OutputDllPath => Path.Combine(Storage.TempFilesPath, NamePath);
 
     public DLLProcessor()
     {
@@ -81,11 +69,10 @@ public abstract class DLLProcessor
 
             if (File.Exists(expectedZipPath) == false)
             {
-                var httpClient = new HttpClient();
                 Log.Information($"Downloading {dllRecord.Filename}");
                 using (var localStream = File.Create(expectedZipPath))
                 {
-                    using (var remoteStream = await httpClient.GetStreamAsync(dllRecord.DownloadUrl))
+                    using (var remoteStream = await DownloadHelper.HttpClient.GetStreamAsync(dllRecord.DownloadUrl))
                     {
                         await remoteStream.CopyToAsync(localStream);
                     }
@@ -111,7 +98,7 @@ public abstract class DLLProcessor
     {
         var files = new List<string>();
         files.AddRange(Directory.GetFiles(BaseInputPath, "*.zip", SearchOption.TopDirectoryOnly));
-        files.AddRange(Directory.GetFiles(InputSDKsFilesPath, "*.zip", SearchOption.AllDirectories));
+        files.AddRange(Directory.GetFiles(Storage.InputSDKsFilesPath, "*.zip", SearchOption.AllDirectories));
         files.AddRange(Directory.GetFiles(ImportPath, "*.zip", SearchOption.AllDirectories));
         return files.ToArray();
     }
@@ -166,7 +153,7 @@ public abstract class DLLProcessor
 
                         var dllRecord = DLLRecord.FromFile(dllExtractFilename, ExpectedDLLName);
                         // If the file is imported from SDKs, add its source name here.
-                        if (file.Contains(InputSDKsFilesPath) == true)
+                        if (file.Contains(Storage.InputSDKsFilesPath) == true)
                         {
                             dllRecord.DllSource = fileName;
                         }
@@ -357,7 +344,7 @@ public abstract class DLLProcessor
             Log.Information($"PostProcessing: {oldZipFilename}");
 
             // Create a path to extract the dll to
-            var dllExtractPath = Path.Combine(TempFilesPath, Path.GetFileNameWithoutExtension(oldZipFilename));
+            var dllExtractPath = Path.Combine(Storage.TempFilesPath, Path.GetFileNameWithoutExtension(oldZipFilename));
             Directory.CreateDirectory(dllExtractPath);
 
             using (var fileStream = File.OpenRead(oldZipFilename))

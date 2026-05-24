@@ -1,9 +1,15 @@
-﻿using System.Diagnostics;
-using System.Text.Json;
-using DLSS_Swapper_Manifest_Builder;
+﻿using DLSS_Swapper_Manifest_Builder;
+using DLSS_Swapper_Manifest_Builder.Downloaders;
+using DLSS_Swapper_Manifest_Builder.Downloaders.AMD;
+using DLSS_Swapper_Manifest_Builder.Downloaders.Intel;
+using DLSS_Swapper_Manifest_Builder.Downloaders.Microsoft;
+using DLSS_Swapper_Manifest_Builder.Downloaders.NVIDIA;
+using DLSS_Swapper_Manifest_Builder.Downloaders.NVIDIA_RTX;
 using DLSS_Swapper_Manifest_Builder.Processors;
 using NewDLLHandler;
 using Serilog;
+using System.Diagnostics;
+using System.Text.Json;
 
 Log.Logger = new LoggerConfiguration()
 	.WriteTo.File("log.txt", rollingInterval: RollingInterval.Day)
@@ -13,42 +19,31 @@ Log.Logger = new LoggerConfiguration()
 Log.Information("Starting processing");
 //Log.Debug(
 
-// Deleting directory is not instant, moving it is :|
-if (Directory.Exists(DLLProcessor.OutputFilesPath))
-{
-    var newPath = Path.Combine(Path.GetDirectoryName(DLLProcessor.OutputFilesPath) ?? string.Empty, Path.GetRandomFileName());
-    Directory.Move(DLLProcessor.OutputFilesPath, newPath);
-    Directory.Delete(newPath, true);
-}
+Storage.CreateDirectories();
 
-if (Directory.Exists(DLLProcessor.TempFilesPath))
-{
-    var newPath = Path.Combine(Path.GetDirectoryName(DLLProcessor.TempFilesPath) ?? string.Empty, Path.GetRandomFileName());
-    Directory.Move(DLLProcessor.TempFilesPath, newPath);
-    Directory.Delete(newPath, true);
-}
-
-if (Directory.Exists(DLLProcessor.InputFilesPath) == false)
-{
-    Directory.CreateDirectory(DLLProcessor.InputFilesPath);
-}
-
-if (Directory.Exists(DLLProcessor.OutputFilesPath) == false)
-{
-    Directory.CreateDirectory(DLLProcessor.OutputFilesPath);
-}
-
-if (Directory.Exists(DLLProcessor.InputSDKsFilesPath) == false)
-{
-    Directory.CreateDirectory(DLLProcessor.InputSDKsFilesPath);
-}
-
-var manifest = JsonSerializer.Deserialize<Manifest>(File.ReadAllText(DLLProcessor.InputManifestPath));
+var manifest = JsonSerializer.Deserialize<Manifest>(File.ReadAllText(Storage.InputManifestPath));
 if (manifest == null)
 {
-    Log.Information($"Could not load {DLLProcessor.InputManifestPath}.");
+    Log.Information($"Could not load {Storage.InputManifestPath}.");
     return 1;
 }
+
+var downloaders = new List<ReleaseDownloader>();
+downloaders.Add(new StreamlineDownloader());
+downloaders.Add(new DLSSDownloader());
+downloaders.Add(new XeSSDownloader());
+downloaders.Add(new DirectStorageDownloader());
+downloaders.Add(new FidelityFXDownloader());
+
+
+foreach (var downloader in downloaders)
+{
+	await downloader.DownloadAsync();
+}
+
+
+
+return 0;
 
 var dlssProcessor = new DLSSProcessor();
 var dlssgProcessor = new DLSSGProcessor();
@@ -186,24 +181,24 @@ using (var stream = File.OpenRead(knownDLLSourcesMissingPath))
 
 var manifestJson = JsonSerializer.Serialize(manifest, new JsonSerializerOptions() { WriteIndented = true });
 
-File.WriteAllText(DLLProcessor.OutputManifestPath, manifestJson);
+File.WriteAllText(Storage.OutputManifestPath, manifestJson);
 
 // Copy to root of the repo
 var repoRootManifestPath = Path.Combine("..", "..", "..", "..", "..", "..", "manifest.json");
-File.Copy(DLLProcessor.OutputManifestPath, repoRootManifestPath, true);
+File.Copy(Storage.OutputManifestPath, repoRootManifestPath, true);
 
 //Copy to DLSS Swapper docs if the folder is in a relative location.
 var dlssSwapperRepoManifestPath = Path.Combine("..", "..", "..", "..", "..", "..", "..", "dlss-swapper", "docs", "manifest.json");
 if (File.Exists(dlssSwapperRepoManifestPath))
 {
-	File.Copy(DLLProcessor.OutputManifestPath, dlssSwapperRepoManifestPath, true);
+	File.Copy(Storage.OutputManifestPath, dlssSwapperRepoManifestPath, true);
 }
 
 // Cleanup.
 
-if (Directory.Exists(DLLProcessor.TempFilesPath))
+if (Directory.Exists(Storage.TempFilesPath))
 {
-    Directory.Delete(DLLProcessor.TempFilesPath, true);
+    Directory.Delete(Storage.TempFilesPath, true);
 }
 
 return 1;
