@@ -96,7 +96,9 @@ public class DLLRecord : IComparable<DLLRecord>
             "libxell.dll" => GameAssetType.XeLL,
             "libxess_fg.dll" => GameAssetType.XeSS_FG,
 			"libxess_dx11.dll" => GameAssetType.XeSS_DX11,
-			_ => GameAssetType.Unknown,
+            "dstorage.dll" => GameAssetType.DirectStorage,
+            "dstoragecore.dll" => GameAssetType.DirectStorageCore,
+            _ => GameAssetType.Unknown,
         };
 
         if (dllRecord.AssetType == GameAssetType.Unknown)
@@ -257,13 +259,21 @@ public class DLLRecord : IComparable<DLLRecord>
 		}
 		else if (dllRecord.AssetType == GameAssetType.XeSS_FG)
 		{
-			// NOOP
-		}
-		else if (dllRecord.AssetType == GameAssetType.XeSS_DX11)
-		{
-			// NOOP
-		}
-		else
+            // NOOP
+        }
+        else if (dllRecord.AssetType == GameAssetType.XeSS_DX11)
+        {
+            // NOOP
+        }
+        else if (dllRecord.AssetType == GameAssetType.DirectStorage)
+        {
+            // NOOP
+        }
+        else if (dllRecord.AssetType == GameAssetType.DirectStorageCore)
+        {
+            // NOOP
+        }
+        else
         {
             Debugger.Break();
         }
@@ -305,7 +315,9 @@ public class DLLRecord : IComparable<DLLRecord>
             GameAssetType.XeLL => "xell",
             GameAssetType.XeSS_FG => "xess_fg",
             GameAssetType.XeSS_DX11 => "xess_dx11",
-			_ => string.Empty,
+            GameAssetType.DirectStorage => "directstorage",
+            GameAssetType.DirectStorageCore => "directstorage_core",
+            _ => string.Empty,
         };
     }
 }

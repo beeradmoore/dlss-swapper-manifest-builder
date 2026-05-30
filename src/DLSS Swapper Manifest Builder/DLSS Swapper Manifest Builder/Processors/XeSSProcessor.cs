@@ -1,4 +1,6 @@
-﻿using System.Diagnostics;
+﻿using DLSS_Swapper.Data;
+using DLSS_Swapper_Manifest_Builder.Downloaders.Intel;
+using System.Diagnostics;
 using System.IO.Compression;
 using System.Text.Json;
 
@@ -29,4 +31,13 @@ public class XeSSProcessor : DLLProcessor
         { "C9FB6BB716A087FD537790BEBE710D4C", "Forza Horizon 5" }, // v1.1.0.18
         { "367BE8343B288372FF8523438F53B62D", "Marvel Rivals" }, // v2.0.0.18
     };
+    public override string[] DownloadedFilesPaths => [
+        Path.Combine(Storage.DownloadedFilesPath, XeSSDownloader.DownloadPathName),
+    ];
+
+    public override GameAssetType GameAssetType => GameAssetType.XeSS;
+
+    public XeSSProcessor(List<DLLRecord> manifestDllRecords) : base(manifestDllRecords)
+    {
+    }
 }

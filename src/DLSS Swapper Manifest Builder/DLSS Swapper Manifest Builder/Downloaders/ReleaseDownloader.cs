@@ -7,6 +7,8 @@ namespace DLSS_Swapper_Manifest_Builder.Downloaders;
 
 public abstract class ReleaseDownloader
 {
+    public const string DownloadPathName = "";
+
     public abstract string DownloadPath { get; }
 
     public Dictionary<string, string> TagToFileName { get; } = new Dictionary<string, string>();

@@ -1,11 +1,14 @@
-﻿using System;
+﻿using DLSS_Swapper.Data;
+using DLSS_Swapper_Manifest_Builder.Downloaders.NVIDIA;
+using DLSS_Swapper_Manifest_Builder.Downloaders.NVIDIA_RTX;
+using Serilog;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
-using Serilog;
 
 namespace DLSS_Swapper_Manifest_Builder.Processors;
 
@@ -82,6 +85,11 @@ internal class DLSSGProcessor : DLLProcessor
         // Not showing E8E78491DC415315A2C3785916185CF1 (1.10.0 , 3.1.10)
         // as it says NVIDIA CONFIDENTIAL - PROVIDED UNDER NDA - DO NOT DISTRIBUTE IN ANY WAY
     };
+    
+    public override string[] DownloadedFilesPaths => [
+        Path.Combine(Storage.DownloadedFilesPath, DLSSDownloader.DownloadPathName),
+        Path.Combine(Storage.DownloadedFilesPath, StreamlineDownloader.DownloadPathName),
+    ];
 
     public override List<DLLRecord> ProcessLocalFiles(IReadOnlyList<DLLRecord> existingRecords)
     {
@@ -132,5 +140,11 @@ internal class DLSSGProcessor : DLLProcessor
         
         var processedFiles = base.ProcessLocalFiles(existingRecords);
         return processedFiles;
+    }
+
+    public override GameAssetType GameAssetType => GameAssetType.DLSS_G;
+
+    public DLSSGProcessor(List<DLLRecord> manifestDllRecords) : base(manifestDllRecords)
+    {
     }
 }

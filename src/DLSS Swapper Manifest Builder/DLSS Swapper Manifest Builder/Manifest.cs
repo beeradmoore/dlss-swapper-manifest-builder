@@ -33,9 +33,15 @@ internal class Manifest
 	[JsonPropertyName("xess_fg")]
 	public List<DLLRecord> XeSS_FG { get; set; } = new List<DLLRecord>();
 
-	[JsonPropertyName("xess_dx11")]
-	public List<DLLRecord> XeSS_DX11 { get; set; } = new List<DLLRecord>();
+    [JsonPropertyName("xess_dx11")]
+    public List<DLLRecord> XeSS_DX11 { get; set; } = new List<DLLRecord>();
 
-	[JsonPropertyName("known_dlls")]
+    [JsonPropertyName("directstorage")]
+    public List<DLLRecord> DirectStorage { get; set; } = new List<DLLRecord>();
+
+    [JsonPropertyName("directstorage_core")]
+    public List<DLLRecord> DirectStorageCore { get; set; } = new List<DLLRecord>();
+
+    [JsonPropertyName("known_dlls")]
     public KnownDLLs KnownDLLs { get; set; } = new KnownDLLs();
 }

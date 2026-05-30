@@ -1,4 +1,6 @@
-﻿using System;
+﻿using DLSS_Swapper.Data;
+using DLSS_Swapper_Manifest_Builder.Downloaders.AMD;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -21,4 +23,14 @@ internal class FSR31VKProcessor : FSR31Processor
         { "0D0CDC8D5865027D100DAA35B605793F", "3.1.2" }, // VK FidelityFX-SDK-1.1.2.zip
         { "23A87C10A859D5756EDBE5A6D7F692B5", "3.1.3" }, // VK FidelityFX-SDK-1.1.3.zip
     };
+
+    public override string[] DownloadedFilesPaths => [
+        Path.Combine(Storage.DownloadedFilesPath, FidelityFXDownloader.DownloadPathName),
+    ];
+
+    public override GameAssetType GameAssetType => GameAssetType.FSR_31_VK;
+
+    public FSR31VKProcessor(List<DLLRecord> manifestDllRecords) : base(manifestDllRecords)
+    {
+    }
 }

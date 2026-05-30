@@ -1,4 +1,7 @@
-﻿using System;
+﻿using DLSS_Swapper.Data;
+using DLSS_Swapper_Manifest_Builder.Downloaders.AMD;
+using DLSS_Swapper_Manifest_Builder.Downloaders.Intel;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -29,4 +32,14 @@ internal class XeLLProcessor : DLLProcessor
     {
         { "D469069D3935032F907106331161E78A", "Marvel Rivals" }, // v1.0.0.139
     };
+
+    public override string[] DownloadedFilesPaths => [
+        Path.Combine(Storage.DownloadedFilesPath, XeSSDownloader.DownloadPathName),
+    ];
+
+    public override GameAssetType GameAssetType => GameAssetType.XeSS;
+
+    public XeLLProcessor(List<DLLRecord> manifestDllRecords) : base(manifestDllRecords)
+    {
+    }
 }

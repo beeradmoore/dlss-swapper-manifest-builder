@@ -8,8 +8,8 @@ namespace DLSS_Swapper_Manifest_Builder.Downloaders.Intel;
 
 internal class XeSSDownloader : ReleaseDownloader
 {
-
-    public override string DownloadPath => Path.Combine(Storage.DownloadedFilesPath, "XeSS");
+    public new const string DownloadPathName = "XeSS";
+    public override string DownloadPath => Path.Combine(Storage.DownloadedFilesPath, DownloadPathName);
 
     public XeSSDownloader()
     {

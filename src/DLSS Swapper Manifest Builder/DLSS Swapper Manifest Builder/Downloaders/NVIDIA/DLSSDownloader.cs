@@ -8,7 +8,8 @@ namespace DLSS_Swapper_Manifest_Builder.Downloaders.NVIDIA;
 
 internal class DLSSDownloader : ReleaseDownloader
 {
-    public override string DownloadPath => Path.Combine(Storage.DownloadedFilesPath, "DLSS");
+    public new const string DownloadPathName = "DLSS";
+    public override string DownloadPath => Path.Combine(Storage.DownloadedFilesPath, DownloadPathName);
 
     public DLSSDownloader()
     {

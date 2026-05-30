@@ -10,7 +10,8 @@ namespace DLSS_Swapper_Manifest_Builder.Downloaders.Microsoft;
 
 internal class DirectStorageDownloader : ReleaseDownloader
 {
-    public override string DownloadPath => Path.Combine(Storage.DownloadedFilesPath, "DirectStorage");
+    public new const string DownloadPathName = "DirectStorage";
+    public override string DownloadPath => Path.Combine(Storage.DownloadedFilesPath, DownloadPathName);
 
 
     public DirectStorageDownloader()

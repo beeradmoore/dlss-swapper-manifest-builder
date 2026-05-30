@@ -33,6 +33,12 @@ public class KnownDLLs
 	[JsonPropertyName("xess_fg")]
 	public List<HashedKnownDLL> XeSS_FG { get; set; } = new List<HashedKnownDLL>();
 
-	[JsonPropertyName("xess_dx11")]
-	public List<HashedKnownDLL> XeSS_DX11 { get; set; } = new List<HashedKnownDLL>();
+    [JsonPropertyName("xess_dx11")]
+    public List<HashedKnownDLL> XeSS_DX11 { get; set; } = new List<HashedKnownDLL>();
+
+    [JsonPropertyName("directstorage")]
+    public List<HashedKnownDLL> DirectStorage { get; set; } = new List<HashedKnownDLL>();
+
+    [JsonPropertyName("directstorage_core")]
+    public List<HashedKnownDLL> DirectStorageCore { get; set; } = new List<HashedKnownDLL>();
 }

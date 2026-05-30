@@ -15,6 +15,7 @@ namespace DLSS_Swapper_Manifest_Builder.Processors;
 
 public abstract class DLLProcessor
 {
+    public abstract GameAssetType GameAssetType { get; }
 
     public abstract string NamePath { get; }
     public abstract string ExpectedDLLName { get; }
@@ -28,10 +29,16 @@ public abstract class DLLProcessor
     public string BaseInputPath => Path.Combine(Storage.InputFilesPath, "base", NamePath);
     public string ImportPath => Path.Combine(Storage.InputFilesPath, "import", NamePath);
     public string OutputZipPath => Path.Combine(Storage.OutputFilesPath, NamePath);
+    public abstract string[] DownloadedFilesPaths { get; }
     public string OutputDllPath => Path.Combine(Storage.TempFilesPath, NamePath);
 
-    public DLLProcessor()
+    public List<DLLRecord> ManifestDllRecords { get; set; }
+
+
+    public DLLProcessor(List<DLLRecord> manifestDllRecords)
     {
+        ManifestDllRecords = manifestDllRecords;
+        
         // Create directories if they don't exist.
         if (Directory.Exists(BaseInputPath) == false)
         {
@@ -51,7 +58,7 @@ public abstract class DLLProcessor
         if (Directory.Exists(OutputDllPath) == false)
         {
             Directory.CreateDirectory(OutputDllPath);
-        }
+        }   
     }
 
     public async Task DownloadExistingRecordsAsync(IReadOnlyList<DLLRecord> dllRecords)
@@ -100,6 +107,13 @@ public abstract class DLLProcessor
         files.AddRange(Directory.GetFiles(BaseInputPath, "*.zip", SearchOption.TopDirectoryOnly));
         files.AddRange(Directory.GetFiles(Storage.InputSDKsFilesPath, "*.zip", SearchOption.AllDirectories));
         files.AddRange(Directory.GetFiles(ImportPath, "*.zip", SearchOption.AllDirectories));
+
+        foreach (var downloadedFilesPath in DownloadedFilesPaths)
+        {
+            files.AddRange(Directory.GetFiles(downloadedFilesPath, "*.nupkg", SearchOption.AllDirectories));
+            files.AddRange(Directory.GetFiles(downloadedFilesPath, "*.zip", SearchOption.AllDirectories));
+        }
+
         return files.ToArray();
     }
 
@@ -152,16 +166,28 @@ public abstract class DLLProcessor
                         dllEntry.ExtractToFile(dllExtractFilename, false);
 
                         var dllRecord = DLLRecord.FromFile(dllExtractFilename, ExpectedDLLName);
-                        // If the file is imported from SDKs, add its source name here.
-                        if (file.Contains(Storage.InputSDKsFilesPath) == true)
-                        {
-                            dllRecord.DllSource = fileName;
-                        }
-                        else if (DllSource.ContainsKey(dllRecord.MD5Hash))
+
+                        if (DllSource.ContainsKey(dllRecord.MD5Hash)) // Manual override
                         {
                             dllRecord.DllSource = DllSource[dllRecord.MD5Hash];
                         }
+                        else if (file.Contains(Storage.InputSDKsFilesPath) == true) // If the file is imported from SDKs, add its source name here.
+                        {
+                            dllRecord.DllSource = fileName;
+                        } 
                         else
+                        {
+                            foreach (var downloadedFilePath in DownloadedFilesPaths)
+                            {
+                                if (file.Contains(downloadedFilePath))
+                                {
+                                    dllRecord.DllSource = fileName;
+                                    break;
+                                }
+                            }
+                        }
+
+                        if (string.IsNullOrWhiteSpace(dllRecord.DllSource))
                         {
                             Log.Information($"! {ExpectedDLLName} {dllRecord.Version} {dllRecord.MD5Hash} does not have a source attributed.");
                         }

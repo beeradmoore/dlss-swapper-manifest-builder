@@ -1,11 +1,15 @@
-﻿using System;
+﻿using DLSS_Swapper.Data;
+using DLSS_Swapper_Manifest_Builder.Downloaders.Microsoft;
+using DLSS_Swapper_Manifest_Builder.Downloaders.NVIDIA;
+using DLSS_Swapper_Manifest_Builder.Downloaders.NVIDIA_RTX;
+using Serilog;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
-using Serilog;
 
 namespace DLSS_Swapper_Manifest_Builder.Processors;
 
@@ -47,6 +51,11 @@ internal class DLSSDProcessor : DLLProcessor
         { "E6081B848EA68880DB8ADC83CDFB15DC", "NVIDIA Driver" }, // v310.2.0.0
         { "E5311D6C46C2920E2D5347C029F60CB7", "Half-Life 2 RTX" }, // v310.2.1.0
     };
+
+    public override string[] DownloadedFilesPaths => [
+        Path.Combine(Storage.DownloadedFilesPath, DLSSDownloader.DownloadPathName),
+        Path.Combine(Storage.DownloadedFilesPath, StreamlineDownloader.DownloadPathName),
+    ];
 
     public override List<DLLRecord> ProcessLocalFiles(IReadOnlyList<DLLRecord> existingRecords)
     {
@@ -98,5 +107,11 @@ internal class DLSSDProcessor : DLLProcessor
         var processedFiles = base.ProcessLocalFiles(existingRecords);
         
         return processedFiles;
+    }
+
+    public override GameAssetType GameAssetType => GameAssetType.DLSS_D;
+    
+    public DLSSDProcessor(List<DLLRecord> manifestDllRecords) : base(manifestDllRecords)
+    {
     }
 }

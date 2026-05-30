@@ -9,7 +9,8 @@ namespace DLSS_Swapper_Manifest_Builder.Downloaders.NVIDIA_RTX;
 
 internal class StreamlineDownloader : ReleaseDownloader
 {
-    public override string DownloadPath => Path.Combine(Storage.DownloadedFilesPath, "Streamline");
+    public new const string DownloadPathName = "Streamline";
+    public override string DownloadPath => Path.Combine(Storage.DownloadedFilesPath, DownloadPathName);
 
 
     public StreamlineDownloader()

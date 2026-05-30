@@ -1,7 +1,10 @@
-﻿using System.Diagnostics;
+﻿using DLSS_Swapper.Data;
+using DLSS_Swapper_Manifest_Builder.Downloaders.NVIDIA;
+using DLSS_Swapper_Manifest_Builder.Downloaders.NVIDIA_RTX;
+using Serilog;
+using System.Diagnostics;
 using System.IO.Compression;
 using System.Security.Cryptography;
-using Serilog;
 
 namespace DLSS_Swapper_Manifest_Builder.Processors;
 
@@ -116,6 +119,11 @@ public class DLSSProcessor : DLLProcessor
         { "3A875F45C315D09E5F4548CC9288F178" , "NVIDIA Driver" }, // v310.2.0.0
     };
 
+    public override string[] DownloadedFilesPaths => [
+        Path.Combine(Storage.DownloadedFilesPath, DLSSDownloader.DownloadPathName),
+        Path.Combine(Storage.DownloadedFilesPath, StreamlineDownloader.DownloadPathName),
+    ];
+
     public override List<DLLRecord> ProcessLocalFiles(IReadOnlyList<DLLRecord> existingRecords)
     {
         var modelPath = @"C:\ProgramData\NVIDIA\NGX\models\dlss\versions\";
@@ -165,5 +173,11 @@ public class DLSSProcessor : DLLProcessor
 
         var processedFiles = base.ProcessLocalFiles(existingRecords);
         return processedFiles;
+    }
+
+    public override GameAssetType GameAssetType => GameAssetType.DLSS;
+
+    public DLSSProcessor(List<DLLRecord> manifestDllRecords) : base(manifestDllRecords)
+    {
     }
 }

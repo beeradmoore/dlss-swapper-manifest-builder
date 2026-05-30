@@ -1,4 +1,6 @@
-﻿using System;
+﻿using DLSS_Swapper.Data;
+using DLSS_Swapper_Manifest_Builder.Downloaders.Intel;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,13 +14,13 @@ internal class XeSSDX11Processor : DLLProcessor
 	public override string ExpectedDLLName => "libxess_dx11.dll";
 	public override string[] ValidFileDescriptions => new string[]
 	{
-	"XeSS SDK"
+		"XeSS SDK"
 	};
 	public override string[] ExpectedPrefix => new string[]
 	{
-	"bin/",
-	"/",
-	"Binaries/ThirdParty/Win64/",
+		"bin/",
+		"/",
+		"Binaries/ThirdParty/Win64/",
 	};
 	public override string[] ExpectedDevPrefix => new string[]
 	{
@@ -30,4 +32,14 @@ internal class XeSSDX11Processor : DLLProcessor
 	public override Dictionary<string, string> DllSource => new Dictionary<string, string>()
 	{
 	};
+
+    public override string[] DownloadedFilesPaths => [
+        Path.Combine(Storage.DownloadedFilesPath, XeSSDownloader.DownloadPathName),
+    ];
+
+	public override GameAssetType GameAssetType => GameAssetType.XeSS_DX11;
+
+    public XeSSDX11Processor(List<DLLRecord> manifestDllRecords) : base(manifestDllRecords)
+    {
+    }
 }

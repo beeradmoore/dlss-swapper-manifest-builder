@@ -8,7 +8,8 @@ namespace DLSS_Swapper_Manifest_Builder.Downloaders.AMD;
 
 internal class FidelityFXDownloader : ReleaseDownloader
 {
-    public override string DownloadPath => Path.Combine(Storage.DownloadedFilesPath, "FidelityFX-SDK");
+    public new const string DownloadPathName = "FidelityFX-SDK";
+    public override string DownloadPath => Path.Combine(Storage.DownloadedFilesPath, DownloadPathName);
 
     public FidelityFXDownloader()
     {
