@@ -8,6 +8,8 @@ using DLSS_Swapper_Manifest_Builder.Downloaders.NVIDIA;
 using DLSS_Swapper_Manifest_Builder.Downloaders.NVIDIA_RTX;
 using DLSS_Swapper_Manifest_Builder.Processors;
 using DLSS_Swapper_Manifest_Builder.Processors.DirectStorage;
+using DLSS_Swapper_Manifest_Builder.Processors.FidelityFX_SDK1;
+using DLSS_Swapper_Manifest_Builder.Processors.FidelityFX_SDK2;
 using NewDLLHandler;
 using Serilog;
 using System.Diagnostics;
@@ -52,9 +54,16 @@ var dllProcessors = new List<DLLProcessor>();
 //dllProcessors.Add(new DLSSGProcessor(manifest.DLSS_G));
 //dllProcessors.Add(new DLSSDProcessor(manifest.DLSS_D));
 
-// FSR 3.1
-//dllProcessors.Add(new FSR31DX12Processor(manifest.FSR_31_DX12));
-//dllProcessors.Add(new FSR31VKProcessor(manifest.FSR_31_VK));
+// FSR 3.1 / Fidelity SDK 1
+// dllProcessors.Add(new FSR31DX12Processor(manifest.FSR_31_DX12));
+// dllProcessors.Add(new FSR31VKProcessor(manifest.FSR_31_VK));
+
+// FSR 4 / Fidelity SDK 2 
+dllProcessors.Add(new FidelityFX2_Denoiser_DX12_Processor(manifest.FSR_31_DX12));
+dllProcessors.Add(new FidelityFX2_FrameGeneration_DX12_Processor(manifest.FSR_31_DX12));
+dllProcessors.Add(new FidelityFX2_Loader_DX12_Processor(manifest.FSR_31_DX12));
+dllProcessors.Add(new FidelityFX2_RadianceCache_DX12_Processor(manifest.FSR_31_DX12));
+dllProcessors.Add(new FidelityFX2_Upscaler_DX12_Processor(manifest.FSR_31_DX12));
 
 // XeSS
 //dllProcessors.Add(new XeSSProcessor(manifest.XeSS));
@@ -63,8 +72,8 @@ var dllProcessors = new List<DLLProcessor>();
 //dllProcessors.Add(new XeSSDX11Processor(manifest.XeSS_DX11));
 
 // Direct Storage
-dllProcessors.Add(new DirectStorageProcessor(manifest.DirectStorage));
-dllProcessors.Add(new DirectStorageCoreProcessor(manifest.DirectStorageCore));
+// dllProcessors.Add(new DirectStorageProcessor(manifest.DirectStorage));
+//dllProcessors.Add(new DirectStorageCoreProcessor(manifest.DirectStorageCore));
 
 
 foreach (var dllProcessor in dllProcessors)
@@ -123,7 +132,12 @@ using (var stream = File.OpenRead(knownDLLSourcesMissingPath))
             GameAssetType.XeSS_DX11 => manifest.KnownDLLs.XeSS_DX11,
             GameAssetType.DirectStorage => manifest.KnownDLLs.DirectStorage,
             GameAssetType.DirectStorageCore => manifest.KnownDLLs.DirectStorageCore,
-            _ => null
+            GameAssetType.FidelityFX_SDK2_Denoiser_DX12 => manifest.KnownDLLs.FidelityFX_SDK2_Denoiser_DX12,
+            GameAssetType.FidelityFX_SDK2_FrameGeneration_DX12 => manifest.KnownDLLs.FidelityFX_SDK2_FrameGeneration_DX12,
+            GameAssetType.FidelityFX_SDK2_Loader_DX12 => manifest.KnownDLLs.FidelityFX_SDK2_Loader_DX12,
+            GameAssetType.FidelityFX_SDK2_RadianceCache_DX12 => manifest.KnownDLLs.FidelityFX_SDK2_RadianceCache_DX12,
+            GameAssetType.FidelityFX_SDK2_Upscaler_DX12 => manifest.KnownDLLs.FidelityFX_SDK2_Upscaler_DX12,
+            _ => null,
 		};
 
 		if (knownDLLsList is null)

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DLSS_Swapper.Data;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -41,6 +42,21 @@ internal class Manifest
 
     [JsonPropertyName("directstorage_core")]
     public List<DLLRecord> DirectStorageCore { get; set; } = new List<DLLRecord>();
+
+    [JsonPropertyName("fidelityfx_sdk2_denoiser_dx12")]
+    public List<DLLRecord> FidelityFX_SDK2_Denoiser_DX12 { get; set; } = new List<DLLRecord>();
+
+    [JsonPropertyName("fidelityfx_sdk2_framegeneration_dx12")]
+    public List<DLLRecord> FidelityFX_SDK2_FrameGeneration_DX12 { get; set; } = new List<DLLRecord>();
+
+    [JsonPropertyName("fidelityfx_sdk2_loader_dx12")]
+    public List<DLLRecord> FidelityFX_SDK2_Loader_DX12 { get; set; } = new List<DLLRecord>();
+
+    [JsonPropertyName("fidelityfx_sdk2_radiancecache_dx12")]
+    public List<DLLRecord> FidelityFX_SDK2_RadianceCache_DX12 { get; set; } = new List<DLLRecord>();
+
+    [JsonPropertyName("fidelityfx_sdk2_upscaler_dx12")]
+    public List<DLLRecord> FidelityFX_SDK2_Upscaler_DX12 { get; set; } = new List<DLLRecord>();
 
     [JsonPropertyName("known_dlls")]
     public KnownDLLs KnownDLLs { get; set; } = new KnownDLLs();

@@ -98,6 +98,11 @@ public class DLLRecord : IComparable<DLLRecord>
 			"libxess_dx11.dll" => GameAssetType.XeSS_DX11,
             "dstorage.dll" => GameAssetType.DirectStorage,
             "dstoragecore.dll" => GameAssetType.DirectStorageCore,
+            "amd_fidelityfx_denoiser_dx12.dll" => GameAssetType.FidelityFX_SDK2_Denoiser_DX12,
+            "amd_fidelityfx_framegeneration_dx12.dll" => GameAssetType.FidelityFX_SDK2_FrameGeneration_DX12,
+            "amd_fidelityfx_loader_dx12.dll" => GameAssetType.FidelityFX_SDK2_Loader_DX12,
+            "amd_fidelityfx_radiancecache_dx12.dll" => GameAssetType.FidelityFX_SDK2_RadianceCache_DX12,
+            "amd_fidelityfx_upscaler_dx12.dll" => GameAssetType.FidelityFX_SDK2_Upscaler_DX12,
             _ => GameAssetType.Unknown,
         };
 
@@ -273,6 +278,26 @@ public class DLLRecord : IComparable<DLLRecord>
         {
             // NOOP
         }
+        else if (dllRecord.AssetType == GameAssetType.FidelityFX_SDK2_Denoiser_DX12)
+        {
+            // NOOP
+        }
+        else if (dllRecord.AssetType == GameAssetType.FidelityFX_SDK2_FrameGeneration_DX12)
+        {
+            // NOOP
+        }
+        else if (dllRecord.AssetType == GameAssetType.FidelityFX_SDK2_Loader_DX12)
+        {
+            // NOOP
+        }
+        else if (dllRecord.AssetType == GameAssetType.FidelityFX_SDK2_RadianceCache_DX12)
+        {
+            // NOOP
+        }
+        else if (dllRecord.AssetType == GameAssetType.FidelityFX_SDK2_Upscaler_DX12)
+        {
+            // NOOP
+        }
         else
         {
             Debugger.Break();
@@ -317,6 +342,11 @@ public class DLLRecord : IComparable<DLLRecord>
             GameAssetType.XeSS_DX11 => "xess_dx11",
             GameAssetType.DirectStorage => "directstorage",
             GameAssetType.DirectStorageCore => "directstorage_core",
+            GameAssetType.FidelityFX_SDK2_Denoiser_DX12 => "fidelityfx_sdk2_denoiser_dx12",
+            GameAssetType.FidelityFX_SDK2_FrameGeneration_DX12 => "fidelityfx_sdk2_framegeneration_dx12",
+            GameAssetType.FidelityFX_SDK2_Loader_DX12 => "fidelityfx_sdk2_loader_dx12",
+            GameAssetType.FidelityFX_SDK2_RadianceCache_DX12 => "fidelityfx_sdk2_radiancecache_dx12",
+            GameAssetType.FidelityFX_SDK2_Upscaler_DX12 => "fidelityfx_sdk2_upscaler_dx12",
             _ => string.Empty,
         };
     }
