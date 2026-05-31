@@ -55,8 +55,8 @@ var dllProcessors = new List<DLLProcessor>();
 //dllProcessors.Add(new DLSSDProcessor(manifest.DLSS_D));
 
 // FSR 3.1 / Fidelity SDK 1
-// dllProcessors.Add(new FSR31DX12Processor(manifest.FSR_31_DX12));
-// dllProcessors.Add(new FSR31VKProcessor(manifest.FSR_31_VK));
+//dllProcessors.Add(new FSR31DX12Processor(manifest.FSR_31_DX12));
+//dllProcessors.Add(new FSR31VKProcessor(manifest.FSR_31_VK));
 
 // FSR 4 / Fidelity SDK 2 
 dllProcessors.Add(new FidelityFX2_Denoiser_DX12_Processor(manifest.FSR_31_DX12));

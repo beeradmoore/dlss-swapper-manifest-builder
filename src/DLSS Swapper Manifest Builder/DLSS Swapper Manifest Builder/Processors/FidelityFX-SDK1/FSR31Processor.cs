@@ -12,7 +12,7 @@ public abstract class FSR31Processor : DLLProcessor
 {
     public override string[] ExpectedPrefix => new string[]
     {
-        "/PrebuiltSignedDLL/",
+        "PrebuiltSignedDLL/",
         //"/",
     };
     public override string[] ExpectedDevPrefix => new string[]
