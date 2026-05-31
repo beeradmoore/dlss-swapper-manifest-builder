@@ -6,14 +6,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DLSS_Swapper_Manifest_Builder.Processors;
+namespace DLSS_Swapper_Manifest_Builder.Processors.FidelityFX_SDK1;
 
 public abstract class FSR31Processor : DLLProcessor
 {
     public override string[] ExpectedPrefix => new string[]
     {
         "/PrebuiltSignedDLL/",
-        "/",
+        //"/",
     };
     public override string[] ExpectedDevPrefix => new string[]
     {

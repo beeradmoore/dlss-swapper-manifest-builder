@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DLSS_Swapper_Manifest_Builder.Processors;
+namespace DLSS_Swapper_Manifest_Builder.Processors.FidelityFX_SDK1;
 
 internal class FSR31VKProcessor : FSR31Processor
 {

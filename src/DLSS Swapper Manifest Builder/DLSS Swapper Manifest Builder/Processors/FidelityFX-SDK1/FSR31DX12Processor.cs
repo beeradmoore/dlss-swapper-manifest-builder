@@ -8,7 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DLSS_Swapper_Manifest_Builder.Processors;
+namespace DLSS_Swapper_Manifest_Builder.Processors.FidelityFX_SDK1;
 
 public class FSR31DX12Processor : FSR31Processor
 {
