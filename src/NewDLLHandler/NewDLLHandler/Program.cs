@@ -1,4 +1,5 @@
-﻿using DLSS_Swapper_Manifest_Builder;
+﻿using DLSS_Swapper.Data;
+using DLSS_Swapper_Manifest_Builder;
 using NewDLLHandler;
 using Octokit;
 using Serilog;
@@ -68,7 +69,10 @@ if (File.Exists(handledIssuesFile))
 // Some issues are triggered as handled manually so they will be skipped lower.
 var manuallyHandledIssues = new int[]
 {
-	3835, 3792, 3779, 3773, 3772, 3758, 3757, 3751, 3746, 3745,
+    4095, 4086, 4059, 4050, 4042, 4026, 4000, 3982, 3946, 3880,
+    3875, 3874,
+
+    3835, 3792, 3779, 3773, 3772, 3758, 3757, 3751, 3746, 3745,
 	3619, 3531, 3522, 3517, 3507, 3506, 3500, 3493, 
 
 	3420, 3416, 3411, 3393, 3376, 3336,
@@ -142,50 +146,37 @@ if (File.Exists(knownDLLSourcesFile))
     }
 }
 
-// If the categories don't exist, create them
-if (knownDLLs.ContainsKey("DLSS") == false)
-{
-    knownDLLs["DLSS"] = new List<KnownDLL>();
-}
+var gameAssetTypeLookup = new Dictionary<GameAssetType, string>();
 
-if (knownDLLs.ContainsKey("DLSS_G") == false)
+foreach (var gameAssetType in Enum.GetValues<GameAssetType>())
 {
-    knownDLLs["DLSS_G"] = new List<KnownDLL>();
-}
+    if (gameAssetType == GameAssetType.Unknown)
+    {
+        continue;
+    }
 
-if (knownDLLs.ContainsKey("DLSS_D") == false)
-{
-    knownDLLs["DLSS_D"] = new List<KnownDLL>();
-}
+    var gameAssetTypeName = Enum.GetName<GameAssetType>(gameAssetType);
 
-if (knownDLLs.ContainsKey("FSR_31_DX12") == false)
-{
-    knownDLLs["FSR_31_DX12"] = new List<KnownDLL>();
-}
+    if (string.IsNullOrWhiteSpace(gameAssetTypeName))
+    {
+        // This should never happen.
+        Debugger.Break();
+        continue;
+    }
 
-if (knownDLLs.ContainsKey("FSR_31_VK") == false)
-{
-    knownDLLs["FSR_31_VK"] = new List<KnownDLL>();
-}
+    if (gameAssetTypeName.Contains("_BACKUP", StringComparison.OrdinalIgnoreCase))
+    {
+        continue;
+    }
 
-if (knownDLLs.ContainsKey("XeSS") == false)
-{
-    knownDLLs["XeSS"] = new List<KnownDLL>();
-}
+    gameAssetTypeLookup.Add(gameAssetType, gameAssetTypeName);
 
-if (knownDLLs.ContainsKey("XeLL") == false)
-{
-    knownDLLs["XeLL"] = new List<KnownDLL>();
-}
+    // If the categories don't exist, create them
+    if (knownDLLs.ContainsKey(gameAssetTypeName) == false)
+    {
+        knownDLLs[gameAssetTypeName] = new List<KnownDLL>();
+    }
 
-if (knownDLLs.ContainsKey("XeSS_FG") == false)
-{
-    knownDLLs["XeSS_FG"] = new List<KnownDLL>();
-}
-
-if (knownDLLs.ContainsKey("XeSS_DX11") == false)
-{
-	knownDLLs["XeSS_DX11"] = new List<KnownDLL>();
 }
 
 try
@@ -372,27 +363,24 @@ try
             if (match.Success)
             {
                 var dll = match.Groups["dll_name"].Value.Trim();
-               
+                if (dll.EndsWith(".dll.dlsss"))
+                {
+                    dll = dll.Replace(".dll.dlsss", ".dll");
+                }
+
                 var dllType = dll switch
                 {
-                    "nvngx_dlss.dll" => "DLSS",
-                    "nvngx_dlssg.dll" => "DLSS_G",
-                    "nvngx_dlssd.dll" => "DLSS_D",
-                    "amd_fidelityfx_dx12.dll" => "FSR_31_DX12",
-                    "amd_fidelityfx_vk.dll" => "FSR_31_VK",
-                    "libxess.dll" => "XeSS",
-                    "libxell.dll" => "XeLL",
-					"libxess_dx11.dll" => "XeSS_DX11",
-					"libxess_fg.dll" => "XeSS_FG",
-                    "nvngx_dlss.dll.dlsss" => "DLSS",
-                    "nvngx_dlssg.dll.dlsss" => "DLSS_G",
-                    "nvngx_dlssd.dll.dlsss" => "DLSS_D",
-                    "amd_fidelityfx_dx12.dll.dlsss" => "FSR_31_DX12",
-                    "amd_fidelityfx_vk.dll.dlsss" => "FSR_31_VK",
-                    "libxess.dll.dlsss" => "XeSS",
-					"libxess_dx11.dll.dlsss" => "XeSS_DX11",
-					"libxell.dll.dlsss" => "XeLL",
-                    "libxess_fg.dll.dlsss" => "XeSS_FG",
+                    "nvngx_dlss.dll" => gameAssetTypeLookup[GameAssetType.DLSS],
+                    "nvngx_dlssg.dll" => gameAssetTypeLookup[GameAssetType.DLSS_G],
+                    "nvngx_dlssd.dll" => gameAssetTypeLookup[GameAssetType.DLSS_D],
+                    "amd_fidelityfx_dx12.dll" => gameAssetTypeLookup[GameAssetType.FSR_31_DX12],
+                    "amd_fidelityfx_vk.dll" => gameAssetTypeLookup[GameAssetType.FSR_31_VK],
+                    "libxess.dll" => gameAssetTypeLookup[GameAssetType.XeSS],
+                    "libxell.dll" => gameAssetTypeLookup[GameAssetType.XeLL],
+					"libxess_dx11.dll" => gameAssetTypeLookup[GameAssetType.XeSS_DX11],
+					"libxess_fg.dll" => gameAssetTypeLookup[GameAssetType.XeSS_FG],
+                    "dstorage.dll" => gameAssetTypeLookup[GameAssetType.DirectStorage],
+                    "dstoragecore.dll" => gameAssetTypeLookup[GameAssetType.DirectStorageCore],
                     _ => string.Empty,
                 };
 
@@ -447,6 +435,7 @@ try
                     Debugger.Break();
                     continue;
                 }
+
                 if (existingKnownDLL.Sources.ContainsKey(currentLibrary) == false)
                 {
                     existingKnownDLL.Sources[currentLibrary] = new List<string>();
@@ -502,15 +491,10 @@ try
     }
 
     // Sort on DLL version
-    knownDLLs["DLSS"].Sort(SortDLLs);
-    knownDLLs["DLSS_G"].Sort(SortDLLs);
-    knownDLLs["DLSS_D"].Sort(SortDLLs);
-    knownDLLs["FSR_31_DX12"].Sort(SortDLLs);
-    knownDLLs["FSR_31_VK"].Sort(SortDLLs);
-    knownDLLs["XeSS"].Sort(SortDLLs);
-    knownDLLs["XeLL"].Sort(SortDLLs);
-    knownDLLs["XeSS_FG"].Sort(SortDLLs);
-    knownDLLs["XeSS_DX11"].Sort(SortDLLs);
+    foreach (var knownDLL in knownDLLs)
+    {
+        knownDLL.Value.Sort(SortDLLs);
+    }
 
 	// Write out the DLL source file list
 	File.WriteAllText(knownDLLSourcesFile, JsonSerializer.Serialize(knownDLLs, new JsonSerializerOptions() { WriteIndented = true }));
@@ -563,15 +547,36 @@ try
             }
         }
 
-        RemoveExisting(manifest.DLSS, knownDLLs["DLSS"]);
-        RemoveExisting(manifest.DLSS_G, knownDLLs["DLSS_G"]);
-        RemoveExisting(manifest.DLSS_D, knownDLLs["DLSS_D"]);
-        RemoveExisting(manifest.FSR_31_DX12, knownDLLs["FSR_31_DX12"]);
-        RemoveExisting(manifest.FSR_31_VK, knownDLLs["FSR_31_VK"]);
-        RemoveExisting(manifest.XeSS, knownDLLs["XeSS"]);
-        RemoveExisting(manifest.XeSS_FG, knownDLLs["XeSS_FG"]);
-        RemoveExisting(manifest.XeSS_DX11, knownDLLs["XeSS_DX11"]);
-		RemoveExisting(manifest.XeLL, knownDLLs["XeLL"]);
+        foreach (var gameAssetTypeKeyPair in gameAssetTypeLookup)
+        {
+            var manifestList = gameAssetTypeKeyPair.Key switch
+            {
+                GameAssetType.DLSS => manifest.DLSS,
+                GameAssetType.DLSS_G => manifest.DLSS_G,
+                GameAssetType.DLSS_D => manifest.DLSS_D,
+                GameAssetType.FSR_31_DX12 => manifest.FSR_31_DX12,
+                GameAssetType.FSR_31_VK => manifest.FSR_31_VK,
+                GameAssetType.XeSS => manifest.XeSS,
+                GameAssetType.XeSS_FG => manifest.XeSS_FG,
+                GameAssetType.XeSS_DX11 => manifest.XeSS_DX11,
+                GameAssetType.XeLL => manifest.XeLL,
+                GameAssetType.DirectStorage => manifest.DirectStorage,
+                GameAssetType.DirectStorageCore => manifest.DirectStorageCore,
+                _ => null
+            };
+
+            if (manifestList is null)
+            {
+                // This should also not happen.
+                Log.Error($"Did not know how to handle type {gameAssetTypeKeyPair.Key}");
+                Debugger.Break();
+                continue;
+            }
+
+
+            RemoveExisting(manifestList, knownDLLs[gameAssetTypeKeyPair.Value]);
+        }
+
     }
 
     // Write it out.
