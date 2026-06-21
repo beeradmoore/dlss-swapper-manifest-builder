@@ -1,11 +1,12 @@
-﻿using System;
+﻿using Serilog;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
-using Serilog;
+using Vortice.Direct3D12;
 
 namespace DLSS_Swapper_Manifest_Builder.FSR31;
 
@@ -26,7 +27,7 @@ public class FSR31Helper
     [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     private delegate FfxApiReturnCodes ffxQueryDelegate(IntPtr context, ref QueryDescGetVersions header);
 
-    public List<string?> GetVersions(string dllPath)
+    public List<string?> GetVersions(string dllPath, ulong descType)
     {
         Log.Information($"AMDFidelityFXAPI - Loading {dllPath}");
         var hModule = LoadLibrary(dllPath);
@@ -35,6 +36,7 @@ public class FSR31Helper
             throw new Exception("Failed to load DLL");
         }
 
+        ID3D12Device? device = null;
         try
         {
             var pAddressOfFunctionToCall = GetProcAddress(hModule, "ffxQuery");
@@ -52,10 +54,17 @@ public class FSR31Helper
             var versionQuery = new QueryDescGetVersions();
 
             //versionQuery.createDescType = FFX_API_CREATE_CONTEXT_DESC_TYPE_UPSCALE;
-            versionQuery.createDescType = FxxConsts.FFX_API_CREATE_CONTEXT_DESC_TYPE_UPSCALE;
+            versionQuery.createDescType = descType;
 
-            // versionQuery.device = GetDX12Device(); // only for DirectX 12 applications
-            versionQuery.device = IntPtr.Zero;
+            if (dllPath.EndsWith("_dx12.dll", StringComparison.OrdinalIgnoreCase))
+            {
+                device = D3D12.D3D12CreateDevice<ID3D12Device>(null, Vortice.Direct3D.FeatureLevel.Level_11_0);
+                versionQuery.device = device.NativePointer;
+            }
+            else
+            {
+                versionQuery.device = IntPtr.Zero;
+            }
 
             // uint64_t versionCount = 0;
             UInt64 versionCount = 0;
@@ -171,6 +180,11 @@ public class FSR31Helper
         }
         finally
         {
+            if (device is not null)
+            {
+                device.Dispose();
+                device = null;
+            }
             FreeLibrary(hModule);
         }
 

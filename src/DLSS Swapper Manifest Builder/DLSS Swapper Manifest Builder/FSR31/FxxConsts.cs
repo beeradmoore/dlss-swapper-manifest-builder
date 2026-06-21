@@ -49,4 +49,15 @@ public class FxxConsts
 {
     public const UInt64 FFX_API_CREATE_CONTEXT_DESC_TYPE_UPSCALE = 0x00010000u;
     public const UInt64 FFX_API_QUERY_DESC_TYPE_GET_VERSIONS = 4u;
+    public const UInt64 FFX_API_EFFECT_MASK = 0x00ff0000u;
+
+    // FFX_API_EFFECT_IDs
+    public const UInt64 FFX_API_EFFECT_ID_UPSCALE = 0x00010000u;
+    public const UInt64 FFX_API_EFFECT_ID_FRAMEGENERATION = 0x00020000u;
+    public const UInt64 FFX_API_EFFECT_ID_FRAMEGENERATIONSWAPCHAIN = 0x00030000u;
+    // Need to keep this ID around for the deprecated VK frame gen swapchain
+    public const UInt64 FFX_API_EFFECT_ID_FRAMEGENERATIONSWAPCHAIN_VK = 0x00040000u;
+    // Need to keep this ID around for the deprecated VK frame gen swapchain
+    public const UInt64 FFX_API_EFFECT_ID_DENOISER = 0x00050000u;
+    public const UInt64 FFX_API_EFFECT_ID_RADIANCECACHE = 0x00060000u;
 }

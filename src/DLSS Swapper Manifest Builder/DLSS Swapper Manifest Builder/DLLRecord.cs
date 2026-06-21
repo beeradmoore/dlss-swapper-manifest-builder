@@ -242,7 +242,7 @@ public class DLLRecord : IComparable<DLLRecord>
         else if (dllRecord.AssetType == GameAssetType.FSR_31_DX12 || dllRecord.AssetType == GameAssetType.FSR_31_VK)
         {
             var fsr31Helper = new FSR31Helper();
-            var versions = fsr31Helper.GetVersions(dllRecord.Filename);
+            var versions = fsr31Helper.GetVersions(dllRecord.Filename, FxxConsts.FFX_API_CREATE_CONTEXT_DESC_TYPE_UPSCALE);
 
             if (versions.Count == 2)
             {
@@ -253,6 +253,26 @@ public class DLLRecord : IComparable<DLLRecord>
             {
                 Debugger.Break();
             }
+        }
+        else if (dllRecord.AssetType == GameAssetType.FidelityFX_SDK2_Denoiser_DX12 || dllRecord.AssetType == GameAssetType.FidelityFX_SDK2_FrameGeneration_DX12 ||
+            dllRecord.AssetType == GameAssetType.FidelityFX_SDK2_Loader_DX12 || dllRecord.AssetType == GameAssetType.FidelityFX_SDK2_RadianceCache_DX12 ||
+            dllRecord.AssetType == GameAssetType.FidelityFX_SDK2_Upscaler_DX12)
+        {
+
+            var descType = dllRecord.AssetType switch
+            {
+                GameAssetType.FidelityFX_SDK2_Denoiser_DX12 => FxxConsts.FFX_API_EFFECT_ID_DENOISER,
+                GameAssetType.FidelityFX_SDK2_FrameGeneration_DX12 => FxxConsts.FFX_API_EFFECT_ID_FRAMEGENERATION,
+                GameAssetType.FidelityFX_SDK2_Loader_DX12 => FxxConsts.FFX_API_EFFECT_ID_UPSCALE,
+                GameAssetType.FidelityFX_SDK2_RadianceCache_DX12 => FxxConsts.FFX_API_EFFECT_ID_RADIANCECACHE,
+                GameAssetType.FidelityFX_SDK2_Upscaler_DX12 => FxxConsts.FFX_API_EFFECT_ID_UPSCALE,
+                _ => FxxConsts.FFX_API_CREATE_CONTEXT_DESC_TYPE_UPSCALE
+            };
+            var fsr31Helper = new FSR31Helper();
+            var versions = fsr31Helper.GetVersions(dllRecord.Filename, descType);
+
+            dllRecord.InternalName = versions.ElementAtOrDefault(0) ?? string.Empty;
+            dllRecord.InternalNameExtra = versions.ElementAtOrDefault(1) ?? string.Empty;
         }
         else if (dllRecord.AssetType == GameAssetType.XeSS)
         {
