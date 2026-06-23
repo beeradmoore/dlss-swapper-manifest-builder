@@ -10,6 +10,7 @@ using DLSS_Swapper_Manifest_Builder.Processors;
 using DLSS_Swapper_Manifest_Builder.Processors.DirectStorage;
 using DLSS_Swapper_Manifest_Builder.Processors.FidelityFX_SDK1;
 using DLSS_Swapper_Manifest_Builder.Processors.FidelityFX_SDK2;
+using DLSS_Swapper_Manifest_Builder.Processors.Streamline;
 using NewDLLHandler;
 using Serilog;
 using System.Diagnostics;
@@ -59,11 +60,11 @@ var dllProcessors = new List<DLLProcessor>();
 //dllProcessors.Add(new FSR31VKProcessor(manifest.FSR_31_VK));
 
 // FSR 4 / Fidelity SDK 2 
-dllProcessors.Add(new FidelityFX2_Denoiser_DX12_Processor(manifest.FSR_31_DX12));
-dllProcessors.Add(new FidelityFX2_FrameGeneration_DX12_Processor(manifest.FSR_31_DX12));
-dllProcessors.Add(new FidelityFX2_Loader_DX12_Processor(manifest.FSR_31_DX12));
-dllProcessors.Add(new FidelityFX2_RadianceCache_DX12_Processor(manifest.FSR_31_DX12));
-dllProcessors.Add(new FidelityFX2_Upscaler_DX12_Processor(manifest.FSR_31_DX12));
+//dllProcessors.Add(new FidelityFX2_Denoiser_DX12_Processor(manifest.FSR_31_DX12));
+//dllProcessors.Add(new FidelityFX2_FrameGeneration_DX12_Processor(manifest.FSR_31_DX12));
+//dllProcessors.Add(new FidelityFX2_Loader_DX12_Processor(manifest.FSR_31_DX12));
+//dllProcessors.Add(new FidelityFX2_RadianceCache_DX12_Processor(manifest.FSR_31_DX12));
+//dllProcessors.Add(new FidelityFX2_Upscaler_DX12_Processor(manifest.FSR_31_DX12));
 
 // XeSS
 //dllProcessors.Add(new XeSSProcessor(manifest.XeSS));
@@ -72,9 +73,23 @@ dllProcessors.Add(new FidelityFX2_Upscaler_DX12_Processor(manifest.FSR_31_DX12))
 //dllProcessors.Add(new XeSSDX11Processor(manifest.XeSS_DX11));
 
 // Direct Storage
-// dllProcessors.Add(new DirectStorageProcessor(manifest.DirectStorage));
+//dllProcessors.Add(new DirectStorageProcessor(manifest.DirectStorage));
 //dllProcessors.Add(new DirectStorageCoreProcessor(manifest.DirectStorageCore));
 
+// Sreamline
+//dllProcessors.Add(new Streamline_Reflex_Processor(manifest.Streamline_Reflex));
+//dllProcessors.Add(new Streamline_PCL_Processor(manifest.Streamline_PCL));
+//dllProcessors.Add(new Streamline_NvPerf_Processor(manifest.Streamline_NvPerf));
+//dllProcessors.Add(new Streamline_NIS_Processor(manifest.Streamline_NIS));
+//dllProcessors.Add(new Streamline_Interposer_Processor(manifest.Streamline_Interposer));
+//dllProcessors.Add(new Streamline_DLSS_G_Processor(manifest.Streamline_DLSS_G));
+//dllProcessors.Add(new Streamline_DLSS_D_Processor(manifest.Streamline_DLSS_D));
+//dllProcessors.Add(new Streamline_DLSS_Processor(manifest.Streamline_DLSS));
+//dllProcessors.Add(new Streamline_DirectSR_Processor(manifest.Streamline_DirectSR));
+//dllProcessors.Add(new Streamline_DeepDVC_Processor(manifest.Streamline_DeepDVC));
+//dllProcessors.Add(new Streamline_Common_Processor(manifest.Streamline_Common));
+//dllProcessors.Add(new DeepDVC_Processor(manifest.DeepDVC));
+dllProcessors.Add(new NvLowLatencyVK_Processor(manifest.NvLowLatencyVK));
 
 foreach (var dllProcessor in dllProcessors)
 {
@@ -137,6 +152,19 @@ using (var stream = File.OpenRead(knownDLLSourcesMissingPath))
             GameAssetType.FidelityFX_SDK2_Loader_DX12 => manifest.KnownDLLs.FidelityFX_SDK2_Loader_DX12,
             GameAssetType.FidelityFX_SDK2_RadianceCache_DX12 => manifest.KnownDLLs.FidelityFX_SDK2_RadianceCache_DX12,
             GameAssetType.FidelityFX_SDK2_Upscaler_DX12 => manifest.KnownDLLs.FidelityFX_SDK2_Upscaler_DX12,
+            GameAssetType.Streamline_Reflex => manifest.KnownDLLs.Streamline_Reflex,
+            GameAssetType.Streamline_PCL => manifest.KnownDLLs.Streamline_PCL,
+            GameAssetType.Streamline_NvPerf => manifest.KnownDLLs.Streamline_NvPerf,
+            GameAssetType.Streamline_NIS => manifest.KnownDLLs.Streamline_NIS,
+            GameAssetType.Streamline_Interposer => manifest.KnownDLLs.Streamline_Interposer,
+            GameAssetType.Streamline_DLSS_G => manifest.KnownDLLs.Streamline_DLSS_G,
+            GameAssetType.Streamline_DLSS_D => manifest.KnownDLLs.Streamline_DLSS_D,
+            GameAssetType.Streamline_DLSS => manifest.KnownDLLs.Streamline_DLSS,
+            GameAssetType.Streamline_DirectSR => manifest.KnownDLLs.Streamline_DirectSR,
+            GameAssetType.Streamline_DeepDVC => manifest.KnownDLLs.Streamline_DeepDVC,
+            GameAssetType.Streamline_Common => manifest.KnownDLLs.Streamline_Common,
+            GameAssetType.DeepDVC => manifest.KnownDLLs.DeepDVC,
+            GameAssetType.NvLowLatencyVK => manifest.KnownDLLs.NvLowLatencyVK,
             _ => null,
 		};
 

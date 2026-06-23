@@ -58,6 +58,45 @@ internal class Manifest
     [JsonPropertyName("fidelityfx_sdk2_upscaler_dx12")]
     public List<DLLRecord> FidelityFX_SDK2_Upscaler_DX12 { get; set; } = new List<DLLRecord>();
 
+    [JsonPropertyName("sl_reflex")]
+    public List<DLLRecord> Streamline_Reflex { get; set; } = new List<DLLRecord>();
+
+    [JsonPropertyName("sl_pcl")]
+    public List<DLLRecord> Streamline_PCL { get; set; } = new List<DLLRecord>();
+
+    [JsonPropertyName("sl_nvperf")]
+    public List<DLLRecord> Streamline_NvPerf { get; set; } = new List<DLLRecord>();
+
+    [JsonPropertyName("sl_nis")]
+    public List<DLLRecord> Streamline_NIS { get; set; } = new List<DLLRecord>();
+
+    [JsonPropertyName("sl_interposer")]
+    public List<DLLRecord> Streamline_Interposer { get; set; } = new List<DLLRecord>();
+
+    [JsonPropertyName("sl_dlss_g")]
+    public List<DLLRecord> Streamline_DLSS_G { get; set; } = new List<DLLRecord>();
+
+    [JsonPropertyName("sl_dlss_d")]
+    public List<DLLRecord> Streamline_DLSS_D { get; set; } = new List<DLLRecord>();
+
+    [JsonPropertyName("sl_dlss")]
+    public List<DLLRecord> Streamline_DLSS { get; set; } = new List<DLLRecord>();
+
+    [JsonPropertyName("sl_directsr")]
+    public List<DLLRecord> Streamline_DirectSR { get; set; } = new List<DLLRecord>();
+
+    [JsonPropertyName("sl_deepdvc")]
+    public List<DLLRecord> Streamline_DeepDVC { get; set; } = new List<DLLRecord>();
+
+    [JsonPropertyName("sl_common")]
+    public List<DLLRecord> Streamline_Common { get; set; } = new List<DLLRecord>();
+
+    [JsonPropertyName("deepdvc")]
+    public List<DLLRecord> DeepDVC { get; set; } = new List<DLLRecord>();
+
+    [JsonPropertyName("nvlowlatencyvk")]
+    public List<DLLRecord> NvLowLatencyVK { get; set; } = new List<DLLRecord>();
+
     [JsonPropertyName("known_dlls")]
     public KnownDLLs KnownDLLs { get; set; } = new KnownDLLs();
 }

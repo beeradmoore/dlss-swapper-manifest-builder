@@ -56,4 +56,44 @@ public class KnownDLLs
 
     [JsonPropertyName("fidelityfx_sdk2_upscaler_dx12")]
     public List<HashedKnownDLL> FidelityFX_SDK2_Upscaler_DX12 { get; set; } = new List<HashedKnownDLL>();
+
+    [JsonPropertyName("sl_reflex")]
+    public List<HashedKnownDLL> Streamline_Reflex { get; set; } = new List<HashedKnownDLL>();
+
+    [JsonPropertyName("sl_pcl")]
+    public List<HashedKnownDLL> Streamline_PCL { get; set; } = new List<HashedKnownDLL>();
+
+    [JsonPropertyName("sl_nvperf")]
+    public List<HashedKnownDLL> Streamline_NvPerf { get; set; } = new List<HashedKnownDLL>();
+
+    [JsonPropertyName("sl_nis")]
+    public List<HashedKnownDLL> Streamline_NIS { get; set; } = new List<HashedKnownDLL>();
+
+    [JsonPropertyName("sl_interposer")]
+    public List<HashedKnownDLL> Streamline_Interposer { get; set; } = new List<HashedKnownDLL>();
+
+    [JsonPropertyName("sl_dlss_g")]
+    public List<HashedKnownDLL> Streamline_DLSS_G { get; set; } = new List<HashedKnownDLL>();
+
+    [JsonPropertyName("sl_dlss_d")]
+    public List<HashedKnownDLL> Streamline_DLSS_D { get; set; } = new List<HashedKnownDLL>();
+
+    [JsonPropertyName("sl_dlss")]
+    public List<HashedKnownDLL> Streamline_DLSS { get; set; } = new List<HashedKnownDLL>();
+
+    [JsonPropertyName("sl_directsr")]
+    public List<HashedKnownDLL> Streamline_DirectSR { get; set; } = new List<HashedKnownDLL>();
+
+    [JsonPropertyName("sl_deepdvc")]
+    public List<HashedKnownDLL> Streamline_DeepDVC { get; set; } = new List<HashedKnownDLL>();
+
+    [JsonPropertyName("sl_common")]
+    public List<HashedKnownDLL> Streamline_Common { get; set; } = new List<HashedKnownDLL>();
+
+    [JsonPropertyName("deepdvc")]
+    public List<HashedKnownDLL> DeepDVC { get; set; } = new List<HashedKnownDLL>();
+
+    [JsonPropertyName("nvlowlatencyvk")]
+    public List<HashedKnownDLL> NvLowLatencyVK { get; set; } = new List<HashedKnownDLL>();
+
 }

@@ -103,6 +103,19 @@ public class DLLRecord : IComparable<DLLRecord>
             "amd_fidelityfx_loader_dx12.dll" => GameAssetType.FidelityFX_SDK2_Loader_DX12,
             "amd_fidelityfx_radiancecache_dx12.dll" => GameAssetType.FidelityFX_SDK2_RadianceCache_DX12,
             "amd_fidelityfx_upscaler_dx12.dll" => GameAssetType.FidelityFX_SDK2_Upscaler_DX12,
+            "sl.reflex.dll" => GameAssetType.Streamline_Reflex,
+            "sl.pcl.dll" => GameAssetType.Streamline_PCL,
+            "sl.nvperf.dll" => GameAssetType.Streamline_NvPerf,
+            "sl.nis.dll" => GameAssetType.Streamline_NIS,
+            "sl.interposer.dll" => GameAssetType.Streamline_Interposer,
+            "sl.dlss_g.dll" => GameAssetType.Streamline_DLSS_G,
+            "sl.dlss_d.dll" => GameAssetType.Streamline_DLSS_D,
+            "sl.dlss.dll" => GameAssetType.Streamline_DLSS,
+            "sl.directsr.dll" => GameAssetType.Streamline_DirectSR,
+            "sl.deepdvc.dll" => GameAssetType.Streamline_DeepDVC,
+            "sl.common.dll" => GameAssetType.Streamline_Common,
+            "nvngx_deepdvc.dll" => GameAssetType.DeepDVC,
+            "NvLowLatencyVk.dll" => GameAssetType.NvLowLatencyVK,
             _ => GameAssetType.Unknown,
         };
 
@@ -318,6 +331,58 @@ public class DLLRecord : IComparable<DLLRecord>
         {
             // NOOP
         }
+        else if (dllRecord.AssetType == GameAssetType.Streamline_Reflex)
+        {
+            // NOOP
+        }
+        else if (dllRecord.AssetType == GameAssetType.Streamline_PCL)
+        {
+            // NOOP
+        }
+        else if (dllRecord.AssetType == GameAssetType.Streamline_NvPerf)
+        {
+            // NOOP
+        }
+        else if (dllRecord.AssetType == GameAssetType.Streamline_NIS)
+        {
+            // NOOP
+        }
+        else if (dllRecord.AssetType == GameAssetType.Streamline_Interposer)
+        {
+            // NOOP
+        }
+        else if (dllRecord.AssetType == GameAssetType.Streamline_DLSS_G)
+        {
+            // NOOP
+        }
+        else if (dllRecord.AssetType == GameAssetType.Streamline_DLSS_D)
+        {
+            // NOOP
+        }
+        else if (dllRecord.AssetType == GameAssetType.Streamline_DLSS)
+        {
+            // NOOP
+        }
+        else if (dllRecord.AssetType == GameAssetType.Streamline_DirectSR)
+        {
+            // NOOP
+        }
+        else if (dllRecord.AssetType == GameAssetType.Streamline_DeepDVC)
+        {
+            // NOOP
+        }
+        else if (dllRecord.AssetType == GameAssetType.Streamline_Common)
+        {
+            // NOOP
+        }
+        else if (dllRecord.AssetType == GameAssetType.DeepDVC)
+        {
+            // NOOP
+        }
+        else if (dllRecord.AssetType == GameAssetType.NvLowLatencyVK)
+        {
+            // NOOP
+        }
         else
         {
             Debugger.Break();
@@ -367,6 +432,19 @@ public class DLLRecord : IComparable<DLLRecord>
             GameAssetType.FidelityFX_SDK2_Loader_DX12 => "fidelityfx_sdk2_loader_dx12",
             GameAssetType.FidelityFX_SDK2_RadianceCache_DX12 => "fidelityfx_sdk2_radiancecache_dx12",
             GameAssetType.FidelityFX_SDK2_Upscaler_DX12 => "fidelityfx_sdk2_upscaler_dx12",
+            GameAssetType.Streamline_Reflex => "sl_reflex",
+            GameAssetType.Streamline_PCL => "sl_pcl",
+            GameAssetType.Streamline_NvPerf => "sl_nvperf",
+            GameAssetType.Streamline_NIS => "sl_nis",
+            GameAssetType.Streamline_Interposer => "sl_interposer",
+            GameAssetType.Streamline_DLSS_G => "sl_dlss_g",
+            GameAssetType.Streamline_DLSS_D => "sl_dlss_d",
+            GameAssetType.Streamline_DLSS => "sl_dlss",
+            GameAssetType.Streamline_DirectSR => "sl_directsr",
+            GameAssetType.Streamline_DeepDVC => "sl_deepdvc",
+            GameAssetType.Streamline_Common => "sl_common",
+            GameAssetType.DeepDVC => "deepdvc",
+            GameAssetType.NvLowLatencyVK => "nvlowlatencyvk",
             _ => string.Empty,
         };
     }
