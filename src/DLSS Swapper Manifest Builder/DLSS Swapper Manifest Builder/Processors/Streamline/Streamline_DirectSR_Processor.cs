@@ -43,6 +43,7 @@ internal class Streamline_DirectSR_Processor : DLLProcessor
     public override string[] DownloadedFilesPaths => [
         Path.Combine(Storage.DownloadedFilesPath, StreamlineDownloader.DownloadPathName),
     ];
+    public override string DLLSetType => DLLSet.Streamline;
 
     public Streamline_DirectSR_Processor(List<DLLRecord> manifestDllRecords) : base(manifestDllRecords)
     {

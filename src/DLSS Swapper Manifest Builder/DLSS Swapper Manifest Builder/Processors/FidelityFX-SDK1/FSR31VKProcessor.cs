@@ -29,6 +29,7 @@ internal class FSR31VKProcessor : FSR31Processor
     ];
 
     public override GameAssetType GameAssetType => GameAssetType.FSR_31_VK;
+    public override string DLLSetType => DLLSet.FidelityFX_SDK1;
 
     public FSR31VKProcessor(List<DLLRecord> manifestDllRecords) : base(manifestDllRecords)
     {

@@ -36,6 +36,7 @@ internal class XeSSFGProcessor : DLLProcessor
     ];
 
     public override GameAssetType GameAssetType => GameAssetType.XeSS_FG;
+    public override string DLLSetType => DLLSet.XeSS;
 
     public XeSSFGProcessor(List<DLLRecord> manifestDllRecords) : base(manifestDllRecords)
     {

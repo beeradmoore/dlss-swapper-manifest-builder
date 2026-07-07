@@ -38,6 +38,7 @@ internal class XeLLProcessor : DLLProcessor
     ];
 
     public override GameAssetType GameAssetType => GameAssetType.XeSS;
+    public override string DLLSetType => DLLSet.XeSS;
 
     public XeLLProcessor(List<DLLRecord> manifestDllRecords) : base(manifestDllRecords)
     {

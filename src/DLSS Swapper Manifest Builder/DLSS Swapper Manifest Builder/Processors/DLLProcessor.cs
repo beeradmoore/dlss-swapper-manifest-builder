@@ -24,6 +24,7 @@ public abstract class DLLProcessor
     public abstract string[] ExpectedDevPrefix { get; }
     public abstract Dictionary<string, string> CustomAdditionalLabels { get; }
     public abstract Dictionary<string, string> DllSource { get; }
+    public abstract string DLLSetType { get; }
 
 
     public string BaseInputPath => Path.Combine(Storage.InputFilesPath, "base", NamePath);

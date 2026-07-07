@@ -33,6 +33,7 @@ public class FSR31DX12Processor : FSR31Processor
     ];
 
     public override GameAssetType GameAssetType => GameAssetType.FSR_31_DX12;
+    public override string DLLSetType => DLLSet.FidelityFX_SDK1;
 
     public FSR31DX12Processor(List<DLLRecord> manifestDllRecords) : base(manifestDllRecords)
     {

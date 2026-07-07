@@ -42,6 +42,7 @@ internal class NvLowLatencyVK_Processor : DLLProcessor
     public override string[] DownloadedFilesPaths => [
         Path.Combine(Storage.DownloadedFilesPath, StreamlineDownloader.DownloadPathName),
     ];
+    public override string DLLSetType => DLLSet.Streamline;
 
     public NvLowLatencyVK_Processor(List<DLLRecord> manifestDllRecords) : base(manifestDllRecords)
     {

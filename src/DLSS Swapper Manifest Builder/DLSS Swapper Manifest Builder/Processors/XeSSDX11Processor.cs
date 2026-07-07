@@ -38,6 +38,7 @@ internal class XeSSDX11Processor : DLLProcessor
     ];
 
 	public override GameAssetType GameAssetType => GameAssetType.XeSS_DX11;
+    public override string DLLSetType => DLLSet.XeSS;
 
     public XeSSDX11Processor(List<DLLRecord> manifestDllRecords) : base(manifestDllRecords)
     {

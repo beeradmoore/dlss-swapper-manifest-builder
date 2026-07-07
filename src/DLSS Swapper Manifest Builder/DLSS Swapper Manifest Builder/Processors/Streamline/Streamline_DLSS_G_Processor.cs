@@ -43,6 +43,7 @@ internal class Streamline_DLSS_G_Processor : DLLProcessor
     public override string[] DownloadedFilesPaths => [
         Path.Combine(Storage.DownloadedFilesPath, StreamlineDownloader.DownloadPathName),
     ];
+    public override string DLLSetType => DLLSet.Streamline;
 
     public Streamline_DLSS_G_Processor(List<DLLRecord> manifestDllRecords) : base(manifestDllRecords)
     {

@@ -32,6 +32,7 @@ internal class DirectStorageProcessor : DirectStorageBaseProcessor
     ];
 
     public override GameAssetType GameAssetType => GameAssetType.DirectStorage;
+    public override string DLLSetType => DLLSet.DirectStorage;
     public DirectStorageProcessor(List<DLLRecord> manifestDllRecords) : base(manifestDllRecords)
     {
     }

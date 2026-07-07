@@ -43,6 +43,7 @@ internal class FidelityFX2_FrameGeneration_DX12_Processor : DLLProcessor
     public override string[] DownloadedFilesPaths => [
         Path.Combine(Storage.DownloadedFilesPath, FidelityFXDownloader.DownloadPathName),
     ];
+    public override string DLLSetType => DLLSet.FidelityFX_SDK2;
 
     public FidelityFX2_FrameGeneration_DX12_Processor(List<DLLRecord> manifestDllRecords) : base(manifestDllRecords)
     {

@@ -43,6 +43,8 @@ internal class DeepDVC_Processor : DLLProcessor
         Path.Combine(Storage.DownloadedFilesPath, StreamlineDownloader.DownloadPathName),
     ];
 
+    public override string DLLSetType => DLLSet.Streamline;
+
     public DeepDVC_Processor(List<DLLRecord> manifestDllRecords) : base(manifestDllRecords)
     {
     }

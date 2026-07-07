@@ -110,7 +110,8 @@ internal class DLSSDProcessor : DLLProcessor
     }
 
     public override GameAssetType GameAssetType => GameAssetType.DLSS_D;
-    
+    public override string DLLSetType => DLLSet.DLSS;
+
     public DLSSDProcessor(List<DLLRecord> manifestDllRecords) : base(manifestDllRecords)
     {
     }

@@ -36,6 +36,7 @@ public class XeSSProcessor : DLLProcessor
     ];
 
     public override GameAssetType GameAssetType => GameAssetType.XeSS;
+    public override string DLLSetType => DLLSet.XeSS;
 
     public XeSSProcessor(List<DLLRecord> manifestDllRecords) : base(manifestDllRecords)
     {

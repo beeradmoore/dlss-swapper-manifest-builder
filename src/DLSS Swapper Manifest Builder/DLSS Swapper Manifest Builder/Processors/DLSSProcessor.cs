@@ -176,6 +176,7 @@ public class DLSSProcessor : DLLProcessor
     }
 
     public override GameAssetType GameAssetType => GameAssetType.DLSS;
+    public override string DLLSetType => DLLSet.DLSS;
 
     public DLSSProcessor(List<DLLRecord> manifestDllRecords) : base(manifestDllRecords)
     {
