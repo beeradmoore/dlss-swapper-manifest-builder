@@ -106,9 +106,31 @@ internal class GithubHelper
 		{
 			using (var fileStream = File.OpenWrite(tempFile))
 			{
-				using (var stream = await DownloadHelper.HttpClient.GetStreamAsync(asset.BrowserDownloadUrl))
+				var downloadUrl = asset.BrowserDownloadUrl;
+				while (true)
 				{
-					await stream.CopyToAsync(fileStream);
+					using (var response = await DownloadHelper.HttpClient.GetAsync(downloadUrl, HttpCompletionOption.ResponseHeadersRead))
+					{
+						if (response.StatusCode == System.Net.HttpStatusCode.OK)
+						{
+							// NOOP
+						}
+						else if (response.StatusCode == System.Net.HttpStatusCode.Found)
+						{
+							var location = response.Headers.Location?.AbsoluteUri;
+							if (string.IsNullOrWhiteSpace(location) == false)
+							{
+                                downloadUrl = location;
+								continue;
+							}
+						}
+
+                        using (var stream = await response.Content.ReadAsStreamAsync())
+                        {
+                            await stream.CopyToAsync(fileStream);
+                            break;
+                        }
+                    }
 				}
 			}
 
@@ -128,6 +150,7 @@ internal class GithubHelper
 		catch (Exception ex)
 		{
 			Log.Error(ex, $"AttemptDownloadReleaseAssetAsync: Could not download {asset.Name}.");
+			Debugger.Break();
 			return false;
 		}
     }
