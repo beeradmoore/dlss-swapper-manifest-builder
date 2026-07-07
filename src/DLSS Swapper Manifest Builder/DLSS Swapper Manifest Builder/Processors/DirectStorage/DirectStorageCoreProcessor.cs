@@ -1,12 +1,9 @@
 ﻿using DLSS_Swapper.Data;
 using DLSS_Swapper_Manifest_Builder.Downloaders.Microsoft;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace DLSS_Swapper_Manifest_Builder.Processors.DirectStorage;
 
-internal class DirectStorageCoreProcessor : DLLProcessor
+internal class DirectStorageCoreProcessor : DirectStorageBaseProcessor
 {
     public override string NamePath => "directstorage";
 
@@ -34,6 +31,7 @@ internal class DirectStorageCoreProcessor : DLLProcessor
     ];
 
     public override GameAssetType GameAssetType => GameAssetType.DirectStorageCore;
+    public override string DLLSetType => DLLSet.DirectStorage;
     public DirectStorageCoreProcessor(List<DLLRecord> manifestDllRecords) : base(manifestDllRecords)
     {
     }

@@ -1,12 +1,9 @@
 ﻿using DLSS_Swapper.Data;
 using DLSS_Swapper_Manifest_Builder.Downloaders.Microsoft;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace DLSS_Swapper_Manifest_Builder.Processors.DirectStorage;
 
-internal class DirectStorageProcessor : DLLProcessor
+internal class DirectStorageProcessor : DirectStorageBaseProcessor
 {
 
     public override string NamePath => "directstorage_core";
