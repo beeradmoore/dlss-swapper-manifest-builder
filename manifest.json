@@ -3394,6 +3394,23 @@
       "file_size": 411504,
       "zip_file_size": 137125,
       "dll_source": "XeSS_SDK_3.0.0.zip"
+    },
+    {
+      "version": "1.3.2.10",
+      "version_number": 281487861743626,
+      "internal_name": "",
+      "internal_name_extra": "",
+      "additional_label": "",
+      "md5_hash": "831A165EB6832A5C1EC46EEE2A33DE30",
+      "zip_md5_hash": "A9C6CDD30FF67E1AEF356083194952C5",
+      "download_url": "https://dlss-swapper-downloads.beeradmoore.com/xell/xell_v1.3.2.10_831A165EB6832A5C1EC46EEE2A33DE30.zip",
+      "file_description": "XeLL SDK",
+      "signed_datetime": "2026-07-14T10:42:51Z",
+      "is_signature_valid": true,
+      "is_dev_file": false,
+      "file_size": 415368,
+      "zip_file_size": 138576,
+      "dll_source": "XeSS_SDK_3.0.2.zip"
     }
   ],
   "xess_fg": [
