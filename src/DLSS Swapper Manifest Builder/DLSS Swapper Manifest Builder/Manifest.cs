@@ -19,6 +19,9 @@ internal class Manifest
     [JsonPropertyName("dlss_g")]
     public List<DLLRecord> DLSS_G { get; set; } = new List<DLLRecord>();
 
+    [JsonPropertyName("dlss_nr")]
+    public List<DLLRecord> DLSS_NR { get; set; } = new List<DLLRecord>();
+
     [JsonPropertyName("fsr_31_dx12")]
     public List<DLLRecord> FSR_31_DX12 { get; set; } = new List<DLLRecord>();
 

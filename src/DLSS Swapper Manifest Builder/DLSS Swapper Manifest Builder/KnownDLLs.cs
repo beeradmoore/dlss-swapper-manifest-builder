@@ -18,6 +18,9 @@ public class KnownDLLs
     [JsonPropertyName("dlss_g")]
     public List<HashedKnownDLL> DLSS_G { get; set; } = new List<HashedKnownDLL>();
 
+    [JsonPropertyName("dlss_nr")]
+    public List<HashedKnownDLL> DLSS_NR { get; set; } = new List<HashedKnownDLL>();
+
     [JsonPropertyName("fsr_31_dx12")]
     public List<HashedKnownDLL> FSR_31_DX12 { get; set; } = new List<HashedKnownDLL>();
 
