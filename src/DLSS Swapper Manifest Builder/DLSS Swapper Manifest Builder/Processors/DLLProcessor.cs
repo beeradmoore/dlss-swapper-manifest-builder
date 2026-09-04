@@ -1,5 +1,6 @@
 ﻿using DLSS_Swapper.Data;
 using DLSS_Swapper_Manifest_Builder.Downloaders;
+using DLSS_Swapper_Manifest_Builder.Processors.DLLSets;
 using Serilog;
 using System;
 using System.Collections.Generic;
@@ -24,7 +25,7 @@ public abstract class DLLProcessor
     public abstract string[] ExpectedDevPrefix { get; }
     public abstract Dictionary<string, string> CustomAdditionalLabels { get; }
     public abstract Dictionary<string, string> DllSource { get; }
-    public abstract string DLLSetType { get; }
+    public abstract DLLSetType DLLSetType { get; }
 
 
     public string BaseInputPath => Path.Combine(Storage.InputFilesPath, "base", NamePath);
