@@ -16,6 +16,8 @@ using Serilog;
 using System.Diagnostics;
 using System.Text.Json;
 
+// Reset console to prevent text overriding previous text
+Console.Clear();
 
 Log.Logger = new LoggerConfiguration()
 	.WriteTo.File("log.txt", rollingInterval: RollingInterval.Day)
