@@ -1,6 +1,7 @@
 ﻿using DLSS_Swapper.Data;
 using DLSS_Swapper_Manifest_Builder.Downloaders.AMD;
 using DLSS_Swapper_Manifest_Builder.Downloaders.Intel;
+using DLSS_Swapper_Manifest_Builder.Processors.DLLSets;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -38,7 +39,7 @@ internal class XeLLProcessor : DLLProcessor
     ];
 
     public override GameAssetType GameAssetType => GameAssetType.XeSS;
-    public override string DLLSetType => DLLSet.XeSS;
+    public override DLLSetType DLLSetType => DLLSetType.XeSS;
 
     public XeLLProcessor(List<DLLRecord> manifestDllRecords) : base(manifestDllRecords)
     {

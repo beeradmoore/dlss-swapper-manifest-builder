@@ -1,5 +1,6 @@
 ﻿using DLSS_Swapper.Data;
 using DLSS_Swapper_Manifest_Builder.Downloaders.NVIDIA_RTX;
+using DLSS_Swapper_Manifest_Builder.Processors.DLLSets;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -42,7 +43,7 @@ internal class NvLowLatencyVK_Processor : DLLProcessor
     public override string[] DownloadedFilesPaths => [
         Path.Combine(Storage.DownloadedFilesPath, StreamlineDownloader.DownloadPathName),
     ];
-    public override string DLLSetType => DLLSet.Streamline;
+    public override DLLSetType DLLSetType => DLLSetType.Streamline;
 
     public NvLowLatencyVK_Processor(List<DLLRecord> manifestDllRecords) : base(manifestDllRecords)
     {

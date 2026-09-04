@@ -1,5 +1,6 @@
 ﻿using DLSS_Swapper.Data;
 using DLSS_Swapper_Manifest_Builder.Downloaders.AMD;
+using DLSS_Swapper_Manifest_Builder.Processors.DLLSets;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -29,7 +30,7 @@ internal class FSR31VKProcessor : FSR31Processor
     ];
 
     public override GameAssetType GameAssetType => GameAssetType.FSR_31_VK;
-    public override string DLLSetType => DLLSet.FidelityFX_SDK1;
+    public override DLLSetType DLLSetType => DLLSetType.FidelityFX_SDK1;
 
     public FSR31VKProcessor(List<DLLRecord> manifestDllRecords) : base(manifestDllRecords)
     {

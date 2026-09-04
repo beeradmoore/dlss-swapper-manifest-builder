@@ -1,6 +1,7 @@
 ﻿using DLSS_Swapper.Data;
 using DLSS_Swapper_Manifest_Builder.Downloaders.NVIDIA;
 using DLSS_Swapper_Manifest_Builder.Downloaders.NVIDIA_RTX;
+using DLSS_Swapper_Manifest_Builder.Processors.DLLSets;
 using Serilog;
 using System;
 using System.Collections.Generic;
@@ -143,7 +144,7 @@ internal class DLSSGProcessor : DLLProcessor
     }
 
     public override GameAssetType GameAssetType => GameAssetType.DLSS_G;
-    public override string DLLSetType => DLLSet.DLSS;
+    public override DLLSetType DLLSetType => DLLSetType.DLSS;
 
     public DLSSGProcessor(List<DLLRecord> manifestDllRecords) : base(manifestDllRecords)
     {

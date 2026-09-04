@@ -1,5 +1,6 @@
 ﻿using DLSS_Swapper.Data;
 using DLSS_Swapper_Manifest_Builder.Downloaders.AMD;
+using DLSS_Swapper_Manifest_Builder.Processors.DLLSets;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -43,7 +44,7 @@ internal class FidelityFX2_FrameGeneration_DX12_Processor : DLLProcessor
     public override string[] DownloadedFilesPaths => [
         Path.Combine(Storage.DownloadedFilesPath, FidelityFXDownloader.DownloadPathName),
     ];
-    public override string DLLSetType => DLLSet.FidelityFX_SDK2;
+    public override DLLSetType DLLSetType => DLLSetType.FidelityFX_SDK2;
 
     public FidelityFX2_FrameGeneration_DX12_Processor(List<DLLRecord> manifestDllRecords) : base(manifestDllRecords)
     {
