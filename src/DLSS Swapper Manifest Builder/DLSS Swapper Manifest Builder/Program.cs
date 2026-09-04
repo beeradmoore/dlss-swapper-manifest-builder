@@ -25,9 +25,54 @@ Log.Logger = new LoggerConfiguration()
 	.CreateLogger();
 
 Log.Information("Starting processing");
-//Log.Debug(
+Log.Information(string.Empty);
 
+// Create input/output folder structure
 Storage.CreateDirectories();
+
+// Validate GameAssetType 
+Log.Information("Validating GameAssetTypes");
+var gameAssetTypeErrors = new List<string>();
+var gameAssetTypes = Enum.GetNames(typeof(GameAssetType));
+foreach (var gameAssetType in gameAssetTypes)
+{
+    if (gameAssetType == nameof(GameAssetType.Unknown))
+    {
+        continue;
+    }
+
+    if (gameAssetType.Contains("_BACKUP"))
+    {
+        var gameAssetTypeWithoutBackup = gameAssetType.Substring(0, gameAssetType.Length - "_BACKUP".Length);
+        if (gameAssetTypes.Contains(gameAssetTypeWithoutBackup) == false)
+        {
+            gameAssetTypeErrors.Add($"{gameAssetType} exists but there is no {gameAssetTypeWithoutBackup}");
+        }
+    }
+    else
+    {
+        var gameAssetTypeWithBackup = $"{gameAssetType}_BACKUP";
+        if (gameAssetTypes.Contains(gameAssetTypeWithBackup) == false)
+        {
+            gameAssetTypeErrors.Add($"{gameAssetType} exists but there is no {gameAssetTypeWithBackup}");
+        }
+    }
+}
+
+if (gameAssetTypeErrors.Count > 0)
+{
+    Log.Error($"Found {gameAssetTypeErrors.Count} issues.");
+    foreach (var gameAssetTypeError in gameAssetTypeErrors)
+    {
+        Log.Error(gameAssetTypeError);
+    }
+}
+else
+{
+    Log.Information("No GameAssetType issues found.");
+}
+
+Log.Information(string.Empty);
 
 var manifest = JsonSerializer.Deserialize<Manifest>(File.ReadAllText(Storage.InputManifestPath));
 if (manifest == null)
