@@ -100,6 +100,9 @@ internal class Manifest
     [JsonPropertyName("nvlowlatencyvk")]
     public List<DLLRecord> NvLowLatencyVK { get; set; } = new List<DLLRecord>();
 
+    [JsonPropertyName("dll_sets")]
+    public DLLSets DLLSets { get; set; } = new DLLSets();
+
     [JsonPropertyName("known_dlls")]
     public KnownDLLs KnownDLLs { get; set; } = new KnownDLLs();
 }
