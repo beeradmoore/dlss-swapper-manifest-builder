@@ -110,6 +110,8 @@ var dllProcessors = new List<DLLProcessor>();
 //dllProcessors.Add(new DLSSProcessor(manifest.DLSS));
 //dllProcessors.Add(new DLSSGProcessor(manifest.DLSS_G));
 //dllProcessors.Add(new DLSSDProcessor(manifest.DLSS_D));
+//dllProcessors.Add(new DLSSNRProcessor(manifest.DLSS_NR));
+
 
 // FSR 3.1 / Fidelity SDK 1
 //dllProcessors.Add(new FSR31DX12Processor(manifest.FSR_31_DX12));
@@ -129,8 +131,8 @@ var dllProcessors = new List<DLLProcessor>();
 //dllProcessors.Add(new XeSSDX11Processor(manifest.XeSS_DX11));
 
 // Direct Storage
-//dllProcessors.Add(new DirectStorageProcessor(manifest.DirectStorage));
-//dllProcessors.Add(new DirectStorageCoreProcessor(manifest.DirectStorageCore));
+dllProcessors.Add(new DirectStorageProcessor(manifest.DirectStorage));
+dllProcessors.Add(new DirectStorageCoreProcessor(manifest.DirectStorageCore));
 
 // Sreamline
 //dllProcessors.Add(new Streamline_Reflex_Processor(manifest.Streamline_Reflex));
@@ -145,7 +147,8 @@ var dllProcessors = new List<DLLProcessor>();
 //dllProcessors.Add(new Streamline_DeepDVC_Processor(manifest.Streamline_DeepDVC));
 //dllProcessors.Add(new Streamline_Common_Processor(manifest.Streamline_Common));
 //dllProcessors.Add(new DeepDVC_Processor(manifest.DeepDVC));
-dllProcessors.Add(new NvLowLatencyVK_Processor(manifest.NvLowLatencyVK));
+//dllProcessors.Add(new NvLowLatencyVK_Processor(manifest.NvLowLatencyVK));
+
 
 foreach (var dllProcessor in dllProcessors)
 {
