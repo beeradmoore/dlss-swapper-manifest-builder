@@ -21,9 +21,13 @@ using System.Text.Json;
 // Reset console to prevent text overriding previous text
 Console.Clear();
 
+var counterSink = new CounterSink();
+
+
 Log.Logger = new LoggerConfiguration()
 	.WriteTo.File("log.txt", rollingInterval: RollingInterval.Day)
 	.WriteTo.Console()
+    .WriteTo.Sink(counterSink)
 	.CreateLogger();
 
 Log.Information("Starting processing");
@@ -82,6 +86,7 @@ var manifest = JsonSerializer.Deserialize<Manifest>(File.ReadAllText(Storage.Inp
 if (manifest == null)
 {
     Log.Information($"Could not load {Storage.InputManifestPath}.");
+    Log.CloseAndFlush();
     return 1;
 }
 
@@ -196,6 +201,8 @@ using (var stream = File.OpenRead(knownDLLSourcesMissingPath))
     if (knownDLLSourcesMissing is null)
     {
         Debugger.Break();
+
+        Log.CloseAndFlush();
         return 0;
 	}
 
@@ -294,4 +301,16 @@ if (Directory.Exists(Storage.TempFilesPath))
     Directory.Delete(Storage.TempFilesPath, true);
 }
 
+
+Log.CloseAndFlush();
+
+Console.WriteLine();
+Console.WriteLine($"Output Summary");
+Console.WriteLine($"{"Verbose:", -15} {counterSink.VerboseCount}");
+Console.WriteLine($"{"Debug:", -15} {counterSink.DebugCount}");
+Console.WriteLine($"{"Information:", -15} {counterSink.InformationCount}");
+Console.WriteLine($"{"Warning:", -15} {counterSink.WarningCount}");
+Console.WriteLine($"{"Error:", -15} {counterSink.ErrorCount}");
+Console.WriteLine($"{"Fatal:", -15} {counterSink.FatalCount}");
+Console.WriteLine();
 return 1;
