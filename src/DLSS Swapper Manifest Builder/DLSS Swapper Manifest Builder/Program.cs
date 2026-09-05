@@ -6,8 +6,10 @@ using DLSS_Swapper_Manifest_Builder.Downloaders.Intel;
 using DLSS_Swapper_Manifest_Builder.Downloaders.Microsoft;
 using DLSS_Swapper_Manifest_Builder.Downloaders.NVIDIA;
 using DLSS_Swapper_Manifest_Builder.Downloaders.NVIDIA_RTX;
+using DLSS_Swapper_Manifest_Builder.Helpers;
 using DLSS_Swapper_Manifest_Builder.Processors;
 using DLSS_Swapper_Manifest_Builder.Processors.DirectStorage;
+using DLSS_Swapper_Manifest_Builder.Processors.DLLSets;
 using DLSS_Swapper_Manifest_Builder.Processors.FidelityFX_SDK1;
 using DLSS_Swapper_Manifest_Builder.Processors.FidelityFX_SDK2;
 using DLSS_Swapper_Manifest_Builder.Processors.Streamline;
@@ -66,6 +68,8 @@ if (gameAssetTypeErrors.Count > 0)
     {
         Log.Error(gameAssetTypeError);
     }
+
+    Debugger.Break();
 }
 else
 {
@@ -157,6 +161,32 @@ foreach (var dllProcessor in dllProcessors)
     //dllProcessor.ManifestDllRecords = dllProcessor.ProcessLocalFiles(dllProcessor.ManifestDllRecords);
 }
 
+// Rebuild DLL sets
+#region Rebuild DLL Sets
+
+var dllSetProcessors = new Dictionary<DLLSetType, DLLSetProcessor>();
+
+foreach (var dllProcessor in dllProcessors)
+{
+    if (dllSetProcessors.ContainsKey(dllProcessor.DLLSetType) == false)
+    {
+        var dllSetTypeString = DLLSetProcessor.GetDLLSetTypeString(dllProcessor.DLLSetType);   
+        var dllSetList = ObjectPropertyGrabber.GetPropertyByJsonName<List<DLLSet>>(manifest.DLLSets, dllSetTypeString);
+        var dllSetProcessor = DLLSetProcessor.FromDLLSetType(dllProcessor.DLLSetType, dllSetList);
+        dllSetProcessors.Add(dllProcessor.DLLSetType, dllSetProcessor);
+    }
+
+    dllSetProcessors[dllProcessor.DLLSetType].DLLProcessors.Add(dllProcessor);
+}
+
+foreach ((DLLSetType dllSetType,  DLLSetProcessor dllSetProcessor) in dllSetProcessors)
+{
+    dllSetProcessor.ProcessDLLSets();
+}
+
+#endregion
+
+
 var knownDLLSourcesMissingPath = Path.Combine("..", "..", "..", "..", "..", "..", "known_dll_sources_missing.json");
 using (var stream = File.OpenRead(knownDLLSourcesMissingPath))
 {
@@ -181,11 +211,13 @@ using (var stream = File.OpenRead(knownDLLSourcesMissingPath))
 			continue;
 		}
 
+        // TODO: Can this be dynamic?
 		var knownDLLsList = gameAssetType switch
         {
             GameAssetType.DLSS => manifest.KnownDLLs.DLSS,
             GameAssetType.DLSS_D => manifest.KnownDLLs.DLSS_D,
             GameAssetType.DLSS_G => manifest.KnownDLLs.DLSS_G,
+            GameAssetType.DLSS_NR => manifest.KnownDLLs.DLSS_NR,
             GameAssetType.FSR_31_DX12 => manifest.KnownDLLs.FSR_31_DX12,
             GameAssetType.FSR_31_VK => manifest.KnownDLLs.FSR_31_VK,
             GameAssetType.XeSS => manifest.KnownDLLs.XeSS,
