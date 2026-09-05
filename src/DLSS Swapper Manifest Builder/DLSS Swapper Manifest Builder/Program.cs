@@ -277,6 +277,14 @@ if (File.Exists(dlssSwapperRepoManifestPath))
 	File.Copy(Storage.OutputManifestPath, dlssSwapperRepoManifestPath, true);
 }
 
+//Copy to DLSS Swapper static assets file to ensure new installs have the latest version.
+var dlssSwapperRepoStaticAssetsPath = Path.Combine("..", "..", "..", "..", "..", "..", "..", "dlss-swapper", "src", "Assets", "static_manifest.json");
+if (File.Exists(dlssSwapperRepoStaticAssetsPath))
+{
+    File.Copy(Storage.OutputManifestPath, dlssSwapperRepoStaticAssetsPath, true);
+}
+
+
 // Cleanup.
 
 if (Directory.Exists(Storage.TempFilesPath))
