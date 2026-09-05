@@ -11,9 +11,11 @@ internal class DLLSet
     public const string FidelityFX_SDK2 = "fidelityfx_sdk2";
     public const string XeSS = "xess";
 
-
     [JsonPropertyName("name")]
     public string Name { get; set; } = string.Empty;
+
+    [JsonPropertyName("set_hash")]
+    public string SetHash { get; set; } = string.Empty;
 
     [JsonPropertyName("dll_records")]
     public Dictionary<string, string> DLLRecords { get; set; } = new Dictionary<string, string>();

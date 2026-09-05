@@ -1,7 +1,9 @@
 ﻿using DLSS_Swapper.Data;
+using Serilog;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Security.Cryptography;
 using System.Text;
 
 namespace DLSS_Swapper_Manifest_Builder.Processors.DLLSets;
@@ -77,6 +79,8 @@ internal abstract class DLLSetProcessor
                 dllSetMatch.DLLRecords = incomingDllSet.DLLRecords;
             }
         }
+
+        UpdateAllHashSets();
     }
 
     // Allows per DLLSetProcessor to name DLL sets automatically
@@ -105,5 +109,28 @@ internal abstract class DLLSetProcessor
             DLLSetType.DirectStorage => new DirectStorageDLLSetProcessor(dllSets),
             _ => throw new Exception($"Unable to find DLLSetType {dllSetType} in FromDLLSetType"),
         };
+    }
+
+    void UpdateAllHashSets()
+    {
+        foreach (var dllSet in DLLSets)
+        {
+            var dllSetHashBefore = dllSet.SetHash;
+
+            var allHashes = String.Join(",", dllSet.DLLRecords.Values);
+            var allHashBytes = Encoding.UTF8.GetBytes(allHashes);
+
+            using (var md5 = MD5.Create())
+            {
+                var finalHash = md5.ComputeHash(allHashBytes);
+                dllSet.SetHash = Convert.ToHexString(finalHash);
+            }
+
+            if (string.IsNullOrWhiteSpace(dllSetHashBefore) == false && dllSetHashBefore != dllSet.SetHash)
+            {
+                Log.Warning($"DLLSet {dllSet.Name} has drifted.");
+                Debugger.Break();
+            }
+        }
     }
 }
