@@ -150,6 +150,8 @@ foreach (var dllProcessor in dllProcessors)
 	dllProcessor.ManifestDllRecords.Clear();
 	dllProcessor.ManifestDllRecords.AddRange(newDllRecords);
 
+    // Old things we don't do anymore.
+
     //dllProcessor.PostProcessRecords(dllProcessor.ManifestDllRecords, dllProcessor.GameAssetType);
 
     //dllProcessor.MoveToCorrectLocations(dllProcessor.ManifestDllRecords, dllProcessor.GameAssetType);
